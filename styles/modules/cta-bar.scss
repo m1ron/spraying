@@ -1,0 +1,81 @@
+.cta-bar {
+    background-color: $spray-dkst-blue;
+    overflow: hidden;
+    padding: 2.8rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: center;
+    margin: 0 0 1rem 0;
+
+    @media #{$medium-up} {
+        padding: 2.8rem 4rem;
+    }
+
+    .cta-content {
+        max-width: 1440px;
+    }
+
+    &-copy {
+        color: $light;
+        display: inline-block;
+        font-family: $site-font-secondary;
+        font-size: 2.4rem;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+        margin: 1rem;
+        text-align: center;
+
+        @media #{$medium-up} {
+            font-size: 2.8rem;
+            font-weight: 900;
+        }
+
+        @media #{$xlarge-up} {
+            font-weight: 800;
+            line-height: 5rem;
+            margin: 0 1rem;
+            padding: 1rem 0;
+        }
+    }
+
+    &-button, .scTextWrapper { //Add scTextWrapper for Exp Editor 'no text' support
+        @extend %button-base;
+        background-color: $spray-dk-blue;
+        box-shadow: 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 rgba(0,0,0,0.15);
+        color: $light !important;
+        display: inline-block;
+        font-family: $site-font-secondary;
+        font-size: 1.8rem;
+        font-weight: 800;
+        letter-spacing: 0.1rem;
+        margin: 1rem 2rem;
+        padding: 1.2rem 3rem;
+        text-transform: uppercase;
+        vertical-align: middle;
+
+        &:hover, &:focus {
+            background-color: darken($spray-dk-blue, 4%);
+            color: $light;
+        }
+
+        &:active {
+            background-color: darken($spray-dk-blue, 4%);
+            color: $light;
+        }
+
+        @media #{$medium-up} {
+            font-size: 2rem;
+        }
+
+        @media #{$xlarge-up} {
+            margin: 1rem;
+        }
+    }
+}
+
+.cta-bar-alt {
+    background-color: $spray-dkst-blue;
+}

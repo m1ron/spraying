@@ -1,0 +1,91 @@
+.landing-page {
+    .header-feature-cta-title {
+		text-transform: none !important;
+		letter-spacing: -0.3rem;
+		line-height: 0.95;
+        font-size: 4.2rem;
+
+		@media #{$medium-up} { font-size: 5rem; }
+		@media #{$large-up} { font-size: 6.2rem; }
+		@media #{$xlarge-up} { font-size: 6.4rem; }
+    } 
+    .article-copy {
+        background-color: $spray-lt-gray;
+        padding: 2rem;
+        ul { margin-top: 2rem; }
+        &-flex {
+            @media #{$medium-up} { 
+                display: flex; 
+                margin: 0 auto;
+                max-width: 1200px;
+            }
+            &-main-col { 
+                @media #{$medium-up} { width: 50%;padding: 2rem; }
+                @media #{$large-up} { width: 60%; padding: 4.5rem; }
+             }
+             &-secondary-col { 
+                padding-top: 2rem;
+                @media #{$medium-up} { width: 50%; padding: 2rem; }
+                @media #{$large-up} { width: 40%; padding: 4.5rem; }
+             }
+        }  
+    }
+    &-cta-link {
+        &:hover { 
+            text-decoration: none;
+         }
+        h3 { 
+            color: $spray-blue;
+            transition: all 0.2s ease-in; 
+        }
+        .icon-double-arrow {
+            color: $spray-lt-blue;
+            font-size: 3.7rem;
+            margin-bottom: 2rem;
+            position: relative;
+            top:-5px;
+            transform: rotate(90deg);
+            @media #{$medium-up} { transform: none; }
+        }
+    }
+
+    .spray-form {
+        &-header {
+            margin-bottom: 4.5rem;
+            position: relative;
+            &::after {
+                background-color: #D47070;
+                bottom: -1.3rem;
+                content: '';
+                height: 6px;
+                left: 0;
+                opacity: 1;
+                position: absolute;
+                right: 0;
+                width: 80px;
+                z-index: 1;
+            }
+        }
+        &-field { margin-bottom: 2rem; }
+        .checkbox, .events-interest {
+            margin-bottom: 2rem;
+        }
+        .checkbox label { 
+            color: $spray-dk-blue-gray; 
+            font-weight: 400;
+            margin-left: -6px; 
+            padding-left: 4rem !important;
+            &.consent-text {
+                font-weight: 700;
+            }
+        }
+        .checkbox label::before {
+            font-size: 2.8rem;
+            top: -10px;
+        }
+        
+        button {
+            margin-top: 1rem;
+        }
+    }
+}

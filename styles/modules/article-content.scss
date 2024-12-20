@@ -1,0 +1,255 @@
+.article-content {
+	&.main-content {
+		background-color: $spray-lt-gray;
+	}
+
+	.main-wrapper {
+		@include position(relative, null null null null);
+		margin: auto;
+		padding: 2rem 0;
+
+		@media #{$medium-up} {
+			padding: 3rem 0 6rem;
+		}
+		@media #{$large-up} {
+			padding: 4rem 0 8rem;
+		}
+	}
+
+	.article-sidebar {
+		margin: 3rem auto 0;
+		max-width: 95.4rem;
+		width: 100%;
+
+		@media screen and (min-width: 1570px) {
+			margin-top: 0;
+			padding: 0 8rem 0 2rem;
+		}
+
+		&-container {
+			background-color: $spray-gray;
+			margin: 0;
+			padding: 2rem;
+			width: 100%;
+
+			@media screen and (min-width: 1570px) {
+				max-width: 36.2rem;
+				min-height: 60.2rem;
+				min-width: 22.5rem;
+			}
+		}
+
+		p {
+			color: $light;
+			// -----
+			// remove for production
+			text-align: center;
+		}
+	}
+}
+
+.article-wrapper {
+	display: flex;
+	flex-direction: column;
+	
+	@media #{$medium-up} {
+		flex-direction: row-reverse;
+	}
+
+	figure {
+		width: 100%;
+
+		@media #{$medium-up} {
+			width: 50%;
+			text-align: center;
+		}
+
+		img {
+			width: 100%;
+			max-width: 600px;
+		}
+	}
+}
+
+.article {
+	margin: 0 auto;
+	max-width: 99.4rem;
+	padding: 0 2rem;
+
+
+	&-container {
+		@include position(relative, null null null null);
+		background-color: $light;
+		max-width: 99.4rem;
+		padding: 3rem;
+
+		@media #{$medium-up} {
+			padding: 4rem;
+		}
+	}
+
+	figure {
+		margin-bottom: 2rem;
+		@media #{$medium-up} {
+			margin-bottom: 3rem;
+		}
+		.clear {
+			clear: both;
+		}
+	}
+
+	&-title {
+		color: $spray-dk-blue-gray;
+		font-size: 4rem;
+		font-weight: 100;
+		line-height: 1;
+		margin: 0 0 2rem;
+		padding: 0;
+
+		@media #{$medium-up} {
+			font-size: 5.5rem;
+		}
+		@media #{$large-up} {
+			font-size: 6.4rem;
+		}
+	}
+	&-subhead {
+		color: #2897dc;
+		font-size: 1.8rem;
+		font-weight: 600;
+		line-height: 1;
+		margin: 0 0 3rem;
+		padding: 0;
+
+		@media #{$medium-up} {
+			font-size: 2.1rem;
+		}
+		@media #{$large-up} {
+			font-size: 2.8rem;
+		}
+	}
+
+	.article-meta {
+		display: flex;
+		margin: 0 auto 2rem;
+
+		@media #{$medium-up} {
+			margin: 0 auto 4rem;
+		}
+
+		p {
+			font-size: 1.8rem;
+			margin: 0 0 0 2rem;
+			@media screen and (min-width: 768px) {
+				margin: 3rem 0 0 2rem;
+			}
+		}
+
+		&-author-img {
+			border-radius: 50%;
+			float: left;
+			max-height: 5rem;
+			max-width: 5rem;
+			@media screen and (min-width: 768px) {
+				max-height: 8.6rem;
+				max-width: 8.6rem;
+			}
+		}
+		&-author {
+			font-style: italic;
+			margin-right: 0.5rem;
+			padding-right: 1rem;
+
+			@media #{$medium-up} {
+				border-right: dotted 2px rgba(63,96,116,0.5);
+			}
+		}
+		&-date {
+			display: block;
+			font-weight: 700;
+
+			@media screen and (min-width: 768px) {
+				display: inline;
+			}
+		}
+
+		@media screen and (min-width: 768px) {
+			float: left;
+			width: 60%;
+		}
+	}
+
+	&-copy {
+		h3 {
+			font-size: 1.8rem;
+			font-weight: 600;
+			line-height: 1.25;
+			margin: 0 0 0.6rem;
+			@media #{$medium-up} { font-size: 2rem; }
+		}
+
+		ul, ol {
+			font-weight: normal;
+			margin: 1.5rem 0 3rem;
+			@media #{$medium-up} {
+				margin-bottom: 4rem;
+			}
+			li {
+				@include position(relative, null null null null);
+				margin: 0 0 1rem 1.75rem;
+
+				@media #{$medium-up} {
+					margin-left: 3rem;
+				}
+			}
+		}
+		ul {
+			list-style-type: none;
+			li {
+				&:before {
+					@include position(absolute, null null null -1.5rem);
+					content: '\2022';
+				}
+			}
+		}
+
+		p:not(:last-of-type) + {
+			ul, ol {
+				@include position(relative, null null null null);
+				margin-top: -1.5rem;
+
+				@media #{$large-up} {
+					margin-top: -2.5rem;
+				}
+			}
+		}
+
+		p, li {
+			color: $spray-dk-blue-gray;
+			font-size: 1.5rem;
+			margin-bottom: 3rem;
+			@media #{$medium-up} { font-size: 1.8rem; }
+			@media #{$large-up} {
+				font-size: 2rem;
+				line-height: 1.45;
+				margin-bottom: 4rem;
+			}
+		}
+		p:last-of-type {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		blockquote {
+			p {
+				color: $spray-dk-blue-gray;
+				font-size: 2.8rem;
+				line-height: 1.1;
+
+				@media #{$medium-up} {
+					font-size: 3.2rem;
+				}
+			}
+		}
+	}
+}

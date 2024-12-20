@@ -1,0 +1,337 @@
+%button-base {
+    display: inline-block;
+    outline: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover, &:focus, &:active {
+        text-decoration: none;
+    }
+}
+
+.button-small {
+    font-size: 1rem;
+    padding: 0.6rem 2.6rem;
+
+    @media #{$medium} {
+        font-size: 1.25rem;
+    }
+}
+
+
+.button-red {
+    @extend %button-base;
+    background-color: $spray-red;
+    box-shadow: 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 rgba(0,0,0,0.15);
+    color: $light !important;
+    font-family: $site-font-secondary;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    padding: 1.5rem 3.3rem 1.5rem;
+    text-transform: uppercase;
+
+    &:hover, &:focus {
+        background-color: darken($spray-red, 10%);
+        box-shadow: 0 5px 20px -5px rgba(0,0,0,0.35), inset 0 -4px 0 rgba(0,0,0,0.15);
+        color: $light;
+    }
+
+    &:active {
+        background-color: darken($spray-red, 10%);
+        box-shadow: inset 0 0 0 rgba(0,0,0,0) !important;
+        color: $light;
+    }
+
+    @media #{$medium-up} {
+        font-size: 2rem;
+    }
+}
+
+.button-blue {
+    @extend %button-base;
+    background-color: $spray-dk-blue;
+    box-shadow: 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 rgba(0,0,0,0.15);
+    color: $light !important;
+    font-family: $site-font-secondary;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    padding: 1.2rem 3rem;
+    text-transform: uppercase;
+
+    &:hover, &:focus {
+        background-color: darken($spray-dk-blue, 10%);
+        box-shadow: 0 5px 20px -5px rgba(0,0,0,0.35), inset 0 -3px 0 rgba(0,0,0,0.15);
+        color: $light;
+    }
+
+    &:active {
+        background-color: darken($spray-dk-blue, 10%);
+        box-shadow: inset 0 0 0 rgba(0,0,0,0) !important;
+        color: $light;
+    }
+
+    @media #{$medium-up} {
+        font-size: 2rem;
+    }
+}
+
+.button-dark-blue {
+    @extend %button-base;
+    background-color: $spray-dk-blue-green;
+    border: 2px solid $light;
+    box-shadow: 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 rgba(0,0,0,0.15);
+    color: $light !important;
+    font-family: $site-font-secondary;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    padding: 1.2rem 3rem;
+    text-transform: uppercase;
+
+    &:hover, &:focus {
+        background-color: darken($spray-dk-blue-green, 10%);
+        box-shadow: 0 5px 20px -5px rgba(0,0,0,0.35), inset 0 -3px 0 rgba(0,0,0,0.15);
+        color: $light;
+    }
+
+    &:active {
+        background-color: darken($spray-dk-blue-green, 10%);
+        box-shadow: inset 0 0 0 rgba(0,0,0,0) !important;
+        color: $light;
+    }
+
+    @media #{$medium-up} {
+        font-size: 2rem;
+    }
+}
+
+
+.button-light-blue {
+    @extend %button-base;
+    background-color: $spray-ltr-blue;
+    box-shadow: 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 rgba(0,0,0,0.15);
+    color: $light !important;
+    font-family: $site-font-secondary;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    padding: 1.2rem 3rem;
+    text-transform: uppercase;
+
+    &:hover, &:focus {
+        background-color: darken($spray-ltr-blue, 10%);
+        box-shadow: 0 5px 20px -5px rgba(0,0,0,0.35), inset 0 -3px 0 rgba(0,0,0,0.15);
+        color: $light;
+    }
+
+    &:active {
+        background-color: darken($spray-ltr-blue, 10%);
+        box-shadow: inset 0 0 0 rgba(0,0,0,0) !important;
+        color: $light;
+    }
+
+    @media #{$medium-up} {
+        font-size: 2rem;
+    }
+
+    &.forty-two {
+        padding: 0.8rem 3rem;
+    }
+}
+
+.button-gray {
+    @extend %button-base;
+    background-color: #f6f8f9;
+    border: 1px solid rgba(63,96,116,0.25);
+    box-shadow: 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 0 rgba(63,96,116,0.3);
+    color: $spray-dk-blue-gray !important;
+    font-family: $site-font-secondary;
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 1.2rem 3rem;
+    text-transform: uppercase;
+
+    &:hover, &:focus {
+        background-color: darken(#f6f8f9, 10%);
+        box-shadow: 0 5px 20px -5px rgba(0,0,0,0.35), inset 0 -3px 0 rgba(0,0,0,0.15);
+        color: $spray-dk-blue-gray;
+    }
+
+    &:active {
+        background-color: darken($spray-lt-gray, 10%);
+        box-shadow: 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 0 0 rgba(0,0,0,0) !important;
+        color: $spray-dk-blue-gray;
+    }
+
+    @media #{$medium-up} {
+        font-size: 2rem;
+    }
+}
+
+.button-primary {
+    @extend %button-base;
+    background-color: $spray-red;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3);
+    color: $light;
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 1.2 3rem;
+
+    .general-content & {
+        margin-top: 1.6rem;
+    }
+
+    &:hover, &:focus {
+        background-color: darken($spray-red, 5%);
+        box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3) !important;
+        color: $light;
+    }
+
+    &:active {
+        background-color: darken($spray-red, 10%);
+        box-shadow: inset 0 0 0 rgba(0,0,0,0) !important;
+        color: $light;
+        padding-bottom: 1.1rem;
+        padding-top: 1.3rem;
+    }
+
+    &:active {
+        background-color: darken($spray-red, 10%);
+        box-shadow: none;
+        padding-bottom: 1.1rem;
+        padding-top: 1.3rem;
+    }
+
+    @media #{$medium-up} {
+        font-size: 2rem;
+    }
+}
+
+
+.button-light {
+    @extend %button-base;
+    background-color: $light;
+    border: 1px solid $dark-gray;
+    color: $dark-gray;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($light, 5%);
+    }
+}
+
+.button-header-white {
+    @extend %button-base;
+    background-color: $light;
+    border: 1px solid $light;
+    color: $dark-gray;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($light, 10%);
+    }
+}
+
+.button-header-red {
+    @extend %button-base;
+    background-color: $spray-red;
+    border: 1px solid $spray-red;
+    color: $light;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($spray-red, 10%);
+    }
+}
+
+.button-header-blue-dark {
+    @extend %button-base;
+    background-color: $spray-dk-blue-green;
+    border: 1px solid $spray-dk-blue-green;
+    color: $light;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($spray-dk-blue-green, 10%);
+    }
+}
+
+.button-header-blue-default {
+    @extend %button-base;
+    background-color: $spray-blue-alt-1;
+    border: 1px solid $spray-blue-alt-1;
+    color: $light;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($spray-blue-alt-1, 10%);
+    }
+}
+
+.button-header-blue-light {
+    @extend %button-base;
+    background-color: $spray-ltr-blue;
+    border: 1px solid $spray-ltr-blue;
+    color: $light;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($spray-ltr-blue, 10%);
+    }
+}
+
+.button-header-gray {
+    @extend %button-base;
+    background-color: $spray-dk-gray-alt;
+    border: 1px solid $spray-dk-gray-alt;
+    color: $spray-dk-blue-gray;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($spray-dk-gray-alt, 10%);
+    }
+}
+
+.button-header-green {
+    @extend %button-base;
+    background-color: $spray-green;
+    border: 1px solid $spray-green;
+    color: $light;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($spray-green, 10%);
+    }
+}
+
+.button-bold {
+    font-weight: bold;
+}
+
+.button-border-radius {
+    border-radius: 3rem;
+    padding: 2rem 4rem;
+}
+
+.button-with-icon {
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+
+    i {
+        font-size: 2rem;
+        position: absolute;
+        left: 0.8rem;
+        margin-top: -1rem;
+        top: 50%;
+
+        @media #{$small-up} {
+            font-size: 2.75rem;
+            margin-top: -1.2rem;
+        }
+
+        @media #{$large-up} {
+            font-size: 3.125rem;
+            margin-top: -1.5rem;
+        }
+    }
+
+    span {
+        padding-left: 2.25rem;
+    }
+}

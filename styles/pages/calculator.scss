@@ -1,0 +1,1000 @@
+.calculator {
+
+    &.spray-coverage {
+        .basic-header-feature.centered {
+            padding: 4rem 0 3rem;
+        }
+    }
+
+    &.eductor-sizing {
+        .spray-table-wrapper {
+            max-width: 100%;
+        }
+    }
+
+    .content-wrapper {
+        max-width: 790px;
+        padding: 0 2rem;
+
+        .spray-coverage-note-wrapper {
+            margin-top: 3rem;
+
+            @media #{$small-up} {
+                display: flex;
+            }
+
+            .spray-coverage-note {
+                font-size: 1.5rem;
+                line-height: 1.5;
+
+                @media #{$small-up} {
+                    width: 80%;
+                }
+
+                @media #{$medium-up} {
+                    font-size: 1.8rem;
+                }
+            }
+
+            .spray-coverage-image {
+                width: 70%;
+                margin: 0 auto;
+                max-width: 250px;
+
+                @media #{$small-up} {
+                    width: 50%;
+                    max-width: 170px;
+                }
+
+                img {
+                    width: 100%;
+                    margin: 0 1rem;
+                }
+            }
+        }
+    }
+
+    &-wrapper {
+        margin: 0 auto;
+        max-width: 790px;
+        padding: 0 2rem;
+
+        &.eductor {
+            max-width: 830px;
+
+            .spray-form-field-header-wrapper {
+                padding: 0 2rem;
+            }
+
+            .calculator-results {
+                max-width: 750px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .spray-form-field-filter-wrapper {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px dotted rgba(63,96,116,0.2);
+        margin-bottom: 2rem;
+    }
+
+    .spray-form-field-wrapper {
+        &.coverage {
+            display: flex;
+
+            .spray-form-field {
+                width: 50%;
+
+                &.pad-right {
+                    padding-right: 1rem;
+                }
+
+                &.pad-left {
+                    padding-left: 1rem;
+                }
+            }
+        }
+
+        &.eductor {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .spray-form-field {
+                width: 100%;
+                margin-bottom: 3rem;
+
+                @media screen and (min-width: 500px) {
+                    padding: 0 2rem;
+                    width: 50%;
+                }
+
+                input.disabled {
+                    background-color: $spray-gray;
+                }
+            }
+
+            .spray-form-field ~ .note {
+                position: relative;
+                top: -1.5rem;
+                font-size: 1.5rem;
+                font-style: italic;
+
+                @media screen and (min-width: 500px) {
+                    padding: 0 2rem;
+                }
+            }
+        }
+
+        &.last {
+            margin-bottom: 2rem;
+
+            @media #{$medium-up} {
+                margin-bottom: 3rem;
+            }
+
+            @media #{$large-up} {
+                margin-bottom: 4rem;
+            }
+        }
+    }
+
+    .spray-form-field {
+        @media #{$large-up} {
+            margin-bottom: 4rem;
+        }
+
+        .radio-select-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            .radio-select {
+                width: 125px;
+                margin: 1.5rem 0 0;
+            }
+        }
+
+        .radio-select {
+            margin: 1.5rem 0;
+
+            span {
+                font-size: 1.4rem;
+                color: #222;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 0.6rem;
+
+                @media #{$medium-up} {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        i.icon-circle-question-mark {
+            color: #24ADFF;
+            cursor: pointer;
+            font-size: 1.4rem;
+            margin-left: 0.7rem;
+
+            @media #{$medium-up} {
+                font-size: 1.6rem;
+            }
+        }
+
+        [type='radio']:not(:checked) + label:before, [type='radio']:checked + label:before {
+            top: -1px;
+        }
+
+        label.radio, label.radio span {
+            color: $spray-dk-blue-gray;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-left: 0.3rem;
+            line-height: 1.3;
+            padding-right: 1rem;
+        }
+
+        label.radio span {
+            margin-left: 0;
+        }
+
+        &.variable-select {
+            display: none;
+        }
+
+        &.spray-angle, &.spray-cover, &.spray-height {
+            margin-bottom: 3rem;
+
+            @media #{$medium-up} {
+                margin-bottom: 4rem;
+            }
+        }
+
+        .button-gray {
+            height: 42px;
+
+            &:hover {
+                background: $spray-lt-gray;
+                box-shadow: 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 0 $spray-dk-blue-gray;
+            }
+        }
+
+        .flex-fields {
+            display: flex;
+            align-items: center;
+
+            .field-one {
+                width: 70%;
+            }
+
+            .field-two {
+                width: 30%;
+            }
+
+            .field-one {
+                padding-right: 0.75rem;
+            }
+
+            .field-two {
+                padding-left: 0.75rem;
+            }
+        }
+    }
+
+    .spray-dry-selector {
+        display: block;
+
+        @media screen and (min-width: 550px) {
+            display: flex;
+        }
+
+        .spray-form-field.third {
+            width: 100%;
+
+            @media screen and (min-width: 550px) {
+                margin-right: 1.5rem;
+                margin-bottom: 0;
+
+                &:last-of-type() {
+                    margin-right: 0;
+                }
+
+                width: 33.33%;
+            }
+
+            @media #{$medium-up} {
+                margin-right: 4rem;
+
+                &:last-of-type() {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .spray-pressure-conditional-form {
+        display: none;
+    }
+
+    .nozzle-menu-item {
+        display: flex;
+        display: flex;
+        font-size: 1.4rem;
+        font-weight: 600;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        order: 2;
+        z-index: 40;
+
+        @media #{$small-up} {
+            font-size: 1.5rem;
+        }
+
+        @media #{$large-up} {
+            font-size: 1.8rem;
+        }
+
+        &:first-child {
+            border: 0;
+        }
+
+        strong {
+            color: #222;
+        }
+
+        &.menu-filters {
+            @media #{$large-up} {
+                padding-left: 0;
+            }
+        }
+
+        &.menu-reset {
+            &.reset-only {
+                margin-left: auto;
+                border-left: 0;
+            }
+
+            @media #{$large-up} {
+                padding-right: 0;
+            }
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        i {
+            color: $dark;
+            font-size: 2.5rem;
+            margin-right: 0.25rem;
+            position: relative;
+            top: -2px;
+
+            @media #{$large-up} {
+                top: 0;
+            }
+
+            &.icon-reorder {
+                transition: cubic-bezier(0.79, 0.24, 0.51, 0.95) 0.3s;
+                top: -2px;
+            }
+
+            &.active {
+                transform: rotate(360deg);
+            }
+        }
+
+        strong {
+            margin-right: 0.5rem;
+        }
+
+        .filter-text-metric {
+            display: flex;
+            flex-wrap: wrap;
+            font-weight: 600;
+            overflow: hidden;
+            user-select: none;
+
+            @media #{$large-up} {
+                height: 22px;
+            }
+
+            label {
+                padding-right: 1.5rem;
+                font-size: 100%;
+                line-height: unset;
+                margin-bottom: unset;
+
+                &:before {
+                    top: 0;
+                }
+            }
+
+            .us, .metric {
+                color: $spray-lt-blue;
+                top: -18px;
+                position: relative;
+                cursor: pointer;
+                transition: cubic-bezier(0.79, 0.24, 0.51, 0.95) 0.3s;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                @media #{$large-up} {
+                    top: -22px;
+                }
+            }
+
+            &.collapsed .metric,
+            &.collapsed .us {
+                top: 0px;
+            }
+        }
+    }
+
+    &-form-button {
+        margin-bottom: 3rem;
+
+        button {
+            width: 100%;
+
+            @media #{$small-up} {
+                width: auto;
+            }
+        }
+
+        @media #{$small-up} {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        &.eductor {
+            margin-top: 2rem;
+            padding: 0 2rem;
+        }
+    }
+
+    .blue-container {
+        padding: 2rem;
+
+        @media #{$medium-up} {
+            padding: 3rem 4rem;
+        }
+
+        background-color: $spray-dk-blue-gray;
+        text-align: center;
+
+        .calculator-results {
+            &-text {
+                color: $light;
+            }
+        }
+
+        .thanks-msg-text {
+            color: $light;
+        }
+    }
+
+    &-results {
+        display: none;
+        padding: 2rem;
+
+        @media #{$medium-up} {
+            padding: 3rem 4rem;
+        }
+
+        text-align: center;
+
+        &-text {
+            margin-bottom: 0.5rem;
+        }
+
+        &-text.left {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        &-result {
+            font-size: 3.3rem;
+            color: $light;
+            margin-bottom: 4.8rem;
+        }
+
+        &-header {
+            font-size: 2.4rem;
+            color: $dark;
+        }
+
+        &.lubricant-savings {
+            text-align: left;
+            padding: 1rem 0 2rem;
+        }
+
+        &.spray-dry {
+            background-color: $spray-lt-gray;
+            display: none;
+            padding: 0 0 4rem;
+            margin: 0 auto;
+
+            .spray-dry-results-card {
+                display: block;
+                margin: 0 auto;
+                max-width: 1000px;
+            }
+
+            .spray-dry-results-header {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 2rem 0;
+
+                .spray-dry-results-image {
+                    img {
+                        max-width: 120px;
+                        border-radius: 50%;
+                        margin-right: 2rem;
+                    }
+                }
+
+                .spray-dry-results-text {
+                    font-size: 2.4rem;
+                    font-weight: 500;
+                    color: $dark;
+                    text-align: left;
+                }
+
+                .spray-dry-results-desc {
+                    font-size: 1.6rem;
+                    color: $spray-dk-blue-gray;
+                }
+            }
+
+            .spray-dry-results-table {
+                margin-bottom: 4rem;
+                max-width: 1000px;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+
+                .table-row {
+                    padding: 1rem;
+                    text-align: center;
+
+                    &.one {
+                        min-width: 100px;
+                        width: 100%;
+                    }
+
+                    &.two {
+                        min-width: 160px;
+                        width: 100%;
+                    }
+
+                    &.three, &.four, &.five, &.six {
+                        min-width: 135px;
+                        width: 100%;
+                    }
+
+                    &.seven {
+                        min-width: 180px;
+                        width: 100%;
+                    }
+                }
+
+                .results-row {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    text-align: center;
+                    width: 1000px;
+                    overflow-y: auto;
+                    -webkit-overflow-scrolling: touch;
+
+                    &.results {
+                        &:nth-of-type(odd) {
+                            background-color: #f6f8f9;
+                        }
+
+                        .table-row {
+                            border-right: 2px dotted rgba(63,96,116,0.2);
+                            color: $spray-dk-blue-gray;
+                            font-size: 1.6rem;
+                            font-weight: 500;
+
+                            &:last-child {
+                                border-right: none;
+                            }
+                        }
+
+                        &.last {
+                            border-bottom: 2px dotted rgba(63, 96, 116, 0.2);
+                        }
+                    }
+                }
+
+                .results-table-header {
+                    background-color: $dark;
+                    color: $light;
+                    text-transform: uppercase;
+                    font-weight: 1.6rem;
+                    font-weight: bold;
+
+                    .table-row {
+                        border-right: 2px dotted rgba(255, 255, 255, 0.3);
+
+                        &:last-child {
+                            border-right: none;
+                        }
+                    }
+                }
+
+                .results-table-subheader {
+                    background-color: $spray-dk-blue-gray;
+                    font-size: 1.4rem;
+                    color: $light;
+                    font-weight: bold;
+                    text-align: center;
+
+                    .table-row {
+                        border-right: 2px dotted rgba(255, 255, 255, 0.3);
+
+                        &:last-child {
+                            border-right: none;
+                        }
+                    }
+                }
+
+                .table-note {
+                    width: 1000px;
+                    overflow-y: auto;
+
+                    p {
+                        margin-top: 0.7rem;
+                        text-align: left;
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .spray-dry-results-card.sulfur {
+                max-width: 960px;
+
+                .spray-dry-results-table.sulfur {
+                    max-width: 960px;
+
+                    .results-row {
+                        max-width: 960px;
+
+                        &.results-table-subheader, &.results {
+                            .table-row.four {
+                                display: flex;
+                                flex-flow: row wrap;
+                                min-width: 200px;
+                                padding: 0 1rem;
+
+                                .table-sub-row {
+                                    width: 50%;
+                                    padding: 1rem 1rem 1rem 0.5rem;
+                                    border-right: 2px dotted rgba(255, 255, 255, 0.3);
+
+                                    &:last-of-type {
+                                        border-right: none;
+                                        padding: 1rem 0.5rem 1rem 1rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .table-row.three {
+                            min-width: 200px;
+                        }
+
+                        .table-row.five {
+                            min-width: 240px;
+                        }
+
+                        .table-row.four {
+                            min-width: 200px;
+                        }
+
+                        &.results {
+                            background-color: #ffffff;
+
+                            .table-row.four {
+                                .table-sub-row {
+                                    border-right: 2px dotted rgba(63, 96, 116, 0.2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .thanks-msg {
+            display: none;
+            margin: 3rem 0 0;
+
+            &-text {
+                color: $spray-dk-blue-gray;
+                margin-bottom: 0;
+                text-align: center;
+            }
+        }
+
+        .calculator-note-text {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .discuss-results {
+        h1 {
+            font-weight: 800;
+            font-size: 10vw;
+
+            @media #{$medium-up} {
+                font-size: 3rem;
+            }
+        }
+
+        &-form {
+            text-align: left;
+            margin-top: 3rem;
+
+            &.spray-dry {
+                max-width: 790px;
+                margin: 0 auto;
+            }
+
+            &.sulfur {
+                max-width: 960px;
+            }
+        }
+
+        &-button {
+            display: flex;
+            align-items: baseline;
+
+            button {
+                margin-right: 2rem;
+
+                @media #{$small-up} {
+                    width: auto;
+                }
+            }
+        }
+
+        &.lubricant-savings, &.spray-dry {
+            text-align: center;
+        }
+    }
+
+    .blue-container .discuss-results {
+        h1 {
+            color: $light;
+        }
+
+        &-form {
+            label {
+                color: $light;
+
+                &.required-asterisk {
+                    a {
+                        color: #D47070;
+                    }
+                }
+            }
+
+            .form-validation-note,
+            .required-asterisk:after,
+            .field-validation-error {
+                color: $spray-red-orange;
+            }
+        }
+    }
+
+
+
+    .lubricant-input-grid-outer {
+        .lubricant-input-grid {
+            padding-bottom: 1rem;
+
+            @media screen and (min-width: 600px) {
+                display: flex;
+                justify-content: flex-start;
+                width: 95%;
+            }
+        }
+
+        .lubricant-input-item {
+            margin-bottom: 2rem;
+
+            @media screen and (min-width: 600px) {
+                width: 33.33%;
+                margin-right: 2rem;
+                padding-right: 1rem;
+                border-right: 2px dotted rgba(63,96,116,0.2);
+
+                &:last-of-type {
+                    border-right: 0;
+                }
+            }
+        }
+
+        .lubricant-input-label {
+            text-transform: uppercase;
+            color: $spray-blue;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .lubricant-input-text {
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+        }
+    }
+
+    .lubricant-savings-grid-outer {
+        margin-bottom: 1.8rem;
+    }
+
+    .lubricant-savings-grid {
+        text-align: left;
+
+        .lubricant-savings-label {
+            color: $light;
+            margin-bottom: 2rem;
+
+            @media #{$medium-up} {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media screen and (min-width: 375px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+
+    .lubricant-savings-item {
+        padding: 2rem;
+        background-color: $spray-dk-blue-gray;
+        margin-bottom: 1rem;
+        width: 100%;
+
+        @media screen and (min-width: 375px) {
+            width: 48.7%;
+            margin-right: 0.5rem;
+
+            &:nth-of-type(even) {
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+            width: 32.4%;
+
+            &:nth-of-type(even) {
+                margin-right: 0.5rem;
+            }
+
+            &:last-of-type() {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .lubricant-savings-section {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px dotted rgba(255, 255, 255, 0.3);
+
+        &:last-of-type {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .per-day {
+            color: $spray-ltr-blue;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .savings-amount {
+            color: $light;
+            font-size: 3.3rem;
+            font-weight: bold;
+        }
+
+        .liquid-amount {
+            color: $spray-lt-gray;
+            font-size: 1.4rem;
+
+            @media #{$medium-up} {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    .nozzle-tooltip-equation {
+        max-width: 65%;
+    }
+
+    &.sulfur-sizing {
+        .spray-form-field {
+            .flex-fields {
+                .field-one {
+                    width: 60%;
+                }
+
+                .field-two {
+                    width: 40%;
+                }
+            }
+        }
+
+        #flow-pressure-chart {
+            max-height: 40rem;
+            padding-bottom: 3rem;
+        }
+    }
+
+    &.sulfur-sizing,
+    &.eductor-sizing,
+    &.spraydry {
+        .content-wrapper, .calculator-wrapper {
+            max-width: 1100px;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+.spraydry-selector {
+    .content-wrapper, .content-wrapper hr { max-width: 1040px; }
+    .calculator-wrapper {
+        max-width: 100%;
+        .calculator-form {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.metric-label {
+    display: none;
+}
+
+.metric {
+    .metric-label {
+        display: inline;
+    }
+    .us-label {
+        display: none;
+    }
+}
+
+div.eductor-sizing {
+    .spray-table-link {
+        min-width: 950px;
+        max-width: 950px;
+        margin: auto;
+    }
+}
+
+div.spray-table.eductor-sizing.eductor-materials {
+    max-width: none;
+
+    .spray-table-header {
+        min-width: 0;
+
+        .spray-table-cell.one, .spray-table-cell.two {
+            width: auto;
+            min-width: 200px;
+            padding: 6px 2px 2px 2px;
+        }
+
+        .spray-table-cell.three .spray-table-sub-col {
+            min-width: 0;
+            width: 25%;
+        }
+
+        .spray-table-cell.three.header {
+            min-width: 0;
+        }
+    }
+
+    .spray-table-row {
+        min-width: 0;
+
+        .spray-table-cell.one, .spray-table-cell.two {
+            width: auto;
+            min-width: 200px;
+            padding: 6px 2px 2px 2px;
+        }
+
+        .spray-table-cell.three {
+            min-width: 0;
+        }
+
+        .spray-table-cell.three .spray-table-sub-col {
+            min-width: 0;
+            width: 25%;
+        }
+    }
+}

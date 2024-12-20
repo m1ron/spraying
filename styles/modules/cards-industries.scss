@@ -1,0 +1,795 @@
+.cards-industries {
+    background: linear-gradient(rgba(25,57,76,1) 0%, rgba(235,238,242,1) 50%);
+    padding-bottom: 3rem;
+
+    &-top {
+        padding: 0 2rem 2rem 2rem;
+
+        @media #{$medium-up} {
+            padding: 0 4rem 2rem 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            max-width: 1620px;
+        }
+
+        @media (min-width: 1201px) {
+            padding: 0 10rem 2rem 10rem;
+        }
+
+        @media (min-width: 1441px) {
+            padding: 0 12rem 2rem 12rem;
+        }
+    }
+
+    &-bottom {
+        padding: 2rem;
+
+        @media #{$medium-up} {
+            padding: 0 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            max-width: 1620px;
+        }
+
+        @media (min-width: 1201px) {
+            padding: 0 10rem;
+        }
+
+        @media (min-width: 1441px) {
+            padding: 0 12rem;
+        }
+    }
+
+    &.no-gradient {
+        background: $light;
+    }
+
+    &.top-pad {
+        padding-bottom: 0;
+        padding-top: 2rem;
+    }
+
+    &.standard {
+        padding: 3rem 0 !important;
+
+        @media #{$medium-up} {
+            padding: 4rem 0 !important;
+        }
+    }
+
+    &.cards-industries-homepage {
+        padding-bottom: 0 !important;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+        padding-top: 2.5rem;
+        margin: 0 2rem 2rem;
+        color: $light;
+
+        @media #{$medium-up} {
+            color: $spray-dkr-blue;
+            font-size: 2.9rem;
+        }
+    }
+
+    @media #{$medium-up} {
+        background: none;
+        background-color: $spray-lt-gray;
+        padding-bottom: 6rem;
+    }
+
+    @media #{$large-up} {
+        padding-bottom: 8rem;
+    }
+
+    .section-header {
+        text-align: center;
+        padding-bottom: 3rem;
+
+        @media #{ $large-up } {
+            padding-bottom: 4rem;
+        }
+    }
+
+    &-wrapper {
+        margin: auto;
+        max-width: 1620px;
+        padding: 0.01rem 0 3rem;
+        // 0.01rem top is fix for safari neg margin layout bug
+        @media #{$medium-up} {
+            padding: 0.01rem 2rem 3.5rem;
+        }
+
+        @media #{$large-up} {
+            padding-bottom: 6.4rem;
+        }
+
+        @media only screen and (min-width: 1640px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &.standard {
+            padding-bottom: 0;
+        }
+
+        .homepage & {
+            @media #{$large-up} {
+                padding-bottom: 8rem;
+            }
+        }
+    }
+
+    &-grid {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+
+		&.dynamic-neg-margin {
+			@media screen and (max-width:1440px) {
+				margin-top:-40px !important;
+			}
+		}
+
+        &.center-content {
+            justify-content: center !important;
+        }
+
+        &-item {
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+            width: 100%;
+
+            @media #{$medium-up} {
+                border: 0;
+                width: 50%;
+                margin-bottom: 3rem;
+                padding: 0 1.5rem;
+            }
+
+            @media #{$large-up} {
+                width: 33%;
+                margin-bottom: 4rem;
+                padding: 0 2rem;
+            }
+
+            &:not(.three-across-max) {
+                @media #{$xlarge-up} {
+                    width: 25%;
+                }
+            }
+
+            .js-toggle-container {
+                display: inline-block;
+                height: 60px;
+                position: absolute;
+                width: 100%;
+
+                @media #{$medium-up} {
+                    pointer-events: none;
+                }
+            }
+
+            .js-toggle {
+                background: $spray-lt-gray;
+                display: inline-block;
+                border-radius: 50%;
+                box-shadow: inset 0 -2px 0 rgba(63,96,116,0.3), 0 2px 4px 0 rgba(63,96,116,0.2);
+                height: 3rem;
+                margin: 0;
+                padding: 0;
+                right: 2rem;
+                top: 1.35rem;
+                transition: all 0.35s ease;
+                width: 3rem;
+
+                @media #{$medium-up} {
+                    display: none;
+                }
+
+                .bar {
+                    border-top: 2px solid $dark;
+                    position: absolute;
+                    right: 0.9rem;
+                    top: 1.4rem;
+                    transition: all 0.35s ease;
+                    width: 12px;
+                }
+            }
+
+            &-wrapper {
+                background-color: $light;
+                box-shadow: 0 10px 20px -5px rgba(63,96,116,0.15), inset 0 0 0 1px rgba(63,96,115,0.15);
+                padding: 1px;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                position: relative;
+                text-align: left;
+
+                &.active .js-toggle {
+                    background: $spray-red;
+
+                    .bar {
+                        border-color: $light;
+                    }
+                }
+
+                &.active &-content {
+                    @media #{$xsmall},#{$small} {
+                        padding: 2rem;
+                    }
+                }
+
+                &.active .cards-industries-grid-item-title {
+                    cursor: pointer;
+                    display: inline-block;
+                    pointer-events: auto;
+
+                    h3:after,
+                    span:after {
+                        opacity: 1;
+                        width: 80px;
+                    }
+                }
+
+                @media #{$medium-up} {
+                    box-shadow: 0 20px 50px -5px rgba(63,96,116,0.15), inset 0 0 0 1px rgba(63,96,115,0.15);
+                }
+            }
+
+            &-image-container {
+                display: block;
+                max-height: 175px;
+                overflow: hidden;
+                position: relative;
+
+                .js-toggle-container ~ & {
+                    @media #{$xsmall}, #{$small} {
+                        cursor: not-allowed;
+                        pointer-events: none;
+                    }
+                }
+
+                &:hover, &:active, &:focus {
+                    .cards-industries-grid-item-image {
+                        transform: scale(1.1, 1.1);
+                    }
+                }
+            }
+
+            &-image {
+                display: none;
+                height: auto;
+                margin-top: -3.5rem;
+                max-width: 101%;
+                position: relative;
+                width: 101%;
+
+                &.no-overflow-image {
+                    margin-top: 0;
+                    max-width: unset;
+                    width: 100%;
+                    height: 100%;
+                    max-height: 175px;
+                    object-fit: contain;
+                }
+
+                @media #{$xsmall}, #{$small} {
+                    cursor: not-allowed;
+                    pointer-events: none;
+                }
+
+                @media #{$medium-up} {
+                    display: block !important;
+                    transition: all 0.8s ease;
+                }
+            }
+
+            &-content {
+                padding: 2rem 5rem 2rem 2rem;
+                transition: padding 0.3s ease;
+
+                @media #{$medium-up} {
+                    padding: 2.4rem 3rem 3rem;
+                }
+
+                ul {
+                    font-weight: 400;
+                    line-height: 1.3;
+                    padding-right: 2rem;
+                }
+            }
+
+            &-copy {
+                color: $spray-dk-blue-gray;
+                display: none;
+                font-size: 1.4rem;
+                font-weight: 400;
+                line-height: 1.425;
+                margin: 0 3rem 0.6rem 2rem;
+                opacity: 0.9;
+
+                @media #{$medium-up} {
+                    display: block !important;
+                    margin: 0 3rem 0.6rem 3rem;
+                }
+
+                @media #{$xlarge-up} {
+                    font-size: 1.8rem;
+                    line-height: 1.333;
+                    margin: 0.5rem 4rem 1.6rem 3rem;
+                }
+            }
+
+            &-title {
+                display: inline-block;
+                width: auto;
+
+                &:hover {
+                    border: 0;
+                    text-decoration: none;
+                }
+
+                @media #{$xsmall}, #{$small} {
+                    cursor: not-allowed;
+                    pointer-events: none;
+                }
+
+                h3,
+                > span {
+                    color: #222222;
+                    display: inline-block;
+                    font-size: 2rem;
+                    font-weight: 500;
+                    letter-spacing: 0.31px;
+                    line-height: 1;
+                    margin: 0;
+                    position: relative;
+
+                    @media #{$medium-up} {
+                        font-size: 2.2rem;
+                        margin: 0 0 2.6rem;
+                    }
+
+                    &:after {
+                        background-color: $spray-red-orange;
+                        bottom: -1.3rem;
+                        content: '';
+                        height: 6px;
+                        left: 0;
+                        opacity: 0;
+                        position: absolute;
+                        right: 0;
+                        transition: all 0.4s ease;
+                        width: 0;
+                        z-index: 1;
+
+                        @media #{$medium-up} {
+                            bottom: -1.5rem;
+                            opacity: 1;
+                            width: 80px;
+                        }
+                    }
+
+                    &:hover:after {
+                        width: 100%;
+                    }
+
+                    .active & {
+                        margin-bottom: 2.4rem;
+                    }
+                }
+            }
+
+            &-copy {
+                color: $spray-dk-blue-gray;
+                display: none;
+                font-size: 1.4rem;
+                font-weight: 400;
+                line-height: 1.425;
+                margin: 0 0 0.6rem 0;
+                opacity: 0.9;
+
+                @media #{$medium-up} {
+                    display: block !important;
+                    margin: 0 0 0.6rem 0;
+                }
+
+                @media #{$large} {
+                    font-size: 1.6rem;
+                    line-height: 1.4;
+                }
+
+                @media #{$xlarge-up} {
+                    font-size: 1.8rem;
+                    line-height: 1.333;
+                    margin: 0.5rem 0 1.6rem 0;
+                }
+            }
+
+            &-callout-action {
+                display: none;
+
+                @media #{$medium-up} {
+                    display: block !important;
+                }
+
+                a {
+                    color: $link-color;
+                    font-weight: 600;
+                    line-height: 1;
+                    margin: 1.5rem 0 3rem;
+                    position: relative;
+
+                    @media #{$medium-up} {
+                        font-size: 1.6rem;
+                    }
+                }
+
+                i {
+                    color: $link-color;
+                    font-weight: 600;
+                    line-height: 1;
+                }
+            }
+
+            hr.js-slide {
+                background: none;
+                border-top: 2px dotted $lighter-gray;
+                display: none;
+                left: 0;
+                margin-top: auto;
+                position: relative;
+                right: 0;
+                width: 100%;
+
+                @media #{$medium-up} {
+                    display: block !important;
+                }
+            }
+
+            p.js-slide, ul.js-slide, div.js-slide {
+                display: none;
+                font-size: 1.6rem;
+
+                @media #{$medium-up} {
+                    display: block !important;
+                }
+            }
+
+            &-case-study {
+                display: none;
+
+                @media #{$medium-up} {
+                    display: block !important;
+                }
+
+                &-flex {
+                    display: flex;
+                    -webkit-transition: all 0.8s ease;
+                    transition: all 0.8s ease;
+                }
+
+                &-amount {
+                    color: spray-blue;
+                    font-family: $site-font-secondary;
+                    font-size: 4rem;
+                    font-weight: 900;
+                    line-height: 0.8;
+                    text-transform: uppercase;
+                    display: block;
+                    color: rgb(63, 96, 116);
+                }
+
+                &-copy {
+                    padding-left: 1.5rem;
+                    display: block;
+
+                    p,
+                    &-text {
+                        display: block;
+                        color: $spray-dk-blue-gray;
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                        line-height: 1.285;
+                        margin: 0 0 0.6rem;
+                        opacity: 0.9;
+
+                        @media #{$xlarge-up} {
+                            font-size: 1.6rem;
+                            line-height: 1.125;
+                        }
+                    }
+
+                    a {
+                        color: $link-color;
+                        display: block;
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                        line-height: 1.25;
+
+                        @media #{$xlarge-up} {
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+
+            &-case-study-flex-anchor {
+                display: block;
+                padding: 1.5rem 2rem 2rem;
+                text-decoration: none;
+            }
+
+            &-case-study-flex-anchor:hover,
+            &-case-study-flex-anchor:focus {
+                text-decoration: none;
+                -webkit-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+                -moz-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+                box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+                display: block;
+            }
+
+            &-case-study-flex-anchor-tag {
+                text-decoration: none;
+            }
+
+            &-case-study-flex-anchor-tag:hover,
+            &-case-study-flex-anchor-tag:focus {
+                text-decoration: none;
+            }
+        }
+
+        &-callout {
+            margin: 2rem auto 0;
+            text-align: center;
+            width: 100%;
+
+            @media #{$medium-up} {
+                margin: 0 auto;
+            }
+
+            .homepage & {
+                @media #{$medium-up} {
+                    margin: 1rem auto 0;
+                }
+            }
+
+            .button-light-blue {
+                @extend %button-base;
+                background-color: $spray-ltr-blue;
+                box-shadow: 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 rgba(0,0,0,0.15);
+                color: $light !important;
+                cursor: pointer;
+                font-family: $site-font-secondary;
+                font-size: 1.8rem;
+                font-weight: 800;
+                letter-spacing: 0.1rem;
+                margin: auto;
+                padding: 1.2rem 2rem;
+                text-transform: uppercase;
+                width: auto;
+
+                &:hover, &:focus {
+                    background-color: darken($spray-ltr-blue, 10%);
+                    box-shadow: 0 5px 20px -5px rgba(0,0,0,0.35), inset 0 -3px 0 rgba(0,0,0,0.15);
+                    color: $light;
+                }
+
+                &:active {
+                    background-color: darken($spray-ltr-blue, 10%);
+                    box-shadow: inset 0 0 0 rgba(0,0,0,0) !important;
+                    color: $light;
+                }
+
+                @media #{$medium-up} {
+                    font-size: 2rem;
+                }
+
+                @media #{$xlarge-up} {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media #{$large-up} {
+    .no-odd-rows {
+        .cards-industries-grid-item {
+            width: 50% !important;
+        }
+    }
+}
+
+@media screen and (min-width: 1260px) {
+    .no-odd-rows {
+        .cards-industries-grid-item {
+            width: 25% !important;
+        }
+    }
+}
+
+/* resource card mods */
+.no-hover-zoom {
+    .cards-industries-grid-item-image {
+        transform: scale(1) !important;
+    }
+}
+
+.no-collapse {
+    .cards-industries-grid-item {
+        &-copy, &-callout-action {
+            display: block !important;
+        }
+
+        &-title {
+            h3,
+            span {
+                margin-bottom: 2.4rem !important;
+
+                &:after {
+                    opacity: 1 !important;
+                    width: 80px;
+                }
+
+                @media #{$medium-up} {
+                    margin-bottom: 2.5rem !important;
+                }
+            }
+        }
+
+        &-image {
+            display: block !important;
+            margin: auto;
+
+            &-container {
+                background-image: linear-gradient(to bottom, #212323, #0064A2);
+                max-height: 100%;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    padding-top: (19 / 37) * 100%;
+                    width: 100%;
+                }
+
+                > .cards-industries-grid-item-image, > i {
+                    @include position(absolute, 0 0 0 0);
+                }
+            }
+        }
+    }
+}
+
+.doc-cover-image {
+    .cards-industries-grid-item-image {
+        margin: 0 auto;
+        max-height: 100%;
+        width: auto;
+    }
+}
+
+.no-image {
+    .cards-industries-grid-item-image {
+        margin: 0 auto;
+
+        &-container {
+            i {
+                align-items: center;
+                color: rgba(255,255,255,.5);
+                display: flex;
+                font-size: 12rem;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.is-video {
+    .cards-industries-grid-item-image {
+        &-container {
+            .button-play {
+                @include position(absolute, 50% 50% null null);
+                @include size(66px);
+                margin-right: -33px;
+                margin-top: -33px;
+            }
+        }
+    }
+}
+
+.resource-card-asset-type {
+    align-items: center;
+    border-top: 2px dotted $lighter-gray;
+    display: flex;
+    margin-top: auto;
+    padding: 1rem 1.5rem;
+
+    @media #{$medium-up} {
+        padding: 1.5rem 2.5rem;
+    }
+
+    i {
+        color: $spray-gray;
+        font-size: 3rem;
+    }
+
+    span {
+        color: $spray-dk-blue-gray;
+        font-size: 1.4rem;
+        padding-left: 0.25rem;
+    }
+}
+
+.card-grid-hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+
+    &.card-grid-open {
+        display: block; //Fix small screen display
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+h3.cards-industries-grid-item-title {
+    color: #222222;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.31px;
+    line-height: 1;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+
+    &:hover:after {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 2.2rem;
+        margin: 0 0 2.6rem;
+    }
+
+    &:after {
+        background-color: #D47070;
+        bottom: -1.3rem;
+        content: '';
+        height: 6px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        width: 0;
+        z-index: 1;
+
+        @media (min-width: 768px) {
+            bottom: -1.5rem;
+            opacity: 1;
+            width: 80px;
+        }
+    }
+}
+
+.active {
+    h3.cards-industries-grid-item-title {
+        margin-bottom: 2.4rem;
+
+        &:after {
+            opacity: 1;
+            width: 80px;
+        }
+    }
+}

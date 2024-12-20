@@ -1,0 +1,44 @@
+// generic grid
+.generic-grid {
+	// padding-bottom: 2rem;
+
+	// @media #{$medium-up} { padding-bottom: 7rem; }
+
+	.generic-grid {
+			display: flex;
+			flex-flow: row wrap;
+		}
+
+	// &:last-of-type { padding-bottom: 10px; }
+	&-item {
+		// border-color: #ffffff;
+		// border-style: solid;
+		// border-width: 10px;
+		width: 100%;
+		&.full-width { width: 100%; }
+	}
+}
+@media #{$medium-up} {
+	.generic-grid {
+		display: flex;
+		flex-flow: row wrap;
+		// &-anchor { top: -170px; }
+		&-item {
+			&.quarter-width { width: 50%; }
+			&.half-width { width: 100%; }
+			&.three-quarter-width { width: 50%; }
+
+		}
+	}
+}
+@media #{$xlarge-up} {
+	.generic-grid {
+		flex-direction: row;
+		&-anchor { top: -200px; }
+		&-item {
+			&.quarter-width { width: 25%; }
+			&.half-width { width: 50%; }
+			&.three-quarter-width { width: 75%; }
+		}
+	}
+}

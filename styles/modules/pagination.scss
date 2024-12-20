@@ -1,0 +1,94 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 0 0 4rem;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	&:empty {
+		margin: 0;
+		padding: 0;
+	}
+	@media #{$medium-up} { padding-bottom: 6rem }
+	@media #{$large-up} { padding-bottom: 8rem }
+	.page-numbers {
+		border: 0;
+		color: $spray-dk-blue-gray;
+		display: block;
+		font-size: 2rem;
+		font-weight: 500;
+		height: 5rem;
+		padding: 1.6rem 0.5rem;
+		text-align: center;
+		transition: 0.2s;
+		&:hover {
+			color: $link-color;
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		&:not(.arrow) { display: none; }
+		&.prev, &.next {
+			color: $spray-lt-blue;
+			font-size: 2.75rem;
+			padding: 0.9rem 0.75rem;
+			display: flex;
+			align-items: center;
+			&:hover {
+				color: $light-blue-hover;
+				text-decoration: none;
+			}
+			&[disabled] {
+				color: $spray-gray;
+				pointer-events: none;
+			}
+			i:before {
+				display: block;
+				position: relative;
+			}
+			span {
+				color: $dark;
+				font-size: 2rem;
+				text-decoration: underline;
+				padding-right: 3rem;
+			}
+		}
+		&.prev i:before { 
+			left: -10px;
+			transform: rotate(90deg); 
+		}
+		&.next i:before { transform: rotate(-90deg); }
+	}
+}
+
+@media #{$medium-up} {
+	.pagination {
+		.page-numbers {
+			width: 5rem;
+			&:not(.arrow) { display: inline-block; }
+			&.prev, &.next {
+				i:before { top: 3px; }
+				span { display: none; }
+			}
+			&.current {
+				color: $dark;
+				display: inline-block;
+				position: relative;
+				&:hover { text-decoration: none; }
+				&:after {
+					background: $spray-red-orange;
+					bottom: 0;
+					content: '';
+					display: inline-block;
+					height: 0.6rem;
+					left: 50%;
+					max-width: 1.2rem;
+					position: absolute;
+					transform: translateX(-50%);
+					width: 100%;
+				}	
+			}
+		}
+	}
+}

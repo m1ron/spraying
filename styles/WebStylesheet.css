@@ -1,0 +1,7 @@
+@import "../default.css";
+@import "./vendor.min.css";
+@import "./main.min.css";
+
+body {
+	background-color: #ffffff;
+}

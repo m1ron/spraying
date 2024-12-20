@@ -1,0 +1,145 @@
+.find-rep {
+    &.main-content {
+        padding-bottom: 3rem;
+        @media #{$medium-up} { padding-bottom: 6rem; }
+        @media #{$large-up} { padding-bottom: 8rem; }
+        .cards-default-container {
+            .cards-default-grid-item { 
+                @media #{$medium-up} { margin-bottom: 0; }
+            }
+        }
+    }
+
+    &-form-wrapper {
+        margin: 0 auto;
+        padding-bottom: 3rem;
+        @media #{$medium-up}{ padding-bottom: 4rem; }
+    }
+    .find-rep-form { 
+        margin: 0 auto;
+        padding: 0 2rem;
+        width: 100%;
+        max-width: 400px;
+        @media #{$small-up} {
+            display: flex;
+            justify-content: center;
+            max-width: 800px;
+        }
+        #find-rep-country-select { 
+            @media #{$small-up} { width: 380px; } 
+         }
+        &.postal-active {
+            #find-rep-postal, #find-rep-country-select { width: 100%; }
+        } 
+        #find-rep-postal { 
+            display: none; 
+        }
+        .find-rep-zip {
+            position: relative;
+        
+            input.postal-code { 
+                background-color: #ffffff;
+                border: 0;
+                box-shadow: inset 0 3px 0 0 rgba(63,96,116,0.2);
+                padding-right: 3.8rem;
+                &:active, &:focus {
+                    box-shadow: inset 0 0 0 2.5px $spray-lt-blue;
+                }
+            }
+        }
+        .find-country {
+            margin-bottom: 2rem;
+            position: relative;
+            @media #{$small-up} { margin-right: 2rem;  }
+        
+            input.awesomplete {padding-right: 3.8rem;}
+            .awesomplete {
+                background-color: $light;
+                border: 0;
+                box-shadow: inset 0 3px 0 0 rgba(63,96,116,0.2);
+                display: block;
+                width: 100%;
+                &::-webkit-calendar-picker-indicator {
+                    display: none;
+                    }
+                ul {
+                    background: $light;
+                    padding: 0.5rem 0.5rem 0 0.5rem;
+                    li {
+                        font-weight: 400;
+                        margin-bottom: 0.5rem;
+                    }
+                }
+                ul::before {
+                    background: transparent;
+                    border: 0;
+                }
+                ul li mark {background-color: transparent;}
+                &:focus, &:active {
+                    box-shadow: inset 0 0 0 2.5px $spray-lt-blue;
+                }
+            }
+        }
+        .icon-search {
+            background-color: transparent;
+            background-image: url(../images/template/magnifying.svg);
+            background-position: center 6px;
+            background-repeat: no-repeat;
+            border: 0;
+            box-shadow: none;
+            cursor: pointer;
+            font-size: 2rem;
+            height: 30px;
+            outline: 0;
+            position: absolute;
+            right: -10px;
+            text-indent: -9999px;
+            top: 21px;
+            width: 38px;
+            &:hover {
+                background-color: transparent;
+                box-shadow: none;
+            }
+            &:active, &:focus {
+                background-color: transparent;
+                box-shadow: none;
+            }
+            @media #{$medium-up} { top: 23px; }
+            @media #{$large-up} { top: 25px; }
+        }
+    } 
+
+    .grid-item-callout-result-header {
+        width: 100%;
+        p { font-size: 1.6rem; }
+        .offices-result { 
+            margin-right: 1rem;
+            display: block; 
+            @media #{$small-up} { margin-right: 2rem; display: inline; }
+        }
+        
+    }
+
+    .grid-item-callout-result-wrapper {
+        padding: 2rem;
+        width: 100%;
+        display: none;
+        margin: 0 auto;
+        max-width: 1170px;
+        @media #{$medium-up} { padding: 2rem 4rem; }
+    }
+    .grid-item-callout-result-inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .sidebar-cards-grid-item-callout-result {
+        display: block;
+        margin: 0 0 3rem;
+        padding-right: 6rem;
+        max-width: 270px;
+        
+        &-office {
+            border-bottom: 2px dotted rgba(63,96,116,0.2);
+        }
+    }
+}	

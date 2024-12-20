@@ -1,0 +1,175 @@
+.tankjet-content {
+    background-color: $spray-lt-gray;
+    padding: 3rem 0 0;
+
+    .main-outer-wrapper {
+        max-width: 1360px;
+        margin: 0 auto;
+        @media screen and (min-width: 1600px) {
+            max-width: 1550px;
+            padding-right: 19.5%;
+        }
+        @media screen and (min-width: 1700px) {
+            max-width: 1610px;
+            padding-right: 18%;  
+        }
+        @media screen and (min-width: 1800px) {
+            max-width: 1680px;
+        }
+    }
+    
+    .resource-grid-header .items-showing, .menu-reset { 
+        display: none;
+    }
+
+    .main-wrapper {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin: 0 auto;
+
+		@media #{$medium-up} {
+			padding: 3rem 1rem;
+		}
+		@media #{$large-up} {
+			padding: 5rem 2rem;
+        }
+        @media screen and (min-width: 1200px) {
+            max-width: 1300px;
+            padding: 6rem 2rem;
+        }
+        @media screen and (min-width: 1600px) {
+            margin: 0;
+        }
+        @media screen and (min-width: 1800px) {
+            padding: 6rem 0;
+        }
+    }
+    
+    .flex-column-container {
+        @media screen and (min-width: 1200px) {
+			width: calc(100% - 310px);
+        }
+        @media screen and (min-width: 1800px) {
+            width: calc(100% - 370px);
+        }
+        
+        .resource-grid-header-container, .tankjet-navigation-link {
+            padding: 1rem 0;
+            font-weight: 600;
+            line-height: 1.5;
+            @media screen and (min-width: 1200px) { display: none; }
+            a { 
+                text-decoration: none;
+                font-size: 1.4rem;
+                @media #{$small-up} { font-size: 1.5rem; }
+                @media #{$large-up} { font-size: 1.8rem; } 
+            }
+            i { 
+                position: relative;
+                top: -2px;
+                font-size: 25px; 
+                font-weight: 400; 
+                margin-right: 0.5rem; 
+                @media #{$small-up} { top: 0px; }
+                @media #{$large-up} { top: 1px; }
+            }
+        }
+    }
+
+    .tankjet-filters {
+        @include position(fixed, 0 0 0 0);
+        @include size(100%);
+        -webkit-overflow-scrolling: touch;
+        background-color: $spray-lt-gray;
+        display: none;
+        height: 100%;
+        overflow-y: auto;
+        padding: 5rem 0;
+        width: 100%;
+        z-index: 50;
+        @media screen and (min-width: 1200px) {
+            @include position(relative, auto auto auto auto);
+            display: block !important;
+            height: 100%;
+            padding: 0 0 3rem 0;
+            z-index: 31;
+        }    
+        .close-search-button {
+            display: none;
+            .menu-global { border-top: 3px solid #000; }
+         } 
+
+		@media screen and (min-width: 1200px) {
+            display: block;
+            margin-top: -1rem;
+            max-width: 310px;	
+            padding: 0;
+        }
+        @media screen and (min-width: 1800px ) {
+            max-width: 370px;
+        }
+
+		&-container {
+			list-style-type: none;
+			margin: 0;
+			padding: 0 4rem 0 0;
+
+			li {
+				display: block;
+				margin: 0 0 2.4rem;
+				padding: 0;
+
+				.nav-functional-item {
+					color: $spray-dk-blue-gray;
+					font-size: 2.0rem;
+					font-weight: 500;
+					text-transform: capitalize;
+				}
+
+				&.landmark {
+					.nav-functional-item {
+						color: $dark;
+						position: relative;
+						&:hover {
+							text-decoration: none;
+                        }
+                        &:before {
+							background-color: $spray-red-orange;
+							content: '';
+							height: 0.6rem;
+							width: 100%;
+
+							@include position(absolute, null null -1rem null);
+						}
+					}
+                }
+                ul { 
+                    display: none; 
+                    margin: 2rem 0 1.5rem 1.5rem;
+                    li { 
+                        margin-bottom: 1.5rem;
+                        a { 
+                            color: $spray-dk-blue-gray;
+                            &:hover { color: $spray-lt-blue; } 
+                        } 
+                    }
+                }
+			}
+		}
+    }
+}
+
+.tankjet-filter-open {
+    .tankjet-content {
+        .tankjet-filters {
+            .close-search-button {
+                display: block !important;
+                @media screen and (min-width: 1200px) {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}

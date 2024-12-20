@@ -1,0 +1,49 @@
+section.seminar-post-registration-details {
+	padding: 2rem 0;
+}
+
+.seminar-date {
+	padding: 2rem 0;
+}
+.spray-form .toggleable {
+	display: none;
+}
+
+.cc-summary {
+	margin: 0 0 3rem 2rem;
+
+	div {
+		span {
+			display: inline-block;
+			width: 50%;
+
+			&:first-of-type {
+				font-weight: 700;
+				&:after {
+					content: ":";
+				}
+			}
+
+		}
+	}
+}
+
+.submit-response-modal {
+	border-radius: 1rem;
+	
+	&#payment-success [class^="icon-"] {
+		color: $s-shipped;
+	}
+	&#payment-failure [class^="icon-"] {
+		color: $spray-red;
+	}
+	.err-msg {
+		font-size: 1.3rem;
+		font-family: monospace;
+		padding: 2rem 0 0 2rem;
+	}
+}
+
+#AcceptUIContainer {
+	position: fixed !important;
+}

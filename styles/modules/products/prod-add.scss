@@ -1,0 +1,90 @@
+.prod-add {
+	&-container {
+		background-color: $spray-dk-blue-green;
+		color: $light;
+		padding: 2rem;
+		@media #{$medium-up} { padding: 3rem; }
+		@media #{$xlarge-up} { padding: 4rem; }
+		label { color: $light; }
+	}
+	&-qty, &-price {
+		align-items: center;
+		display: flex;
+		margin-bottom: 1rem;
+		label {
+			color: $spray-lt-gray;
+			font-size: 1.6rem;
+			letter-spacing: 0.16px;
+			margin-bottom: 0;
+			padding-right: 1rem;
+		}
+		input { 
+			max-width: 100px;
+			width: 100px; 
+		}
+	}
+	&-price { margin-bottom: 0.25rem; }
+	&-bulk {
+		font-size: 1.6rem;
+		letter-spacing: -0.32px;
+		margin-bottom: 2rem;
+		a {
+			white-space: nowrap;
+			i {
+				position: relative;
+				top: 2px;
+			}
+		}
+	}
+	&-stock {
+		font-size: 1.8rem;
+		font-weight: bold;
+		letter-spacing: 1px;
+		margin-bottom: 2rem;
+		text-transform: uppercase;
+	}
+	&-buttons {
+		a {
+			@extend .button-with-icon;
+			display: block;
+		}
+		a:first-of-type { margin-bottom: 1rem; }
+	}
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.prod-add {
+		&-container {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+		}
+		&-stock { margin-bottom: 0; }
+		&-buttons { 
+			padding-left: 1.5rem;
+			width: 50%; 
+		}
+	}
+}
+///style to use overlay on product-detail-page
+.product-detail {
+    .overlay {
+        background-color: rgba(63,96,116,0.5);
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        -webkit-transition: cubic-bezier(0.79, 0.24, 0.51, 0.95) 0.2s;
+        transition: cubic-bezier(0.79, 0.24, 0.51, 0.95) 0.2s;
+        visibility: hidden;
+        width: 100%;
+        z-index: 902;
+    }
+
+    .overlay-active .overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+}

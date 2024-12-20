@@ -1,0 +1,173 @@
+.accordion {
+    margin: 0 auto;
+    max-width: 1064px;
+    padding: 2rem 0;
+
+    &-header {
+        text-align: left;
+
+        &.headCenter {
+            text-align: center;
+        }
+
+        &.headLeft {
+            text-align: left;
+        }
+
+        &.headRight {
+            text-align: right;
+        }
+    }
+
+    &-grid-item {
+        margin-bottom: 1rem;
+        width: 100%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-inner {
+            background-color: #fff;
+            box-shadow: 0 10px 20px -5px rgba(63,96,116,0.15), inset 0 0 0 1px rgba(63,96,115,0.15);
+            position: relative;
+            text-align: left;
+
+            &.active {
+                .js-toggle-container .js-toggle {
+                    background: #EC3737;
+
+                    .bar {
+                        border-color: #fff;
+                    }
+                }
+
+                .accordion-grid-item-content h3:after {
+                    opacity: 1;
+                    width: 80px;
+                }
+            }
+
+            &.edit-mode {
+                padding: 2rem;
+            }
+        }
+
+        .js-toggle-container {
+            cursor: pointer;
+            display: inline-block;
+            height: 60px;
+            position: absolute;
+            width: 100%;
+
+            @media #{$medium-up} {
+                height: 80px;
+            }
+
+            .js-toggle {
+                background: #eef1f4;
+                border-radius: 50%;
+                box-shadow: inset 0 -2px 0 rgba(63,96,116,0.3), 0 2px 4px 0 rgba(63,96,116,0.2);
+                display: inline-block;
+                height: 3rem;
+                margin-left: 1rem;
+                position: absolute;
+                right: 2rem;
+                top: 1.35rem;
+                transition: all 0.35s ease;
+                width: 3rem;
+                z-index: 2;
+
+                @media #{$medium-up} {
+                    top: 2.4rem;
+                }
+
+                .bar {
+                    border-top: 2px solid #222;
+                    position: absolute;
+                    right: 0.9rem;
+                    top: 1.4rem;
+                    transition: all 0.35s ease;
+                    width: 12px;
+                }
+            }
+        }
+
+        &-content {
+            padding: 2rem;
+
+            @media #{$medium-up} {
+                padding: 3rem;
+            }
+        }
+
+        &-title {
+            pointer-events: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            h3 {
+                font-size: 2rem;
+                font-weight: 500;
+                line-height: 1;
+                margin-bottom: 0;
+                padding-right: 4.5rem;
+                position: relative;
+
+                &:after {
+                    background-color: #D47070;
+                    bottom: -1.3rem;
+                    content: '';
+                    height: 6px;
+                    left: 0;
+                    opacity: 0;
+                    position: absolute;
+                    right: 0;
+                    transition: all 0.3s ease-in;
+                    width: 0;
+                    z-index: 1;
+                }
+            }
+        }
+
+        &-text {
+            display: none;
+            margin: 2.5rem 0 0;
+
+            @media #{$large-up} {
+                font-size: 1.8rem;
+            }
+
+            &.edit-mode {
+                display: block;
+            }
+        }
+
+        &.reverse {
+            .accordion-grid-item-inner {
+                background-color: $spray-dk-blue-gray;
+            }
+
+            .accordion-grid-item-content {
+                p, ul {
+                    color: #fff;
+                }
+
+                ul {
+                    margin-left: 2rem;
+                    margin-top: 1rem;
+
+                    li:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .accordion-grid-item-title h3 {
+                color: #fff;
+            }
+        }
+    }
+}

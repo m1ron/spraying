@@ -1,0 +1,124 @@
+.ecom {
+	&-wrapper {
+		margin-top: 2rem;
+		overflow-x: hidden;
+		padding: 0 1rem;
+		@media #{$medium-up} { padding: 0 2rem; }
+		&.no-marg-top { 
+			margin-top: 0;
+			@media #{$large-up} { margin-top: 2rem; }
+		}
+	}
+
+	&-main {
+		margin-bottom: 3rem;
+		width: 100%;
+	}
+
+	&-aside {
+		&-item {
+			margin-bottom: 4rem;
+			&-title {
+				color: $dark;
+				display: inline-block;
+				font-size: 2rem;
+				font-weight: 500;
+				letter-spacing: 0.31px;
+				line-height: 1;
+				margin: 0 0 2rem;
+				position: relative;
+				@media #{$medium-up} { font-size: 2.6rem; }
+				@media #{$large} { font-size: 2.4rem; }
+				@media #{$xlarge-up} { font-size: 2.8rem; }
+				&:after {
+					background-color: $spray-red-orange;
+					bottom: -1.3rem;
+					content: '';
+					height: 6px;
+					left: 0;
+					opacity: 1;
+					position: absolute;
+					right: 0;
+					width: 80px;
+					z-index: 1;
+					@media #{$medium-up} { bottom: -1.5rem; }
+				}
+			}
+		}
+	}
+}
+
+@media #{$large-up} {
+	.ecom {
+		&-wrapper {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 4rem;
+			padding: 0 4rem;
+		}
+
+		&-main {
+			margin-right: 4rem;
+			width: calc(100% - 310px);
+		}
+
+		&-aside {
+			width: 310px;
+		}
+	}
+}
+
+@media #{$xlarge-up} {
+	.ecom {
+		&-wrapper {
+			padding: 0 8rem;
+		}
+
+		&-main {
+			margin-right: 8rem;
+			width: calc(100% - 430px);
+		}
+
+		&-aside {
+			width: 430px;
+			&-item { margin-bottom: 8rem; }
+		}
+	}
+}
+
+
+@media screen and (min-width: 769px) {
+	.ecom-three-col {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 0;
+		padding: 0 4rem;
+		.ecom {
+			&-main {
+				margin-right: 4rem;
+				width: calc(100% - 310px);
+			}
+			&-aside { width: 310px; }
+		}
+	}
+}
+@media screen and (min-width: 1200px) {
+	.ecom-three-col {
+		.ecom-main {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 8rem;
+			&-item {
+				&:nth-child(1) { width: calc(60% - 2rem); }
+				&:nth-child(2) { width: calc(40% - 2rem); }
+			}
+		}
+	}
+}
+@media #{$xlarge-up} {
+	.ecom-three-col {
+		padding: 0 8rem;
+		.ecom-main { width: calc(100% - 335px); }
+		.ecom-aside { width: 335px; }
+	}
+}

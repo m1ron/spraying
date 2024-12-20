@@ -1,0 +1,14 @@
+.spray-optimization {
+     .resource-grid {
+        .event-card-grid {
+            width: 100%;
+            margin-top: 3rem;
+            @media #{$large-up} { margin-top: 4rem; }
+            &-item {
+                @media #{$small-up} { width: 50%; }
+                @media #{$medium-up} { width: 33.33%; } 
+                @media #{$large-up} { width: 25%; } 
+            }
+        }
+     }
+}

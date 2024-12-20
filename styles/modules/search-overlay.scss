@@ -1,0 +1,213 @@
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    &:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}
+
+.site-search-overlay {
+    display: none;
+
+    input[type=text] {
+        width: 100%;
+        font-size: 12px;
+        border: 1px solid #979797;
+        padding: 6px 20px 6px 15px;
+        border-radius: 8px;
+
+        &:focus,
+        &:active {
+            border: 1px solid #24ADFF
+        }
+    }
+
+    input[type=submit] {
+        position: absolute;
+        top: 50%;
+        right: .75rem;
+        transform: translateY(-50%);
+        background-color: transparent;
+        background-image: url(../images/template/magnifying.svg);
+        background-repeat: no-repeat;
+        border: 0;
+        cursor: pointer;
+        font-size: 2rem;
+        height: 28px;
+        outline: 0;
+        text-indent: -9999px;
+        width: 28px;
+    }
+}
+
+// IE hack to fix magnifier icon within search field
+_:-ms-input-placeholder, :root .site-search-overlay input[type=submit] {
+    top: -5px;
+    @media #{$large-up} { right: -2px; }
+}
+// IE hack to fix label position
+_:-ms-input-placeholder, :root .site-search-overlay label { margin-left: -30px; }
+
+@media screen and (min-width: 1201px) {
+    .site-search-overlay {
+        position: absolute;
+        top: 62px;
+        right: 35px;
+        width: calc( (100%) - (900px) );
+        display: block;
+        max-width: 375px;
+    }
+    .site-header {
+        .site-search-overlay {
+            z-index: 1;
+        }
+    }
+
+    .is-scrolled {
+        .site-search-overlay {
+            top: 38px;
+        }
+    }
+}
+@media #{$xlarge-up} {
+    .site-search-overlay {
+        width: calc( (100%) - (1000px) );
+
+        input[type=text] {
+            font-size: 15px;
+        }
+    }
+}
+
+/* close search button */
+.close-search-button {
+    @include position(absolute, 5px 13px null auto);
+    align-self: center;
+    cursor: pointer;
+    height: 60px;
+    opacity: 0.5;
+    outline: 0;
+    transition: 0.2s;
+    width: 60px;
+    z-index: 32;
+    &:hover, &:active { opacity: 1; }
+    .menu-global {
+        @include position(absolute, null 13px 25px null);
+        border-top: 3px solid $light;
+        transition: 0.2s;
+        width: 30px;
+        &.menu-top {
+            bottom: 28px;
+            transform: rotate(135deg);
+        }
+        &.menu-bottom {
+            bottom: 28px;
+            transform: rotate(225deg);
+        }
+    }
+}
+@media screen and (min-width: 1201px) {
+    .close-search-button {
+        margin-top: -30px;
+        right: 1.2rem;
+        top: 50%;
+        display:none;
+        .menu-global { width: 34px; }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .site-search-overlay {
+        background: -webkit-gradient(linear, left top, right bottom, from(#075287), to(#458AB7));
+        background: linear-gradient(to bottom right, #075287, #458AB7);
+        position: fixed;
+        top: 120vh;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 120vh;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+        flex-flow: column;
+        /* height:100%; */
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        padding: 25% 3rem 0 3rem;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .search-open .site-search-overlay {
+        /* bottom:0; */
+        top: 0;
+        overflow-y: hidden;
+    }
+
+    .site-search-overlay label {
+        -ms-flex-item-align: baseline;
+        align-self: baseline;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 0.03rem;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .site-search-overlay-input {
+        -ms-flex-item-align: baseline;
+        align-self: baseline;
+        position: relative;
+        width: 100%;
+    }
+
+    .site-search-overlay input {
+        &[type=text] {
+            -webkit-appearance: none;
+            border: 2px solid #ccc;
+            border-radius: 0;
+            font-family: "proxima-nova",sans-serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            outline: 0;
+            padding: 1.4rem 5rem 1.4rem 0.8rem;
+            -webkit-transition: 0.2s;
+            transition: 0.2s;
+            width: 100%;
+            border-radius: 8px;
+
+            &:focus, &:active {
+                border: 2px solid #24ADFF;
+            }
+        }
+    }
+
+    _:-ms-input-placeholder, :root .site-search-overlay input[type=submit] {
+        top: -5px;
+    }
+}
+
+.site-search-overlay-input {
+    position: relative;
+}
