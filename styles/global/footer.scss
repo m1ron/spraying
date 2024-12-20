@@ -1,236 +1,229 @@
+/* ===== SITE-FOOTER ===== */
 .site-footer {
-	@include clearfix;
-	background-color: $footer-color;
-	color: $spray-lt-blue-gray;	
+    padding: 5rem 0;
+    position: relative;
+    font: 14px/150% $font-default;
+    letter-spacing: .015em;
+    color: $color-ocean;
+    background-color: $color-night;
 
-	&-container {
-		display: flex;
-		margin: auto;
-		max-width: 1493px;
+    @at-root footer#{&} {
+        color: $color-ocean !important;
+        background: $color-night !important;
+    }
 
-		@media #{$xlarge-up} { padding: 0 4rem; }
-	}
+    &-container {
+        width: 100%;
+        max-width: $max-width;
+        padding: 0 16px;
+        margin: 0 auto;
+        @include media-breakpoint-up(xl) {
+            display: flex;
+            gap: 16px;
+        }
+        @include media-breakpoint-up(xxl) {
+            padding: 0 20px;
+            gap: 20px;
+        }
+    }
 
-	&-info {
-		padding: 3rem 3rem 5rem;
-		text-align: center;
-		width: 100%;
+    &-info {
+        text-align: center;
+        @include media-breakpoint-up(xl) {
+            width: 240px;
+            flex-shrink: 0;
+            text-align: left;
+        }
+        @include media-breakpoint-up(xxl) {
+            width: 277px;
+        }
+    }
 
-		@media #{$large-up} {
-			text-align: left;
-			width: auto;
-		}
-	}
-	&-logo {
-		display: none;
-		max-height: 100px;
+    &-logo {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: center;
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 26px;
+            justify-content: flex-start;
+        }
 
-		@media #{$large-up} {
-				display: block;
-				margin-bottom: 3rem;
-		}
+        a {
+            display: block;
+        }
 
-		img {
-			height: auto;
-			max-width: 100%;
-			width: 100%;
-		}
-	}
-	.social-icon-list {
-		align-items: center;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		list-style: none;
-		margin: auto;
-		padding: 0 0 2rem;
-		width: 18rem;
+        img {
+            width: 228px;
+            height: auto;
+            display: block;
+            @include user-select;
+            @include user-drag;
+        }
+    }
 
-		@media #{$large-up} { margin: 0; }
+    .social-icon-list {
+        margin: 0 auto 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        list-style: none;
 
-		li { margin-bottom: 0 }
-        
-		&-item {
-			color: $spray-lt-blue-gray;
-			font-size: 2.5rem;
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 30px;
+            justify-content: flex-start;
+        }
+
+        li {
+            margin-bottom: 0;
+        }
+
+        &-item {
+            color: $color-ocean;
+            display: block;
+            font-size: 2rem;
+            @include media-breakpoint-up(xl) {
+                font-size: 24px;
+            }
+
+            &:hover, &:focus {
+                text-decoration: none;
+            }
 
             .fa {
-                font-family: "FontAwesome" !important;
+                display: block;
+                font-family: $font-fa;
+                line-height: normal;
             }
-		}
-	}
-	.copyright {
-		font-size: 1.3rem;
-		font-weight: 400;
-		margin: 0;
-		padding: 0;
-		@media #{$xlarge-up} { font-size: 1.4rem; }
-	}
-	&-links {
-		display: none;
-		font-weight: 400;
-		list-style: none;
-		margin: 1rem -0.625rem;
-
-		@media #{$large-up} { display: block; }
-
-		li {
-			display: block;
-			margin-bottom: 0;
-			padding: 0 0.625rem;
-			position: relative;
-
-			&:last-of-type:before { display: none; }
-			&:first-of-type a { padding-left: 0; }
-			a {
-				color: $spray-lt-blue-gray;
-				display: block;
-				font-size: 1.3rem;
-				@media #{$xlarge-up} { font-size: 1.4rem; }
-				&:hover { text-decoration: underline; }
-			}
-		}
-	}
-	&-menu {
-		display: none;
-	}
-
-	.chat-button {
-		display: none;
-		@media (min-width: 1201px){
-			display: none; // Hide chat button until functional; Set to block to restore
-			position: fixed;
-			right: 20px;
-			bottom: 20px;
-			z-index: 11;
-			.icon-chat {
-				font-size: 5rem;
-				color: #ffffff;
-				background-color: $spray-ltr-blue;
-				padding: 1.5rem;
-				text-decoration: none;
-				border-radius: 50%;
-			}
-		}
-	}
-	
-	&.lighter {
-		background-color: $lightest-gray;
-		color: $darker-gray;
-		
-		.site-footer-menu ul li a,
-		.site-footer-links li a,
-		.footer-menu-title {
-			color: $darker-gray;
-		}
-
-		.social-icon-list-item {
-			color: $spray-dk-blue;
-		}
-
-		.site-footer {
-			.copyright {
-				strong {
-					font-weight: 500;
-				}
-			}
-		}
-	}
-
-	&.darker {
-		background-color: $spray-dkr-blue-gray;
-
-		.social-icon-list-item {
-			color: $light;
-		}
-
-		.site-footer {
-			.copyright {
-				strong {
-					font-weight: 500;
-				}
-			}
-		}
-	}
-}
-@media #{$large-up} {
-    .site-footer {
-        display: flex;
-        padding-top: 3rem;
-        padding-bottom: 8rem;
-        margin-bottom: 2rem;
-
-        @media #{$xlarge-up} {
-            padding-top: 4rem;
         }
+    }
 
-        &-info {
-            border-right: 1px dashed rbga(255,255,255,0.4);
-            padding-top: 0;
-            width: 20%;
+    .copyright {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.5;
+        font-weight: 500;
+
+        strong {
+            font-weight: 500;
         }
+    }
 
-        &-menu {
-            display: flex;
-            padding-left: 2rem;
-            width: 80%;
+    &-links {
+        margin: 1.5rem 0 0;
+        font-size: 14px;
+        line-height: 1.5;
+        list-style: none;
 
-            .footer-menu {
-                display: flex;
-                flex-direction: row;
+        li {
+            margin-bottom: 0;
+            position: relative;
+            display: block;
+
+            & + li {
+                margin-left: .625rem;
             }
 
-            ul {
-                font-weight: 500;
-                line-height: 1;
-                list-style: none;
-                margin: 0;
-                padding: 0 1rem;
-
-                @media #{$xlarge-up} {
-                    padding: 0 2rem;
-                }
-
-                li {
-                    margin-bottom: 1.6rem;
-
-                    &.footer-menu-title {
-                        color: $spray-lt-gray;
-                        margin-bottom: 2rem;
-                        font-weight: 700;
-                        text-transform: uppercase;
-                        word-break: break-word;
-
-                        @media #{$large-up} {
-                            font-size: 1.0rem;
-                        }
-
-                        @media #{$xlarge-up} {
-                            font-size: 1.0rem;
-                            letter-spacing: 0;
-                            line-height: 1;
-                        }
-
-                        a {
-                            pointer-events: none;
-                        }
-                    }
-
-                    a {
-                        color: $spray-lt-blue-gray;
-                        font-size: 1.0rem;
-                        font-weight: 500;
-                        line-height: 1;
-                        word-break: break-word;
-
-                        @media #{$xlarge-up} {
-                            font-size: 1.0rem;
-                        }
-                    }
+            a {
+                color: $color-ocean;
+                &:hover, &:focus {
+                    color: $color-white;
+                    text-decoration: none;
                 }
             }
         }
     }
+
+    &-menu {
+        display: none;
+        @include media-breakpoint-up(xl) {
+            width: 100%;
+            display: block;
+        }
+
+        .footer-menu {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            @include media-breakpoint-up(xl) {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                gap: 1.5rem;
+            }
+
+            ul {
+                width: 25%;
+                padding: 0 .5rem;
+                margin: 0 0 3rem;
+                list-style: none;
+                font-size: 9px;
+                line-height: 1.5;
+                word-break: break-word;
+                @include media-breakpoint-up(xl) {
+                    width: auto;
+                    padding: 0;
+                    margin-bottom: 0;
+                }
+
+                li {
+                    margin-bottom: 6px;
+                    &:last-child {margin-bottom: 0;}
+                    @include media-breakpoint-up(xl) {
+                        margin-bottom: 16px;
+                    }
+
+                    &.footer-menu-title {
+                        font-weight: bold;
+                        line-height: 1;
+                        letter-spacing: .05em;
+                        color: $color-mist;
+                        text-transform: uppercase;
+                        word-break: break-word;
+                        pointer-events: none;
+                    }
+
+                    a {
+                        color: $color-ocean;
+                        transition: color .3s ease;
+                        &:hover, &:focus {
+                            color: $color-white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .chat-button {
+        display: none;
+        @include media-breakpoint-up(xl) {
+            display: none; // Hide chat button until functional; Set to block to restore
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 11;
+            .icon-chat {
+                font-size: 5rem;
+                color: $color-white;
+                background-color: $spray-ltr-blue;
+                padding: 1.5rem;
+                text-decoration: none;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &.lighter {
+        background-color: $lightest-gray;
+        color: $darker-gray;
+        .site-footer-menu ul li a, .site-footer-links li a, .footer-menu-title {color: $darker-gray;}
+        .social-icon-list-item {color: $color-navy;}
+    }
+
+    &.darker {
+        background-color: $color-night;
+        .social-icon-list-item {color: $color-white;}
+    }
 }
-
-

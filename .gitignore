@@ -12,4 +12,15 @@ _psd
 *.html
 gulpfile.js
 package.json
+package-lock.json
 README.md
+
+svg
+scripts
+images
+fonts
+cdn-cgi
+-
+
+styles/main.css
+styles/main.css.map

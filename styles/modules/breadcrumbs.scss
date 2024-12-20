@@ -1,83 +1,79 @@
+/* ===== BREADCRUMBS ===== */
 .breadcrumbs {
-    padding: 9rem 2rem 1rem 2rem;
-    background-color: $light;
-    border-bottom: 1px solid $spray-ltr-gray;
+    max-width: $max-width;
+    padding: 10px 16px;
+    border-bottom: 1px solid $color-mist;
+    margin: 64px auto 0;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: .015em;
+    @include media-breakpoint-up(xl) {
+        padding-right: 40px;
+        padding-left: 40px;
+        margin-top: 140px;
+    }
+    @include media-breakpoint-up(xxl) {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 
-    span, i {
-        line-height: 1.5;
-        font-size: 1.4rem;
-
-        @media #{$large-up} {
-            font-size: 1.6rem;
-        }
+    span, i, a, .icon-double-arrow {
+        display: inline-block;
+        vertical-align: top;
+        line-height: inherit !important;
     }
 
     i {
-        opacity: 0.5;
+        padding-left: .25rem;
+        opacity: .5;
         transform: rotate(180deg);
-        padding-left: 0.25rem;
-
-        @media #{$medium-up} {
+        @include media-breakpoint-up(md) {
+            padding-right: .75rem;
+            padding-left: .75rem;
             transform: rotate(0deg);
-            padding-right: 0.75rem;
-            padding-left: 0.75rem;
         }
     }
 
     a {
-        color: #24ADFF;
-        font-weight: 600;
-    }
-
-    &.basic-header {
-        background-color: #eef1f4;
+        font-weight: 500;
+        color: $color-blue;
     }
 
     & > .icon-double-arrow:first-child {
-        @media #{$medium-up} {
+        @include media-breakpoint-up(md) {
             display: none;
         }
     }
 
     .desktop {
         display: none;
-
-        @media #{$medium-up} {
+        @include media-breakpoint-up(md) {
             display: inline-block;
         }
     }
 
     .mobile {
         display: inline-block;
-
-        @media #{$medium-up} {
+        @include media-breakpoint-up(md) {
             display: none;
         }
     }
 
-    @media screen and (min-width: 1201px) {
-        padding: 16rem 52.5px 1rem 52.5px;
+    &.basic-header {
+        background-color: $color-mist;
     }
 
-    @media screen and (min-width: 1441px) {
-        padding: 16rem 61.25px 1rem 61.25px;
-    }
-}
-
-.thin-hero-banner + .breadcrumbs {
-    padding: 1rem 2rem 1rem 2rem;
-
-    @media screen and (min-width: 1201px) {
-        padding: 1rem 52.5px 1rem 52.5px;
+    .thin-hero-banner + & {
+        padding: 1rem 2rem 1rem 2rem;
+        @include media-breakpoint-up(xl) {
+            padding: 1rem 52.5px;
+        }
+        @include media-breakpoint-up(xxl) {
+            padding: 1rem 61.25px;
+        }
     }
 
-    @media screen and (min-width: 1441px) {
-        padding: 1rem 61.25px 1rem 61.25px;
-    }
-}
-
-.pagemode-edit, .pagemode-preview {
-    .breadcrumbs {
+    .pagemode-edit &, .pagemode-preview & {
         padding-top: 1rem;
     }
 }

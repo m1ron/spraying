@@ -1,62 +1,102 @@
-// colors
-$spray-lt-gray: #EEF1F4;
-$spray-ltr-gray: #E0E0E0;
-$spray-gray: #D9DFE3;
+// Colors
+$spray-lt-gray: #eef1f4;
+$spray-ltr-gray: #e0e0e0;
+$spray-gray: #d9dfe3;
 $spray-dk-gray: #404040;
 $spray-dk-gray-alt: #f6f8f9;
 $spray-dk-blue-green: #075671;
 $spray-ltst-blue: #2897dc;
-$spray-ltr-blue: #67D1FF;
-$spray-lt-blue: #24ADFF;
-$spray-blue: #0065A4;
+$spray-ltr-blue: #67d1ff;
+$spray-lt-blue: #24adff;
+$spray-blue: #0065a4;
 $spray-blue-alt: #012b7f;
-$spray-blue-alt-1: #004B87;
+$spray-blue-alt-1: #004b87;
 $spray-blue-alt-2: #0164a7;
 $spray-light-blue: #6dcff6;
-$spray-dk-blue: #005B94;
+$spray-dk-blue: #005b94;
 $spray-dkr-blue: #284659;
-$spray-dkst-blue: #003C50;
-$spray-lt-blue-gray: #AEBDC6;
-$spray-blue-gray: #5E7C8E;
-$spray-dk-blue-gray: #3F6074;
-$spray-dkr-blue-gray: #242F37;
-$spray-red: #EC3737;
-$spray-red-orange: #D47070;
+$spray-dkst-blue: #003c50;
+$spray-lt-blue-gray: #aebdc6;
+$spray-blue-gray: #5e7c8e;
+$spray-dk-blue-gray: #3f6074;
+$spray-dkr-blue-gray: #242f37;
+$spray-red: #ec3737;
+$spray-red-orange: #d47070;
 $spray-yellow: #e2d252;
-$spray-green: #39B54A;
+$spray-green: #39b54a;
 
-$light: #FFFFFF;
-$lightest-gray: #EAEAEA;
-$lighter-gray: #E3E7E9;
-$light-gray: #A7A9AC;
-$medium-gray: #6A6A6C;
+$light: #fff;
+$lightest-gray: #eaeaea;
+$lighter-gray: #e3e7e9;
+$light-gray: #a7a9ac;
+$medium-gray: #6a6a6c;
 $gray: #808080;
 $dark-gray: #363636;
 $dark-gray-1: #d2d2d0;
-$darker-gray: #3A4B58;
-$dark: #222222;
+$darker-gray: #3a4b58;
+$dark: #222;
 $dark-1: #0f0f04;
-$darker: #000000;
+$darker: #000;
 
-$light-blue-hover: #34C2FF;
-$dotted-border: 2px dotted rgba(63,96,116,0.2);
-
+$light-blue-hover: #34c2ff;
+$dotted-border: 2px dotted rgba(63, 96, 116, .2);
 $link-color: #006199;
-$footer-color: $spray-blue-gray;
-
-// fonts
-$site-font: "proxima-nova", sans-serif;
-$site-font-secondary: "mr-eaves-xl-modern-narrow",sans-serif;
+$footer-color: $spray-dkr-blue-gray;
 $site-text-color: $spray-dk-blue-gray;
 
-// order status
-$s-processed: #F5A623;
-$s-shipped: #7ED321;
+$s-processed: #f5a623;
+$s-shipped: #7ed321;
 $s-delivered: $spray-dk-blue-gray;
 
-// social
-$facebook: #3B599B;
-$twitter: #55ACEF;
-$google-plus: #DC4E41;
-$linkedin: #0077B5;
-$email: #7D7D7D;
+$facebook: #3b599b;
+$twitter: #55acef;
+$google-plus: #dc4e41;
+$linkedin: #0077b5;
+$email: #7d7d7d;
+
+// Fonts
+$site-font: 'proxima-nova', sans-serif;
+$site-font-secondary: 'mr-eaves-xl-modern-narrow', sans-serif;
+
+// NEW Colors
+$color-black: #0a0a1f;
+$color-night: #242f37;
+$color-navy: #005b94;
+$color-led-blue: #0065a4;
+$color-blue: #00abe5;
+$color-silver: #757575;
+$color-gray: #979797;
+$color-ocean: #aebdc6;
+$color-maui: #eff2f5;
+$color-mist: #eef1f4;
+$color-white: #fff;
+
+// NEW Fonts
+$font-old: $site-font;
+$font-default: 'Inter', sans-serif;
+$font-fa: 'FontAwesome' !important;
+
+// Transition Settings
+$bezier: cubic-bezier(.250, .460, .450, .940);
+$easing: ease;
+$effect: .3s $easing;
+$effect-s: .2s $easing;
+
+// Min/Max
+$min-width: 320px;
+$max-width: 1640px;
+
+// Media Breakpoints
+$grid-breakpoints: (
+    xs: 360px,
+    xss: 375px, // iPhone SE
+    xsm: 390px, // iPhone 14
+    xsl: 420px, // iPhone Plus/Max
+    sm: 540px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xlm: 1380px,
+    xxl: 1600px,
+    xxxl: 1900px
+) !default;
