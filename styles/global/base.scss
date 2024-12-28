@@ -61,22 +61,17 @@ body {
 }
 
 .main-content {
-    display: block;
-    flex-direction: column;
     width: 100%;
-    overflow-x: auto;
-
-    &:empty {
-        display: none !important;
+    max-width: $max-width;
+    padding: 0 16px;
+    margin: 0 auto;
+    @include media-breakpoint-up(md) {
+        padding: 0 20px;
     }
 
-    &.gray {
-        background-color: #e6eaed;
-    }
-
-    &.light-gray {
-        background-color: $spray-lt-gray;
-    }
+    &:empty {display: none !important;}
+    &.gray {background-color: #e6eaed;}
+    &.light-gray {background-color: $spray-lt-gray;}
 }
 
 .module-border {

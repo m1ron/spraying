@@ -57,24 +57,18 @@
         }
         @include media-breakpoint-up(md) {
             width: 228px;
-            top: 10px;
+            top: 12px;
             transform: translate3d(-50%, 0, 0);
             transition: none;
         }
         @include media-breakpoint-up(xl) {
             min-width: 310px;
             top: 20px;
-            left: 40px;
+            left: 20px;
             transform: none;
             transition: min-width .2s linear, top .2s linear;
 
-            .is-scrolled & {
-                min-width: 228px;
-                top: 12px;
-            }
-        }
-        @include media-breakpoint-up(xxl) {
-            left: 20px;
+            .is-scrolled & {min-width: 228px;top: 12px;}
         }
 
         a {
@@ -165,6 +159,7 @@
             padding: 0 4px 0 32px;
             margin-right: auto;
             position: relative;
+            left: 6px;
             display: flex;
             order: 1;
             align-self: flex-start;
@@ -375,8 +370,7 @@
         left: 0;
         z-index: 100;
         background-color: $color-white;
-        box-shadow: 0 0 5px rgba(black, .1);
-        transition: top .4s $bezier;
+        transition: box-shadow .4s $bezier, top .4s $bezier;
         -webkit-overflow-scrolling: touch;
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -392,6 +386,7 @@
 
         .country-language-open & {
             top: 0;
+            box-shadow: 0 0 5px rgba(black, .1);
             @include media-breakpoint-up(xl) {
                 top: 68px;
                 display: block;

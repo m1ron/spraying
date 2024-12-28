@@ -7,14 +7,12 @@
     font-size: 14px;
     line-height: 24px;
     letter-spacing: .015em;
-    @include media-breakpoint-up(xl) {
-        padding-right: 40px;
-        padding-left: 40px;
-        margin-top: 140px;
-    }
-    @include media-breakpoint-up(xxl) {
+    @include media-breakpoint-up(md) {
         padding-right: 20px;
         padding-left: 20px;
+    }
+    @include media-breakpoint-up(xl) {
+        margin-top: 140px;
     }
 
     span, i, a, .icon-double-arrow {

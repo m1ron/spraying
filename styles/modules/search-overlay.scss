@@ -16,11 +16,11 @@
         left: 0;
         z-index: 100;
         background-color: $color-white;
-        box-shadow: 0 0 5px rgba(black, .1);
-        transition: top .4s $bezier;
+        transition: shadow .4s $bezier, top .4s $bezier;
 
         .search-open & {
             top: 0;
+            box-shadow: 0 0 5px rgba(black, .1);
         }
 
         .site-header & {
