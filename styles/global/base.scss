@@ -62,11 +62,16 @@ body {
 
 .main-content {
     width: 100%;
-    max-width: $max-width;
     padding: 0 16px;
     margin: 0 auto;
+    @include media-breakpoint-down(md) {
+        max-width: 572px;
+    }
     @include media-breakpoint-up(md) {
         padding: 0 20px;
+    }
+    @include media-breakpoint-up(xl) {
+        max-width: $max-width;
     }
 
     &:empty {display: none !important;}
