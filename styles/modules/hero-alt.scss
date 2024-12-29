@@ -15,6 +15,7 @@
         @include media-breakpoint-up(xl) {
             font-size: 16px;
             line-height: 160%;
+
             &::after {
                 @include pseudo;
                 width: 100vw;
@@ -111,14 +112,13 @@
     }
 
     &-content {
-        padding: 24px 0;
+        padding: 3rem 0;
         color: $color-black;
         @include media-breakpoint-up(md) {
-            padding-top: 32px;
-            padding-bottom: 32px;
+            padding: 4rem 0;
         }
         @include media-breakpoint-up(xl) {
-            max-width: 600px;
+            max-width: 640px;
         }
         @include media-breakpoint-up(xxl) {
             max-width: 720px;
@@ -270,9 +270,11 @@
         }
 
         &.hero-alt-title-mobile {
-            padding: 24px 0;
+            padding: 3rem 0;
             text-align: center;
-
+            @include media-breakpoint-up(md) {
+                padding: 4rem 0;
+            }
             @include media-breakpoint-up(xl) {
                 display: none;
             }
@@ -330,12 +332,17 @@
     &-subtitle {
         margin-bottom: 4px;
         display: block;
-        display: none;
         font-size: 14px;
-        line-height: 160%;
+        line-height: 120%;
         font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .05em;
         color: $color-led-blue;
         @include media-breakpoint-up(md) {
+            font-size: 15px;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 8px;
             font-size: 16px;
         }
     }

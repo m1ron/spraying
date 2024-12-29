@@ -24,3 +24,5 @@ cdn-cgi
 
 styles/main.css
 styles/main.css.map
+styles/vendor.min.css
+styles/mschat.css
