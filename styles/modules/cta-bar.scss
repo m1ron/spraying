@@ -7,6 +7,16 @@
         margin: 9rem 0;
     }
 
+    &.bottom-0 {
+        margin-bottom: 4rem !important;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 6rem !important;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 9rem !important;
+        }
+    }
+
     .cta-content {
         width: 100%;
         padding: 24px;
