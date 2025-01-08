@@ -1,100 +1,107 @@
 .basic-header-feature {
-	background-color: $spray-lt-gray;
-	padding: 3rem 0;
-	@media #{$medium-up} { padding: 4rem 0; }
-	@media #{$large-up} { padding: 4rem 0; }
-	
-	&-section {
-		color: #2897DC;
-		font-size: 2rem;
-		font-weight: 600;
-		letter-spacing: 0.02rem;
-		line-height: 1;
-		margin-bottom: 1.5rem;
-		text-align: center;
-		text-transform: uppercase;
-		@media #{$medium-up} { font-size: 2.2rem; }
-		@media #{$large-up} { font-size: 2.2rem; }
-	}
-	h1 {
-		color: $spray-dk-blue-gray;
-		font-size: 4.3rem;
-		font-weight: 100;
-		letter-spacing: -0.7px;
-		line-height: 0.85;
-		margin-bottom: 0;
-		text-align: center;
-		text-transform: uppercase;
-		@media #{$small-up} { font-size: 5rem; }
-		@media #{$large-up} { font-size: 6.4rem; }
-	}
-	hr {
-		border-top: 2px dotted rgba(63,96,116,0.2);
-		margin: 1rem auto;
-		max-width: 79rem;
-		padding: 0;
-		@media #{$medium-up} {margin: 1.5rem auto;  }
-		@media #{$large-up} { margin: 2rem auto;}
-	}
-	.content-wrapper > p, .content-wrapper .content-text {
-		font-size: 1.5rem;
-		text-align: center;
-		margin: 0 auto;
-		max-width: 105rem;
-		line-height: 1.5;
-		@media #{$medium-up} { font-size: 1.8rem; }
-	}
-    .subtitle {
-        padding-top: 10px;
-        text-align: center;
+    padding: 3rem 0;
+    margin: 0;
+    font: 15px/150% $font-default;
+    color: $color-black;
+    position: relative;
+    z-index: 1;
+    background: $color-mist;
+    @include media-breakpoint-up(md) {
+        padding: 4rem 0;
+        background: $color-mist;
     }
-}
+    @include media-breakpoint-up(xl) {
+        font-size: 16px;
+        line-height: 160%;
+    }
 
-.basic-header-feature {
-	&.centered {
-		padding: 3rem 0;
-		@media #{$large-up} { padding: 4rem 0;}
-		h1 {
-			font-size: 10vw;
-			@media #{$medium-up} { font-size: 6.4rem; }
-			@media #{$large-up} { font-size: 6.4rem; }
-		}
-	}
-}
+    &::after {
+        @include pseudo;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        right: auto;
+        bottom: 0;
+        left: 50%;
+        z-index: -1;
+        background-color: $color-maui;
+        transform: translateX(-50%);
+        @include media-breakpoint-down(sm) {
+            right: -16px;
+            left: -16px;
+            transform: none;
+        }
+    }
 
-.basic-header-feature {
-	&.withbreadcrumbs {
-		padding: 3rem 0;
-		@media #{$large-up} { padding: 2rem 0 4rem;}	
-	}
-}
 
-.basic-header-feature.small-lower-pad {
-	padding-bottom: 1rem;
-	@media #{$medium-up} { padding-bottom: 2rem; }
-	@media #{$large-up} { padding-bottom: 2.2rem; }
-}
+    h1 {
+        margin: 0 0 12px 0;
+        font: 42px/50px $font-default;
+        color: $color-night;
+        text-transform: uppercase;
+        @include media-breakpoint-up(xss) {
+            font-size: 42px;
+            line-height: 50px;
+        }
+    }
 
-.basic-header-feature.prod-detail {
-	padding: 3rem 0;
-	@media #{$medium-up} { padding: 4rem 0; }
-	@media #{$large-up} { padding: 5rem 0; }
-	.content-wrapper {
-		max-width: 100%;
-		padding: 0 2rem;
-		@media #{$medium-up} { padding: 0 4rem; }
-		@media #{$xlarge-up} { padding: 0 8rem; }
-	}
-	.prod-detail-type {
-		color: #2897DC;
-		font-size: 2rem;
-		font-weight: bold;
-		margin-bottom: 1.75rem;
-		text-transform: uppercase;
-	}
-	h1 {
-		margin-bottom: 1.5rem;
-		text-align: left;
-		text-transform: none;
-	}
+    hr {
+        max-width: 79rem;
+        padding: 0;
+        border-top: 2px dotted rgba($color-ocean, .5);
+        margin: 12px auto;
+    }
+
+    p {
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+        &:last-of-type {margin-bottom: 0;}
+    }
+
+    .content-wrapper {
+        max-width: 640px;
+        padding: 0;
+        margin: 0;
+        @include media-breakpoint-up(lg) {
+            max-width: 720px;
+        }
+    }
+
+    &.centered {
+        text-align: center;
+        .content-wrapper {
+            margin: 0 auto;
+        }
+    }
+
+    &.small-lower-pad {
+        padding-bottom: 1rem;
+        @media #{$medium-up} { padding-bottom: 2rem; }
+        @media #{$large-up} { padding-bottom: 2.2rem; }
+    }
+
+    &.prod-detail {
+        padding: 3rem 0;
+        @media #{$medium-up} { padding: 4rem 0; }
+        @media #{$large-up} { padding: 5rem 0; }
+        .content-wrapper {
+            max-width: 100%;
+            padding: 0 2rem;
+            @media #{$medium-up} { padding: 0 4rem; }
+            @media #{$xlarge-up} { padding: 0 8rem; }
+        }
+        .prod-detail-type {
+            color: #2897dc;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.75rem;
+            text-transform: uppercase;
+        }
+        h1 {
+            margin-bottom: 1.5rem;
+            text-align: left;
+            text-transform: none;
+        }
+    }
 }

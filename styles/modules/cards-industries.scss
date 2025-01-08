@@ -1,15 +1,15 @@
 .cards-industries {
-    padding-bottom: 4rem;
+    padding: 4rem 0;
     font: 16px/1.5 $font-default;
     color: $color-night;
     position: relative;
     z-index: 1;
     background: $color-maui;
     @include media-breakpoint-up(md) {
-        padding-bottom: 6rem;
+        padding: 6rem 0;
     }
-    @include media-breakpoint-up(lg) {
-        padding-bottom: 9rem;
+    @include media-breakpoint-up(xl) {
+        padding: 9rem 0;
     }
 
     &::after {
@@ -35,27 +35,6 @@
         &::after {display: none;}
         &.no-gradient {
             padding: 0;
-            margin-bottom: 4rem;
-            @include media-breakpoint-up(md) {
-                margin-bottom: 6rem;
-            }
-            @include media-breakpoint-up(xl) {
-                margin-bottom: 9rem;
-            }
-        }
-    }
-
-    &.standard {
-        padding: 4rem 0;
-        @include media-breakpoint-up(md) {
-            padding: 6rem 0;
-        }
-        @include media-breakpoint-up(xl) {
-            padding: 9rem 0;
-        }
-
-        &.no-gradient {
-            padding: 0;
             margin: 4rem 0;
             background: none;
             &::after {display: none;}
@@ -71,7 +50,7 @@
     &-top {
         margin-bottom: 3rem;
         @include media-breakpoint-up(xl) {
-            margin-bottom: 41px;
+            margin-bottom: 4rem;
         }
 
         small {
@@ -105,14 +84,6 @@
         br {display: none;}
 
         > p:last-child {margin-bottom: 0;}
-    }
-
-    &-wrapper {
-        .homepage & {
-            @include media-breakpoint-up(lg) {
-                padding-bottom: 8rem;
-            }
-        }
     }
 
     &-grid {
@@ -213,22 +184,6 @@
                 background: $color-white;
                 box-shadow: inset 0 0 0 1px rgba(#3f6073, .15);
 
-                &::before {
-                    @include pseudo;
-                    height: 5px;
-                    border-radius: 4px 4px 0 0;
-                    display: none;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    left: 0;
-                    z-index: 5;
-                    background: #255a90;
-                    @include media-breakpoint-up(md) {
-                        display: block;
-                    }
-                }
-
                 &.active {
                     .js-toggle {
                         .bar {border-color: $light;}
@@ -253,6 +208,19 @@
                         opacity: 1;
                     }
                 }
+
+                > a {
+                    display: block;
+                    color: $color-navy;
+                    text-decoration: none;
+                    &:hover {
+                        color: $color-night;
+                    }
+
+                    > .cards-industries-grid-item-content {
+                        color: inherit;
+                    }
+                }
             }
 
             &-image-container {
@@ -260,17 +228,22 @@
                 max-height: 175px;
                 overflow: hidden;
                 position: relative;
+                @include media-breakpoint-up(md) {
+                    max-height: none;
+                }
+
+                .cards-industries-grid-item-image {
+                    display: none;
+                    float: left;
+                    @include media-breakpoint-up(md) {
+                        display: inline;
+                    }
+                }
 
                 .js-toggle-container ~ & {
                     @include media-breakpoint-down(md) {
                         cursor: not-allowed;
                         pointer-events: none;
-                    }
-                }
-
-                &:hover, &:active, &:focus {
-                    .cards-industries-grid-item-image {
-                        transform: scale(1.1, 1.1);
                     }
                 }
             }
@@ -279,7 +252,7 @@
                 width: calc(100% + 2px);
                 max-width: none;
                 height: 38vw;
-                max-height: 200px;
+                max-height: 175px;
                 border-radius: 4px 4px 0 0;
                 margin: -1px -1px 0 -1px;
                 position: relative;
@@ -288,23 +261,36 @@
                 @include user-select;
                 @include user-drag;
                 @include media-breakpoint-down(xsm) {
-                    min-height: 150px;
+                    height: 160px;
                 }
                 @include media-breakpoint-up(md) {
-                    height: 172px;
-                    max-height: none;
+                    height: auto;
+                    max-height: 200px;
+                    aspect-ratio: 5/2.93;
                     display: block !important;
                 }
 
-                &.no-overflow-image {
-                    display: block;
+                &::before {
+                    @include pseudo;
+                    height: 5px;
+                    border-radius: 4px 4px 0 0;
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    z-index: 5;
+                    background: #255a90;
+                    @include media-breakpoint-up(md) {
+                        display: block;
+                    }
                 }
             }
 
             &-content {
                 padding: 15px;
                 font-size: 16px;
-                line-height: 150%;
+                line-height: 1;
                 font-weight: 400;
                 letter-spacing: .03em;
                 color: $color-night;
@@ -312,20 +298,38 @@
                     padding: 23px;
                 }
 
-                .js-slide {
-                    &:not(.cards-industries-grid-item-callout-action) {
-                        padding: 20px 15px 0;
-                        margin: 0 -15px;
-                        @include media-breakpoint-up(md) {
-                            padding: 0 23px;
-                            margin: 0 -23px;
+                > a {
+                    display: block;
+                    @include media-breakpoint-up(md) {
+                        margin-bottom: 6px;
+                        .cards-industries-grid-item-title, h3, > span {
+                            margin-bottom: 0;
                         }
                     }
-                    &.cards-industries-grid-item-callout-action {
-                        &:empty {display: none !important;}
-                    }
+                }
 
+                .js-slide {
+                    padding: 0 15px;
+                    margin: 0 -15px;
+                    font-size: 16px;
+                    line-height: 150%;
+                    letter-spacing: 0;
+                    overflow: hidden;
+                    @include media-breakpoint-down(md) {
+                        display: none;
+                    }
+                    @include media-breakpoint-up(md) {
+                        padding: 8px 23px 0;
+                        margin: 0 -23px;
+                    }
+                    &:empty {display: none !important;}
                     & > *:last-child {margin-bottom: 0;}
+                    @include media-breakpoint-down(md) {
+                        & > *:first-child {
+                            margin-top: 8px;
+                            display: block;
+                        }
+                    }
                 }
 
                 p, ul {
@@ -343,9 +347,12 @@
                     }
 
                     a {
+                        color: $color-navy;
                         text-decoration: none;
                         transition: color $effect;
-                        &:hover {color: $color-night;}
+                        &:hover, &:focus {
+                            color: $color-night;
+                        }
                     }
                 }
             }
@@ -391,7 +398,8 @@
 
             &-title {
                 &, h3, > span {
-                    width: auto;
+                    width: 100%;
+                    padding-right: 30px;
                     margin: 0;
                     position: relative;
                     display: inline-block;
@@ -400,11 +408,23 @@
                     font-weight: 500;
                     letter-spacing: 0;
                     color: $color-night;
-                    cursor: default;
                     @include media-breakpoint-up(md) {
-                        margin-bottom: 14px;
+                        padding-right: 0;
                         font-size: 21px;
-                        line-height: 26px;
+                    }
+                }
+
+                @include media-breakpoint-up(md) {
+                    padding-bottom: 15px;
+                    margin-bottom: 16px;
+                    &::after {
+                        @include pseudo;
+                        width: 80px;
+                        height: 6px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background: #57b160;
                     }
                 }
             }
@@ -437,138 +457,123 @@
 
             &-callout-action {
                 display: none;
-
-                @media #{$medium-up} {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 150%;
+                @include media-breakpoint-up(md) {
                     display: block !important;
                 }
 
-                a {
-                    color: $link-color;
-                    font-weight: 600;
-                    line-height: 1;
-                    margin: 1.5rem 0 3rem;
-                    position: relative;
+                &.js-slide {
+                    .cards-industries-grid-item-title + & {padding-top: 0 !important;}
+                    @include media-breakpoint-down(md) {
+                        &:not([style="display: none;"]) {
+                            display: block !important;
+                        }
+                        &:not([style]) {
+                            display: none !important;
+                        }
+                    }
+                }
 
-                    @media #{$medium-up} {
-                        font-size: 1.6rem;
+                a {
+                    position: relative;
+                    color: $color-navy;
+                    &:hover, &:focus {
+                        color: $color-night;
+                        text-decoration: none;
                     }
                 }
 
                 i {
-                    color: $link-color;
                     font-weight: 600;
                     line-height: 1;
+                    color: $color-night;
                 }
             }
 
             hr.js-slide {
-                background: none;
-                border-top: 2px dotted $lighter-gray;
+                padding: 0;
+                border-top: 1px dotted rgba($color-ocean, .5);
+                margin: 0 15px;
                 display: none;
-                left: 0;
-                margin-top: auto;
                 position: relative;
-                right: 0;
-                width: 100%;
-
-                @media #{$medium-up} {
-                    display: block !important;
-                }
-            }
-
-            p.js-slide, ul.js-slide, div.js-slide {
-                display: none;
-                font-size: 1.6rem;
-
-                @media #{$medium-up} {
+                background: none;
+                @include media-breakpoint-up(md) {
+                    margin: -5px 23px 0;
                     display: block !important;
                 }
             }
 
             &-case-study {
                 display: none;
-
-                @media #{$medium-up} {
+                @include media-breakpoint-up(md) {
                     display: block !important;
                 }
 
-                &-flex {
-                    display: flex;
-                    -webkit-transition: all 0.8s ease;
-                    transition: all 0.8s ease;
-                }
-
                 &-amount {
-                    font-family: $site-font-secondary;
-                    font-size: 4rem;
-                    font-weight: 900;
-                    line-height: 0.8;
-                    text-transform: uppercase;
                     display: block;
-                    color: $spray-dk-blue-gray;
+                    font-size: 24px;
+                    line-height: 150%;
+                    font-weight: bold;
+                    color: $color-black;
                 }
 
                 &-copy {
-                    padding-left: 1.5rem;
                     display: block;
+                    font-weight: 500;
+                    color: $color-black;
 
-                    p,
-                    &-text {
-                        display: block;
-                        color: $spray-dk-blue-gray;
-                        font-size: 1.4rem;
-                        font-weight: 500;
-                        line-height: 1.285;
-                        margin: 0 0 0.6rem;
-                        opacity: 0.9;
-
-                        @media #{$xlarge-up} {
-                            font-size: 1.6rem;
-                            line-height: 1.125;
-                        }
+                    p, &-text {
+                        margin: 0;
+                        font-size: inherit;
+                        line-height: inherit;
+                        font-weight: inherit;
                     }
 
                     a {
-                        color: $link-color;
                         display: block;
-                        font-size: 1.4rem;
-                        font-weight: 600;
-                        line-height: 1.25;
+                        color: $color-black;
+                    }
 
-                        @media #{$xlarge-up} {
-                            font-size: 1.6rem;
+                    .has-arrow {
+                        margin-top: 12px;
+                        display: block;
+                        font-weight: normal;
+                        color: $color-navy;
+                    }
+                }
+
+                &-flex {
+                    display: block;
+
+                    &-anchor {
+                        padding: 15px;
+                        display: block;
+                        text-decoration: none;
+                        @include media-breakpoint-up(md) {
+                            padding: 17px 23px 21px;
+                        }
+
+                        &-tag {
+                            display: block;
+                            text-decoration: none;
+                            &:hover, &:focus {
+                                text-decoration: none;
+                                .cards-industries-grid-item-case-study-copy .has-arrow {
+                                    color: $color-black;
+                                }
+                            }
                         }
                     }
                 }
-            }
-
-            &-case-study-flex-anchor {
-                display: block;
-                padding: 1.5rem 2rem 2rem;
-                text-decoration: none;
-            }
-
-            &-case-study-flex-anchor:hover,
-            &-case-study-flex-anchor:focus {
-                text-decoration: none;
-                box-shadow: inset 0 0 5px 0 rgba(50, 50, 50, 0.75);
-                display: block;
-            }
-
-            &-case-study-flex-anchor-tag {
-                text-decoration: none;
-            }
-
-            &-case-study-flex-anchor-tag:hover,
-            &-case-study-flex-anchor-tag:focus {
-                text-decoration: none;
             }
         }
 
         &-callout {
+            width: 100%;
             margin: 2rem auto 0;
             text-align: center;
-            width: 100%;
 
             @media #{$medium-up} {
                 margin: 0 auto;
@@ -643,19 +648,24 @@
         padding-top: 2rem;
     }
 
-    &.cards-industries-homepage {
-        padding-bottom: 0 !important;
-    }
-
     .main-title {
-        font-size: 1.5rem;
-        padding-top: 2.5rem;
-        margin: 0 2rem 2rem;
-        color: $light;
+        margin: 0 0 3rem;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: bold;
+        letter-spacing: -.0175em;
+        color: $color-night;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 4rem;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 5rem;
+        }
 
-        @media #{$medium-up} {
-            color: $spray-dkr-blue;
-            font-size: 2.9rem;
+        strong {
+            font-weight: inherit;
+            display: block;
         }
     }
 
