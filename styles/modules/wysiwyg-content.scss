@@ -1,29 +1,33 @@
 .wysiwyg-content {
-    background-color: $light;
-    padding: 2rem 0;
-
-    @media #{$large-up} {
-        padding: 3.5rem 0;
+    padding: 0 2rem;
+    margin: 4rem auto;
+    position: relative;
+    z-index: 1;
+    font-family: $font-default;
+    background: $light;
+    @include media-breakpoint-up(md) {
+        padding: 0 4rem;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+    }
+    @include media-breakpoint-up(xl) {
+        padding: 0 8rem;
+        margin-top: 9rem;
+        margin-bottom: 9rem;
+    }
+    @include media-breakpoint-up(xl) {
+        padding: 0 12rem;
     }
 
-    &-wrapper {
-        margin: 0 auto;
-        padding: 0 2rem;
-
-        @media #{$medium-up} {
-            padding: 0 4rem;
+    a {
+        color: $color-navy !important;
+        text-decoration: none;
+        &:hover, &:focus {
+            text-decoration: underline;
         }
+    }
 
-        @media (min-width: 1024px) {
-            max-width: 1620px;
-        }
-
-        @media (min-width: 1201px) {
-            padding: 0 10rem;
-        }
-
-        @media (min-width: 1441px) {
-            padding: 0 12rem;
-        }
+    .article-copy a {
+        color: $color-navy !important;
     }
 }

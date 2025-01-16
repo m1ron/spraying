@@ -240,10 +240,32 @@
                     }
                 }
 
+                &:hover {
+                    .cards-industries-grid-item-image {
+                        transform: scale(1.05);
+                    }
+                }
+
                 .js-toggle-container ~ & {
                     @include media-breakpoint-down(md) {
                         cursor: not-allowed;
                         pointer-events: none;
+                    }
+                }
+
+                &::before {
+                    @include pseudo;
+                    height: 5px;
+                    border-radius: 3px 3px 0 0;
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    z-index: 5;
+                    background: #255a90;
+                    @include media-breakpoint-up(md) {
+                        display: block;
                     }
                 }
             }
@@ -258,6 +280,7 @@
                 position: relative;
                 object-fit: cover;
                 display: none;
+                transition: transform $effect;
                 @include user-select;
                 @include user-drag;
                 @include media-breakpoint-down(xsm) {
@@ -266,24 +289,9 @@
                 @include media-breakpoint-up(md) {
                     height: auto;
                     max-height: 200px;
+                    border-radius: 6px 6px 0 0;
                     aspect-ratio: 5/2.93;
                     display: block !important;
-                }
-
-                &::before {
-                    @include pseudo;
-                    height: 5px;
-                    border-radius: 4px 4px 0 0;
-                    display: none;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    left: 0;
-                    z-index: 5;
-                    background: #255a90;
-                    @include media-breakpoint-up(md) {
-                        display: block;
-                    }
                 }
             }
 
@@ -304,6 +312,14 @@
                         margin-bottom: 6px;
                         .cards-industries-grid-item-title, h3, > span {
                             margin-bottom: 0;
+                        }
+                    }
+
+                    &:hover {
+                        .cards-industries-grid-item-title {
+                            &::after {
+                                width: 95px;
+                            }
                         }
                     }
                 }
@@ -425,6 +441,7 @@
                         bottom: 0;
                         left: 0;
                         background: #57b160;
+                        transition: width .3s $bezier;
                     }
                 }
             }

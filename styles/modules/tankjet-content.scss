@@ -1,6 +1,5 @@
 .tankjet-content {
     background-color: $spray-lt-gray;
-    padding: 3rem 0 0;
 
     .main-outer-wrapper {
         max-width: 1360px;
@@ -11,14 +10,14 @@
         }
         @media screen and (min-width: 1700px) {
             max-width: 1610px;
-            padding-right: 18%;  
+            padding-right: 18%;
         }
         @media screen and (min-width: 1800px) {
             max-width: 1680px;
         }
     }
-    
-    .resource-grid-header .items-showing, .menu-reset { 
+
+    .resource-grid-header .items-showing, .menu-reset {
         display: none;
     }
 
@@ -46,7 +45,7 @@
             padding: 6rem 0;
         }
     }
-    
+
     .flex-column-container {
         @media screen and (min-width: 1200px) {
 			width: calc(100% - 310px);
@@ -54,24 +53,24 @@
         @media screen and (min-width: 1800px) {
             width: calc(100% - 370px);
         }
-        
+
         .resource-grid-header-container, .tankjet-navigation-link {
             padding: 1rem 0;
             font-weight: 600;
             line-height: 1.5;
             @media screen and (min-width: 1200px) { display: none; }
-            a { 
+            a {
                 text-decoration: none;
                 font-size: 1.4rem;
                 @media #{$small-up} { font-size: 1.5rem; }
-                @media #{$large-up} { font-size: 1.8rem; } 
+                @media #{$large-up} { font-size: 1.8rem; }
             }
-            i { 
+            i {
                 position: relative;
                 top: -2px;
-                font-size: 25px; 
-                font-weight: 400; 
-                margin-right: 0.5rem; 
+                font-size: 25px;
+                font-weight: 400;
+                margin-right: 0.5rem;
                 @media #{$small-up} { top: 0px; }
                 @media #{$large-up} { top: 1px; }
             }
@@ -95,16 +94,16 @@
             height: 100%;
             padding: 0 0 3rem 0;
             z-index: 31;
-        }    
+        }
         .close-search-button {
             display: none;
             .menu-global { border-top: 3px solid #000; }
-         } 
+         }
 
 		@media screen and (min-width: 1200px) {
             display: block;
             margin-top: -1rem;
-            max-width: 310px;	
+            max-width: 310px;
             padding: 0;
         }
         @media screen and (min-width: 1800px ) {
@@ -145,15 +144,15 @@
 						}
 					}
                 }
-                ul { 
-                    display: none; 
+                ul {
+                    display: none;
                     margin: 2rem 0 1.5rem 1.5rem;
-                    li { 
+                    li {
                         margin-bottom: 1.5rem;
-                        a { 
+                        a {
                             color: $spray-dk-blue-gray;
-                            &:hover { color: $spray-lt-blue; } 
-                        } 
+                            &:hover { color: $spray-lt-blue; }
+                        }
                     }
                 }
 			}

@@ -43,6 +43,7 @@
         margin-bottom: 3rem;
         @include media-breakpoint-up(xl) {
             margin-bottom: 41px;
+            //margin-bottom: 52px;
         }
 
         small {
@@ -52,7 +53,7 @@
             line-height: 120%;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: .05em;
+            letter-spacing: .045em;
             color: $color-led-blue;
             @include media-breakpoint-up(xl) {
                 margin-bottom: 20px;
@@ -78,27 +79,6 @@
         > p:last-child {margin-bottom: 0;}
     }
 
-
-    &-wrapper {
-        h2 {
-            text-align: center;
-            padding-bottom: 2.5rem;
-            @include media-breakpoint-up(md) {
-                padding-bottom: .4rem;
-            }
-        }
-
-        &.alt-padding {
-            padding-top: 3rem;
-            @include media-breakpoint-up(md) {
-                padding-top: 5.5rem;
-            }
-            @include media-breakpoint-up(lg) {
-                padding-bottom: 8rem;
-            }
-        }
-    }
-
     &-grid {
         .generic-grid {
             display: flex;
@@ -106,8 +86,30 @@
             gap: 24px;
             @include media-breakpoint-up(md) {
                 flex-direction: row;
-                gap: 24px;
             }
+
+            &-item {
+                &.quarter-width {
+                    @include media-breakpoint-up(md) {
+                        width: calc(50% - 12px);
+                    }
+                    @include media-breakpoint-up(lg) {
+                        width: calc(33.3% - 16px);
+                    }
+                    @include media-breakpoint-up(xl) {
+                        width: calc(25% - 18px);
+                    }
+                }
+                &.half-width {
+                    @include media-breakpoint-up(lg) {
+                        width: calc(50% - 12px);
+                    }
+                }
+            }
+        }
+
+        > .generic-grid {
+
         }
 
         &.divider {
@@ -120,31 +122,196 @@
         }
 
         &-item {
-            border-radius: 4px;
-            text-align: left;
-            background: $color-white;
-            box-shadow: 0 20px 50px -5px rgba($spray-dk-blue-gray, .15);
-
-            &.generic-grid-item.quarter-width {
-                @include media-breakpoint-up(md) {
-                    width: calc(50% - 12px);
-                }
-                @include media-breakpoint-up(lg) {
-                    width: calc(33.3% - 16px);
-                }
-                @include media-breakpoint-up(xl) {
-                    width: calc(25% - 18px);
-                }
-            }
-
-
             > a {
                 position: relative;
                 display: block;
                 text-decoration: none;
+                transition: color $effect;
                 outline: none;
 
-                &[data-fancybox="data-fancybox"] {
+                &:hover, &:focus {
+                    .cards-callouts-grid-item-callout-action {
+                        color: $color-night;
+                    }
+                }
+            }
+
+            &-image {
+                display: block;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    max-width: none;
+                    height: 38vw;
+                    max-height: 200px;
+                    border-radius: 4px 4px 0 0;
+                    display: block;
+                    position: relative;
+                    z-index: 1;
+                    object-fit: cover;
+                    @include user-select;
+                    @include user-drag;
+                    @include media-breakpoint-down(xsm) {
+                        min-height: 150px;
+                    }
+                    @include media-breakpoint-up(md) {
+                        height: 170px;
+                        max-height: none;
+                        display: block !important;
+                    }
+                }
+            }
+
+            &-title {
+                margin: 0 0 10px;
+                font-size: 18px;
+                line-height: 21px;
+                font-weight: 500;
+                color: $color-night;
+                @include media-breakpoint-up(xl) {
+                    font-size: 21px;
+                    line-height: 24px;
+                }
+            }
+
+            &-callout-action {
+                a {
+                    color: inherit;
+                    font-size: inherit;
+                    font-weight: inherit;
+                    line-height: inherit;
+                    position: relative;
+                }
+
+                i {
+                    color: inherit;
+                    font-size: inherit;
+                    line-height: inherit;
+                    font-weight: inherit;
+                }
+            }
+
+            .tag {
+                padding: 3px 5px;
+                margin-bottom: 10px;
+                display: inline-block;
+                font: 800 10px/14px $font-default;
+                text-transform: uppercase;
+                letter-spacing: .05em;
+                color: white;
+                background: $spray-blue;
+                @include media-breakpoint-up(xl) {
+                    padding: 4px 6px;
+                    margin-bottom: 14px;
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+            }
+
+            &.callout-copy, &.callout-copy-image {
+                padding-left: 14px;
+                position: relative;
+
+                &::after {
+                    @include pseudo;
+                    width: 2px;
+                    border-left: 2px dotted $spray-dk-blue-gray;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    opacity: .2;
+                }
+
+                .generic-grid {
+                    flex-direction: row;
+                    gap: 24px;
+                    @include media-breakpoint-up(xl) {
+                        gap: 36px;
+                    }
+
+                    &-item {
+                        &.flex-cell {
+                            align-items: center;
+
+                            &-a {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                @include media-breakpoint-up(md) {
+                                    width: calc(50% - 12px);
+                                }
+                                @include media-breakpoint-up(xl) {
+                                    width: calc(45% - 18px);
+                                }
+                            }
+
+                            &-b {
+                                @include media-breakpoint-up(md) {
+                                    width: calc(50% - 12px);
+                                }
+                                @include media-breakpoint-up(xl) {
+                                    width: calc(55% - 18px);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .cards-callouts-grid-item-copy {
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    font-weight: 600;
+                    color: $spray-dk-blue-gray;
+                    @include media-breakpoint-up(xl) {
+                        font-size: 16px;
+                    }
+
+                    p {
+                        margin: 0;
+                        font-size: inherit;
+                        line-height: inherit;
+                        font-weight: inherit;
+                    }
+                }
+
+                .cards-callouts-grid-item-image {
+                    width: 100%;
+                    max-height: 218px;
+                    object-fit: cover;
+                    @include media-breakpoint-down(md) {
+                        max-height: 240px;
+                        aspect-ratio: 27/15;
+                    }
+                }
+
+                .cards-callouts-grid-item-callout-action {
+                    margin: 8px 0 0;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    font-weight: 600;
+                    @include media-breakpoint-up(xl) {
+                        margin-top: auto;
+                        margin-bottom: 6px;
+                        font-size: 16.8px;
+                        line-height: 21.6px;
+                    }
+
+                    .has-arrow::after {margin-left: 4px;}
+                }
+            }
+
+            &.callout-with-title-image {
+                padding-left: 0;
+                border-radius: 4px;
+                text-align: left;
+                background: $color-white;
+                box-shadow: 0 20px 50px -5px rgba($color-night, .15);
+                &::after {display: none;}
+
+                > a[data-fancybox="data-fancybox"] {
                     .cards-callouts-grid-item-image {
                         &::before {
                             @include pseudo;
@@ -176,427 +343,118 @@
                     }
 
                     &:hover, &:focus {
-                        .cards-callouts-grid-item-image {
-                            &::after {opacity: 0;}
-                        }
-                    }
-                }
-            }
-
-            .flex-cell {
-                align-items: center;
-            }
-
-            span.tag {
-                background: $spray-blue;
-                color: $light;
-                display: inline-block;
-                text-transform: uppercase;
-                font-family: $site-font-secondary;
-                font-size: 1.6rem;
-                font-weight: 800;
-                letter-spacing: .5px;
-                line-height: 1;
-                padding: 4px 6px;
-                margin-bottom: 1.2rem;
-                @include media-breakpoint-up(md) {
-                    font-size: 1.8rem;
-                    line-height: 1;
-                    padding: 4px 7px;
-                }
-                @include media-breakpoint-up(lg) {
-                    font-size: 1.7rem;
-                }
-            }
-
-            &-image {
-                display: block;
-                position: relative;
-
-                img {
-                    width: 100%;
-                    max-width: none;
-                    height: 38vw;
-                    max-height: 200px;
-                    border-radius: 4px 4px 0 0;
-                    display: block;
-                    position: relative;
-                    z-index: 1;
-                    object-fit: cover;
-                    @include user-select;
-                    @include user-drag;
-                    @include media-breakpoint-down(xsm) {
-                        min-height: 150px;
-                    }
-                    @include media-breakpoint-up(md) {
-                        height: 170px;
-                        max-height: none;
-                        display: block !important;
-                    }
-                }
-            }
-
-            &-copy {
-                padding: 16px;
-                @include media-breakpoint-up(md) {
-                    padding: 25px 24px;
-                }
-
-                p {
-                    margin: 0;
-                    font-size: 18px;
-                    line-height: 26px;
-                    font-weight: 500;
-                    letter-spacing: 0;
-                    color: $color-night;
-                    @include media-breakpoint-up(md) {
-                        font-size: 21px;
-                        line-height: 26px;
-                    }
-
-                    &::after {
-                        @include pseudo;
-                        width: 80px;
-                        height: 8px;
-                        margin-top: 14px;
-                        background: #4b9844;
-                    }
-                }
-
-                &.has-margin-top {
-                }
-            }
-
-            &-title {
-                color: $dark;
-                font-size: 2.2rem;
-                font-weight: 500;
-                letter-spacing: .25px;
-                line-height: .905;
-                @include media-breakpoint-up(md) {
-                    font-size: 2.4rem;
-                    line-height: 1;
-                }
-                @include media-breakpoint-up(xl) {
-                    font-size: 2.4rem;
-                }
-            }
-
-            &-callout-action {
-                color: $link-color;
-                font-size: 1.8rem;
-                font-weight: 800;
-                line-height: 1.285;
-                @include media-breakpoint-up(md) {
-                    font-size: 1.8rem;
-                }
-
-                a {
-                    color: inherit;
-                    font-size: inherit;
-                    font-weight: inherit;
-                    line-height: inherit;
-                    position: relative;
-                }
-
-                i {
-                    color: inherit;
-                    font-size: inherit;
-                    line-height: inherit;
-                    font-weight: inherit;
-                }
-            }
-        }
-
-        &-item:first-of-type {
-            @include media-breakpoint-up(xl) {
-                padding-bottom: 0;
-            }
-        }
-
-        &-item:last-of-type {
-            margin-bottom: 0;
-
-            @media #{$medium} {
-                border-bottom: none;
-            }
-        }
-
-        &-item.callout-copy-image {
-            @media #{$medium}, #{$large} {
-                border-bottom: 2px dotted rgba(63, 96, 116, .2);
-            }
-
-            @media #{$medium},#{$large} {
-                padding-bottom: 3rem;
-            }
-
-            .generic-grid {
-                border-bottom: 0;
-
-                &-item {
-                    @include media-breakpoint-up(md) {
-                        height: 100%;
-                        width: 50%;
-                    }
-                }
-            }
-
-            &-item.callout-copy-image:last-of-type {
-                padding-bottom: 0;
-            }
-
-            .flex-cell-a {
-                order: 2;
-            }
-
-            .flex-cell-b {
-                order: 1;
-
-                img {
-                    margin-bottom: 1.6rem;
-
-                    @include media-breakpoint-up(md) {
-                        margin-bottom: 0;
-                    }
-                }
-            }
-
-            @include media-breakpoint-up(md) {
-                padding-left: 1.5rem;
-                padding-right: 0;
-
-                .flex-cell-a {
-                    order: 1;
-                }
-
-                .flex-cell-b {
-                    order: 2;
-                }
-
-                .flex-cell:first-of-type {
-                    padding-right: 3.5rem;
-                }
-            }
-
-            @include media-breakpoint-up(lg) {
-                border-bottom: 0;
-                padding: 0 3.5rem 0 1.5rem;
-            }
-        }
-
-        &-item.callout-copy-image:last-of-type {
-            border-bottom: 2px dotted rgba(63, 96, 116, .2);
-            padding-right: 0;
-
-            @media #{ $medium-up } {
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-        }
-
-        &-item.half-width + &-item.quarter-width {
-            @include media-breakpoint-up(md) {
-                padding-left: 1.5rem;
-            }
-
-            @include media-breakpoint-up(lg) {
-                border-left: 2px dotted rgba(63, 96, 116, .2);
-                padding: 0 3.5rem 0 1.5rem;
-            }
-        }
-
-        &-item.half-width + &-item.half-width {
-            @include media-breakpoint-up(lg) {
-                border-left: 2px dotted rgba(63, 96, 116, .2);
-                padding-left: 1.5rem;
-            }
-        }
-
-        &-item.quarter-width + &-item.half-width {
-            @include media-breakpoint-up(lg) {
-                border-left: 2px dotted rgba(63, 96, 116, .2);
-                padding-left: 1.5rem;
-            }
-        }
-
-        &-item.quarter-width:nth-child(3n):not(.callout-with-title-image):not(.callout-alt-1) {
-            @include media-breakpoint-up(md) {
-                padding-left: 0;
-            }
-
-            @include media-breakpoint-up(lg) {
-                border-left: 2px dotted rgba(63, 96, 116, .2);
-                padding: 0 3.5rem 0 1.5rem;
-            }
-        }
-
-        &-item.callout-copy-image + .quarter-width + .quarter-width:nth-child(3n):not(.callout-with-title-image):not(.callout-alt-1) {
-            @include media-breakpoint-up(md) {
-                border-left: 2px dotted rgba(63, 96, 116, .2);
-                padding: 0 0 0 1.5rem;
-            }
-        }
-
-        .callout-alt {
-            > a {
-                padding-bottom: 0;
-
-                &:after {
-                    display: none;
-                }
-
-                &:hover,
-                &:focus {
-                    .callout-alt-wrapper {
-                        background-color: #98102e;
-                    }
-                }
-            }
-
-            &.callout-alt-1 {
-                > a {
-                    padding-bottom: 6px;
-
-                    &:hover,
-                    &:focus {
-                        text-decoration: none;
-                    }
-                }
-            }
-
-            &.is-in-generic-grid {
-                height: 100%;
-            }
-
-
-            &-wrapper {
-                background: $spray-red-orange;
-                height: 100%;
-                padding: 6rem 2rem 6rem;
-                text-align: center;
-                -webkit-transition: background .5s ease;
-                -moz-transition: background .5s ease;
-                -o-transition: background .5s ease;
-                transition: background .5s ease;
-
-                a:after {
-                    display: none;
-                }
-
-                h3, p {
-                    color: $light;
-                }
-
-                h3 {
-                    font-size: 2.2rem;
-
-                    @include media-breakpoint-up(md) {
-                        font-size: 2.4rem;
-                        line-height: 1;
-                    }
-
-                    @include media-breakpoint-up(xl) {
-                        font-size: 2.4rem;
+                        .cards-callouts-grid-item-image::after {opacity: 0;}
                     }
                 }
 
                 .cards-callouts-grid-item-title {
-                    margin-bottom: 3rem;
-                    position: relative;
+                    padding: 15px;
+                    color: $light;
+                    background: #183446;
+                }
 
-                    &:after {
-                        @include position(absolute, null 0 -2rem 50%);
-                        background-color: rgba($light, .3);
-                        content: '';
-                        height: 6px;
-                        opacity: 1;
-                        transition: all .8s cubic-bezier(0.79, .24, .51, .95);
-                        width: 80px;
-                        z-index: 1;
-                        transform: translateX(-50%);
+                .cards-callouts-grid-item-copy {
+                    padding: 16px;
+                    margin: 0;
+                    @include media-breakpoint-up(md) {
+                        padding: 24px;
+                    }
 
+                    p {
+                        margin: 0;
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 500;
+                        letter-spacing: 0;
+                        color: $color-night;
                         @include media-breakpoint-up(md) {
-                            bottom: -2rem;
-                            left: 50%;
-                            opacity: 1;
-                            transform: translateX(-50%);
+                            font-size: 21px;
+                            line-height: 26px;
+                        }
+
+                        &::after {
+                            @include pseudo;
+                            width: 80px;
+                            height: 8px;
+                            margin-top: 14px;
+                            background: #4b9844;
                         }
                     }
                 }
+            }
 
-                &.generic-card-wrapper-1 {
+            &.callout-alt {
+                padding-left: 0;
+
+                > a {
+                    height: 100%;
                     display: flex;
-                    align-items: center;
                     justify-content: center;
 
-                    i {
-                        font-size: 6.5rem;
-                        margin-bottom: 1rem;
-                        color: $light;
-
-                        @include media-breakpoint-up(lg) {
-                            font-size: 7rem;
-                        }
-
-                        @include media-breakpoint-up(xl) {
-                            font-size: 8.2rem;
-                        }
+                    &:hover, &:focus {
+                        .callout-alt-wrapper {background-color: $color-led-blue;}
                     }
+                }
+
+                .callout-alt-wrapper {
+                    width: 100%;
+                    height: 100%;
+                    padding: 24px 36px;
+                    border-radius: 4px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    color: white;
+                    background: $color-navy;
+                    transition: background-color $effect;
 
                     .cards-callouts-grid-item-title {
-                        margin: 0;
-
-                        &:after {
-                            display: none;
+                        margin-bottom: 8px;
+                        font-size: 18px;
+                        line-height: 21px;
+                        font-weight: 500;
+                        color: inherit;
+                        @include media-breakpoint-up(xl) {
+                            margin-bottom: 10px;
+                            font-size: 21px;
+                            line-height: 24px;
                         }
                     }
 
-                    &.card-wrapper-theme-1 {
-                        background: #f8a200;
-                    }
-
-                    &.card-wrapper-theme-2 {
-                        background: #183446;
-                    }
-                }
-            }
-
-            &:hover,
-            &:focus {
-                &-wrapper {
-                    background: #98102e;
-
-                    &.card-wrapper-theme-1 {
-                        background: #98102e;
-                    }
-
-                    &.card-wrapper-theme-2 {
-                        background: #98102e;
-                    }
-                }
-            }
-
-            @include media-breakpoint-up(lg) {
-                .generic-grid {
-                    &-item {
-                        &.quarter-width {
-                            width: 25% !important;
+                    .cards-callouts-grid-item-copy {
+                        margin-bottom: 8px;
+                        font-size: 15px;
+                        line-height: 1.3;
+                        font-weight: 500;
+                        color: inherit;
+                        @include media-breakpoint-up(xl) {
+                            margin-bottom: 14px;
                         }
 
-                        &.half-width {
-                            width: 50% !important;
+                        p:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .cards-callouts-grid-item-callout-action {
+                        margin-top: 0;
+                        margin-bottom: 0;
+
+                        .button-light-blue {
+                            color: $color-navy !important;
+                            background: white;
+                            @include media-breakpoint-up(md) {
+                                padding-right: 32px;
+                                padding-left: 32px;
+                            }
+                            &:hover, &:focus {
+                                background: $color-maui;
+                            }
                         }
                     }
                 }
-            }
-        }
-
-        .callout-with-title-image {
-            .cards-callouts-grid-item-title {
-                background: #183446;
-                color: $light;
-                padding: 15px;
             }
         }
     }
