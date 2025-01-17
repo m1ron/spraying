@@ -71,6 +71,24 @@
         }
     }
 
+    &-section {
+        margin-bottom: 4px;
+        display: block;
+        font-size: 14px;
+        line-height: 120%;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        color: $color-led-blue;
+        @include media-breakpoint-up(md) {
+            font-size: 15px;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+    }
+
     &.centered {
         text-align: center;
         .content-wrapper {
