@@ -1,23 +1,24 @@
+/* ===== CARDS-CALLOUTS ===== */
 .cards-callouts {
     margin: 4rem 0;
     position: relative;
     z-index: 1;
     font: 16px/1.5 $font-default;
     @include media-breakpoint-up(md) {
-        margin: 6rem 0;
+        margin: 5rem 0;
     }
     @include media-breakpoint-up(xl) {
-        margin: 9rem 0;
+        margin: 8rem 0;
     }
 
     &.light-gray {
         padding: 4rem 0;
         margin: 0;
         @include media-breakpoint-up(md) {
-            padding: 6rem 0;
+            padding: 5rem 0;
         }
         @include media-breakpoint-up(xl) {
-            padding: 9rem 0;
+            padding: 8rem 0;
         }
 
         &::after {
@@ -42,8 +43,7 @@
     .section-header {
         margin-bottom: 3rem;
         @include media-breakpoint-up(xl) {
-            margin-bottom: 41px;
-            //margin-bottom: 52px;
+            margin-bottom: 4rem;
         }
 
         small {
@@ -61,21 +61,8 @@
             }
         }
 
-        h2 {
-            margin: 0;
-            font-size: 24px;
-            line-height: 28px;
-            font-weight: bold;
-            letter-spacing: -.0175em;
-            color: $color-night;
-            @include media-breakpoint-up(xl) {
-                font-size: 28px;
-                line-height: 32px;
-            }
-        }
-
+        h1, h2, h3, h4, h5, h6 {margin: 0;}
         br {display: none;}
-
         > p:last-child {margin-bottom: 0;}
     }
 
@@ -132,6 +119,9 @@
                 &:hover, &:focus {
                     .cards-callouts-grid-item-callout-action {
                         color: $color-night;
+                    }
+                    .cards-callouts-grid-item-copy p::after {
+                        width: 100px;
                     }
                 }
             }
@@ -227,9 +217,6 @@
                 .generic-grid {
                     flex-direction: row;
                     gap: 24px;
-                    @include media-breakpoint-up(xl) {
-                        gap: 36px;
-                    }
 
                     &-item {
                         &.flex-cell {
@@ -243,7 +230,7 @@
                                     width: calc(50% - 12px);
                                 }
                                 @include media-breakpoint-up(xl) {
-                                    width: calc(45% - 18px);
+                                    width: calc(50% - 18px);
                                 }
                             }
 
@@ -252,7 +239,7 @@
                                     width: calc(50% - 12px);
                                 }
                                 @include media-breakpoint-up(xl) {
-                                    width: calc(55% - 18px);
+                                    width: calc(50% - 18px);
                                 }
                             }
                         }
@@ -263,7 +250,7 @@
                     margin-bottom: 8px;
                     font-size: 14px;
                     line-height: 1.5;
-                    font-weight: 600;
+                    font-weight: 500;
                     color: $spray-dk-blue-gray;
                     @include media-breakpoint-up(xl) {
                         font-size: 16px;
@@ -350,7 +337,7 @@
                 .cards-callouts-grid-item-title {
                     padding: 15px;
                     color: $light;
-                    background: #183446;
+                    background: $color-deep-space-blue;
                 }
 
                 .cards-callouts-grid-item-copy {
@@ -377,7 +364,8 @@
                             width: 80px;
                             height: 8px;
                             margin-top: 14px;
-                            background: #4b9844;
+                            background: $color-forest-green;
+                            transition: width $effect;
                         }
                     }
                 }

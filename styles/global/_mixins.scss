@@ -1,5 +1,7 @@
-@mixin diagonal-gradient {background: linear-gradient(to bottom right, #075287, #458ab7);}
 @mixin pseudo {content: '';display: block;overflow: hidden;}
+@mixin clearfix-new {content: '';display: table;clear: both;}
 @mixin font-smooth {-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 @mixin user-select {-webkit-touch-callout: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 @mixin user-drag {-webkit-user-drag: none;user-drag: none;}
+
+@mixin diagonal-gradient {background: linear-gradient(to bottom right, #075287, #458ab7);}

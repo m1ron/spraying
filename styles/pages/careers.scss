@@ -87,14 +87,6 @@
         @media #{$large-up}  { padding: 8rem 0; }
     }
 
-    .button-container {
-        margin-top: 3rem;
-        text-align: center;
-        .button-blue { 
-            @media #{$large-up} { font-size: 2.4rem; }
-         }
-    }
-
     .video-feature-container.left {
         @media #{$medium-up} { padding-bottom: 0; }
     }

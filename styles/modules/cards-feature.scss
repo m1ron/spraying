@@ -1,13 +1,13 @@
+/* ===== CARDS-FEATURE ===== */
 .cards-feature {
-
     &-container {
         margin: 4rem 0;
         font: 16px/1.5 $font-default;
         @include media-breakpoint-up(md) {
-            margin: 6rem 0;
+            margin: 5rem 0;
         }
         @include media-breakpoint-up(xl) {
-            margin: 9rem 0;
+            margin: 8rem 0;
         }
 
         .section-header {
@@ -21,9 +21,6 @@
                 margin: 3rem auto 0;
             }
         }
-    }
-
-    &-wrapper {
     }
 
     &-grid {
@@ -44,7 +41,6 @@
             position: relative;
 
             > a {
-                border-radius: 4px;
                 display: block;
                 position: relative;
                 z-index: 1;
@@ -143,6 +139,7 @@
             bottom: 16px;
             z-index: 2;
             background: white;
+            box-shadow: 0 15px 30px rgba($color-black, .15);
             cursor: default;
             @include media-breakpoint-up(sm) {
                 max-width: 280px;
@@ -214,33 +211,3 @@
         }
     }
 }
-
-@media #{$medium-up} {
-    .cards-feature {
-        flex-direction: row;
-        &.cardsLeft {
-            .cards-feature-image {
-                padding-left: 0;
-                padding-right: 0;
-                order: 1;
-            }
-            .cards-feature-text {
-                padding-right: 0;
-                order: 1;
-            }
-        }
-        &.cardsRight {
-            .cards-feature-image {
-                padding-left: 0;
-                padding-right: 0;
-                order: 1;
-            }
-            .cards-feature-text {
-                padding-left: 0;
-                order: 1;
-            }
-        }
-        &-text { padding: 0; }
-    }
-}
-

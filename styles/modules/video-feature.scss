@@ -21,10 +21,10 @@
         position: relative;
         z-index: 1;
         @include media-breakpoint-up(md) {
-            margin: 6rem 0;
+            margin: 5rem 0;
         }
         @include media-breakpoint-up(xl) {
-            margin: 9rem 0;
+            margin: 8rem 0;
         }
     }
 
@@ -61,7 +61,7 @@
         outline: none;
         transition: none;
         @include media-breakpoint-up(md) {
-            width: 600px;
+            width: 580px;
         }
         @include media-breakpoint-up(lg) {
             width: calc(50% - 12px);
@@ -73,7 +73,7 @@
             width: 100%;
             max-width: 100%;
             height: auto;
-            border-radius: 4px;
+            //border-radius: 4px;
             display: block;
             position: relative;
             z-index: 1;
@@ -134,15 +134,18 @@
 
     &-text {
         order: 4;
+        @include media-breakpoint-up(md) {
+            width: 580px;
+            margin: 0 auto;
+        }
         @include media-breakpoint-up(lg) {
             width: calc(50% - 12px);
+            margin: 0;
             order: 3;
             .videoRight & {order: 2;}
         }
         @include media-breakpoint-up(xl) {
             padding-right: 40px;
-            font-size: 18px;
-            line-height: 28px;
             .videoLeft & {padding-left: 40px;}
             .videoRight & {padding-right: 40px;}
         }
@@ -206,13 +209,11 @@
         }
 
         p {
-            margin: 0 0 24px;
-            font-size: inherit;
-            line-height: inherit;
-            font-weight: inherit;
+            //margin: 0 0 24px;
             &:last-child {margin-bottom: 0;}
         }
 
+        /*
         ul, ol {
             margin: 0 0 24px;
             font-size: inherit;
@@ -246,6 +247,7 @@
                 }
             }
         }
+         */
 
         &-copy {
             display: block;
@@ -363,21 +365,6 @@
     &-description {
         grid-area: description;
         border-bottom: 1px $spray-blue dotted;
-
-        * {
-            margin-bottom: 0;
-            padding-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 500;
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 300;
-        }
     }
 }
 

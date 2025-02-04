@@ -1,208 +1,84 @@
 @font-face {
-  font-family: 'icomoon';
-  src:
-    url('../fonts/icomoon.ttf?od3jx8') format('truetype'),
-    url('../fonts/icomoon.woff?od3jx8') format('woff'),
-    url('../fonts/icomoon.svg?od3jx8#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.ttf?od3jx8') format('truetype'), url('../fonts/icomoon.woff?od3jx8') format('woff'), url('../fonts/icomoon.svg?od3jx8#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* use !important to prevent issues with browser extensions that change fonts */
-  display: inline-block;
-  font-family: 'icomoon' !important;
-  font-size: inherit;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: 1;
-  speak: none;
-  text-transform: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* use !important to prevent issues with browser extensions that change fonts */
+    display: inline-block;
+    font-family: 'icomoon' !important;
+    font-size: inherit;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
 }
 
-
-.icon-full-cone:before {
-  content: "\e93a";
-}
-.icon-checklist:before {
-  content: "\e937";
-}
-.icon-gauge:before {
-  content: "\e938";
-}
-.icon-sliders:before {
-  content: "\e939";
-}
-.icon-nozzle-off:before {
-  content: "\e900";
-}
-.icon-alert:before {
-  content: "\e901";
-}
-.icon-arrow:before {
-  content: "\e902";
-}
-.icon-bulletin:before {
-  content: "\e903";
-}
-.icon-calendar:before {
-  content: "\e904";
-}
-.icon-cancel:before {
-  content: "\e905";
-}
-.icon-cart:before {
-  content: "\e906";
-}
-.icon-case-study:before {
-  content: "\e907";
-}
-.icon-catalog:before {
-  content: "\e908";
-}
-.icon-chat:before {
-  content: "\e909";
-}
-.icon-checkmark:before {
-  content: "\e90a";
-}
-.icon-circle-minus:before {
-  content: "\e90b";
-}
-.icon-circle-plus:before {
-  content: "\e90c";
-}
-.icon-circle-question-mark:before {
-  content: "\e90d";
-}
-.icon-double-arrow:before {
-  content: "\e90e";
-}
-.icon-download:before {
-  content: "\e90f";
-}
-.icon-enlarge:before {
-  content: "\e910";
-}
-.icon-filter:before {
-  content: "\e911";
-}
-.icon-gear-engineering:before {
-  content: "\e912";
-}
-.icon-invoice:before {
-  content: "\e913";
-}
-.icon-journal-paper:before {
-  content: "\e914";
-}
-.icon-local-expert:before {
-  content: "\e915";
-}
-.icon-menu:before {
-  content: "\e916";
-}
-.icon-minus:before {
-  content: "\e917";
-}
-.icon-nozzle:before {
-  content: "\e918";
-}
-.icon-nozzle-replacement:before {
-  content: "\e919";
-}
-.icon-person:before {
-  content: "\e91a";
-}
-.icon-pin:before {
-  content: "\e91b";
-}
-.icon-plus:before {
-  content: "\e91c";
-}
-.icon-question-mark:before {
-  content: "\e91d";
-}
-.icon-reorder:before {
-  content: "\e91e";
-}
-.icon-return:before {
-  content: "\e91f";
-}
-.icon-search:before {
-  content: "\e920";
-}
-.icon-technical-manual:before {
-  content: "\e921";
-}
-.icon-thumbsup:before {
-  content: "\e922";
-}
-.icon-truck:before {
-  content: "\e923";
-}
-.icon-video:before {
-  content: "\e924";
-}
-.icon-viewdoc:before {
-  content: "\e925";
-}
-.icon-whitepaper:before {
-  content: "\e926";
-}
+.icon-full-cone:before {content: "\e93a";}
+.icon-checklist:before {content: "\e937";}
+.icon-gauge:before {content: "\e938";}
+.icon-sliders:before {content: "\e939";}
+.icon-nozzle-off:before {content: "\e900";}
+.icon-alert:before {content: "\e901";}
+.icon-arrow:before {content: "\e902";}
+.icon-bulletin:before {content: "\e903";}
+.icon-calendar:before {content: "\e904";}
+.icon-cancel:before {content: "\e905";}
+.icon-cart:before {content: "\e906";}
+.icon-case-study:before {content: "\e907";}
+.icon-catalog:before {content: "\e908";}
+.icon-chat:before {content: "\e909";}
+.icon-checkmark:before {content: "\e90a";}
+.icon-circle-minus:before {content: "\e90b";}
+.icon-circle-plus:before {content: "\e90c";}
+.icon-circle-question-mark:before {content: "\e90d";}
+.icon-double-arrow:before {content: "\e90e";}
+.icon-download:before {content: "\e90f";}
+.icon-enlarge:before {content: "\e910";}
+.icon-filter:before {content: "\e911";}
+.icon-gear-engineering:before {content: "\e912";}
+.icon-invoice:before {content: "\e913";}
+.icon-journal-paper:before {content: "\e914";}
+.icon-local-expert:before {content: "\e915";}
+.icon-menu:before {content: "\e916";}
+.icon-minus:before {content: "\e917";}
+.icon-nozzle:before {content: "\e918";}
+.icon-nozzle-replacement:before {content: "\e919";}
+.icon-person:before {content: "\e91a";}
+.icon-pin:before {content: "\e91b";}
+.icon-plus:before {content: "\e91c";}
+.icon-question-mark:before {content: "\e91d";}
+.icon-reorder:before {content: "\e91e";}
+.icon-return:before {content: "\e91f";}
+.icon-search:before {content: "\e920";}
+.icon-technical-manual:before {content: "\e921";}
+.icon-thumbsup:before {content: "\e922";}
+.icon-truck:before {content: "\e923";}
+.icon-video:before {content: "\e924";}
+.icon-viewdoc:before {content: "\e925";}
+.icon-whitepaper:before {content: "\e926";}
 //Adding redundancy for Resource consistency; also use for conference paper
-.icon-white-paper:before, .icon-conference-paper:before {
-    content: "\e926";
-}
-.icon-drop:before {
-  content: "\e927";
-}
-.icon-expand:before {
-  content: "\e928";
-}
-.icon-play:before {
-  content: "\e929";
-}
-.icon-measure:before {
-  content: "\e92a";
-}
-.icon-vacation:before {
-  content: "\e92b";
-}
-.icon-umbrella:before {
-  content: "\e92c";
-}
-.icon-piggy-bank:before {
-  content: "\e92d";
-}
-.icon-media-center:before {
-  content: "\e92e";
-}
-.icon-events:before {
-  content: "\e92f";
-}
-.icon-blog:before {
-  content: "\e930";
-}
-.icon-trash:before {
-  content: "\e931";
-}
-.icon-contact:before {
-  content: "\e932";
-}
-.icon-cvv:before {
-  content: "\e933";
-}
-.icon-careers:before {
-  content: "\e934";
-}
-.icon-upload:before {
-  content: "\e936";
-}
-.icon-contact-us:before {
-  content: "\e935";
-}
+.icon-white-paper:before, .icon-conference-paper:before {content: "\e926";}
+.icon-drop:before {content: "\e927";}
+.icon-expand:before {content: "\e928";}
+.icon-play:before {content: "\e929";}
+.icon-measure:before {content: "\e92a";}
+.icon-vacation:before {content: "\e92b";}
+.icon-umbrella:before {content: "\e92c";}
+.icon-piggy-bank:before {content: "\e92d";}
+.icon-media-center:before {content: "\e92e";}
+.icon-events:before {content: "\e92f";}
+.icon-blog:before {content: "\e930";}
+.icon-trash:before {content: "\e931";}
+.icon-contact:before {content: "\e932";}
+.icon-cvv:before {content: "\e933";}
+.icon-careers:before {content: "\e934";}
+.icon-upload:before {content: "\e936";}
+.icon-contact-us:before {content: "\e935";}

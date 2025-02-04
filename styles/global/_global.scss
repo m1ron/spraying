@@ -1,21 +1,24 @@
-@import "_variables";
-@import "_media-queries";
-@import "_mixins";
-@import "_reset";
-@import "base";
+@import "variables";
+@import "mixins";
+@import "media-queries";
+@import "reset";
+@import "fonts";
+
+@import "default";
+
+@import "container";
+@import "header"; // ++
+@import "navigation"; // +~
+@import "footer"; // ++
+
+@import "layout";
+@import "generic-grid";
 @import "bourbon";
 @import "buttons";
-@import "elements";
 @import "flyout-menu";
-@import "fonts";
-@import "footer";
 @import "form";
-@import "generic-grid";
-@import "header";
 @import "icons";
-@import "layout";
 @import "modal";
-@import "navigation";
 @import "slider.scss";
 @import "slider-custom.scss";
 @import "utilities";

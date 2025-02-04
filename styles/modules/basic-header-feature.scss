@@ -1,8 +1,6 @@
 .basic-header-feature {
     padding: 3rem 0;
     margin: 0;
-    font: 15px/150% $font-default;
-    color: $color-black;
     position: relative;
     z-index: 1;
     background: $color-mist;
@@ -35,29 +33,22 @@
 
 
     h1 {
-        margin: 0 0 12px 0;
-        font: 600 42px/50px $font-default;
+        margin: 0 0 12px;
         color: $color-night;
         text-transform: uppercase;
-        @include media-breakpoint-up(xss) {
-            font-size: 42px;
-            line-height: 50px;
+        @include media-breakpoint-up(md) {
+            letter-spacing: .03em;
         }
     }
 
     hr {
-        max-width: 79rem;
+        max-width: 80rem;
         padding: 0;
         border-top: 2px dotted rgba($color-ocean, .5);
         margin: 12px auto;
     }
 
-    p {
-        font-size: inherit;
-        line-height: inherit;
-        font-weight: inherit;
-        &:last-of-type {margin-bottom: 0;}
-    }
+    p:last-child {margin-bottom: 0;}
 
     .content-wrapper {
         max-width: 640px;

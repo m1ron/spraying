@@ -60,10 +60,13 @@ $site-font-secondary: 'mr-eaves-xl-modern-narrow', sans-serif;
 
 // NEW Colors
 $color-black: #0a0a1f;
+$color-deep-space-blue: #183446;
 $color-night: #242f37;
 $color-navy: #005b94;
 $color-led-blue: #0065a4;
 $color-blue: #00abe5;
+$color-forest-green: #4b9844;
+$color-green: #57b160;
 $color-silver: #757575;
 $color-gray: #979797;
 $color-ocean: #aebdc6;
@@ -72,7 +75,6 @@ $color-mist: #eef1f4;
 $color-white: #fff;
 
 // NEW Fonts
-$font-old: $site-font;
 $font-default: 'Inter', sans-serif;
 $font-fa: 'FontAwesome' !important;
 
@@ -96,7 +98,7 @@ $grid-breakpoints: (
     md: 768px,
     lg: 992px,
     xl: 1200px,
-    xlm: 1380px,
+    xlm: 1400px,
     xxl: 1640px,
     xxxl: 1900px
 ) !default;

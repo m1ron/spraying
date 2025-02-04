@@ -1,33 +1,10 @@
+/* ===== WYSIWYG ===== */
 .wysiwyg-content {
-    padding: 0 2rem;
-    margin: 4rem auto;
-    position: relative;
-    z-index: 1;
-    font-family: $font-default;
-    background: $light;
+    margin: 4rem 0;
     @include media-breakpoint-up(md) {
-        padding: 0 4rem;
-        margin-top: 6rem;
-        margin-bottom: 6rem;
+        margin: 5rem 0;
     }
     @include media-breakpoint-up(xl) {
-        padding: 0 8rem;
-        margin-top: 9rem;
-        margin-bottom: 9rem;
-    }
-    @include media-breakpoint-up(xl) {
-        padding: 0 12rem;
-    }
-
-    a {
-        color: $color-navy !important;
-        text-decoration: none;
-        &:hover, &:focus {
-            text-decoration: underline;
-        }
-    }
-
-    .article-copy a {
-        color: $color-navy !important;
+        margin: 8rem 0;
     }
 }

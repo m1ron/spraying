@@ -1,25 +1,26 @@
+/* ===== CTA-BAR ===== */
 .cta-bar {
     margin: 4rem 0;
     @include media-breakpoint-up(md) {
-        margin: 6rem 0;
+        margin: 5rem 0;
     }
     @include media-breakpoint-up(xl) {
-        margin: 9rem 0;
+        margin: 8rem 0;
     }
 
     &.bottom-0 {
         margin-bottom: 4rem !important;
         @include media-breakpoint-up(md) {
-            margin-bottom: 6rem !important;
+            margin-bottom: 5rem !important;
         }
         @include media-breakpoint-up(xl) {
-            margin-bottom: 9rem !important;
+            margin-bottom: 8rem !important;
         }
     }
 
     .cta-content {
         width: 100%;
-        padding: 24px;
+        padding: 24px 12px;
         border-radius: 4px;
         margin: 0 auto;
         position: relative;
@@ -28,6 +29,9 @@
         text-align: center;
         color: $color-night;
         background: $color-maui;
+        @include media-breakpoint-up(sm) {
+            padding: 24px;
+        }
         @include media-breakpoint-up(xl) {
             padding: 38px 40px 44px;
         }
@@ -68,7 +72,7 @@
         margin-top: 16px;
         display: inline-block;
         font: 600 14px/18px $font-default;
-        letter-spacing: .05em;
+        letter-spacing: .025em;
         color: $color-white !important;
         text-transform: none;
         background: $color-navy;
@@ -95,6 +99,9 @@
     }
 
     &-alt {
-        background-color: $spray-dkst-blue;
+        .cta-content {
+            color: white;
+            background-color: $spray-dkst-blue;
+        }
     }
 }

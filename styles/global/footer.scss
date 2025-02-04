@@ -2,7 +2,8 @@
 .site-footer {
     padding: 5rem 0;
     position: relative;
-    font: 14px/150% $font-default;
+    font-size: 14px;
+    line-height: 1.5;
     letter-spacing: .015em;
     color: $color-ocean;
     background-color: $color-night;
@@ -62,6 +63,7 @@
     }
 
     .social-icon-list {
+        padding: 0;
         margin: 0 auto 3rem;
         display: flex;
         justify-content: center;
@@ -79,9 +81,9 @@
         }
 
         &-item {
-            color: $color-ocean;
             display: block;
             font-size: 2rem;
+            color: $color-ocean;
             @include media-breakpoint-up(xl) {
                 font-size: 24px;
             }
@@ -101,7 +103,6 @@
     .copyright {
         margin: 0;
         font-size: 13px;
-        line-height: 1.5;
         font-weight: 500;
 
         strong {
@@ -110,13 +111,13 @@
     }
 
     &-links {
+        padding: 0;
         margin: 1.5rem 0 0;
         font-size: 14px;
-        line-height: 1.5;
         list-style: none;
 
         li {
-            margin-bottom: 0;
+            margin: 0;
             position: relative;
             display: block;
 
@@ -157,7 +158,6 @@
                 margin: 0 0 3rem;
                 list-style: none;
                 font-size: 9px;
-                line-height: 1.5;
                 word-break: break-word;
                 @include media-breakpoint-up(xl) {
                     width: auto;
@@ -166,7 +166,7 @@
                 }
 
                 li {
-                    margin-bottom: 6px;
+                    margin: 0 0 6px;
                     &:last-child {margin-bottom: 0;}
                     @include media-breakpoint-up(xl) {
                         margin-bottom: 16px;

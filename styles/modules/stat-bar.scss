@@ -1,3 +1,4 @@
+/* ===== STAT-BAR ===== */
 .stat-bar {
     padding: 2.6rem 1rem 2.6rem;
     position: relative;
@@ -8,11 +9,11 @@
     box-shadow: 0 20px 50px 0 rgba($color-ocean, .15);
     @include media-breakpoint-up(md) {
         padding: 2.6rem 2rem;
-        margin: 6rem 0;
+        margin: 5rem 0;
     }
     @include media-breakpoint-up(xl) {
         padding: 3rem;
-        margin: 9rem 0;
+        margin: 8rem 0;
     }
 
     &-wrapper {
@@ -22,6 +23,7 @@
         justify-content: center;
         @media #{$medium-up} { flex-direction: row; }
     }
+
     &-stat {
         color: $spray-blue;
         font-family: $site-font-secondary;
@@ -34,6 +36,7 @@
             text-align: right;
         }
     }
+
     &-copy {
         color: $spray-dk-blue-gray;
         font-size: 2rem;

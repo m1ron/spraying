@@ -1,9 +1,13 @@
 .main-contact-form {
     padding-bottom: 5.5rem;
 }
+
 .contact-us-form {
     padding: 0 2rem;
-    @media #{$medium-up}{padding: 0};
+    @media #{$medium-up}{
+        padding: 0
+    };
+
     .spray-form-field {
         margin-bottom: 2rem;
         &.product-interest {
@@ -19,11 +23,12 @@
         }
     }
 }
+
 .g-recaptcha {
     left: -10px;
     margin-bottom: 3rem;
     position: relative;
-    @media screen and (min-width: 330px){
+    @media screen and (min-width: 330px) {
         position: static;
     }
 }
