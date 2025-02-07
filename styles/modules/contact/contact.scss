@@ -1,18 +1,21 @@
-.main-contact-form {
-    padding-bottom: 5.5rem;
+/* CONTACT */
+.calculator-wrapper .main-contact-form {
+    padding-bottom: 5.5rem !important;
 }
 
 .contact-us-form {
     padding: 0 2rem;
-    @media #{$medium-up}{
-        padding: 0
-    };
+    @include media-breakpoint-up(md) {
+        padding: 0;
+    }
 
     .spray-form-field {
         margin-bottom: 2rem;
+
         &.product-interest {
             margin-top: 3rem;
         }
+
         fieldset {
             label {
                 color: $spray-dk-blue-gray;

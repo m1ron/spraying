@@ -1,18 +1,8 @@
 .landing-page {
-    .header-feature-cta-title {
-        text-transform: none !important;
-        letter-spacing: -0.3rem;
-        line-height: 0.95;
-        font-size: 4.2rem;
-
-        @media #{$medium-up} { font-size: 5rem; }
-        @media #{$large-up} { font-size: 6.2rem; }
-        @media #{$xlarge-up} { font-size: 6.4rem; }
-    }
     .article-copy {
         background-color: $spray-lt-gray;
         padding: 2rem;
-        ul { margin-top: 2rem; }
+
         &-flex {
             @media #{$medium-up} {
                 display: flex;
@@ -30,6 +20,7 @@
             }
         }
     }
+
     &-cta-link {
         &:hover {
             text-decoration: none;

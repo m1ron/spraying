@@ -4,14 +4,11 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 36px;
     color: #161c2d;
     @include media-breakpoint-up(md) {
         flex-flow: row wrap;
         align-items: flex-start;
-    }
-    @include media-breakpoint-up(xxl) {
-        gap: 36px;
     }
 
     &-container {
@@ -48,6 +45,8 @@
 
         &-desc {
             margin: 0;
+            font-size: 14px;
+            line-height: 18px;
         }
     }
 }

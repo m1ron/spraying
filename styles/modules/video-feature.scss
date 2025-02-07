@@ -264,13 +264,13 @@
         }
 
         .button-blue {
-            @include media-breakpoint-up(md) {
-                margin-top: 12px;
-            }
             border: 1.5px solid $color-led-blue;
             color: $color-navy !important;
             background: white;
             box-shadow: inset 0 -3px 0 rgba(black, .2);
+            @include media-breakpoint-up(md) {
+                margin-top: 12px;
+            }
         }
 
         & > *:last-child, &-copy > *:last-child {

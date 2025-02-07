@@ -3,7 +3,8 @@
     padding: 5rem 16px !important;
     margin: 0 -16px;
     position: relative;
-    font: 14px/1.5 $font-default;
+    font-size: 14px;
+    line-height: 1.5;
     color: $color-night;
     background-position: -100px -100px;
     background-repeat: no-repeat;
@@ -109,19 +110,27 @@
         }
 
         &-subhead {
-            color: $spray-ltst-blue;
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: 0.1rem;
-            line-height: 1.125;
-            margin: 0 auto 1rem;
-            text-align: center;
+            margin-bottom: 4px;
+            display: block;
+            font-size: 14px;
+            line-height: 120%;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            color: $color-led-blue;
+            @include media-breakpoint-up(md) {
+                font-size: 15px;
+            }
             @include media-breakpoint-up(xl) {
-                font-size: 2.2rem;
-                line-height: 1.2;
+                margin-bottom: 8px;
+                font-size: 16px;
             }
 
             &:empty {display: none;}
+        }
+
+        &-subhead + &-title {
+            color: $color-night;
         }
 
         hr {
@@ -207,35 +216,30 @@
         &::after {background: none;}
 
         .header-feature-cta {
+            padding: 5rem 2rem;
             margin: 0 auto;
             background: transparent;
-            padding: 5rem 2rem;
-
-            @media #{$small-up} {
+            @include media-breakpoint-up(sm) {
                 padding: 8rem 4rem 6rem;
             }
-
-            @media #{$medium-up} {
+            @include media-breakpoint-up(md) {
                 padding: 10rem 6rem 8rem;
             }
 
             h1, p, h3 {
-                color: #fff;
+                color: white;
             }
 
             h1 {
                 font-weight: 100;
                 font-size: 4.2rem;
-
-                @media #{$small-up} {
+                @include media-breakpoint-up(sm) {
                     font-size: 5rem;
                 }
-
-                @media #{$large-up} {
+                @include media-breakpoint-up(md) {
                     font-size: 7rem;
                 }
-
-                @media #{$xlarge-up} {
+                @include media-breakpoint-up(xl) {
                     font-size: 7.5rem;
                 }
             }
@@ -245,8 +249,7 @@
                 font-size: 2rem;
                 letter-spacing: 0.31px;
                 margin-bottom: 1rem;
-
-                @media #{$medium-up} {
+                @include media-breakpoint-up(md) {
                     font-size: 2.2rem;
                 }
             }
@@ -254,22 +257,20 @@
             p {
                 font-weight: 500;
                 font-size: 1.5rem;
-
-                @media #{$xlarge-up} {
+                @include media-breakpoint-up(xl) {
                     font-size: 1.8rem;
                 }
             }
 
             hr {
                 border-top: 2px dotted rgba(255, 255, 255, 0.4);
-
-                @media #{$medium-up} {
+                @include media-breakpoint-up(md) {
                     max-width: 50rem;
                 }
             }
 
             .button-blue {
-                @media #{$large-up} {
+                @include media-breakpoint-up(lg) {
                     bottom: -3rem;
                 }
             }

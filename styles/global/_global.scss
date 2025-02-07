@@ -12,11 +12,12 @@
 @import "footer"; // ++
 
 @import "layout";
-@import "generic-grid";
-@import "bourbon";
-@import "buttons";
-@import "flyout-menu";
 @import "form";
+@import "generic-grid";
+@import "buttons";
+
+@import "bourbon";
+@import "flyout-menu";
 @import "icons";
 @import "modal";
 @import "slider.scss";
