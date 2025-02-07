@@ -117,11 +117,12 @@
                 outline: none;
 
                 &:hover, &:focus {
+                    .cards-callouts-grid-item-copy {
+                        color: $color-night;
+                        p::after {width: 100px;}
+                    }
                     .cards-callouts-grid-item-callout-action {
                         color: $color-night;
-                    }
-                    .cards-callouts-grid-item-copy p::after {
-                        width: 100px;
                     }
                 }
             }
@@ -252,6 +253,7 @@
                     line-height: 1.5;
                     font-weight: 500;
                     color: $spray-dk-blue-gray;
+                    transition: color $effect;
                     @include media-breakpoint-up(xl) {
                         font-size: 16px;
                     }
@@ -261,6 +263,10 @@
                         font-size: inherit;
                         line-height: inherit;
                         font-weight: inherit;
+
+                        span {
+                            font-size: inherit !important;
+                        }
                     }
                 }
 
@@ -279,6 +285,7 @@
                     font-size: 14px;
                     line-height: 1.5;
                     font-weight: 600;
+                    transition: color $effect;
                     @include media-breakpoint-up(xl) {
                         margin-top: auto;
                         margin-bottom: 6px;
@@ -286,7 +293,12 @@
                         line-height: 21.6px;
                     }
 
-                    .has-arrow::after {margin-left: 4px;}
+                    &:last-child {margin-bottom: 0;}
+
+                    .has-arrow::after {
+                        margin-top: 1px;
+                        margin-left: 4px;
+                    }
                 }
             }
 

@@ -339,7 +339,7 @@
             top: -4px !important;
         }
         [type='checkbox']:not(:checked) + label, [type='checkbox']:checked + label {
-            padding-left: 3.2rem !important;
+            padding-left: 3rem !important;
             &.optional {
                 font-weight: 400;
             }

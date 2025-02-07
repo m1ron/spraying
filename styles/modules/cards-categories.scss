@@ -194,12 +194,13 @@
         }
 
         &-callout-action {
-            display: none;
+            //display: none;
+            display: block;
             font-weight: 500;
             @include media-breakpoint-up(md) {
                 margin-top: 6px;
                 margin-bottom: 0;
-                display: block !important;
+                //display: block !important;
                 &.hide-card-link {visibility: hidden;}
             }
 

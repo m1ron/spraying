@@ -102,34 +102,22 @@
 
                 &:hover, &:focus {
                     text-decoration: none;
-
-                    .cards-default-grid-item-callout-action {
-                        color: $color-night;
-                    }
-                    > .cards-default-grid-item-wrapper {
-                        @include media-breakpoint-up(xl) {
-                            transform: scale(1.025);
-                        }
-                    }
+                    .cards-default-grid-item-callout-action {color: $color-night;}
                 }
             }
 
             &-wrapper {
                 height: auto !important;
-                padding: 2rem 3rem 2.5rem;
-                //border-top: 6px solid $spray-red-orange;
+                padding: 24px;
                 border-radius: 4px;
                 position: relative;
                 text-align: center;
                 background-color: white;
                 transition: transform $effect;
-                box-shadow: 0 10px 20px -5px rgba(63, 96, 116, 0.15), inset 0 0 0 1px rgba(63, 96, 115, 0.15);
+                box-shadow: 0 10px 20px -5px rgba($spray-dk-blue-gray, .15), inset 0 0 0 1px rgba($spray-dk-blue-gray, .15);
                 @include media-breakpoint-up(md) {
                     min-height: 100%;
-                    box-shadow: 0 20px 50px -5px rgba(63, 96, 116, 0.15), inset 0 0 0 1px rgba(63, 96, 115, 0.15);
-                }
-                @include media-breakpoint-up(md) {
-                    padding: 3rem;
+                    box-shadow: 0 20px 50px -5px rgba($spray-dk-blue-gray, .15), inset 0 0 0 1px rgba($spray-dk-blue-gray, .15);
                 }
 
                 &::before {
@@ -142,7 +130,7 @@
                     right: 0;
                     left: 0;
                     z-index: 5;
-                    background: $color-green;
+                    background: $color-navy;
                     @include media-breakpoint-up(md) {
                         display: block;
                     }
@@ -160,7 +148,7 @@
                     margin-bottom: 1rem;
                     @include media-breakpoint-up(lg) {
                         font-size: 7rem;
-                        margin-bottom: 2rem;
+                        margin-bottom: 1.5rem;
                     }
                     @include media-breakpoint-up(xl) {
                         font-size: 8.2rem;
@@ -169,19 +157,20 @@
             }
 
             &-title {
-                margin-bottom: 1rem;
+                margin-bottom: 12px;
             }
 
             &-copy {
                 font-size: 14px;
                 line-height: 1.5;
-                color: $spray-dk-blue-gray;
+                color: $color-night;
+                opacity: .8;
 
                 p:last-child {margin-bottom: 0;}
             }
 
             &-callout-action {
-                margin-top: 1rem;
+                margin-top: .5rem;
                 align-items: center;
                 display: flex;
                 justify-content: center;
@@ -189,13 +178,17 @@
                 font-weight: 500;
                 color: $color-navy;
                 transition: color $effect;
+                @include media-breakpoint-up(md) {
+                    margin-top: 1rem;
+                    font-size: 15px;
+                }
 
                 a {
                     color: inherit;
                 }
 
                 i {
-                    padding-left: 0.5rem;
+                    padding-left: .5rem;
                     color: inherit;
                     line-height: 1;
                 }
@@ -203,12 +196,6 @@
 
             &-wrapper.left .cards-default-grid-item-callout-action {
                 justify-content: flex-start;
-            }
-
-            &.with-product {
-                @include media-breakpoint-up(md) {
-                    margin-bottom: 4rem;
-                }
             }
         }
     }
@@ -221,51 +208,47 @@
     }
 
     .product-spotlight {
-        background-color: $light;
-        padding-bottom: 1rem;
-        box-shadow: 0 10px 20px -5px rgba(63, 96, 116, 0.15), inset 0 0 0 1px rgba(63, 96, 115, 0.15);
+        height: auto !important;
+        border-radius: 0 0 4px 4px;
+        margin-top: -4px;
+        background-color: white;
+        box-shadow: 0 10px 20px -5px rgba($spray-dk-blue-gray, .15), inset 0 0 0 1px rgba($spray-dk-blue-gray, .15);
         @include media-breakpoint-up(md) {
-            box-shadow: 0 20px 50px -5px rgba(63, 96, 116, 0.15), inset 0 0 0 1px rgba(63, 96, 115, 0.15);
+            box-shadow: 0 20px 50px -5px rgba($spray-dk-blue-gray, .15), inset 0 0 0 1px rgba($spray-dk-blue-gray, .15);
         }
 
         &-title {
-            background: $spray-red-orange;
-            color: $light;
-            font-family: $site-font-secondary;
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin: 0;
-            max-width: 100%;
-            padding: 0.4rem 2rem;
             width: 100%;
-            @include media-breakpoint-up(lg) {
-                padding: 0.4rem 4rem;
-                font-size: 1.7rem;
-            }
+            padding: 3px 24px;
+            margin: 0;
+            font: 800 12px/14px $font-default;
+            letter-spacing: -.0125em;
+            color: white;
+            background: $color-navy;
         }
 
         &-grid {
+            width: 100%;
+            max-width: 550px;
+            padding: 16px 24px;
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
-            padding: 2rem 2rem 0;
-            width: 100%;
-            max-width: 550px;
-
-            @include media-breakpoint-up(lg) {
-                padding: 2rem 3rem 0;
-            }
 
             &-image {
-                text-align: center;
-                padding-right: 1rem;
                 width: 30%;
                 max-width: 150px;
+                padding-right: 1rem;
+                text-align: center;
                 @include media-breakpoint-up(md) {
                     width: 40%;
                 }
-                @include media-breakpoint-up(lg) {
-                    padding-right: 2rem;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    @include user-select;
                 }
             }
 
@@ -276,26 +259,36 @@
                 }
 
                 &-title {
-                    font-size: 1.6rem;
+                    margin: 0 0 .5rem;
+                    font-size: 14px;
+                    line-height: 1.4;
                     font-weight: 500;
-                    margin: 0 0 1rem;
-                    @include media-breakpoint-up(lg) {
-                        font-size: 1.8rem;
-                    }
+                    opacity: .9;
                 }
 
                 &-action {
+                    margin-top: .5rem;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $color-navy;
+                    transition: color $effect;
+
                     a {
-                        color: $link-color;
-                        font-size: 1.4rem;
-                        font-weight: 600;
-                        line-height: 1.285;
-                        position: relative;
-                        @include media-breakpoint-up(lg) {
-                            font-size: 1.6rem;
-                        }
+                        color: inherit;
+                    }
+
+                    i {
+                        padding-left: .5rem;
+                        color: inherit;
+                        line-height: 1;
                     }
                 }
+            }
+        }
+
+        &:hover {
+            .product-spotlight-grid-copy-action {
+                color: $color-night;
             }
         }
     }
