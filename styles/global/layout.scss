@@ -1,56 +1,66 @@
-.flex-wrapper-container {
-    margin: 0 auto;
-    max-width: 1170px;
-}
+/* ===== FLEX-WRAPPER ===== */
 .flex-wrapper {
-    margin: 0 auto;
     width: 100%;
-    section.spray-form {
-        padding-right: 2rem;
-        padding-bottom: 2rem;
-        padding-left: 2rem;
-    }
-}
-
-@media #{$medium-up} {
-    .flex-wrapper {
+    margin: 0 auto;
+    @include media-breakpoint-up(md) {
         display: flex;
         justify-content: center;
+    }
+
+    &-container {
+        max-width: 1170px;
         margin: 0 auto;
-        width: 100%;
-        .sidebar-cards {
-            order: 2;
+    }
+
+    section.spray-form {
+        padding-right: 2rem;
+        padding-left: 2rem;
+        @include media-breakpoint-up(md) {
             width: 50%;
+            margin-bottom: 8rem;
+            order: 1;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 58%;
+            padding: 0 4rem;
+        }
+    }
+
+    .wysiwyg-script {
+        @include media-breakpoint-up(md) {
+            width: 50%;
+            order: 1;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 58%;
+        }
+        @include media-breakpoint-up(xl) {
+            padding-right: 3rem;
+            padding-left: 3rem;
+        }
+    }
+
+    .sidebar-cards {
+        @include media-breakpoint-up(md) {
+            width: 50%;
+            padding: 0 1rem;
+            order: 2;
+
             &-grid-item {
-                padding: 0 2rem;
                 width: 100%;
-            }
-            &-grid-item-wrapper {
-                .js-toggle-container {
-                    height: 0;
+                padding: 0;
+
+                &-wrapper {
+                    .js-toggle-container {height: 0;}
                 }
             }
         }
-        section.spray-form {
-            margin-bottom: 8rem;
-            order: 1;
-            padding: 0 2rem;
-            width: 50%;
-        }
-    }
-}
-@media #{$large-up} {
-    .flex-wrapper {
-        .sidebar-cards {
+        @include media-breakpoint-up(lg) {
             width: 42%;
-            &-grid-item {
-                padding: 0 4rem;
-                margin-bottom: 2rem;
-            }
+            padding: 0 2rem;
         }
-        section.spray-form {
-            padding: 0 4rem;
-            width: 58%;
+        @include media-breakpoint-up(xl) {
+            width: 36%;
         }
     }
 }

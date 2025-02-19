@@ -134,6 +134,7 @@
 
     &-text {
         order: 4;
+        letter-spacing: .0075em;
         @include media-breakpoint-up(md) {
             width: 580px;
             margin: 0 auto;
@@ -178,12 +179,15 @@
             font-size: 24px;
             line-height: 28px;
             font-weight: bold;
-            letter-spacing: -.0175em;
+            letter-spacing: .005em;
             color: $color-night;
-            @include media-breakpoint-up(xl) {
+            @include media-breakpoint-up(md) {
                 margin-bottom: 32px;
                 font-size: 28px;
-                line-height: 32px;
+                line-height: 32.8px;
+            }
+            @include media-breakpoint-up(xl) {
+                margin-bottom: 42px;
             }
 
             &.eyebrow {
@@ -209,45 +213,8 @@
         }
 
         p {
-            //margin: 0 0 24px;
             &:last-child {margin-bottom: 0;}
         }
-
-        /*
-        ul, ol {
-            margin: 0 0 24px;
-            font-size: inherit;
-            line-height: inherit;
-            font-weight: inherit;
-            &:first-child {margin-top: 0;}
-
-            li {
-                margin: 0 0 0 24px;
-                position: relative;
-                @include media-breakpoint-up(xl) {
-                    margin-left: 36px;
-                }
-
-                & + li {
-                    margin-top: 24px;
-                    @include media-breakpoint-up(xl) {
-                        margin-top: 28px;
-                    }
-                }
-            }
-        }
-
-        ul {
-            list-style-type: none;
-
-            li {
-                &:before {
-                    @include position(absolute, null null null -1.5rem);
-                    content: '\2022';
-                }
-            }
-        }
-         */
 
         &-copy {
             display: block;
@@ -264,12 +231,19 @@
         }
 
         .button-blue {
+            padding-top: 18px;
+            padding-bottom: 18px;
             border: 1.5px solid $color-led-blue;
             color: $color-navy !important;
-            background: white;
+            text-align: center;
+            background: transparent;
             box-shadow: inset 0 -3px 0 rgba(black, .2);
             @include media-breakpoint-up(md) {
                 margin-top: 12px;
+            }
+            @include media-breakpoint-up(xl) {
+                min-width: 402px;
+                margin-top: 23px;
             }
         }
 

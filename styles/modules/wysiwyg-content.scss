@@ -7,4 +7,26 @@
     @include media-breakpoint-up(xl) {
         margin: 8rem 0;
     }
+
+    & + .wysiwyg-script {
+        margin: 4rem 0;
+        @include media-breakpoint-up(md) {
+            margin: 5rem 0;
+        }
+        @include media-breakpoint-up(xl) {
+            margin: 8rem 0;
+        }
+    }
+}
+
+.wysiwyg-script {
+    .wysiwyg-script-wrapper {
+        .article-script {
+            .emptyContainer {
+                @include media-breakpoint-down(md) {
+                    padding: 0 !important;
+                }
+            }
+        }
+    }
 }

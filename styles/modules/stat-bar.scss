@@ -1,78 +1,77 @@
 /* ===== STAT-BAR ===== */
 .stat-bar {
-    padding: 2.6rem 1rem 2.6rem;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    z-index: 10;
-    background-color: $light;
-    box-shadow: 0 20px 50px 0 rgba($color-ocean, .15);
+    margin: 4rem 0;
     @include media-breakpoint-up(md) {
-        padding: 2.6rem 2rem;
         margin: 5rem 0;
     }
     @include media-breakpoint-up(xl) {
-        padding: 3rem;
         margin: 8rem 0;
     }
 
     &-wrapper {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        @media #{$medium-up} { flex-direction: row; }
+        text-align: center;
     }
 
     &-stat {
-        color: $spray-blue;
-        font-family: $site-font-secondary;
-        font-size: 7rem;
-        font-weight: 900;
-        line-height: 0.628;
-        margin: 0 auto 2rem;
-        @media #{$medium-up} {
-            margin: 0;
-            text-align: right;
-        }
+        margin: 0;
+        display: block;
+        font-size: 36px;
+        line-height: 46px;
+        font-weight: 800;
+        color: $spray-blue-alt-1;
+        letter-spacing: -0.01em;
     }
 
     &-copy {
-        color: $spray-dk-blue-gray;
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        line-height: 1;
-        margin: 0 1.4rem 0.4rem;
-        @media #{$medium-up} {
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-top: 4px;
-            text-align: left;
-        }
-        @media #{$xlarge-up} {
-            font-weight: 800;
-            line-height: 1.1;
-            margin: 0 1rem;
-            padding: 1rem 0;
-        }
+        margin: 16px 0 0;
+        font-size: 21px;
+        line-height: 25px;
+        font-weight: 500;
+
         &-action {
-            color: $link-color;
-            display: block;
-            font-family: $site-font;
-            font-size: 2.2rem;
-            line-height: 1.1;
-            @media screen and (min-width: 1100px) { display: inline-block; }
+            margin-top: 31px;
+            display: flex;
+            justify-content: center;
+
             a {
-                color: $link-color;
-                position: relative;
+                padding: 16px;
+                border-radius: 4px;
+                display: block;
+                font: 600 13px/18px $font-default;
+                letter-spacing: .005em;
+                color: $color-white !important;
+                text-align: center;
+                text-transform: capitalize;
+                background: $color-navy;
+                transition: background-color $effect;
+                box-shadow: inset 0 -4px 0 rgba(black, .2);
+                @include media-breakpoint-up(xss) {
+                    padding-right: 32px;
+                    padding-left: 32px;
+                    letter-spacing: .05em;
+                }
+                @include media-breakpoint-up(sm) {
+                    padding-right: 42px;
+                    padding-left: 42px;
+                    letter-spacing: .075em;
+                }
+                @include media-breakpoint-up(md) {
+                    font-size: 14px;
+                }
+                @include media-breakpoint-up(xl) {
+                    padding-right: 90px;
+                    padding-left: 90px;
+                }
+
+                &:hover, &:focus {
+                    color: $color-white !important;
+                    text-decoration: none;
+                    background: #004975;
+                }
             }
-            i {
-                color: $link-color;
-                font-size: 2rem;
-                font-weight: 600;
-                line-height: 1.2;
-                @media #{$large-up} { font-size: 2.2rem; }
+
+            .icon-double-arrow {
+                display: none !important;
             }
         }
     }

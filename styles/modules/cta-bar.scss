@@ -9,31 +9,45 @@
     }
 
     &.bottom-0 {
-        margin-bottom: 4rem !important;
-        @include media-breakpoint-up(md) {
-            margin-bottom: 5rem !important;
-        }
-        @include media-breakpoint-up(xl) {
-            margin-bottom: 8rem !important;
-        }
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
     }
 
     .cta-content {
         width: 100%;
         padding: 24px 12px;
-        border-radius: 4px;
+        //border-radius: 4px;
         margin: 0 auto;
         position: relative;
+        z-index: 1;
         font: 16px/1.5 $font-default;
         letter-spacing: .01em;
         text-align: center;
         color: $color-night;
-        background: $color-maui;
+        //background: $color-maui;
         @include media-breakpoint-up(sm) {
             padding: 24px;
         }
         @include media-breakpoint-up(xl) {
-            padding: 38px 40px 44px;
+            padding: 40px;
+        }
+
+        &::after {
+            @include pseudo;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            right: auto;
+            bottom: 0;
+            left: 50%;
+            z-index: -1;
+            background-color: $color-maui;
+            transform: translateX(-50%);
+            @include media-breakpoint-down(sm) {
+                right: -16px;
+                left: -16px;
+                transform: none;
+            }
         }
 
         p {
@@ -41,6 +55,15 @@
             font-size: inherit;
             font-weight: inherit;
             line-height: inherit;
+        }
+
+        .main-content.light-gray & {
+            background: white;
+            box-shadow: 0 10px 20px -5px rgba(63, 96, 116, .15);
+            &::after {display: none;}
+        }
+        .main-content.homepage & {
+            &::after {display: none;}
         }
     }
 
@@ -103,7 +126,15 @@
     &-alt {
         .cta-content {
             color: white;
-            background-color: $spray-dkst-blue;
+            background: none;
+            &::after {background-color: $spray-dkst-blue;}
+        }
+    }
+
+    &-white {
+        .cta-content {
+            background: none;
+            &::after {display: none;}
         }
     }
 }

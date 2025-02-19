@@ -1,12 +1,4 @@
 .find-rep {
-    &.main-content.light-gray {
-        &::before {display: block !important;}
-        .cta-bar .cta-content {
-            background: white !important;
-            box-shadow: 0 10px 20px -5px rgba(63, 96, 116, .15);
-        }
-    }
-
     &-form {
         width: 100%;
         max-width: 1100px;
@@ -14,6 +6,7 @@
         @include media-breakpoint-up(md) {
             display: flex;
             justify-content: center;
+            gap: 20px;
         }
 
         &-wrapper {
@@ -27,7 +20,7 @@
         .spray-form {
             width: 100%;
             max-width: 550px;
-            padding: 0 2rem;
+            padding: 0;
             margin: 0 auto;
             &::before {display: none !important;}
             &::after {@include clearfix-new;}
@@ -109,13 +102,9 @@
     .grid-item-callout-result-wrapper {
         width: 100%;
         max-width: 1060px;
-        padding: 2rem;
+        padding: 2rem 0;
         margin: 0 auto;
         display: none;
-        @include media-breakpoint-up(xl) {
-            padding-right: 0;
-            padding-left: 0;
-        }
     }
 
     .grid-item-callout-result-inner {
@@ -132,13 +121,14 @@
     }
 
     .sidebar-cards-grid-item-callout-result {
-        margin: 0;
+        margin: 0 0 20px;
         display: block;
-        line-height: inherit;
+        font-size: 14px;
+        line-height: 18px;
+        &:last-child {margin-bottom: 0;}
         @include media-breakpoint-up(md) {
             width: calc(50% - 16px);
-            font-size: 14px;
-            line-height: 18px;
+            margin-bottom: 0;
         }
         @include media-breakpoint-up(xl) {
             width: calc(25% - 32px);
