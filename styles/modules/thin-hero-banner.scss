@@ -48,6 +48,9 @@
         @include media-breakpoint-up(lg) {
             text-align: left;
         }
+        @include media-breakpoint-up(xlm) {
+            font-size: 54px;
+        }
     }
 
     @media (min-width: 1200px) {

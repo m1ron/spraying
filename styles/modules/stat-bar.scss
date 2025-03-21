@@ -4,9 +4,11 @@
     @include media-breakpoint-up(md) {
         margin: 5rem 0;
     }
+    /*
     @include media-breakpoint-up(xl) {
         margin: 8rem 0;
     }
+     */
 
     &-wrapper {
         text-align: center;
@@ -16,14 +18,14 @@
         margin: 0;
         display: block;
         font-size: 36px;
-        line-height: 46px;
+        line-height: 36px;
         font-weight: 800;
         color: $spray-blue-alt-1;
         letter-spacing: -0.01em;
     }
 
     &-copy {
-        margin: 16px 0 0;
+        margin: 20px 0 0;
         font-size: 21px;
         line-height: 25px;
         font-weight: 500;
@@ -58,10 +60,12 @@
                 @include media-breakpoint-up(md) {
                     font-size: 14px;
                 }
+                /*
                 @include media-breakpoint-up(xl) {
                     padding-right: 90px;
                     padding-left: 90px;
                 }
+                 */
 
                 &:hover, &:focus {
                     color: $color-white !important;

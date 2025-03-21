@@ -42,7 +42,7 @@
 
 .main-content {
     width: 100%;
-    padding: 0 16px 40px;
+    padding: 0 16px;
     margin: 0 auto;
     position: relative;
     &::after {@include clearfix-new;}
@@ -51,7 +51,7 @@
     }
     @include media-breakpoint-up(md) {
         max-width: 720px;
-        padding: 0 20px 60px;
+        padding: 0 20px;
     }
     @include media-breakpoint-up(lg) {
         max-width: 960px;
@@ -79,7 +79,6 @@
             bottom: 0;
             left: 0;
             z-index: -1;
-            //display: none !important;
             @include media-breakpoint-up(sm) {
                 width: 100vw;
                 right: auto;

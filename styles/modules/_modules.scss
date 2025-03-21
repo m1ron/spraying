@@ -16,6 +16,9 @@
 @import 'wysiwyg-content'; // ++
 @import 'accordion'; // ++
 @import 'iframe'; // ++
+@import 'resources'; // ++
+@import 'event-card';
+@import 'resource-filters'; // ++
 
 @import 'aside-contact-form';
 @import 'general-content';
@@ -26,7 +29,6 @@
 @import 'contact/contact-thanks.scss';
 @import 'homepage-header-feature';
 @import 'article-content';
-@import 'resource-filters';
 @import 'pagination';
 @import 'process';
 @import 'ecom/header-feature';
@@ -45,8 +47,7 @@
 @import 'products/prod-images';
 @import 'products/prod-tabs';
 @import 'sidebar-cards';
-@import 'events/event-card';
-@import 'events/event-filters';
+
 @import 'checkout/checkout-summary';
 @import 'checkout/checkout-process';
 @import 'checkout/checkout-form';
@@ -55,8 +56,6 @@
 @import 'spray-basics';
 @import 'spray-table';
 @import 'tankjet-content';
-@import 'tankjet-filters';
-
 @import 'cookie-bar';
 @import 'alert-banner';
 @import 'lang-banner';

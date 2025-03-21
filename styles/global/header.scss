@@ -14,7 +14,7 @@
     font: 14px/1.5 $font-default;
     background-color: $color-white;
     box-shadow: 0 0 5px rgba(black, .1);
-    transition: none;
+    transition: top .3s ease;
     -webkit-backface-visibility: hidden;
     @include media-breakpoint-up(xl) {
         height: 140px;
@@ -343,6 +343,12 @@
             }
         }
     }
+
+    .is-scrolled &, .filter-fixed & {
+        @include media-breakpoint-down(xl) {
+            top: -64px;
+        }
+    }
 }
 
 /* ===== CARET ===== */
@@ -455,7 +461,19 @@
         @include media-breakpoint-up(xl) {
             padding-left: 19%;
             min-height: 300px;
+            position: relative;
+            z-index: 1;
             background: $color-mist;
+            &::before {
+                @include pseudo;
+                width: 19%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                background: white;
+            }
         }
     }
 
@@ -562,6 +580,9 @@
             background: $color-ocean;
             transition: opacity $effect-s;
             opacity: 0;
+            @include media-breakpoint-up(xl) {
+                display: none;
+            }
         }
 
         ul {
@@ -577,12 +598,12 @@
             width: 50%;
             margin: 0;
             font-weight: 500;
+            line-height: 20px;
             position: relative;
             padding-left: 27px;
-            margin-bottom: 5px;
+            margin-bottom: 14px !important;
             @include media-breakpoint-up(xl) {
                 width: 31%;
-                margin-bottom: 10px;
             }
 
             img {
@@ -613,16 +634,16 @@
                 line-height: 1;
                 @include media-breakpoint-up(xl) {
                     font-size: 15px;
+                    font-weight: normal;
                 }
             }
 
             a {
-                //margin-right: 6px;
                 padding-right: 6px;
                 display: inline-block;
                 position: relative;
                 font-size: 12px;
-                font-weight: 500;
+                font-weight: normal;
                 color: $color-navy;
                 @include media-breakpoint-up(xl) {
                     font-size: 13px;

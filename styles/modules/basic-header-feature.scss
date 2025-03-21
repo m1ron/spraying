@@ -3,6 +3,8 @@
     margin: 0;
     position: relative;
     z-index: 1;
+    color: $spray-dk-blue-gray;
+    text-align: center;
     background: $color-mist;
     @include media-breakpoint-up(md) {
         padding: 4rem 0;
@@ -33,12 +35,10 @@
 
 
     h1 {
-        margin: 0 0 12px;
-        color: $color-night;
+        margin: 0 0 6px;
+        color: $spray-dk-blue-gray;
         text-transform: uppercase;
-        @include media-breakpoint-up(md) {
-            letter-spacing: .03em;
-        }
+        &:last-child {margin-bottom: 0;}
     }
 
     hr {
@@ -53,12 +53,15 @@
     .content-wrapper {
         max-width: 640px;
         padding: 0;
-        margin: 0;
+        margin: 0 auto;
         @include media-breakpoint-up(lg) {
             max-width: 720px;
         }
         @include media-breakpoint-up(xl) {
             max-width: 960px;
+        }
+        @include media-breakpoint-up(xlm) {
+            max-width: 1000px;
         }
     }
 
@@ -67,23 +70,15 @@
         display: block;
         font-size: 14px;
         line-height: 120%;
-        font-weight: 500;
+        font-family: $site-font;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: .05em;
-        color: $color-led-blue;
+        color: #2897dc;
         @include media-breakpoint-up(md) {
-            font-size: 15px;
-        }
-        @include media-breakpoint-up(xl) {
-            margin-bottom: 8px;
             font-size: 16px;
         }
-    }
-
-    &.centered {
-        text-align: center;
-        .content-wrapper {
-            margin: 0 auto;
+        @include media-breakpoint-up(xl) {
+            font-size: 20px;
         }
     }
 

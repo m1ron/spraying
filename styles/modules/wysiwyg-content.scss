@@ -1,11 +1,26 @@
 /* ===== WYSIWYG ===== */
 .wysiwyg-content {
-    margin: 4rem 0;
+    padding: 3rem 0;
+    position: relative;
     @include media-breakpoint-up(md) {
-        margin: 5rem 0;
+        padding: 4rem 0;
     }
-    @include media-breakpoint-up(xl) {
-        margin: 8rem 0;
+
+    &::after {
+        @include pseudo;
+        position: absolute;
+        top: 0;
+        right: -16px;
+        bottom: 0;
+        left: -16px;
+        z-index: -1;
+        background: white;
+        @include media-breakpoint-up(sm) {
+            width: 100vw;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 
     & + .wysiwyg-script {
@@ -14,7 +29,7 @@
             margin: 5rem 0;
         }
         @include media-breakpoint-up(xl) {
-            margin: 8rem 0;
+            margin: 6rem 0;
         }
     }
 }

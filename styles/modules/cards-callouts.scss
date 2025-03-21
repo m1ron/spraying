@@ -1,43 +1,32 @@
 /* ===== CARDS-CALLOUTS ===== */
 .cards-callouts {
-    margin: 4rem 0;
+    padding: 3rem 0 3.5rem;
     position: relative;
     z-index: 1;
     font: 16px/1.5 $font-default;
     @include media-breakpoint-up(md) {
-        margin: 5rem 0;
+        padding: 4rem 0 4.5rem;
     }
-    @include media-breakpoint-up(xl) {
-        margin: 8rem 0;
+
+    &::after {
+        @include pseudo;
+        position: absolute;
+        top: 0;
+        right: -16px;
+        bottom: 0;
+        left: -16px;
+        z-index: -1;
+        background: white;
+        @include media-breakpoint-up(sm) {
+            width: 100vw;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 
     &.light-gray {
-        padding: 4rem 0;
-        margin: 0;
-        @include media-breakpoint-up(md) {
-            padding: 5rem 0;
-        }
-        @include media-breakpoint-up(xl) {
-            padding: 8rem 0;
-        }
-
-        &::after {
-            @include pseudo;
-            width: 100vw;
-            position: absolute;
-            top: 0;
-            right: auto;
-            bottom: 0;
-            left: 50%;
-            z-index: -1;
-            background-color: $color-maui;
-            transform: translateX(-50%);
-            @include media-breakpoint-down(sm) {
-                right: -16px;
-                left: -16px;
-                transform: none;
-            }
-        }
+        &::after {background-color: $color-maui;}
     }
 
     .section-header {
@@ -119,7 +108,7 @@
                 &:hover, &:focus {
                     .cards-callouts-grid-item-copy {
                         color: $color-night;
-                        p::after {width: 100px;}
+                        p::after {width: 135px;}
                     }
                     .cards-callouts-grid-item-callout-action {
                         color: $color-night;
@@ -248,10 +237,9 @@
                 }
 
                 .cards-callouts-grid-item-copy {
-                    margin-bottom: 8px;
+                    margin-bottom: 12px;
                     font-size: 14px;
                     line-height: 1.5;
-                    font-weight: 500;
                     color: $spray-dk-blue-gray;
                     transition: color $effect;
                     @include media-breakpoint-up(xl) {
@@ -293,7 +281,7 @@
                         line-height: 21.6px;
                     }
 
-                    &:last-child {margin-bottom: 0;}
+                    //&:last-child {margin-bottom: 0;}
 
                     .has-arrow::after {
                         margin-top: 1px;
@@ -307,7 +295,7 @@
                 border-radius: 4px;
                 text-align: left;
                 background: $color-white;
-                box-shadow: 0 20px 50px -5px rgba($color-night, .15);
+                box-shadow: 0 15px 30px -5px rgba($color-night, .1);
                 &::after {display: none;}
 
                 > a[data-fancybox="data-fancybox"] {
@@ -373,11 +361,11 @@
 
                         &::after {
                             @include pseudo;
-                            width: 80px;
+                            width: 85px;
                             height: 8px;
                             margin-top: 14px;
                             background: $color-forest-green;
-                            transition: width $effect;
+                            transition: width .5s ease;
                         }
                     }
                 }

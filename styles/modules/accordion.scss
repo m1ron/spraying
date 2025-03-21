@@ -1,12 +1,9 @@
 /* ===== ACCORDION ===== */
 .accordion {
     max-width: 1068px;
-    margin: 4rem auto;
+    margin: 3rem auto;
     @include media-breakpoint-up(md) {
-        margin: 5rem auto;
-    }
-    @include media-breakpoint-up(xl) {
-        margin: 8rem auto;
+        margin: 4rem auto;
     }
 
     &-header {
