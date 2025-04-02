@@ -124,11 +124,11 @@
     }
 
     &-subhead {
-        color: #2897dc;
+        margin: 0 0 2rem;
         font-size: 16px;
         font-weight: 500;
         line-height: 1;
-        margin: 0 0 2rem;
+        color: #2897dc;
         @include media-breakpoint-up(md) {
             font-size: 20px;
         }
@@ -199,6 +199,12 @@
             width: 100% !important;
             height: auto !important;
             aspect-ratio: 534/326;
+        }
+    }
+
+    a {
+        .wysiwyg-content & {
+            color: $color-navy !important;
         }
     }
 

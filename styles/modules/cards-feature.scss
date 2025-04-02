@@ -9,6 +9,10 @@
         @include media-breakpoint-up(xl) {
             margin: 8rem 0;
         }
+        @include media-breakpoint-up(xxl) {
+            padding-right: 137.65px;
+            padding-left: 137.65px;
+        }
 
         .section-header {
             text-align: center;
@@ -31,6 +35,12 @@
         @include media-breakpoint-up(md) {
             flex-direction: row;
             gap: 24px;
+        }
+        @include media-breakpoint-up(lg) {
+            gap: 32px;
+        }
+        @include media-breakpoint-up(xl) {
+            gap: 40px;
         }
     }
 

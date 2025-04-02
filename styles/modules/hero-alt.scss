@@ -152,29 +152,25 @@
         }
 
         .hero-btn {
-            padding: 15px 16px;
+            padding: 12px 24px;
             border-radius: 4px;
             display: inline-block;
-            font: 600 13px/18px $font-default;
+            font: 600 14px/18px $font-default;
             letter-spacing: .005em;
             color: $color-white !important;
             text-align: center;
             text-transform: capitalize;
             background: $color-navy;
-            transition: background-color $effect;
-            box-shadow: inset 0 -4px 0 rgba(black, .2);
+            transition: color $effect-s, border-color $effect-s, background-color $effect-s;
+            //box-shadow: inset 0 -4px 0 rgba(black, .2);
+            box-shadow: none;
             @include media-breakpoint-up(xss) {
                 padding-right: 32px;
                 padding-left: 32px;
-                letter-spacing: .05em;
-            }
-            @include media-breakpoint-up(sm) {
-                padding-right: 42px;
-                padding-left: 42px;
-                letter-spacing: .075em;
             }
             @include media-breakpoint-up(md) {
-                font-size: 14px;
+                padding: 16px 40px;
+                letter-spacing: .05em;
             }
 
             &:hover, &:focus {
@@ -186,10 +182,24 @@
             }
 
             &.btn2 {
+                padding-top: 10.5px;
+                padding-bottom: 10.5px;
                 border: 1.5px solid $color-led-blue;
                 color: $color-navy !important;
                 background: rgba(white, .8);
-                box-shadow: inset 0 -3px 0 rgba(black, .2);
+                //box-shadow: inset 0 -3px 0 rgba(black, .2);
+                box-shadow: none;
+                @include media-breakpoint-up(md) {
+                    padding-top: 14.5px;
+                    padding-bottom: 14.5px;
+                }
+
+                &:hover, &:focus {
+                    border-color: #004975;
+                    color: white !important;
+                    text-decoration: none;
+                    background: #004975;
+                }
             }
 
             &.w-465 {
@@ -200,18 +210,12 @@
         }
 
         .actions {
-            max-width: 440px;
             margin: 24px auto 0;
             @include media-breakpoint-up(md) {
-                max-width: 480px;
                 margin-top: 32px;
             }
-            @include media-breakpoint-up(xl) {
-                max-width: none;
-                margin-top: 42px;
-            }
 
-            &, .video-feature-text-action {
+            & {
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
@@ -219,6 +223,11 @@
                     flex-direction: row;
                     justify-content: flex-start;
                 }
+            }
+
+            .video-feature-text-action {
+                display: flex;
+                justify-content: space-around;
             }
 
             &:empty {
@@ -353,7 +362,7 @@
     }
 
     &-subtitle {
-        margin:0 -150px 0 0;
+        margin: 0 -150px 0 0;
         display: block;
         font-size: 42px;
         line-height: 51px;
@@ -368,10 +377,6 @@
             margin-right: -300px;
         }
 
-        &:empty {
-            display: none !important;
-        }
-
-        //&::after {content: ':';}
+        &:empty {display: none !important;}
     }
 }

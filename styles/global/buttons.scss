@@ -53,22 +53,19 @@
     border-radius: 4px;
     display: inline-block;
     font: 600 14px/18px $font-default;
-    letter-spacing: .05em;
+    letter-spacing: .025em;
     color: $color-white !important;
     text-transform: none;
     background: $color-navy;
     transition: background-color $effect;
     box-shadow: inset 0 -4px 0 rgba(black, .2);
+    @include media-breakpoint-up(xss) {
+        padding-right: 32px;
+        padding-left: 32px;
+    }
     @include media-breakpoint-up(md) {
-        padding: 16px 32px;
-        letter-spacing: .065em;
-    }
-    @include media-breakpoint-up(xl) {
-        padding-right: 52px;
-        padding-left: 52px;
-    }
-    @include media-breakpoint-up(xxl) {
-        font-size: 14px;
+        padding: 16px 40px;
+        letter-spacing: .05em;
     }
 
     &:hover, &:focus {
@@ -108,12 +105,12 @@
 }
 
 .button-light-blue {
-    padding: 11px 24px 13px;
+    padding: 12px 24px;
     border: none;
     border-radius: 4px;
     display: inline-block;
     font: 600 14px/18px $font-default;
-    letter-spacing: .05em;
+    letter-spacing: .025em;
     color: $color-white !important;
     text-transform: none;
     background: $color-blue;
@@ -121,15 +118,12 @@
     box-shadow: inset 0 -4px 0 rgba(black, .2);
     cursor: pointer;
     @include media-breakpoint-up(md) {
-        padding: 15px 32px 17px;
-        letter-spacing: .065em;
-    }
-    @include media-breakpoint-up(xl) {
-        padding-right: 52px;
-        padding-left: 52px;
+        padding: 16px 40px;
+        letter-spacing: .05em;
     }
     @include media-breakpoint-up(xxl) {
-        font-size: 14px;
+        padding-right: 48px;
+        padding-left: 48px;
     }
 
     &:hover, &:focus {
@@ -299,8 +293,11 @@
 }
 
 .button-border-radius {
-    border-radius: 3rem;
-    padding: 2rem 4rem;
+    border-radius: 3.4rem;
+    padding: 1rem 3rem;
+    @include media-breakpoint-up(md) {
+        padding: 2rem 4rem;
+    }
 }
 
 .button-with-icon {

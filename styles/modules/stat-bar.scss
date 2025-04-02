@@ -1,14 +1,9 @@
 /* ===== STAT-BAR ===== */
 .stat-bar {
-    margin: 4rem 0;
+    margin: 3rem 0;
     @include media-breakpoint-up(md) {
-        margin: 5rem 0;
+        margin: 4rem 0;
     }
-    /*
-    @include media-breakpoint-up(xl) {
-        margin: 8rem 0;
-    }
-     */
 
     &-wrapper {
         text-align: center;
@@ -17,30 +12,40 @@
     &-stat {
         margin: 0;
         display: block;
-        font-size: 36px;
-        line-height: 36px;
+        font-size: 26px;
+        line-height: 26px;
         font-weight: 800;
         color: $spray-blue-alt-1;
-        letter-spacing: -0.01em;
+        letter-spacing: .01em;
+        @include media-breakpoint-up(md) {
+            font-size: 32px;
+            line-height: 32px;
+        }
     }
 
     &-copy {
-        margin: 20px 0 0;
-        font-size: 21px;
-        line-height: 25px;
+        margin: 12px 0 0;
+        font-size: 14px;
         font-weight: 500;
+        @include media-breakpoint-up(md) {
+            margin-top: 16px;
+            font-size: 16px;
+        }
 
         &-action {
-            margin-top: 31px;
+            margin-top: 12px;
             display: flex;
             justify-content: center;
+            @include media-breakpoint-up(md) {
+                margin-top: 16px;
+            }
 
             a {
-                padding: 16px;
+                padding: 12px 24px;
                 border-radius: 4px;
                 display: block;
-                font: 600 13px/18px $font-default;
-                letter-spacing: .005em;
+                font: 600 14px/18px $font-default;
+                letter-spacing: .025em;
                 color: $color-white !important;
                 text-align: center;
                 text-transform: capitalize;
@@ -50,22 +55,11 @@
                 @include media-breakpoint-up(xss) {
                     padding-right: 32px;
                     padding-left: 32px;
-                    letter-spacing: .05em;
-                }
-                @include media-breakpoint-up(sm) {
-                    padding-right: 42px;
-                    padding-left: 42px;
-                    letter-spacing: .075em;
                 }
                 @include media-breakpoint-up(md) {
-                    font-size: 14px;
+                    padding: 16px 40px;
+                    letter-spacing: .05em;
                 }
-                /*
-                @include media-breakpoint-up(xl) {
-                    padding-right: 90px;
-                    padding-left: 90px;
-                }
-                 */
 
                 &:hover, &:focus {
                     color: $color-white !important;

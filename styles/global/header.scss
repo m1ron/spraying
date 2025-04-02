@@ -42,11 +42,10 @@
     &-logo {
         display: block;
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 12px;
+        left: 20px;
         z-index: 10;
-        transform: translate3d(-50%, -50%, 0);
-        transform-origin: center center;
+        transform: none;
         -webkit-backface-visibility: hidden;
         @media screen and (min-width: 375px) {
             width: 180px;
@@ -58,7 +57,6 @@
         @include media-breakpoint-up(md) {
             width: 228px;
             top: 12px;
-            transform: translate3d(-50%, 0, 0);
             transition: none;
         }
         @include media-breakpoint-up(xl) {
@@ -104,7 +102,6 @@
         position: absolute;
         top: 50%;
         right: 0;
-        left: 0;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -114,7 +111,7 @@
         }
 
         .trigger-button {
-            width: 40px;
+            width: 26px;
             height: 40px;
             display: flex;
             justify-content: center;
@@ -124,8 +121,8 @@
             color: $color-black;
             text-decoration: none;
             cursor: pointer;
-            @include media-breakpoint-down(md) {
-                display: none;
+            @include media-breakpoint-up(md) {
+                width: 40px;
             }
 
             i {
@@ -140,9 +137,13 @@
                     &::before {display: none;}
                 }
                 &.icon-contact {
-                    width: 26px;
-                    height: 26px;
+                    width: 22px;
+                    height: 22px;
                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23242f37' fill-rule='evenodd' d='m21 6-.75-.75H3.75L3 6v14.56l3.31-3.31h13.94l.75-.75V6Zm-1.5.75v9H5.69L4.5 16.94V6.75h15Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+                    @include media-breakpoint-up(md) {
+                        width: 26px;
+                        height: 26px;
+                    }
                 }
                 &.icon-cart {
                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23242f37' fill-rule='evenodd' d='M5.414 6H3.75V4.5h2.836l.75 3h11.599l-1.703 7.663-.732.587H8.25l-.732-.587-1.498-6.74L5.414 6Zm2.271 3 1.167 5.25h7.046L17.065 9h-9.38Zm2.815 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm4.5 1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z' clip-rule='evenodd'/%3E%3C/svg%3E");
@@ -156,13 +157,15 @@
 
         .country-language-trigger {
             width: auto;
-            padding: 0 4px 0 32px;
+            padding: 0 8px 0 24px;
             margin-right: auto;
             position: relative;
             left: 6px;
             display: flex;
-            order: 1;
             align-self: flex-start;
+            @include media-breakpoint-up(md) {
+                padding: 0 4px 0 32px;
+            }
 
             &::before {
                 @include pseudo;
@@ -175,7 +178,10 @@
                 bottom: 0;
                 left: 0;
                 background: url('https://flagcdn.com/us.svg') no-repeat 35% center;
-                background-size: auto 125%;
+                background-size: auto 100%;
+                @include media-breakpoint-up(md) {
+                    background-size: auto 125%;
+                }
             }
 
             img {
@@ -183,14 +189,17 @@
             }
 
             span {
-                font-size: 10px;
+                font-size: 8px;
                 line-height: 10px;
                 font-weight: 500;
                 white-space: nowrap;
                 display: block;
                 @include media-breakpoint-up(md) {
-                    font-size: 11px;
+                    font-size: 10px;
                     line-height: 12px;
+                }
+                @include media-breakpoint-up(lg) {
+                    font-size: 11px;
                 }
             }
         }
@@ -198,12 +207,16 @@
         .search-trigger, .menu-trigger {
             display: flex;
             i {
-                width: 32px;
-                height: 32px;
+                width: 25px;
+                height: 25px;
                 display: block;
                 background: no-repeat center center;
                 background-size: contain;
                 &::before {display: none !important;}
+                @include media-breakpoint-up(md) {
+                    width: 32px;
+                    height: 32px;
+                }
             }
         }
 
@@ -215,10 +228,15 @@
         .menu-trigger {
             order: 10;
             i {
-                width: 40px;
-                height: 40px;
+                width: 36px;
+                height: 36px;
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%23242f37' stroke-linecap='round' stroke-linejoin='round' d='M6 12h12M6 15.5h12M6 8.5h12'/%3E%3C/svg%3E");
-                background-size: 44px 44px;
+                background-size: 36px 36px;
+                @include media-breakpoint-up(md) {
+                    width: 40px;
+                    height: 40px;
+                    background-size: 44px 44px;
+                }
             }
         }
     }

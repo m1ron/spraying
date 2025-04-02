@@ -11,6 +11,75 @@
         &.headCenter {text-align: center;}
         &.headLeft {text-align: left;}
         &.headRight {text-align: right;}
+
+        h3 {
+            margin: 0 0 1em;
+            font-size: 24px;
+            line-height: 28px;
+            font-weight: bold;
+            letter-spacing: .005em;
+            color: $color-night;
+            @include media-breakpoint-up(md) {
+                font-size: 28px;
+                line-height: 32.8px;
+            }
+        }
+    }
+
+    &-container {
+        margin-right: -16px;
+        margin-left: -16px;
+        position: relative;
+        z-index: 1;
+        @include media-breakpoint-up(sm) {
+            margin: 0;
+            @include media-breakpoint-down(xl) {
+                width: 100vw;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &-content {
+        @include media-breakpoint-down(xl) {
+            .video-feature-container, .cards-industries, .cards-default-container, .header-feature-split__content {
+                padding-right: 16px;
+                padding-left: 16px;
+                margin-right: auto;
+                margin-left: auto;
+                @include media-breakpoint-down(md) {
+                    max-width: 572px;
+                }
+                @include media-breakpoint-up(md) {
+                    max-width: 720px;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                }
+                @include media-breakpoint-up(lg) {
+                    max-width: 960px;
+                }
+            }
+        }
+        @include media-breakpoint-up(xl) {
+            .a11y-slider-container {
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /*
+        .a11y-slider-container {
+            margin-right: -16px;
+            margin-left: -16px;
+            .header-feature-split__content {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+        }
+         */
     }
 
     &-grid-item {
@@ -57,7 +126,7 @@
                 display: block;
                 position: absolute;
                 top: 20px;
-                right: 24px;
+                right: 20px;
                 z-index: 2;
                 background: white;
                 transition: background-color $effect;
@@ -94,11 +163,13 @@
         }
 
         &-content {
-            padding: 24px 20px;
+            padding: 20px;
         }
 
         &-title {
-            margin-right: 60px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            margin-right: 50px;
             display: block;
             pointer-events: none;
 
@@ -116,14 +187,8 @@
         }
 
         &-text {
-            padding-left: 12px;
-            border-left: 2px solid #a19f9d;
-            margin: 16px 0 0 6px;
-            letter-spacing: .0075em;
+            margin: 20px 0 0 0;
             display: none;
-            @include media-breakpoint-up(md) {
-                padding-left: 16px;
-            }
 
             &::after {@include clearfix-new;}
             &.edit-mode {display: block;}
