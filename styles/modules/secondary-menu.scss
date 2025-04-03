@@ -3,12 +3,10 @@
     width: 100%;
     display: flex;
     position: relative;
+    z-index: 500;
     font-family: $site-font;
     @include media-breakpoint-down(xl) {
         display: none;
-    }
-    &:hover {
-        z-index: 100;
     }
 
     &::after {

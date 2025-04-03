@@ -633,6 +633,9 @@ form div.columnContainer {
     float: left;
     word-wrap: break-word;
     word-break: break-word;
+    @include media-breakpoint-up(md) {
+        padding: 0 10px !important;
+    }
 }
 form div[data-editorblocktype="Field-text"] label,
 form div[data-editorblocktype="Field-phone"] label,

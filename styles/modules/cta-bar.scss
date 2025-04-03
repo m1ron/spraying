@@ -37,6 +37,7 @@
             transform: translateX(-50%);
             box-shadow: 0 10px 20px -5px rgba(63, 96, 116, .15);
             @include media-breakpoint-down(sm) {
+                width: auto;
                 right: -16px;
                 left: -16px;
                 transform: none;

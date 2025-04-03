@@ -41,6 +41,10 @@
         }
     }
 
+    .content-wrapper {
+        padding: 0 16px !important;
+    }
+
     &-content {
         @include media-breakpoint-down(xl) {
             .video-feature-container, .cards-industries, .cards-default-container, .header-feature-split__content {
