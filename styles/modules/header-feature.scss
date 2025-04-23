@@ -179,7 +179,7 @@
 
             &:hover, &:focus {
                 text-decoration: none;
-                background: #004975;
+                background: $color-navy-dark;
             }
         }
     }
@@ -319,7 +319,7 @@
                 width: 50%;
                 padding: 0;
                 display: flex;
-                right: 0;
+                left: 0;
                 transform: none;
             }
         }

@@ -202,7 +202,7 @@
         }
     }
 
-    a {
+    a:not(.button-blue) {
         .wysiwyg-content & {
             color: $color-navy !important;
         }

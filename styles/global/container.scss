@@ -45,6 +45,7 @@
     padding: 0 16px;
     margin: 0 auto;
     position: relative;
+    overflow-x: visible !important;
     &::after {@include clearfix-new;}
     @include media-breakpoint-down(md) {
         max-width: 572px;
@@ -89,6 +90,8 @@
     }
     &.gray::before {background-color: #e6eaed;}
     &.light-gray::before {background-color: $color-mist;}
+
+    .theme-teejet &.light-gray::before {display: none;}
 }
 
 .module-border {

@@ -33,7 +33,6 @@
         }
     }
 
-
     h1 {
         margin: 0 0 6px;
         color: $spray-dk-blue-gray;
@@ -100,6 +99,109 @@
             margin-bottom: 1.5rem;
             text-align: left;
             text-transform: none;
+        }
+    }
+
+    // TEEJET
+    .theme-teejet & {
+        min-height: 132.8px;
+        padding: 24px 0;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background: $spray-blue-alt-1;
+        @include media-breakpoint-down(md) {
+            min-height: 110px;
+            font-size: 13px;
+        }
+
+        &::after {
+            background: $spray-blue-alt-1;
+        }
+
+        &-section {
+            margin-bottom: 8px;
+            font-weight: 600;
+            letter-spacing: .01em;
+            @include media-breakpoint-up(md) {
+                margin-bottom: 12px;
+                font-size: 16px;
+            }
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-family: $font-default !important;
+            font-weight: normal;
+            font-size: 25px;
+            line-height: 1.25;
+            letter-spacing: .005em;
+            color: inherit !important;
+            background: none !important;
+            @include media-breakpoint-up(md) {
+                font-size: 28px;
+            }
+            @include media-breakpoint-up(xl) {
+                font-size: 32px;
+            }
+        }
+
+        hr {
+            border-width: 1px;
+            margin-top: 8px;
+            margin-bottom: 2px;
+
+            & ~ .basic-header-feature-section {
+                margin-top: 10px;
+                margin-bottom: 0;
+                @include media-breakpoint-up(md) {
+                    margin-top: 14px;
+                }
+            }
+        }
+
+        p {
+            margin-top: 10px;
+            letter-spacing: .005em;
+            @include media-breakpoint-up(md) {
+                margin-top: 14px;
+            }
+
+            &:empty {display: none;}
+
+            a {
+                font-weight: 500;
+                color: inherit;
+                text-decoration: underline;
+                text-underline-offset: .2em;
+                text-decoration-line: underline;
+                text-decoration-thickness: .05em;
+                &:hover, &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .theme-teejet .main-content.contact & {
+        h1 {
+            margin-bottom: 0;
+        }
+
+        hr {
+            display: none;
+        }
+
+        p {
+            margin-top: 2px;
+            @include media-breakpoint-up(md) {
+                margin-top: 6px;
+            }
+            @include media-breakpoint-up(xl) {
+                margin-top: 8px;
+            }
         }
     }
 }

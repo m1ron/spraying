@@ -55,7 +55,7 @@
 @import 'checkout/checkout-menu';
 @import 'blockquote-slider';
 @import 'spray-basics';
-@import 'spray-table';
+@import 'spray-table'; // ++
 @import 'tankjet-content';
 @import 'cookie-bar';
 @import 'alert-banner';
@@ -64,4 +64,10 @@
 @import 'video-feature-container';
 @import 'table-full';
 @import 'table-half';
-@import 'tabs-with-responsive-table';
+
+@import 'tabs-with-responsive-table'; // ++
+
+
+// NEW BLOCKS
+@import 'product';
+@import 'use-cases';
