@@ -383,6 +383,11 @@
         margin-top: 0;
         &::after {display: none;}
     }
+
+    .theme-teejet .main-content.homepage > &:first-child {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
 }
 
 .theme-teejet .main-content.contact .cards-industries + .wysiwyg-content {

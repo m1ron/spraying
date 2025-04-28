@@ -20,10 +20,6 @@ html {
             position: relative;
         }
     }
-
-    *, body {
-        font-family: $font-default !important;
-    }
 }
 
 body {
@@ -46,6 +42,12 @@ body {
     .filter-open & {
         @include media-breakpoint-down(md) {
             overflow: hidden;
+        }
+    }
+
+    &.theme-teejet {
+        &, * {
+            font-family: $font-default !important;
         }
     }
 }

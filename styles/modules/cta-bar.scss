@@ -5,7 +5,7 @@
         margin: 0 0 5rem;
     }
 
-    &.bottom-0 {
+    &:last-child, &.bottom-0, .theme-spray .main-content.homepage & {
         margin-bottom: 0 !important;
     }
 

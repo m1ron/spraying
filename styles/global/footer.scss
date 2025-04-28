@@ -44,6 +44,15 @@
         @include media-breakpoint-up(xxl) {
             width: 277px;
         }
+
+        a {
+            display: inline-block;
+            color: $color-ocean;
+            &:hover, &:focus {
+                color: $color-white;
+                text-decoration: none;
+            }
+        }
     }
 
     &-logo {
@@ -128,10 +137,6 @@
         font-weight: 500;
         color: $color-white;
 
-        a {
-            display: inline-block;
-        }
-
         img {
             display: block;
             @include user-select;
@@ -152,18 +157,6 @@
             margin: 0;
             position: relative;
             display: block;
-
-            & + li {
-                //margin-left: .625rem;
-            }
-
-            a {
-                color: $color-ocean;
-                &:hover, &:focus {
-                    color: $color-white;
-                    text-decoration: none;
-                }
-            }
         }
 
         @include media-breakpoint-down(xl) {

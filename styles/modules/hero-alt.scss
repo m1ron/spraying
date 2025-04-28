@@ -580,6 +580,16 @@
         }
     }
 
+    .theme-spray .main-content.homepage & {
+        &-view {
+            margin-bottom: 0 !important;
+            & + .wysiwyg-content {
+                z-index: 1;
+                &::after {background: $color-maui;}
+            }
+        }
+    }
+
     .theme-teejet .main-content.homepage & {
         &-view {
             margin-bottom: 0;
