@@ -1,22 +1,24 @@
 /* ===== CARDS-FEATURE ===== */
 .cards-feature {
     &-container {
-        margin: 4rem 0;
+        margin: 3rem 0;
         font: 16px/1.5 $font-default;
         @include media-breakpoint-up(md) {
-            margin: 5rem 0;
+            margin: 4rem 0;
         }
         @include media-breakpoint-up(xl) {
-            margin: 8rem 0;
+            margin: 6rem 0;
         }
+        /*
         @include media-breakpoint-up(xxl) {
             padding-right: 137.65px;
             padding-left: 137.65px;
         }
+         */
 
         .section-header {
-            text-align: center;
             padding-bottom: 2.5rem;
+            text-align: center;
         }
 
         &-action {
@@ -73,7 +75,6 @@
             width: 100%;
             min-height: 200px;
             //max-height: 370px;
-            border-radius: 4px;
             aspect-ratio: 27/15;
             position: relative;
             background-size: cover;

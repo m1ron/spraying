@@ -13,58 +13,61 @@
         }
 
         &-item {
-            /*
             width: 100%;
-            padding: 0 1rem;
-            border: 0;
             @include media-breakpoint-up(xss) {
                 width: calc(50% - 12px);
             }
             @include media-breakpoint-up(md) {
                 width: calc(33.3% - 14px);
-                padding: 0 1.5rem;
             }
             @include media-breakpoint-up(lg) {
                 width: calc(25% - 12px);
-                padding: 0 2rem;
             }
-            @media screen and (min-width: 1600px) {
-                //width: 33.33%;
-            }
-             */
 
             &-wrapper {
+                height: 100%;
                 padding: 1px;
-                background-color: $light;
-                box-shadow: 0 10px 20px -5px rgba(63, 96, 116, 0.15), inset 0 0 0 1px rgba(63, 96, 115, 0.15);
                 display: flex;
                 flex-direction: column;
-                height: 100%;
                 position: relative;
                 text-align: left;
-                @include media-breakpoint-up(md) { box-shadow: 0 20px 50px -5px rgba(63, 96, 116, 0.15), inset 0 0 0 1px rgba(63, 96, 115, 0.15); }
+                background-color: $light;
+                box-shadow: 0 10px 20px -5px rgba(63, 96, 116, 0.15), inset 0 0 0 1px rgba(63, 96, 115, 0.15);
+                @include media-breakpoint-up(md) {
+                    box-shadow: 0 20px 50px -5px rgba(63, 96, 116, 0.15), inset 0 0 0 1px rgba(63, 96, 115, 0.15);
+                }
+
                 .event-card-information {
+                    padding: 12px 16px;
+                    border-top: 2px dotted $lighter-gray;
+                    margin-top: auto;
+                    display: flex;
                     align-items: center;
                     flex-flow: nowrap;
-                    border-top: 2px dotted $lighter-gray;
-                    display: flex;
-                    font-size: 1.4rem;
-                    margin-top: auto;
-                    padding: 1rem 1.5rem;
-                    @include media-breakpoint-up(md) { padding: 1.5rem 2.5rem; }
+                    font-size: 14px;
+                    line-height: 18px;
+                    cursor: default;
+                    @include media-breakpoint-up(md) {
+                        padding-right: 20px;
+                        padding-left: 20px;
+                    }
+
                     &-content {
                         flex-flow: wrap;
                     }
+
                     i {
                         color: $spray-gray;
                         font-size: 3rem;
                     }
+
                     span {
                         color: $spray-dk-blue-gray;
                         padding: 0 1rem;
                         position: relative;
                         white-space: nowrap;
                     }
+
                     span:not(:last-child):after {
                         background-color: $spray-gray;
                         content: "";
@@ -78,13 +81,14 @@
             }
 
             &-image-container {
-                padding: 16px 0 0;
-                //box-shadow: inset 0 0 100px $spray-lt-gray, inset 0 0 1px rgba(63, 96, 115, 1);
-                //min-height: 1px;
                 display: block;
                 overflow: hidden;
                 position: relative;
                 background-size: cover;
+
+                .cards-industries-grid-item & {
+                    padding: 12px 0 0;
+                }
 
                 &.gradient {
                     background-image: linear-gradient(to bottom, #212323, #0064a2);
@@ -117,7 +121,6 @@
                 padding: 0;
                 margin: 0 auto;
                 display: block;
-                //position: absolute;
                 text-align: center;
                 z-index: 10;
                 object-fit: contain;
@@ -126,19 +129,25 @@
 
                 &.tiered-card-image {
                     max-width: 100%;
+                    max-height: 160px;
+                    object-fit: cover;
                 }
             }
 
             &-content {
-                padding: 16px;
+                padding: 20px;
                 display: flex;
                 flex-direction: column;
                 flex: 1;
 
+                .cards-industries-grid-item & {
+                    padding: 16px;
+                }
+
                 .cards-industries-grid-item-title {
                     width: auto;
                     padding: 0 16px;
-                    margin: 0 -16px 8px;
+                    margin: 0 -16px 12px;
                     display: block;
                     text-decoration: none;
                     &::after {
@@ -147,62 +156,57 @@
                     }
 
                     h3 {
-                        padding-bottom: 12px;
-                        padding-right: 0;
-                        font-size: 15px;
-                        line-height: 20px;
-                        display: block;
+                        padding-bottom: 12px !important;
+                        padding-right: 0 !important;
+                        font-size: 15px !important;
+                        line-height: 20px !important;
+                        display: block !important;
                     }
                 }
             }
 
             &-copy {
                 color: $spray-dk-blue-gray;
-                font-size: 1.4rem;
-                font-weight: 400;
+                font-size: 14px;
                 line-height: 1.425;
+                font-weight: normal;
                 margin: 0 3rem 0.6rem 2rem;
-                opacity: 0.9;
+                opacity: .9;
                 @include media-breakpoint-up(md) {
                     margin: 0 3rem 0.6rem 3rem;
                 }
                 @include media-breakpoint-up(xl) {
                     font-size: 1.8rem;
                     line-height: 1.333;
-                    margin: 0.5rem 4rem 1.6rem 3rem;
+                    margin: .5rem 4rem 1.6rem 3rem;
                 }
             }
 
             &-title {
                 width: auto;
+                margin-bottom: 12px;
                 display: block;
 
-                &:hover {
-                    border: 0;
+                &:hover, &:focus {
                     text-decoration: none;
                 }
-                /*
-                @media #{$xsmall}, #{$small} {
-                    cursor: not-allowed;
-                    pointer-events: none;
-                }
-                 */
 
                 h3 {
-                    color: #222;
-                    display: inline-block;
-                    font-size: 15px;
-                    line-height: 1;
-                    font-weight: 500;
                     margin-bottom: 1rem;
+                    display: inline-block;
                     position: relative;
+                    font-size: 15px;
+                    line-height: normal;
+                    font-weight: 500;
+                    color: $dark;
                     @include media-breakpoint-up(md) {
-                        font-size: 2.4rem;
-                        margin: 0 0 1.6rem;
+                        font-size: 20px;
+                        margin-bottom: 1.6rem;
                     }
-                    @include media-breakpoint-up(xl) { font-size: 2.8rem; }
+
                     &:after {
-                        background-color: $spray-red-orange;
+                        width: 80px;
+                        background-color: $color-green;
                         bottom: -1.3rem;
                         content: '';
                         height: 6px;
@@ -210,8 +214,7 @@
                         opacity: 1;
                         position: absolute;
                         right: 0;
-                        transition: all 0.4s ease;
-                        width: 80px;
+                        transition: width 0.4s ease;
                         z-index: 1;
                         @include media-breakpoint-up(md) {
                             bottom: -1.5rem;
@@ -226,17 +229,21 @@
             }
 
             &-copy {
-                color: $spray-dk-blue-gray;
-                font-size: 1.4rem;
-                font-weight: 400;
+                margin: 0 0 12px;
+                font-size: 14px;
+                font-weight: normal;
                 line-height: 1.425;
-                margin: 1.5rem 0;
-                opacity: 0.9;
+                color: $spray-dk-blue-gray;
+                opacity: .9;
                 @include media-breakpoint-up(lg) {
-                    font-size: 1.6rem;
-                    line-height: 1.4;
+                    font-size: 16px;
+                }
+
+                &:empty {
+                    display: none !important;
                 }
             }
+
             &-callout-action {
                 //margin-top: auto;
                 display: flex;

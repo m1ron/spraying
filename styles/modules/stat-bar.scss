@@ -2,7 +2,10 @@
 .stat-bar {
     margin: 3rem 0;
     @include media-breakpoint-up(md) {
-        margin: 4rem 0;
+        margin: 4rem 0 4.5rem;
+    }
+    @include media-breakpoint-up(md) {
+        margin: 5rem 0 5.5rem;
     }
 
     &-wrapper {
@@ -11,7 +14,7 @@
 
     &-stat {
         margin: 0;
-        display: block;
+        display: inline;
         font-size: 26px;
         line-height: 26px;
         font-weight: 800;
@@ -24,13 +27,11 @@
     }
 
     &-copy {
-        margin: 12px 0 0;
-        font-size: 14px;
-        font-weight: 500;
-        @include media-breakpoint-up(md) {
-            margin-top: 16px;
-            font-size: 16px;
-        }
+        margin: 0;
+        display: inline;
+        font-size: 26px;
+        line-height: 26px;
+        font-weight: bold;
 
         &-action {
             margin-top: 12px;

@@ -137,6 +137,10 @@
         font-weight: 500;
         color: $color-white;
 
+        a {
+            display: block;
+        }
+
         img {
             display: block;
             @include user-select;

@@ -158,6 +158,12 @@
                         line-height: normal;
                         color: $dark;
                     }
+
+                    &:hover {
+                        &::after {
+                            width: calc(100% - 32px);
+                        }
+                    }
                 }
 
                 &-callout-action {
@@ -230,6 +236,10 @@
             html.filter-open & {
                 margin-left: -323px;
             }
+        }
+
+        .spray-optimization & {
+            display: none;
         }
     }
 }

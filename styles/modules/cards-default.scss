@@ -131,7 +131,7 @@
             }
 
             > a {
-                //height: 100%;
+                width: 100%;
                 flex: 1;
                 display: block;
                 position: relative;
@@ -158,6 +158,7 @@
                     box-shadow: 0 20px 50px -5px rgba($spray-dk-blue-gray, .15), inset 0 0 0 1px rgba($spray-dk-blue-gray, .15);
                 }
                 @include media-breakpoint-up(xl) {
+                    min-height: 100%;
                     padding-right: 32px;
                     padding-left: 32px;
                 }
@@ -244,6 +245,16 @@
 
             &-wrapper.left .cards-default-grid-item-callout-action {
                 justify-content: flex-start;
+            }
+
+            > .cards-categories-item-content {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+
+                .cards-categories-item-callout-action {
+                    margin-top: auto;
+                }
             }
         }
     }
