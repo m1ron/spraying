@@ -15,7 +15,7 @@
         margin: 0;
     }
 
-    .page-numbers {
+    .page-numbers, .pager-item {
         height: 5rem;
         padding: 12px 8px;
         border: none;
@@ -38,11 +38,19 @@
                 span { display: none; }
             }
 
-            &.current {
-                color: $dark;
-                display: block;
+            &.current, &.active {
                 position: relative;
-                &:hover { text-decoration: none; }
+                display: block;
+                color: $dark;
+                cursor: default !important;
+                &:hover, &:focus {
+                    color: $spray-dk-blue-gray !important;
+                    text-decoration: none;
+                }
+
+                .page-link {
+                    cursor: default !important;
+                }
 
                 &:after {
                     @include pseudo;
@@ -56,13 +64,13 @@
             }
         }
 
-        &:hover {
-            color: $link-color;
+        &:hover, &:focus {
+            color: $spray-lt-blue;
             cursor: pointer;
-            text-decoration: underline;
+            text-decoration: none;
         }
 
-        &.prev, &.next {
+        &.prev, &.next, &.PagedList-skipToPrevious, &.PagedList-skipToNext {
             padding: 10px;
             display: flex;
             align-items: center;
@@ -94,6 +102,18 @@
         }
         &.next i:before {
             transform: rotate(-90deg);
+        }
+
+        &.PagedList-skipToPrevious, &.PagedList-skipToNext {
+            font-size: inherit !important;
+        }
+    }
+
+    .page-link {
+        color: inherit !important;
+        text-decoration: none;
+        &:hover, &:focus {
+            text-decoration: none !important;
         }
     }
 }

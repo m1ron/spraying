@@ -88,7 +88,7 @@ h1 {
     line-height: 1.20;
     letter-spacing: -.01639344em;
     color: $spray-dk-blue-gray;
-    @include media-breakpoint-up(xss) {
+    @include media-breakpoint-up(xsm) {
         font-size: 36px;
     }
     @include media-breakpoint-up(md) {

@@ -46,7 +46,6 @@
                     flex-flow: nowrap;
                     font-size: 14px;
                     line-height: 18px;
-                    cursor: default;
                     @include media-breakpoint-up(md) {
                         padding-right: 20px;
                         padding-left: 20px;
@@ -267,7 +266,7 @@
             }
             &-flex { display: flex; }
             &-amount {
-                color: spray-blue;
+                color: $spray-blue;
                 font-family: $site-font-secondary;
                 font-size: 4rem;
                 font-weight: 900;

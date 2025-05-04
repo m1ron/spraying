@@ -1,3 +1,4 @@
+/* ===== BASIC-HEADER-FEATURE ===== */
 .basic-header-feature {
     padding: 3rem 0;
     margin: 0;
@@ -44,7 +45,10 @@
         max-width: 80rem;
         padding: 0;
         border-top: 2px dotted rgba($color-ocean, .5);
-        margin: 8px auto 18px;
+        margin: 8px auto 12px;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 18px;
+        }
     }
 
     .content-wrapper {
@@ -56,6 +60,12 @@
         }
         @include media-breakpoint-up(xl) {
             max-width: 990px;
+        }
+        @include media-breakpoint-up(xlm) {
+            max-width: 1300px;
+        }
+        @include media-breakpoint-up(xxl) {
+            max-width: 1480px;
         }
 
         p {margin-bottom: 0;}
