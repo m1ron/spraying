@@ -37,7 +37,7 @@
 
     .main-title {
         margin: 0;
-        letter-spacing: .03em;
+        letter-spacing: .01em;
         text-transform: uppercase;
         text-align: center;
         color: white;
@@ -48,8 +48,8 @@
         @include media-breakpoint-up(lg) {
             text-align: left;
         }
-        @include media-breakpoint-up(xlm) {
-            font-size: 54px;
+        @include media-breakpoint-up(xl) {
+            font-size: 40px;
         }
     }
 

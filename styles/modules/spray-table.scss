@@ -1,11 +1,11 @@
 /* ===== SPRAY-TABLE ===== */
 div.spray-table {
     margin-bottom: 1rem;
-    max-width: 794px;
+    max-width: 100%;
 
     &-wrapper {
         margin: 4rem 0;
-        max-width: 794px;
+        max-width: 100%;
         overflow-x: auto;
     }
 
@@ -183,7 +183,7 @@ div.spray-table {
 /* ===== SPRAY-TABLE ===== */
 table.spray-table {
     width: 100%;
-    max-width: 794px;
+    max-width: 100%;
     margin-bottom: 1rem;
     table-layout: auto;
     border-collapse: separate;
@@ -195,7 +195,7 @@ table.spray-table {
 
     &-wrapper {
         margin: 4rem 0;
-        max-width: 794px;
+        max-width: 100%;
         overflow-x: auto;
     }
 

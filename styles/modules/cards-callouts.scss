@@ -232,6 +232,14 @@
                                 }
                             }
                         }
+
+                        &.half-width {
+                            .cards-callouts-grid-item-image {
+                                @include media-breakpoint-up(xl) {
+                                    object-fit: cover;
+                                }
+                            }
+                        }
                     }
                 }
 

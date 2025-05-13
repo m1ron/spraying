@@ -70,7 +70,7 @@
             text-decoration: none;
         }
 
-        &.prev, &.next, &.PagedList-skipToPrevious, &.PagedList-skipToNext {
+        &.prev, &.next, &.PagedList-skipToPrevious, &.PagedList-skipToNext, &.PagedList-skipToFirst, &.PagedList-skipToLast {
             padding: 10px;
             display: flex;
             align-items: center;
@@ -104,7 +104,7 @@
             transform: rotate(-90deg);
         }
 
-        &.PagedList-skipToPrevious, &.PagedList-skipToNext {
+        &.PagedList-skipToPrevious, &.PagedList-skipToNext, &.PagedList-skipToFirst, &.PagedList-skipToLast {
             font-size: inherit !important;
         }
     }
