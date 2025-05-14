@@ -51,7 +51,7 @@
     }
     &::after {
         z-index: 2;
-        background: linear-gradient(0deg, rgba(33, 59, 74, 0.8) 0%, rgba(33, 59, 74, 0.2) 56.58%, rgba(63, 96, 116, 0) 100%);
+        background: linear-gradient(0deg, rgba(33, 59, 74, .55) 0%, rgba(33, 59, 74, .1) 50%, rgba(63, 96, 116, 0) 100%);
     }
 
     &-wrapper {
