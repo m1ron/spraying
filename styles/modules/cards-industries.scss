@@ -276,10 +276,16 @@
                     border-radius: 6px 6px 0 0;
                     aspect-ratio: 5/2.93;
                     display: block !important;
+                    .theme-sars & {
+                        max-height: 212px;
+                    }
                 }
 
                 &.no-overflow-image {
                     object-fit: contain;
+                    .theme-sars & {
+                        object-fit: cover;
+                    }
                 }
             }
 
@@ -660,9 +666,8 @@
     }
 
     .section-header {
-        text-align: center;
         padding-bottom: 3rem;
-
+        text-align: center;
         @include media-breakpoint-up(lg) {
             padding-bottom: 4rem;
         }
@@ -813,7 +818,7 @@
                         font-size: 16px;
                         line-height: 1.2;
                         font-weight: bold;
-                        color: #222;
+                        color: $dark;
                         text-align: center;
                         text-transform: none;
                         &::after {display: none;}

@@ -62,7 +62,6 @@
         @include media-breakpoint-up(xl) {
             min-width: 310px;
             top: 20px;
-            left: 20px;
             transform: none;
             transition: min-width .2s linear, top .2s linear;
 
@@ -107,6 +106,43 @@
                 @include media-breakpoint-down(xss) {
                     width: 100%;
                 }
+            }
+        }
+
+
+        .theme-sars & {
+            max-width: none !important;
+            left: 10px;
+            @include media-breakpoint-up(xsl) {
+                width: 180px;
+            }
+            @include media-breakpoint-up(xl) {
+                min-width: 270px;
+            }
+
+            a {
+                @include media-breakpoint-down(xss) {
+                    width: 50px;
+                }
+            }
+
+            img {
+                max-width: none !important;
+                max-height: none !important;
+                @include media-breakpoint-down(xss) {
+                    width: 180px;
+                }
+                @include media-breakpoint-up(xss) {
+                    width: 100% !important;
+                }
+            }
+        }
+
+        .theme-sars.is-scrolled & {
+            margin-top: 0 !important;
+            @include media-breakpoint-up(xl) {
+                min-width: 228px;
+                top: 10px;
             }
         }
     }
@@ -254,6 +290,10 @@
                     background-size: 44px 44px;
                 }
             }
+        }
+
+        .theme-sars & {
+            right: 8px;
         }
     }
 

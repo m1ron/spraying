@@ -244,13 +244,12 @@
             }
 
             &-callout-action {
-                //margin-top: auto;
+                margin-top: auto;
                 display: flex;
                 align-items: center;
                 font-size: 14px;
                 line-height: 1;
                 font-weight: 600;
-                //@include media-breakpoint-up(md) { display: block !important; }
 
                 a {
                     display: block;

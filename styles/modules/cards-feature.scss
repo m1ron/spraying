@@ -9,12 +9,6 @@
         @include media-breakpoint-up(xl) {
             margin: 6rem 0;
         }
-        /*
-        @include media-breakpoint-up(xxl) {
-            padding-right: 137.65px;
-            padding-left: 137.65px;
-        }
-         */
 
         .section-header {
             padding-bottom: 2.5rem;
@@ -80,6 +74,11 @@
             background-size: cover;
             background-color: $color-night;
             transition: opacity $effect;
+            @include media-breakpoint-up(md) {
+                @include media-breakpoint-down(lg) {
+                    aspect-ratio: auto;
+                }
+            }
 
             .button-logo { max-width: 50%; }
             .button-play { max-width: 100px; }
@@ -95,12 +94,12 @@
                 width: auto;
                 z-index: 10;
                 cursor: pointer;
-
-                @media #{$medium-up} {
+                @include media-breakpoint-up(md) {
                     left: 50%;
                     top: 50%;
                     transform: translate(-50%, -50%);
                 }
+
                 span {
                     border-bottom: 2rem solid transparent;
                     border-left: 3.5rem solid white;
@@ -115,12 +114,12 @@
                     transform: translate(-55%, -50%);
                     width: 0;
 
-                    @media #{$medium-up} {
+                    @include media-breakpoint-up(md) {
                         border-bottom: 1rem solid transparent;
                         border-left: 2rem solid white;
                         border-top: 1rem solid transparent;
                     }
-                    @media #{$large-up} {
+                    @include media-breakpoint-up(lg) {
                         border-bottom: 2rem solid transparent;
                         border-left: 3.5rem solid white;
                         border-top: 2rem solid transparent;
@@ -205,9 +204,35 @@
                 }
 
                 p {
+                    max-height: 80px;
                     font-size: inherit;
                     line-height: inherit;
                     font-weight: inherit;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include media-breakpoint-up(md) {
+                        max-height: 72px;
+                        -webkit-line-clamp: 4;
+                    }
+                    @include media-breakpoint-up(lg) {
+                        max-height: 120px;
+                        -webkit-line-clamp: 5;
+                    }
+                    @include media-breakpoint-up(xl) {
+                        max-height: 144px;
+                        -webkit-line-clamp: 6;
+                    }
+                    @include media-breakpoint-up(xlm) {
+                        max-height: 192px;
+                        -webkit-line-clamp: 8;
+                    }
+                    @include media-breakpoint-up(xxl) {
+                        max-height: 240px;
+                        -webkit-line-clamp: 10;
+                    }
                 }
 
                 & > p:last-child {

@@ -82,7 +82,7 @@
 		transition: 0.3s;
 		&:before {
 			align-items: center;
-			color: #222222;
+			color: $dark;
 			content: attr(data-point);
 			display: flex;
 			height: 100%;

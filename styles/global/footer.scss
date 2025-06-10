@@ -13,6 +13,13 @@
         background: $color-night !important;
     }
 
+    .theme-sars & {
+        @at-root footer#{&}, & {
+            color: #aebdc6 !important;
+            background: #5e7c8e !important;
+        }
+    }
+
     &-container {
         width: 100%;
         max-width: $max-width;
@@ -77,6 +84,9 @@
             display: block;
             @include user-select;
             @include user-drag;
+            @include media-breakpoint-down(lg) {
+                margin: 0 auto;
+            }
         }
 
         .theme-teejet & {

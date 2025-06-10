@@ -266,6 +266,11 @@
         max-width: none;
     }
 
+    .theme-sars & {
+        max-width: 1400px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
     .cards-default-grid-item {
         @include media-breakpoint-up(md) {
