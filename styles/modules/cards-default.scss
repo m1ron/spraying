@@ -286,12 +286,6 @@
         max-width: none;
     }
 
-    .theme-sars & {
-        max-width: 1400px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
     .cards-default-grid-item {
         @include media-breakpoint-up(md) {
             max-width: none;
@@ -431,6 +425,18 @@
         &:hover {
             .product-spotlight-grid-copy-action {
                 color: $color-night;
+            }
+        }
+    }
+
+    .theme-sars & {
+        max-width: 1400px;
+        margin-right: auto;
+        margin-left: auto;
+
+        .cards-default-grid-item {
+            @include media-breakpoint-up(xl) {
+                flex: 0 0 calc(33.3% - 18px) !important;
             }
         }
     }
