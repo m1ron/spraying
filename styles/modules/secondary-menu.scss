@@ -24,7 +24,7 @@
     &.sticky {
         position: fixed;
         top: 110px;
-        z-index: 200;
+        z-index: 99;
         @include media-breakpoint-up(lg) {
             max-width: 960px;
         }
