@@ -21,10 +21,6 @@
     text-transform: none;
 }
 
-.icon-full-cone:before {content: "\e93a";}
-.icon-checklist:before {content: "\e937";}
-.icon-gauge:before {content: "\e938";}
-.icon-sliders:before {content: "\e939";}
 .icon-nozzle-off:before {content: "\e900";}
 .icon-alert:before {content: "\e901";}
 .icon-arrow:before {content: "\e902";}
@@ -63,7 +59,6 @@
 .icon-truck:before {content: "\e923";}
 .icon-video:before {content: "\e924";}
 .icon-viewdoc:before {content: "\e925";}
-.icon-whitepaper:before {content: "\e926";}
 //Adding redundancy for Resource consistency; also use for conference paper
 .icon-white-paper:before, .icon-conference-paper:before {content: "\e926";}
 .icon-drop:before {content: "\e927";}
@@ -80,5 +75,15 @@
 .icon-contact:before {content: "\e932";}
 .icon-cvv:before {content: "\e933";}
 .icon-careers:before {content: "\e934";}
-.icon-upload:before {content: "\e936";}
 .icon-contact-us:before {content: "\e935";}
+.icon-upload:before {content: "\e936";}
+.icon-checklist:before {content: "\e937";}
+.icon-gauge:before {content: "\e938";}
+.icon-sliders:before {content: "\e939";}
+.icon-full-cone:before {content: "\e93a";}
+.icon-ethanol-corn:before {content: "\e93b";}
+.icon-usa-with-pencil:before {content: "\e93c";}
+.icon-nozzle-spraying:before {content: "\e93d";}
+.icon-boots-on-the-ground:before {content: "\e93e";}
+.icon-dairy:before {content: "\e93f";}
+.icon-beer-factory:before {content: "\e940";}
