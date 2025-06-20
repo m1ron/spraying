@@ -1,7 +1,6 @@
 .landing-page {
     .article-copy {
         background-color: $spray-lt-gray;
-        //padding: 2rem;
 
         &-flex {
             @include media-breakpoint-up(md) {

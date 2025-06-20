@@ -2,7 +2,7 @@
     &-wrapper {
         background: $spray-lt-gray;
         padding: 1rem;
-        @media #{$medium-up} { 
+        @media #{$medium-up} {
             display: flex;
             justify-content: space-between;
             padding: 1rem 3rem;
@@ -14,9 +14,9 @@
     &-item-review {
         padding: 0 2rem;
         @media #{$medium-up} { padding: 0 3rem; }
-        @media #{$large-up} { 
+        @media #{$large-up} {
             padding: 0 0 0 4rem;
-            width: 65%; 
+            width: 65%;
         }
         @media #{$xlarge-up} { padding: 0 0 0 8rem; }
     }
@@ -24,9 +24,9 @@
     &-process-review {
         @media #{$large-up} {
             display: flex;
-            flex-flow: row wrap; 
+            flex-flow: row wrap;
             justify-content: space-between;
-            
+
         }
         .shopping-cart-card {
             width: 100%;
@@ -46,18 +46,18 @@
     &-process-button {
         padding: 3rem 0 4rem;
         @media #{$medium-up}  {
-            padding: 2rem 0 7rem;  
+            padding: 2rem 0 7rem;
             text-align: right;
         }
         @media #{$large-up} { padding-right: 2rem; }
-       a {
-           width: 100%;
-       }
+        a {
+            width: 100%;
+        }
     }
 }
 
 .overlay {
-    background-color: rgba(63,96,116,0.5);
+    background-color: rgba(63, 96, 116, 0.5);
     bottom: 0;
     height: 100%;
     left: 0;
@@ -68,7 +68,7 @@
     transition: cubic-bezier(0.79, 0.24, 0.51, 0.95) 0.2s;
     visibility: hidden;
     width: 100%;
-    z-index: 902;   
+    z-index: 902;
 }
 
 .overlay-active .overlay {
@@ -86,7 +86,7 @@
     width: 100%;
     z-index: 99;
     opacity: 0;
-    box-shadow: 0 10px 20px -5px rgba(63,96,116,0.15);
+    box-shadow: 0 10px 20px -5px rgba(63, 96, 116, 0.15);
     transition: all 0.3s ease-in;
     .button-light-blue {
         width: 100%;
@@ -98,6 +98,3 @@
     }
     @media #{$large-up} { display: none; }
 }
-
-
-

@@ -9,7 +9,7 @@
 
     .jump-menu-container,
     .site-header-buttons {
-        .scEmptyPlaceholder { 
+        .scEmptyPlaceholder {
             height: 60px; // A bit narrower to prevent main menu being forced down outside of header
         }
     }
@@ -107,7 +107,7 @@
 }
 
 .fallback-rendering-overlay {
-    background-color: rgba(34,34,34,.8);
+    background-color: rgba(34, 34, 34, .8);
     z-index: 100;
     position: absolute;
     top: 0;

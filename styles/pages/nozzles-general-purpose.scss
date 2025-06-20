@@ -1,17 +1,17 @@
 .nozzles-general-purpose {
-	.site-container { background-color: $spray-lt-gray; }
-	.header-feature {
-		&-cta {
-			@media screen and (min-width: 1361px) {
-				margin-left: auto;
-				margin-right: auto;
-			}
-		}
-	}
-	.wysiwyg-content-wrapper {
-		ul {
-			margin-top: 2rem;
-		}
-	}
-	&.is-scrolled .header-feature { background-position: center -1rem !important; }
+    .site-container { background-color: $spray-lt-gray; }
+    .header-feature {
+        &-cta {
+            @media screen and (min-width: 1361px) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    .wysiwyg-content-wrapper {
+        ul {
+            margin-top: 2rem;
+        }
+    }
+    &.is-scrolled .header-feature { background-position: center -1rem !important; }
 }
