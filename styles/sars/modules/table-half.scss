@@ -1,0 +1,202 @@
+.table-half {
+    padding: 4rem;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .small-description {
+        color: #003b61;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .model-wrapper {
+        margin: 0 2.4rem;
+
+        .model-title {
+            font-size: 2.4rem;
+            color: #0065a5;
+            line-height: 1.16;
+            letter-spacing: -0.9px;
+            margin-bottom: 0.6rem;
+            font-weight: 300;
+        }
+
+        .model-image {
+            width: 100%;
+        }
+
+        .model-description {
+            margin-top: 1rem;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: #000000;
+            letter-spacing: 0.0125rem;
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            width: 50%;
+        }
+    }
+
+    .table-wrapper {
+        margin: 0 2.4rem;
+    }
+
+    table {
+        font-size: 16px;
+        width: 100%;
+        border: 1px solid #b4b3b3;
+
+        tr {
+            color: #111111;
+
+            &.main-info {
+                color: #0065a5;
+                font-size: 1.8rem;
+                border-bottom: 1px solid #b4b3b3;
+            }
+
+            &.white {
+                background-color: #ffffff;
+            }
+
+            &.gray {
+                background-color: #e4e1e1;
+            }
+        }
+
+        td {
+            padding: 1rem 1.8rem;
+            border-right: 1px solid #b4b3b3;
+        }
+    }
+
+    .accordion-container {
+        &.expanded {
+            .accordion-trigger {
+                .main-title {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .accordion-trigger {
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+        border: none;
+        display: none;
+
+        .main-title {
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                right: 2rem;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 2.8rem;
+                height: 4px;
+                background-color: white;
+                border-radius: 5px;
+            }
+
+            &::after {
+                height: 2.8rem;
+                width: 4px;
+                right: calc(3.4rem - 2px);
+                display: block;
+            }
+        }
+    }
+
+    .title-feature {
+        background: #4c4b4b;
+        padding: 1rem 0;
+        text-align: left;
+    }
+
+    .main-title {
+        color: #ffffff;
+        font-size: 1.8rem;
+        margin-bottom: 0;
+        padding: 0.3rem 0 0.3rem 2rem;
+    }
+
+    .small-description {
+        color: #003b61;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        font-weight: 300;
+        line-height: 1.4;
+    }
+
+    + div {
+        margin-left: 5rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .table-half {
+        padding: 3.5rem 3rem;
+        width: 100%;
+        flex-direction: column;
+        align-items: unset;
+        margin-right: 0;
+
+        .model-wrapper,
+        .table-wrapper {
+            max-width: none;
+            margin: 0;
+        }
+
+        .model-wrapper {
+            .modal-description {
+                display: none;
+            }
+        }
+
+        .mobile-hidden {
+            display: none;
+        }
+
+        table {
+            tr {
+                &.main-info {
+                    font-size: 1.7rem;
+                }
+
+                td {
+                    padding: 1rem 0.6rem;
+                    text-align: center;
+                }
+            }
+        }
+
+        .title-feature {
+            padding: 2.3rem 0;
+            text-align: left;
+        }
+
+        .accordion-content {
+            display: none;
+        }
+
+        .accordion-trigger {
+            display: block;
+        }
+
+        + div {
+            margin-left: 0;
+        }
+    }
+}

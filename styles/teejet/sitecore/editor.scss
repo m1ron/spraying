@@ -1,0 +1,130 @@
+﻿.pagemode-edit {
+    // Tweaks for Sitecore Experience Editor (Edit mode)
+
+    // Expands empty placeholders visually for experience editor.
+    .scEmptyPlaceholder {
+        width: 100%;
+        min-width: 100px;
+    }
+
+    .jump-menu-container,
+    .site-header-buttons {
+        .scEmptyPlaceholder {
+            height: 60px; // A bit narrower to prevent main menu being forced down outside of header
+        }
+    }
+
+    .site-header-logo .scEmptyImage {
+        max-width: 120px;
+    }
+}
+
+.pagemode-edit,
+.pagemode-preview {
+    // Tweaks for Sitecore Experience Editor (Edit & Preview mode)
+
+    // Take the header out of fixed mode (the Experience Editor ribbon covers it otherwise) ...
+    .site-header {
+        position: relative;
+        // Plus a little something to prevent margin collapsing now that we're relative
+        &:before,
+        &:after {
+            content: "\00a0"; /* No-break space character */
+            display: block;
+            overflow: hidden;
+            height: 0;
+        }
+    }
+    // ... and remove the padding which was accomodating the fixed header
+    .site-container {
+        padding-top: 0 !important;
+    }
+}
+
+// Tooltip & Alerts
+.xp-tooltip {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    color: $dark;
+}
+
+.xp-tooltip-inverse {
+    color: white;
+}
+
+.xp-tooltip-info-icon {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    font: bold 19px sans-serif;
+    cursor: help;
+}
+
+.xp-alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+}
+
+.xp-alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.xp-alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.xp-alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.xp-alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+
+// Placeholder Fallback Rendering
+.fallback-rendering {
+    position: relative;
+    display: inherit;
+    overflow: hidden;
+    width: 100%;
+
+    &.fallback-rendering-empty {
+        // We want this all to collapse if the inherited content is legitimately not visible (e.g. absolutely positioned offscreen like the main menu in the sidebar),
+        // but make sure it's visible if there is no inherited content at all to inform the content author of this "Inherited Content" rendering existance
+        min-height: 2.5rem;
+    }
+}
+
+.fallback-rendering-overlay {
+    background-color: rgba(34, 34, 34, .8);
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fallback-rendering-information {
+    color: #fff;
+
+    .fallback-rendering-info-icon {
+        font: normal 19px sans-serif;
+        cursor: help;
+    }
+}

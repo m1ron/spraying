@@ -1,0 +1,276 @@
+/* ===== CTA-BAR ===== */
+.cta-bar {
+    margin: 0 0 4rem;
+    @include media-breakpoint-up(md) {
+        margin: 0 0 5rem;
+    }
+
+    &:last-child,
+    &.bottom-0,
+    .theme-spray .main-content.homepage & {
+        margin-bottom: 0 !important;
+    }
+
+    .cta-content {
+        width: 100%;
+        padding: 2.5rem 0;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        font: 16px/1.5 $font-default;
+        letter-spacing: .01em;
+        text-align: center;
+        color: white;
+        @include media-breakpoint-up(xl) {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        &::after {
+            @include pseudo;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            right: auto;
+            bottom: 0;
+            left: 50%;
+            z-index: -1;
+            background-color: $spray-dkst-blue;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 20px -5px rgba(63, 96, 116, .15);
+            @include media-breakpoint-down(sm) {
+                width: auto;
+                right: -16px;
+                left: -16px;
+                transform: none;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+    }
+
+    &-copy {
+        display: block;
+        font-family: $site-font-secondary;
+        font-size: 21px;
+        line-height: 1.2;
+        font-weight: 800;
+        letter-spacing: .5px;
+        @include media-breakpoint-up(md) {
+            margin: 0 auto;
+            font-size: 24px;
+        }
+        @include media-breakpoint-up(xl) {
+            font-size: 28px;
+        }
+
+        .theme-sars & {
+            font-size: 21px !important;
+            font-weight: 800 !important;
+            @include media-breakpoint-up(md) {
+                font-size: 24px !important;
+            }
+            @include media-breakpoint-up(xl) {
+                font-size: 28px !important;
+            }
+        }
+
+        &:empty {display: none !important;}
+
+        & + p {
+            margin-top: 12px;
+            @include media-breakpoint-up(md) {
+                margin-top: 16px;
+            }
+            @include media-breakpoint-up(xl) {
+                margin-top: 21px;
+            }
+        }
+    }
+
+    &-button, .scTextWrapper {
+        padding: 12px 24px;
+        border-radius: 4px;
+        margin-top: 12px;
+        display: inline-block;
+        font: 600 14px/18px $font-default;
+        letter-spacing: .025em;
+        color: $color-white !important;
+        text-transform: none;
+        background: $color-navy;
+        transition: background-color $effect;
+        box-shadow: inset 0 -4px 0 rgba(black, .2);
+        @include media-breakpoint-up(xss) {
+            padding-right: 32px;
+            padding-left: 32px;
+        }
+        @include media-breakpoint-up(md) {
+            padding: 16px 40px;
+            margin-top: 16px;
+            letter-spacing: .05em;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-top: 21px;
+        }
+        @include media-breakpoint-up(xxl) {
+            padding-right: 48px;
+            padding-left: 48px;
+        }
+
+        &:hover, &:focus {
+            text-decoration: none;
+            background: #004e80;
+        }
+
+        .theme-sars & {
+            font-size: 14px !important;
+        }
+    }
+
+    &-alt {
+        .cta-content {
+            color: white;
+            background: none;
+            &::after {background-color: $spray-dkst-blue;}
+        }
+    }
+
+    &-white {
+        .cta-content {
+            background: none;
+            &::after {display: none;}
+        }
+    }
+
+    // TEEJET
+    .theme-teejet & {
+        //margin: 6rem 0;
+        background: $color-navy;
+        @include media-breakpoint-up(xl) {
+            //margin-top: 9rem;
+            //margin-bottom: 9rem;
+        }
+
+        .cta-content {
+            padding: 40px 16px;
+            border-radius: 4px;
+            //background: $color-navy url('../images/product/cta-contacts.jpg') no-repeat center center / cover;
+            background: $color-navy;
+            &::after {
+                width: 100%;
+                background: $color-navy url('/en-gb/-/media/dam/agricultural/usa/website-images/teejet-spraycms-images/boom-components_main_tjweb.jpg') no-repeat center center / cover;
+                background-blend-mode: soft-light;
+                right: 0;
+                left: 0;
+                opacity: .3;
+                transform: none;
+            }
+
+            @include media-breakpoint-up(md) {
+                padding: 45px 30px;
+            }
+            @include media-breakpoint-up(xl) {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+            p {
+                font-size: 14px;
+                @include media-breakpoint-up(md) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &-copy {
+            margin: 0 auto;
+            font: bold 21px/1.2 $font-default !important;
+            letter-spacing: .006em;
+            color: white;
+            text-align: center;
+            display: block;
+            @include media-breakpoint-up(md) {
+                font-size: 25px !important;
+            }
+            @include media-breakpoint-up(xl) {
+                font-size: 28px !important;
+                line-height: 32.8px !important;
+            }
+
+            & + p {
+                margin-top: 16px;
+                @include media-breakpoint-up(md) {
+                    margin-top: 20px;
+                }
+                @include media-breakpoint-up(xl) {
+                    margin-top: 34px;
+                }
+            }
+        }
+
+        &-button, .scTextWrapper {
+            min-width: 0;
+            padding: 14px 32px;
+            border: 1px solid white;
+            border-radius: 4px;
+            margin-top: 0;
+            //margin-top: 20px;
+            font-size: 14px !important;
+            line-height: 17px !important;
+            letter-spacing: .06em;
+            background: rgba(white, .35);
+            box-shadow: 0 9px 11px -5px rgba(63, 96, 116, .2), inset 0px -3px 0px rgba(black, .15);
+            @include media-breakpoint-up(md) {
+                padding-top: 19px;
+                padding-bottom: 19px;
+                //margin-top: 24px;
+            }
+            @include media-breakpoint-up(xl) {
+                //margin-top: 43px;
+            }
+
+            &:hover, &:focus {
+                background: rgba(white, .5);
+            }
+        }
+    }
+
+    .blogs.article-copy & {
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 4rem !important;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 5rem !important;
+        }
+
+        .cta-content::after {
+            width: 100%;
+            left: 0;
+            transform: none;
+        }
+    }
+
+    .theme-teejet .main-content.contact & {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        @include media-breakpoint-up(md) {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-top: 88px;
+            margin-bottom: 88px;
+        }
+
+        .cta-bar-copy:empty {
+            display: none;
+        }
+    }
+}

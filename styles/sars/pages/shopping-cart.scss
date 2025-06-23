@@ -1,0 +1,11 @@
+.shopping-cart {
+    .ecom-main {
+        order: 1;
+    }
+    .ecom-aside {
+        order: 2;
+    }
+    .ecom-main {
+        @media #{$large-up} { margin-bottom: 5rem; }
+    }
+}

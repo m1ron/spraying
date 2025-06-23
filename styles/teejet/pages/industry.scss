@@ -1,0 +1,64 @@
+.industry {
+    .site-container { background-color: $spray-lt-gray; }
+    .header-feature {
+        &-cta {
+            @media screen and (min-width: 1361px) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    &.is-scrolled .header-feature { background-position: center -1rem !important; }
+
+    &.engineering, &.other {
+        .article-copy {
+            ul { margin-top: 2rem; }
+            ol {
+                margin-top: 2rem;
+                li {
+                    margin-bottom: 1rem;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .cards-default-container {
+            padding: 3rem 0;
+            @media #{$medium-up} { padding: 6rem 0; }
+            @media #{$large-up} { padding: 8rem 0; }
+        }
+    }
+}
+
+
+// subpages
+.industry-subpage {
+    .header-feature-cta-title {
+        text-transform: none !important;
+        letter-spacing: -0.3rem;
+        line-height: 0.95;
+        font-size: 4.2rem;
+
+        @media #{$medium-up} { font-size: 5rem; }
+        @media #{$large-up} { font-size: 6.4rem; }
+    }
+    .cards-feature-container {
+        @media #{$large-up} { padding: 5rem 0; }
+    }
+}
+
+//bakery subpage
+.bakery {
+    .header-feature {
+        background-position: center 7rem;
+        @media only screen and (min-width: 1201px) {
+            background-position: center 16rem;
+        }
+    }
+    &.is-scrolled .header-feature {
+        background-position: center 9rem !important;
+        @media only screen and (max-width: 1201px) {
+            background-position: center 0 !important;
+        }
+    }
+}

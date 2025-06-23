@@ -1,0 +1,77 @@
+/* ===== STAT-BAR ===== */
+.stat-bar {
+    margin: 3rem 0;
+    @include media-breakpoint-up(md) {
+        margin: 4rem 0 4.5rem;
+    }
+    @include media-breakpoint-up(md) {
+        margin: 5rem 0 5.5rem;
+    }
+
+    &-wrapper {
+        text-align: center;
+    }
+
+    &-stat {
+        margin: 0;
+        display: inline;
+        font-size: 26px;
+        line-height: 26px;
+        font-weight: 800;
+        color: $spray-blue-alt-1;
+        letter-spacing: .01em;
+        @include media-breakpoint-up(md) {
+            font-size: 32px;
+            line-height: 32px;
+        }
+    }
+
+    &-copy {
+        margin: 0;
+        display: inline;
+        font-size: 26px;
+        line-height: 26px;
+        font-weight: bold;
+
+        &-action {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            @include media-breakpoint-up(md) {
+                margin-top: 16px;
+            }
+
+            a {
+                padding: 12px 24px;
+                border-radius: 4px;
+                display: block;
+                font: 600 14px/18px $font-default;
+                letter-spacing: .025em;
+                color: $color-white !important;
+                text-align: center;
+                text-transform: capitalize;
+                background: $color-navy;
+                transition: background-color $effect;
+                box-shadow: inset 0 -4px 0 rgba(black, .2);
+                @include media-breakpoint-up(xss) {
+                    padding-right: 32px;
+                    padding-left: 32px;
+                }
+                @include media-breakpoint-up(md) {
+                    padding: 16px 40px;
+                    letter-spacing: .05em;
+                }
+
+                &:hover, &:focus {
+                    color: $color-white !important;
+                    text-decoration: none;
+                    background: #004975;
+                }
+            }
+
+            .icon-double-arrow {
+                display: none !important;
+            }
+        }
+    }
+}

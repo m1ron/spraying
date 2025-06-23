@@ -1,0 +1,52 @@
+.reorder-remind {
+	&-container { padding: 0 1rem; }
+	&-item {
+		border-top: $dotted-border;
+		display: flex;
+		padding: 2.5rem 0;
+		&:first-of-type { border-top: 0; }
+		&-image {
+			padding-right: 2rem;
+			img { 
+				min-width: 65px;
+				width: 65px; 
+			}
+		}
+		&-content { padding-right: 2rem; }
+	}
+	&-title {
+		color: $dark;
+		font-size: 1.6rem;
+		font-weight: 700;
+		letter-spacing: 0.17px;
+		margin-bottom: 1rem;
+	}
+	&-date {
+		color: $dark;
+		font-size: 1.6rem;
+		letter-spacing: 0.17px;
+		margin-bottom: 1.5rem;
+	}
+	&-actions {
+		&-item {
+			border-left: 1px solid rgba($spray-dk-blue-gray, 0.4);
+			font-size: 1.6rem;
+			padding: 0.125rem 0.5rem 0.125rem 0.75rem;
+			&:first-of-type { 
+				border-left: 0; 
+				padding-left: 0;
+			}
+		}
+	}
+}
+@media #{$medium} {
+	.reorder-remind {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		&-item { 
+			width: 47%; 
+			&:nth-child(2) { border-top: 0; }
+		}
+	}
+}

@@ -1,0 +1,270 @@
+/* ===== SECONDARY-MENU ===== */
+.secondary-menu {
+    width: 100%;
+    display: flex;
+    position: relative;
+    z-index: 500;
+    font-family: $site-font;
+    @include media-breakpoint-down(xl) {
+        display: none;
+    }
+
+    &::after {
+        @include pseudo;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        z-index: -1;
+        background: $color-mist;
+        transform: translateX(-50%);
+    }
+
+    &.sticky {
+        position: fixed;
+        top: 110px;
+        z-index: 99;
+        @include media-breakpoint-up(lg) {
+            max-width: 960px;
+        }
+        @include media-breakpoint-up(xl) {
+            max-width: 1160px;
+            & + section[data-menu] {
+                margin-top: 6rem;
+            }
+        }
+        @include media-breakpoint-up(xlm) {
+            max-width: 1360px;
+        }
+        @include media-breakpoint-up(xxl) {
+            max-width: 1600px;
+        }
+
+        .is-scrolled {
+            & {
+                top: 110px;
+            }
+        }
+    }
+
+    .menu-link {
+        padding: 1.8rem;
+        margin: 0;
+        flex-grow: 1;
+        color: black;
+        text-align: center;
+        background: $color-mist;
+        transition: none;
+
+        &:hover, &.active {
+            color: white;
+            text-decoration: none;
+            background: #0065a5;
+        }
+
+        &.active {
+            position: relative;
+            &:after {
+                @include pseudo;
+                width: 0;
+                height: 0;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-bottom: 12px solid white;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+section[data-menu] {
+
+    &.active {
+        .mobile-toggle {
+            &::before {transform: rotate(90deg);}
+            &::after {opacity: 1;transform: rotate(180deg);}
+        }
+    }
+
+    .content-wrapper {
+        padding: 4rem;
+        @include media-breakpoint-down(xl) {
+            display: block;
+        }
+    }
+
+    .mobile-toggle {
+        width: 100%;
+        padding: 16px;
+        border: none;
+        margin: 0;
+        display: none;
+        letter-spacing: .01em;
+        color: white;
+        text-transform: uppercase;
+        text-align: left;
+        position: relative;
+        background: #4c4b4b;
+        cursor: pointer;
+        @include media-breakpoint-up(sm) {
+            width: 100vw;
+            margin: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @include media-breakpoint-down(xl) {
+            display: block;
+        }
+
+        &::before, &::after {
+            @include pseudo;
+            width: 18px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            background: white;
+            transition: opacity .3s, transform .5s;
+            opacity: 1;
+        }
+
+        &::after {
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+    }
+}
+
+.scrolling-chapters {
+
+    .secondary-menu-vertical {
+        align-self: flex-start;
+        display: block;
+        padding: 0;
+        position: static !important;
+
+        .menu-link {
+            display: block;
+            text-align: left;
+            background: none;
+            color: $spray-blue-alt-2;
+            border: 0;
+            position: relative;
+            padding: 10px 40px;
+            transition: all $effect;
+
+            @media (min-width: 992px) {
+                font-size: 18px;
+            }
+
+            &:before {
+                content: "";
+                display: block;
+                height: 100%;
+                width: 2px;
+                background: $dark-gray-1;
+                position: absolute;
+                top: 0;
+                left: 5px;
+            }
+
+            &:first-child:before {
+                height: 50%;
+                top: 50%;
+            }
+
+            &:last-child:before {
+                height: 50%;
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                height: 12px;
+                width: 12px;
+                border-radius: 50%;
+                border: 2px solid $dark-gray-1;
+                background: $light;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+
+            &.active {
+                @media (min-width: 992px) {
+                    font-weight: 700;
+
+                    &:after {
+                        border: 2px solid $spray-blue;
+                        background: $spray-blue;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 991px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .scrolling-chapters-sections {
+        padding: 30px 2rem;
+    }
+
+    .scrolling-chapters-rail {
+        padding: 30px 2rem;
+
+        & > div {
+            margin-bottom: 30px;
+        }
+
+        .wysiwyg-content {
+            padding: 0;
+            margin-bottom: 30px;
+            &::after {display: none;}
+        }
+
+        .wysiwyg-content-wrapper {
+            padding: 0;
+        }
+    }
+
+    .social-links-rail {
+        margin-left: -.5em;
+        margin-right: -.5em;
+    }
+
+    @media (min-width: 992px) {
+        display: flex;
+
+        .scrolling-chapters-rail {
+            display: block;
+            align-self: flex-start;
+            position: sticky;
+            top: 12rem;
+            width: 30%;
+            z-index: 100;
+        }
+
+        .secondary-menu-vertical {
+            &.sticky {
+                position: static !important;
+            }
+        }
+
+        .scrolling-chapters-sections {
+            width: 70%;
+        }
+    }
+}
+
+.main-content.scrolling-chapters-main-content {
+    @media (min-width: 992px) {
+        overflow: unset;
+    }
+}

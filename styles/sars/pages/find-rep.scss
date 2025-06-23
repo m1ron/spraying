@@ -1,0 +1,161 @@
+.find-rep {
+    &-form {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        &-wrapper {
+            margin: 0 auto;
+            padding-bottom: 3rem;
+            @include media-breakpoint-up(md) {
+                padding-bottom: 4rem;
+            }
+        }
+
+        .spray-form {
+            width: 100%;
+            max-width: 550px;
+            padding: 0;
+            margin: 0 auto;
+            &::before {display: none !important;}
+            &::after {@include clearfix-new;}
+
+            &-field {
+                margin-bottom: 2rem !important;
+            }
+        }
+
+        &.postal-active {
+            #find-rep-postal, #find-rep-country-select { width: 100%; }
+        }
+
+        #find-rep-postal {
+            display: none;
+        }
+
+        .find-rep-zip {
+            position: relative;
+        }
+
+        .find-country {
+            position: relative;
+
+            .awesomplete {
+                &::-webkit-calendar-picker-indicator {
+                    display: none;
+                }
+
+                ul {
+                    padding: .5rem .5rem 0 .5rem;
+                    background: $light;
+                    &::before {border: 0;background: transparent;}
+
+                    li {
+                        margin-bottom: .5rem;
+                        font-weight: 400;
+                        mark {background-color: transparent;}
+                    }
+                }
+            }
+        }
+
+        .icon-search {
+            width: 60px;
+            height: 22px;
+            border: none;
+            border-left: 1px solid $color-gray;
+            border-radius: 0;
+            display: block;
+            overflow: hidden;
+            text-indent: -1000px;
+            position: absolute;
+            right: 1px;
+            bottom: 9px;
+            z-index: 5;
+            background: $color-white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='29' fill='none'%3E%3Cpath fill='%23242F37' d='m22.685 22.492-4.79-4.79a7.041 7.041 0 0 0 1.57-4.44 7.083 7.083 0 0 0-7.076-7.075 7.083 7.083 0 0 0-7.075 7.075 7.083 7.083 0 0 0 7.075 7.075 7.041 7.041 0 0 0 4.448-1.577l4.79 4.79 1.058-1.058Zm-15.874-9.23a5.585 5.585 0 0 1 5.579-5.578 5.585 5.585 0 0 1 5.578 5.578 5.585 5.585 0 0 1-5.579 5.58 5.585 5.585 0 0 1-5.578-5.58Z'/%3E%3C/svg%3E") no-repeat center center !important;
+            box-shadow: none !important;
+            opacity: .75;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+
+    .grid-item-callout-result-header {
+        width: 100%;
+        p { font-size: 1.6rem; }
+        .offices-result {
+            margin-right: 1rem;
+            display: block;
+            @include media-breakpoint-up(sm) {
+                margin-right: 2rem;
+                display: inline;
+            }
+        }
+
+    }
+
+    .grid-item-callout-result-wrapper {
+        width: 100%;
+        max-width: 1060px;
+        padding: 2rem 0;
+        margin: 0 auto;
+        display: none;
+    }
+
+    .grid-item-callout-result-inner {
+        width: 100%;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 0 0 50%;
+            gap: 32px;
+        }
+        @include media-breakpoint-up(xl) {
+            flex: 0 0 25%;
+        }
+    }
+
+    .sidebar-cards-grid-item-callout-result {
+        margin: 0 0 20px;
+        display: block;
+        font-size: 14px;
+        line-height: 18px;
+        &:last-child {margin-bottom: 0;}
+        @include media-breakpoint-up(md) {
+            width: calc(50% - 16px);
+            margin-bottom: 0;
+        }
+        @include media-breakpoint-up(xl) {
+            width: calc(25% - 32px);
+        }
+
+        p {
+            margin-bottom: .5rem;
+            font-size: inherit;
+            line-height: inherit;
+            &:last-child {margin-bottom: 0 !important;}
+        }
+
+        address {
+            margin-bottom: .5rem;
+            font-style: normal;
+            display: block;
+        }
+
+        a {
+            &:hover {
+                color: $color-night;
+                text-decoration: none;
+            }
+        }
+
+        &-office {
+            border-bottom: 2px dotted rgba(63, 96, 116, 0.2);
+        }
+    }
+}

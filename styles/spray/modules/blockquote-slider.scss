@@ -1,0 +1,50 @@
+.blockquote-slider-container {
+    @media #{$large-up} { margin-left: 4rem; }
+    blockquote { 
+        font-size: 2.8rem; 
+        @media #{$medium-up} { font-size: 3.2rem; }
+    }
+
+    .slick-dots {
+        padding-bottom: 2rem;
+        li {
+            margin: 0 1rem;
+            &.slick-active button:before {
+                color: #ffffff;
+                opacity: 1;
+            }
+            &:hover button:before {
+                opacity: 0.5;
+            }
+        }
+        
+        button:before {
+            color: $spray-blue;
+            font-size: 6rem;
+            opacity: 0.1;
+        }
+    }
+
+    .slick-arrow{
+        display: none !important;
+        font-size: 7rem;
+        color: $spray-blue;
+        opacity: 0.1;
+        cursor: pointer;
+        @media #{$large-up} { display: inline-block !important; }
+        &:hover { opacity: 0.5; }
+
+        &.right {
+            position: absolute;
+            right: 0;
+            top: 40%;
+            transform: rotate(-90deg);
+        }
+        &.left {
+            position: absolute;
+            left: -70px;
+            top: 40%;
+            transform: rotate(90deg);
+        }
+    }
+}

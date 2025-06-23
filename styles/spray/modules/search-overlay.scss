@@ -1,0 +1,166 @@
+/* ===== SITE-SEARCH-OVERLAY ===== */
+.site-search-overlay {
+    display: none;
+    font-family: $font-default;
+
+    @include media-breakpoint-down(xl) {
+        width: 100%;
+        min-width: $min-width;
+        height: 100vh;
+        padding: 64px 20px 20px;
+        display: block;
+        overflow: hidden;
+        position: fixed;
+        top: -100%;
+        right: 0;
+        left: 0;
+        z-index: 100;
+        background-color: $color-white;
+        transition: shadow .4s $bezier, top .4s $bezier;
+
+        .search-open & {
+            top: 0;
+            box-shadow: 0 0 5px rgba(black, .1);
+        }
+
+        .site-header & {
+            display: none;
+        }
+
+        label {
+            padding-top: 20px;
+            margin-bottom: 8px;
+            display: block;
+            position: relative;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: .02em;
+            color: $color-night;
+
+            &::before {
+                @include pseudo;
+                height: .5px;
+                position: absolute;
+                top: 0;
+                right: -10px;
+                left: -10px;
+                background: $color-ocean;
+            }
+        }
+    }
+    @include media-breakpoint-up(xl) {
+        width: 25%;
+        min-width: 320px;
+        min-height: 80px;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: 110;
+        transform: translateX(-60%);
+        transition: min-height .3s $bezier;
+
+        .is-scrolled & {
+            min-height: 60px;
+        }
+
+        .site-header & {
+            display: flex;
+        }
+
+        .close-search-button {
+            display: none;
+        }
+    }
+    @include media-breakpoint-up(xlm) {
+        width: 30%;
+        max-width: 460px;
+        transform: translateX(-50%);
+        .theme-teejet & {
+            width: 36.5%;
+            max-width: 600px;
+        }
+    }
+
+    &-input {
+        width: 100%;
+        position: relative;
+
+        input[type='text'] {
+            width: 100%;
+            padding: 8px 70px 8px 15px;
+            border: 1px solid $color-gray;
+            border-radius: 8px;
+            font: 16px/22px $font-default;
+            letter-spacing: .005em;
+            color: $color-night;
+            position: relative;
+            z-index: 1;
+            transition: border-color $effect;
+            outline: none;
+            @include media-breakpoint-up(xl) {
+                font-size: 14px;
+            }
+            @include media-breakpoint-up(xxl) {
+                font-size: 16px;
+            }
+
+            &::placeholder {
+                color: $color-silver;
+                opacity: 1;
+                transition: opacity $effect;
+                @include user-select;
+            }
+
+            &:focus {
+                border-color: $color-silver;
+                &::placeholder {opacity: 0;}
+            }
+        }
+
+        input[type='submit'] {
+            width: 60px;
+            height: 22px;
+            border: none;
+            border-left: 1px solid $color-gray;
+            display: block;
+            overflow: hidden;
+            text-indent: -1000px;
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            z-index: 5;
+            transform: translateY(-50%);
+            background: $color-white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='29' fill='none'%3E%3Cpath fill='%23242F37' d='m22.685 22.492-4.79-4.79a7.041 7.041 0 0 0 1.57-4.44 7.083 7.083 0 0 0-7.076-7.075 7.083 7.083 0 0 0-7.075 7.075 7.083 7.083 0 0 0 7.075 7.075 7.041 7.041 0 0 0 4.448-1.577l4.79 4.79 1.058-1.058Zm-15.874-9.23a5.585 5.585 0 0 1 5.579-5.578 5.585 5.585 0 0 1 5.578 5.578 5.585 5.585 0 0 1-5.579 5.58 5.585 5.585 0 0 1-5.578-5.58Z'/%3E%3C/svg%3E") no-repeat center center;
+            opacity: .75;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+}
+
+/* ===== CLOSE-SEARCH-BUTTON ===== */
+.close-search-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    z-index: 10;
+    outline: none;
+    cursor: pointer;
+
+    .menu-global {
+        width: 24px;
+        height: 2px;
+        border-top: 2px solid $color-night;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        &.menu-top {transform: rotate(135deg);}
+        &.menu-bottom {transform: rotate(225deg);}
+    }
+}

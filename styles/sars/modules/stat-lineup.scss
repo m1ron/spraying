@@ -1,0 +1,52 @@
+/* ===== STAT-LINEUP ===== */
+.stat-lineup {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    color: #161c2d;
+    @include media-breakpoint-up(md) {
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+
+    &-container {
+        margin: 4rem 0;
+        @include media-breakpoint-up(md) {
+            margin: 5rem 0;
+        }
+        @include media-breakpoint-up(xl) {
+            margin: 6rem 0;
+        }
+    }
+
+    &-item {
+        max-width: 300px;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            max-width: 200px;
+        }
+        @include media-breakpoint-up(xl) {
+            width: 200px;
+            max-width: none;
+        }
+        @include media-breakpoint-up(xxl) {
+            width: 280px;
+            padding: 0 20px;
+        }
+
+        &-num {
+            margin: 0;
+            font-size: 36px;
+            line-height: 58px;
+            font-weight: bold;
+        }
+
+        &-desc {
+            margin: 0;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+}

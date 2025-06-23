@@ -1,0 +1,100 @@
+.checkout {
+    &-wrapper {
+        background: $spray-lt-gray;
+        padding: 1rem;
+        @media #{$medium-up} {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 3rem;
+        }
+        @media #{$large-up} { padding: 2rem 2rem 0 2rem; }
+        @media #{$xlarge-up} { padding: 2rem 6rem; }
+    }
+
+    &-item-review {
+        padding: 0 2rem;
+        @media #{$medium-up} { padding: 0 3rem; }
+        @media #{$large-up} {
+            padding: 0 0 0 4rem;
+            width: 65%;
+        }
+        @media #{$xlarge-up} { padding: 0 0 0 8rem; }
+    }
+
+    &-process-review {
+        @media #{$large-up} {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+        }
+        .shopping-cart-card {
+            width: 100%;
+            padding: 1rem 0;
+            &:first-of-type {
+                padding-top: 0;
+            }
+            @media #{$medium-up} { padding: 2rem 0; }
+            @media #{$large-up} { padding-right: 2rem; }
+        }
+    }
+
+    &-process-title-wrapper {
+        margin-bottom: 0.5rem;
+    }
+
+    &-process-button {
+        padding: 3rem 0 4rem;
+        @media #{$medium-up}  {
+            padding: 2rem 0 7rem;
+            text-align: right;
+        }
+        @media #{$large-up} { padding-right: 2rem; }
+        a {
+            width: 100%;
+        }
+    }
+}
+
+.overlay {
+    background-color: rgba(63, 96, 116, 0.5);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: cubic-bezier(0.79, 0.24, 0.51, 0.95) 0.2s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 902;
+}
+
+.overlay-active .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.checkout-top-button {
+    padding: 1rem;
+    background-color: #f6f8f9;
+    text-align: center;
+    position: fixed;
+    top: -75px;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+    opacity: 0;
+    box-shadow: 0 10px 20px -5px rgba(63, 96, 116, 0.15);
+    transition: all 0.3s ease-in;
+    .button-light-blue {
+        width: 100%;
+        font-size: 2rem;
+    }
+    &.affix {
+        top: 0;
+        opacity: 1;
+    }
+    @media #{$large-up} { display: none; }
+}

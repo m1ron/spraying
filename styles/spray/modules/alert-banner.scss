@@ -1,0 +1,92 @@
+.alert-banner {
+    background-color: #98102E;
+    color: $light;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    min-height: calc(1em + 20px);
+
+    p {
+        margin: 0;
+        padding: 0.5em 0;
+        font-size: 1.5rem;
+    }
+
+    a {
+        color: $light;
+        text-decoration: underline;
+    }
+
+    i {
+        vertical-align: baseline;
+    }
+
+    &.collapsed {
+        .alert-banner__toggle {
+            top: 0.5em;
+
+            @media only screen and (min-width: 768px) {
+                top: calc(50% - 10px);
+                right: 2em;
+            }
+
+            &:before {
+                background-color: $light;
+            }
+        }
+    }
+}
+
+.alert-banner__container {
+    max-width: 1493px;
+    margin: 0 auto;
+    padding: 0 6rem 0 2rem;
+
+    @media only screen and (min-width: 1440px) {
+        padding: 0 2rem;
+    }
+}
+
+.alert-banner__toggle {
+    box-sizing: border-box;
+    width: 22px;
+    height: 20px;
+    overflow: hidden;
+    padding: 20px 0 0 0;
+    border: 2px solid $light;
+    border-radius: 50%;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+
+    @media only screen and (min-width: 768px) {
+        top: calc(50% - 10px);
+        right: 2em;
+    }
+
+    &:before {
+        content: '';
+        width: 2px;
+        height: 14px;
+        background-color: transparent;
+        display: inline-block;
+        position: absolute;
+        top: 3px;
+        left: 8px;
+    }
+
+    &:after {
+        content: '';
+        width: 14px;
+        height: 2px;
+        background-color: $light;
+        display: inline-block;
+        position: absolute;
+        top: 9px;
+        left: 2px;
+    }
+}

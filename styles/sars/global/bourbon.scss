@@ -1,0 +1,8 @@
+//- bourbon settings override
+
+//- turn off bourbon vendor prefixing (using autoprefixer)
+$prefix-for-webkit: false;
+$prefix-for-mozilla: false;
+$prefix-for-microsoft: false;
+$prefix-for-opera: false;
+$prefix-for-spec: false;

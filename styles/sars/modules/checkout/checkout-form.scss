@@ -1,0 +1,120 @@
+.checkout-add-form-wrapper {
+    background-color: #f6f8f9;
+    border: 1px solid rgba(63,96,116,0.15);
+    box-shadow: 0 20px 50px -5px rgba(63,96,116,0.15);
+    margin: 0 0 4rem;
+    padding: 2rem;
+    display: none;
+    &.edit { 
+        margin: 2rem 0 2rem; 
+    }
+    @media #{$large-up} { padding: 3rem; }
+    @media #{$xlarge-up} { padding: 3rem 2rem; }
+
+.checkout-add-form {
+    input { margin-bottom: 2rem; }
+    .checkout-num { margin-bottom: 1rem; }
+    &-imgs {
+        margin-bottom: 2rem;
+        &.edit { margin: 2rem 0 2rem; }
+        img { 
+            margin-right: 0.5rem;
+            max-height: 35px; 
+            max-width: 50px;
+        }
+    }
+    label {
+        font-size: 1.4rem;
+        font-weight: 700;
+        @media #{$medium-up} { font-size: 1.6rem; }
+    }
+}
+
+.form-flex-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    &-item { 
+        width: 50%;
+        &:first-of-type { padding-right: 1rem; }
+        @media #{$xlarge-up} { padding: 0 1rem; }
+    }
+    i {
+        color: $dark;
+        font-size: 3rem;
+    }
+    .cvv-wrapper {
+        display: flex;
+        .cvv-input { max-width: 75%; }
+        .icon-cvv {
+            color: $dark;
+            font-size: 3rem;
+            padding-left: 1rem;
+            padding-top: 0.5rem;
+        }
+    }
+}
+
+.button-flex-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    button {
+        height: 42px;
+        margin-left: 0.5rem;
+        padding: 0.8rem 1.8rem;
+        @media screen and (min-width: 375px) { padding: 0.8rem 2rem; }
+        &.button-gray {
+            background-color: #f6f8f9;
+            box-shadow: inset 0 0 0 1px rgba(63,96,115,0.25), 0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 rgba(0,0,0,0.15);
+            color: $spray-dk-blue-gray !important;
+            flex-grow: 1;
+            margin-left: 0;
+            &:hover {
+                background-color: darken(#f6f8f9, 10%);
+            }
+        }
+        &.button-lt-blue {
+            flex-grow: 3;
+        }
+    }
+}
+
+@media #{$xlarge-up} {
+    .checkout-add-form-item-wrapper, .form-flex-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .checkout-add-form-item-wrapper.edit {
+        display: block;
+        .checkout-add-form-item { width: 100%; padding: 0; }
+    } 
+
+    .form-flex-wrapper { align-items: flex-end; }
+    .form-flex-wrapper-item {
+        width: 25%;
+        .cvv-input, .exp-input {
+            margin-bottom: 0;
+        }
+        &.edit { 
+            width: 50%; 
+            margin-bottom: 2rem;
+            padding: 0 1rem 0 0;
+        }
+    }
+    .button-flex-wrapper.edit {
+        margin-bottom: 0;
+    }
+    .card-button-flex-wrapper {
+        width: 50%;
+        &.edit { width: 100%; padding: 0; }
+    }
+    .checkout-add-form-item {
+        padding: 0 1rem;
+        width: 50%;
+        &.edit { 
+            width: 100%;
+        }
+    } 
+}
+} 

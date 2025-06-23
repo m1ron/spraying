@@ -1,0 +1,166 @@
+.checkout-process {
+    padding: 0;
+    @media #{$medium-up} {
+        order: 1;
+        padding: 1.2rem 3rem 0 0;
+        width: 60%;
+    }
+    @media #{$large-up} { 
+        margin-top: -2rem; 
+        padding: 2rem 0 0;
+        width: 65%;
+    }
+    @media #{$large-up} {
+        align-items: stretch;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    a { cursor: pointer; }
+    
+    label {
+        color: $dark;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    [type='radio']:not(:checked)+label:before, [type='radio']:checked+label:before {
+        top: 0;
+    }
+
+    &-item-outer {
+        padding: 1.2rem 0;
+        @media #{$large-up} {
+            padding: 2rem;
+            width: 50%;
+        }
+    }
+
+    &-payment, &-billing, &-shipping, &-method {
+        border-bottom: 2px dotted rgba(63,96,116,0.2);
+        height: 100%;
+        padding: 0 1rem 2.5rem;
+        @media #{$medium-up} { padding: 0 0 2.5rem; }
+    }
+
+    &-payment {
+        @media screen and (min-width: 1200px) {
+            margin-right: 2rem;
+        }
+    }
+
+    &-title {
+        color: $dark;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2.4rem;
+        margin-bottom: 1.7rem;
+        @media #{$medium-up} { 
+            font-size: 2.4rem;
+            margin-bottom: 3rem;
+         }
+        @media #{$large-up} { font-size: 2.8rem; }
+    }
+
+    &-cc {
+        color: $dark;
+        .user-cc {
+            margin-left: 3.25rem;
+            padding: 1.6rem 0;
+            &-default {
+                align-items: center;
+                display: flex;
+                margin-bottom: 2rem;
+                img { max-height: 35px; max-width: 50px; }
+            }
+            &-change {
+                font-size: 1.4rem; 
+                margin: 1rem 0;
+                font-weight: 600;
+                @media #{$large-up} {  font-size: 1.6rem; } 
+            }
+            span {
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-left: 1rem;
+                @media #{$large-up} { font-size: 1.6rem; }
+            }
+        }
+    }
+    
+    &-po {
+        color: $dark;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }  
+    &-billing {
+        .billing {
+            &-title {
+                color: $dark;
+                font-weight: 500;
+                margin-bottom: 0.7rem;
+            }
+            &-address {
+                font-size: 1.4rem;
+                line-height: 1.4;
+                margin-bottom: 1.4rem;
+                @media #{$large-up} {  font-size: 1.6rem; }
+            }
+            &-change { 
+                font-size: 1.4rem; 
+                font-weight: 600;
+                @media #{$large-up} {  font-size: 1.6rem; }
+            }
+        }
+    }
+    &-shipping {
+        [type='checkbox']:not(:checked)+label, [type='checkbox']:checked+label {
+            padding-left: 3.5rem !important;
+        }
+        label::before {
+            font-size: 2.4rem;
+            margin-top: -5px;
+            margin-left: -4px;
+        }
+        @media screen and (min-width: 1200px) {
+            margin-right: 2rem;
+        }
+        @media #{$large-up} { border-bottom: none; }
+    }
+
+    &-method {
+        margin-bottom: 0;
+        @media #{$large-up} { border-bottom: none; }
+        .default-shipping { margin-bottom: 2rem; }
+
+        .my-shipping {
+            &-method { margin-left: 3.25rem; }
+            &-default {
+                align-items: center;
+                display: flex;
+                margin: 1.6rem 0;
+                img { max-height: 35px; max-width: 30px; }
+                &.slideout {
+                    align-items: flex-start;
+                    img { 
+                        position: relative;
+                        top: -7px;
+                    }
+                }
+            }
+            &-number {
+                color: $dark;
+                font-size: 1.4rem;
+                font-weight: 500;
+                margin-left: 1rem;
+                @media #{$large-up} { font-size: 1.6rem; }
+            }
+        }
+        .shipping-change { 
+            font-size: 1.4rem;
+            font-weight: 600;
+            @media #{$large-up} {  font-size: 1.6rem; } 
+        }
+    }
+}

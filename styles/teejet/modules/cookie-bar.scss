@@ -1,0 +1,61 @@
+.cookie-bar {
+	background: rgba(7,86,113,0.85);
+	bottom: 0;
+	display: none;
+	overflow: hidden;
+	padding: 2rem 4rem 2rem;
+	position: fixed;
+	text-align: center;
+	z-index: 901;
+	@media #{$large-up} { padding: 2rem 8rem; }
+	&-copy {
+		color: $light;
+		display: inline-block;
+		font-size: 1.4rem;
+		letter-spacing: 0.5px;
+		margin: 0 auto 2rem;
+		text-align: center;
+		vertical-align: middle;
+		@media #{$medium-up} { font-size: 1.6rem; }
+		@media #{$xlarge-up} { font-size: 1.8rem; }
+		a {
+			color: $link-color;
+			&:after {
+				bottom: -0.3rem;
+				content: '\000BB';
+				display: inline-block;
+				font-size: 2rem;
+				position: absolute;
+				right: -1.5rem;
+				@media #{$medium} {
+					bottom: -0.4rem;
+					right: -1.5rem;
+				}
+	     		@media #{$large-up} { right: -2rem; }
+	      		@media #{$xlarge-up} { font-size: 2.5rem; }
+	   		}
+		}
+	}
+	&-button {
+		@extend %button-base;
+		background-color: $spray-ltr-blue;
+		box-shadow:  0 9px 11px -5px rgba(63,96,116,0.2), inset 0 -3px 0 rgba(0,0,0,0.15);
+		color: $light !important;
+		display: inline-block;
+		font-family: $site-font-secondary;
+		font-size: 1.8rem;
+		font-weight: 800;
+		letter-spacing: 0.1rem;
+		padding: 1.2rem 2rem 1.2rem;
+		text-transform: uppercase;
+		vertical-align: middle;
+		&:hover, &:focus, &:active { color: $light; }
+		@media #{$xsmall} { padding: 1.2rem 2rem; }
+		@media #{$medium-up} { font-size: 2rem; }
+		@media #{$xlarge-up} {
+			font-size: 2rem;
+			padding: 1.3rem 3.3rem;
+		}
+	}
+}
+

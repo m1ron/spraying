@@ -1,0 +1,103 @@
+.nozzle-finder-card {
+	background-color: $light;
+	border-top: 6px solid $spray-red-orange;
+    box-shadow: 0 10px 20px -5px rgba(63,96,116,0.15);
+    margin: 0.25rem;
+    min-width: 150px;
+    padding: 1rem;
+	@media #{$medium-up}{
+        margin: 2rem;
+		width: 43%;
+		padding: 2rem;
+	}
+	@media #{$large-up}{
+		width: 28%;
+		padding: 3rem;
+	}
+    @media #{$xlarge-up} { 
+		padding: 4rem;
+        width: 22%;
+    }
+
+	&-title {
+		color: $dark;
+		font-size: 1.8rem;
+		font-weight: 500;
+		margin-bottom: 1.5rem;
+		line-height: 1.2;
+		@media #{$medium-up} {font-size: 2.4rem;}
+	}
+
+	&-img {
+		margin: 0 0 1rem;
+		text-align: center;
+		@media #{$medium-up} {
+			margin: 0 0 1.6rem;
+			text-align: left;
+		}
+	}
+	
+    label {
+		color: $spray-dk-blue-gray;
+		font-size: 1.4rem;
+		font-weight: 600;
+		text-transform: none;
+		@media #{$medium-up} {
+			font-size: 1.6rem;
+		}
+	}
+  
+    &-table {
+	   width: 100%;
+    }
+	
+	&-row {
+		@media #{$medium-up} {
+			
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 0;
+			width: 100%;
+		}
+	}
+    
+	&-label {
+		border-top: $dotted-border;
+		margin-bottom: 0;
+		padding: 1rem 0.5rem 0 0;
+		&.top {
+			border-top: 0;
+		}
+		@media #{$medium-up} { 
+			font-size: 1.6rem;
+			padding: 1rem 1rem 1rem 0;
+			width: 44%;
+		}
+	}
+    
+	&-cell { 
+		border-top: $dotted-border;
+		background-color: $spray-lt-gray;
+		color: #7C909B;
+		margin-bottom: 0;
+		padding: 1rem;
+		font-size: 1.4rem;
+		&.top {
+			border-top: 0;
+		}
+		@media #{$medium-up} {
+			 width: 56%; 
+			 font-size: 1.6rem;
+			}
+	}
+
+	&-link {
+		margin: 2rem 0 0;
+		font-weight: 600;
+		font-size: 1.4rem;
+		@media #{$medium-up}{font-size: 1.6rem;}
+		i {
+			line-height: 1.3;
+		}
+	}
+}

@@ -1,0 +1,332 @@
+/* ===== CARDS-CATEGORIES ===== */
+.cards-categories {
+    padding: 4rem 0;
+    position: relative;
+    z-index: 1;
+    @include media-breakpoint-up(md) {
+        padding: 6rem 0;
+    }
+
+    &::after {
+        @include pseudo;
+        position: absolute;
+        top: 0;
+        right: -16px;
+        bottom: 0;
+        left: -16px;
+        z-index: -1;
+        background: white;
+        @include media-breakpoint-up(sm) {
+            width: 100vw;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+
+    &-grid {
+        width: 100%;
+        max-width: 1640px;
+        margin: auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        position: relative;
+    }
+
+    &-item {
+        width: 100%;
+        padding: 0 2rem;
+        border: 1px solid rgba(63, 96, 116, .15);
+        border-radius: 4px;
+        box-shadow: 0 10px 20px -5px rgba(63, 96, 116, .15);
+        position: relative;
+        text-align: left;
+        @include media-breakpoint-up(sm) {
+            width: calc(50% - 1rem);
+        }
+        @include media-breakpoint-up(lg) {
+            width: calc(25% - 1.15rem);
+            box-shadow: none;
+            border: none;
+        }
+        @include media-breakpoint-up(xl) {
+            width: calc(20% - 1.2rem);
+            font-size: 16px;
+            line-height: 1.5;
+            .steel-metal & {
+                width: calc(16.667% - 1rem);
+            }
+        }
+
+        &.active .js-toggle {
+            background: #ec3737;
+
+            .bar {
+                border-color: white;
+            }
+        }
+
+        .js-toggle-container {
+            display: inline-block;
+            height: 60px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            @include media-breakpoint-up(md) {
+                pointer-events: none;
+            }
+        }
+
+        .js-toggle {
+            background: #eef1f4;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: inset 0 -2px 0 rgba(63, 96, 116, 0.3), 0 2px 4px 0 rgba(63, 96, 116, 0.2);
+            height: 3rem;
+            margin: 0;
+            padding: 0;
+            right: 2rem;
+            top: 1.35rem;
+            width: 3rem;
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+
+            .bar {
+                border-top: 2px solid #212121;
+                position: absolute;
+                right: .9rem;
+                top: 1.4rem;
+                transition: all 0.35s cubic-bezier(0.79, 0.24, 0.51, .95);
+                width: 12px;
+            }
+        }
+
+        &-image-container {
+            display: block;
+            max-height: 175px;
+            overflow: hidden;
+            position: relative;
+            @media #{$xsmall}, #{$small} {
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+            &:hover .cards-categories-grid-item-image {
+                transform: scale(1.1, 1.1);
+            }
+        }
+
+        &-image {
+            display: none;
+            height: auto;
+            margin-top: -3.5rem;
+            position: relative;
+            width: 100%;
+
+            @media #{$xsmall}, #{$small} {
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+
+            @include media-breakpoint-up(md) {
+                display: block !important;
+                transition: all 0.8s cubic-bezier(0.79, 0.24, 0.51, 0.95);
+            }
+        }
+
+        &.active &-title {
+            cursor: pointer;
+            display: inline-block;
+            pointer-events: auto;
+
+            h3 {
+                &:after {
+                    width: 90px;
+                    height: .6rem;
+                }
+            }
+        }
+
+        &-title {
+            width: auto;
+            pointer-events: none;
+            cursor: not-allowed;
+
+            h3 {
+                padding-bottom: .65em;
+                margin-bottom: .65em;
+                position: relative;
+                display: inline-block;
+
+                &:after {
+                    @include pseudo;
+                    width: 90px;
+                    height: 5px;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 1;
+                    background-color: $color-green;
+                    transition: opacity .5s ease, width .5s ease;
+                }
+            }
+
+            &:hover {
+                border: none;
+                text-decoration: none;
+                h3:after {width: 100%;}
+            }
+        }
+
+        &-content {
+            padding: 2rem 0;
+
+            .cards-default-grid & {
+                padding: 2rem;
+            }
+
+            > a {
+                display: block;
+                color: inherit;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: none;
+
+                    .cards-categories-item-title h3:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &-copy {
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+            }
+
+            p:last-child {margin-bottom: 0 !important;}
+        }
+
+        &-callout-action {
+            //display: none;
+            display: block;
+            font-weight: 500;
+            @include media-breakpoint-up(md) {
+                margin-top: 6px;
+                margin-bottom: 0;
+                //display: block !important;
+                &.hide-card-link {visibility: hidden;}
+            }
+
+            a {
+                color: $color-navy;
+                font-size: inherit;
+                font-weight: inherit;
+                line-height: inherit;
+                margin: 0;
+                position: relative;
+
+                &:hover {
+                    color: $color-night;
+                    text-decoration: none;
+                }
+            }
+
+            i {
+                color: $color-navy;
+                font-size: inherit;
+                font-weight: inherit;
+                line-height: inherit;
+            }
+        }
+
+        hr {
+            background: none;
+            border-top: 2px dotted #e3e7e9;
+            display: none;
+            margin: 2rem 0 1rem;
+            @include media-breakpoint-up(md) {
+                display: block !important;
+                margin: 3rem 0 2rem;
+            }
+        }
+
+        &-case-study {
+            display: none;
+            margin-bottom: 1rem;
+
+            @media #{$medium-up} {
+                display: block !important;
+            }
+
+            &-amount {
+                color: #0065a4;
+                display: inline-block;
+                float: left;
+                font-family: $site-font-secondary;
+                font-size: 4rem;
+                font-weight: 900;
+                line-height: 1;
+                padding-left: 2rem;
+                text-transform: uppercase;
+
+                @media #{$medium-up} {
+                    padding-left: 3rem;
+                }
+
+                @media #{$xlarge-up} {
+                    font-size: 6rem;
+                    line-height: 0.733;
+                }
+            }
+
+            &-copy {
+                display: inline-block;
+                padding-left: 1.5rem;
+                width: 65%;
+
+                @media #{$medium-up} {
+                    margin-bottom: 1rem;
+                }
+
+                @media screen and (max-width: 1190px) and (min-width: 1023px) {
+                    width: 50%;
+                }
+
+                @media screen and (max-width: 1350px) and (min-width: 1191px) {
+                    width: 60%;
+                }
+
+                p {
+                    color: #3f6074;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    line-height: 1.285;
+                    margin: 0 0 .6rem;
+
+                    @media #{$xlarge-up} {
+                        font-size: 1.6rem;
+                        line-height: 1.125;
+                    }
+                }
+
+                a {
+                    color: #5ac1ff;
+                    display: block;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    line-height: 1.25;
+
+                    @include media-breakpoint-up(md) {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}

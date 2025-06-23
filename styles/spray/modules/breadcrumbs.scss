@@ -1,0 +1,101 @@
+/* ===== BREADCRUMBS ===== */
+.breadcrumbs {
+    max-width: $max-width;
+    padding: 10px 16px;
+    border-bottom: 1px solid $color-mist;
+    margin: 64px auto 0;
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: .015em;
+    color: rgba($color-night, .75);
+    @include media-breakpoint-down(md) {
+        max-width: 572px;
+    }
+    @include media-breakpoint-up(md) {
+        max-width: 720px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    @include media-breakpoint-up(lg) {
+        max-width: 960px;
+    }
+    @include media-breakpoint-up(xl) {
+        max-width: 1200px;
+        margin-top: 140px;
+    }
+    @include media-breakpoint-up(xlm) {
+        max-width: 1400px;
+    }
+    @include media-breakpoint-up(xxl) {
+        max-width: $max-width;
+    }
+
+    span, i, a, .icon-double-arrow {
+        display: inline-block;
+        vertical-align: top;
+        line-height: inherit !important;
+    }
+
+    &::after {
+        @include pseudo;
+        width: 100vw;
+        height: 1px;
+        display: none;
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $color-mist;
+        @include media-breakpoint-up(sm) {
+            display: block;
+        }
+    }
+
+    i {
+        padding-left: .25rem;
+        opacity: .5;
+        transform: rotate(180deg);
+        @include media-breakpoint-up(md) {
+            padding-right: .75rem;
+            padding-left: .75rem;
+            transform: rotate(0deg);
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+
+    & > .icon-double-arrow:first-child {
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+
+    .desktop {
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: inline-block;
+        }
+    }
+
+    .mobile {
+        display: inline-block;
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+
+    &.basic-header {
+        background-color: $color-mist;
+    }
+
+    .thin-hero-banner + & {
+        margin-top: 0;
+    }
+
+    .pagemode-edit &, .pagemode-preview & {
+        padding-top: 1rem;
+    }
+}

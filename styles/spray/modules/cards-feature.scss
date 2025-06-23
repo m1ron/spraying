@@ -1,0 +1,298 @@
+/* ===== CARDS-FEATURE ===== */
+.cards-feature {
+    &-container {
+        margin: 3rem 0;
+        font: 16px/1.5 $font-default;
+        @include media-breakpoint-up(md) {
+            margin: 4rem 0;
+        }
+        @include media-breakpoint-up(xl) {
+            margin: 6rem 0;
+        }
+
+        .section-header {
+            padding-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        &-action {
+            text-align: center;
+            .button {
+                margin: 3rem auto 0;
+            }
+        }
+    }
+
+    &-grid {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+            gap: 24px;
+        }
+        @include media-breakpoint-up(lg) {
+            gap: 32px;
+        }
+        @include media-breakpoint-up(xl) {
+            gap: 40px;
+        }
+    }
+
+    &-item {
+        width: 100%;
+
+        &-wrapper {
+            position: relative;
+
+            > a {
+                display: block;
+                position: relative;
+                z-index: 1;
+                background-color: $color-night;
+
+                &:hover {
+                    .cards-feature-item-image {opacity: .9;}
+                }
+            }
+        }
+
+        img, video, iframe {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        &-image {
+            width: 100%;
+            min-height: 200px;
+            //max-height: 370px;
+            aspect-ratio: 27/15;
+            position: relative;
+            background-size: cover;
+            background-color: $color-night;
+            transition: opacity $effect;
+            @include media-breakpoint-up(md) {
+                @include media-breakpoint-down(lg) {
+                    aspect-ratio: auto;
+                }
+            }
+
+            .button-logo { max-width: 50%; }
+            .button-play { max-width: 100px; }
+            .button-play, .button-logo {
+                height: auto;
+                left: 50%;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                text-align: center;
+                top: 40%;
+                transform: translate(-50%, -40%);
+                width: auto;
+                z-index: 10;
+                cursor: pointer;
+                @include media-breakpoint-up(md) {
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                span {
+                    border-bottom: 2rem solid transparent;
+                    border-left: 3.5rem solid white;
+                    border-top: 2rem solid transparent;
+                    display: inline-block;
+                    height: 0;
+                    left: 55%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-55%, -50%);
+                    width: 0;
+
+                    @include media-breakpoint-up(md) {
+                        border-bottom: 1rem solid transparent;
+                        border-left: 2rem solid white;
+                        border-top: 1rem solid transparent;
+                    }
+                    @include media-breakpoint-up(lg) {
+                        border-bottom: 2rem solid transparent;
+                        border-left: 3.5rem solid white;
+                        border-top: 2rem solid transparent;
+                    }
+                }
+            }
+
+            &.img-overlay {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background: rgba($spray-dk-blue-gray, 0.4);
+                }
+            }
+        }
+
+        &-text {
+            max-width: 256px;
+            height: auto !important;
+            padding: 12px 16px;
+            position: absolute;
+            left: 16px;
+            bottom: 16px;
+            z-index: 2;
+            background: white;
+            box-shadow: 0 15px 30px rgba($color-black, .15);
+            cursor: default;
+            @include media-breakpoint-up(sm) {
+                max-width: 280px;
+            }
+            @include media-breakpoint-up(xl) {
+                width: 300px;
+                max-width: none;
+                padding: 16px;
+                left: 32px;
+                bottom: 32px;
+            }
+
+            > a {
+                display: block;
+                text-decoration: none;
+            }
+
+            h3 {
+                margin: 0 0 8px;
+                font-size: 18px;
+                line-height: 20px;
+                font-weight: bold;
+                letter-spacing: -.015em;
+                color: $color-night;
+                transition: color $effect;
+                @include media-breakpoint-up(md) {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+                @include media-breakpoint-up(xl) {
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+
+                &:hover {
+                    color: $color-navy;
+                }
+            }
+
+            &-copy {
+                font-size: 13px;
+                line-height: 16px;
+                font-weight: normal;
+                color: $color-night;
+                @include media-breakpoint-up(md) {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+                @include media-breakpoint-up(xl) {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+
+                p {
+                    max-height: 80px;
+                    font-size: inherit;
+                    line-height: inherit;
+                    font-weight: inherit;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include media-breakpoint-up(md) {
+                        max-height: 72px;
+                        -webkit-line-clamp: 4;
+                    }
+                    @include media-breakpoint-up(lg) {
+                        max-height: 120px;
+                        -webkit-line-clamp: 5;
+                    }
+                    @include media-breakpoint-up(xl) {
+                        max-height: 144px;
+                        -webkit-line-clamp: 6;
+                    }
+                    @include media-breakpoint-up(xlm) {
+                        max-height: 192px;
+                        -webkit-line-clamp: 8;
+                    }
+                    @include media-breakpoint-up(xxl) {
+                        max-height: 240px;
+                        -webkit-line-clamp: 10;
+                    }
+
+                    span[style*="font-size"] {
+                        font-size: inherit !important;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0 !important;
+                    }
+                }
+            }
+
+            &-action {
+                &:empty {display: none;}
+            }
+        }
+    }
+
+    .theme-sars & {
+        &-item {
+            background: none;
+
+            &-wrapper>a {
+                background: none;
+            }
+
+            &-text {
+                width: 100%;
+                max-width: none !important;
+                height: auto !important;
+                padding-right: 0;
+                padding-left: 0;
+                position: relative;
+                left: auto !important;
+                bottom: auto !important;
+                background: none;
+                box-shadow: none;
+                @include media-breakpoint-up(xl) {
+                    padding: 20px 0;
+                }
+
+                &-copy {
+                    font-size: inherit;
+                    line-height: inherit;
+
+                    p {
+                        max-height: none !important;
+                        display: block !important;
+                        -webkit-line-clamp: none !important;
+                        -webkit-box-orient: inline-axis !important;
+                        overflow: visible !important;
+                        text-overflow: clip !important;
+                    }
+                }
+            }
+
+            &-image {
+                opacity: 1;
+                background-color: transparent;
+                transition: none;
+            }
+        }
+    }
+}

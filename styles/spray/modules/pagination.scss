@@ -1,0 +1,119 @@
+.pagination {
+    width: 100%;
+    margin: 1rem auto 4rem;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+        margin-bottom: 6rem;
+    }
+
+    &:empty {
+        padding: 0;
+        margin: 0;
+    }
+
+    .page-numbers, .pager-item {
+        height: 5rem;
+        padding: 12px 8px;
+        border: none;
+        display: block;
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 500;
+        color: $spray-dk-blue-gray;
+        text-align: center;
+        //transition: 0.2s;
+        &:not(.arrow) { display: none; }
+
+        @include media-breakpoint-up(md) {
+            width: 5rem;
+
+            &:not(.arrow) { display: block; }
+
+            &.prev, &.next {
+                i:before { top: -1px; }
+                span { display: none; }
+            }
+
+            &.current, &.active {
+                position: relative;
+                display: block;
+                color: $dark;
+                cursor: default !important;
+                &:hover, &:focus {
+                    color: $spray-dk-blue-gray !important;
+                    text-decoration: none;
+                }
+
+                .page-link {
+                    cursor: default !important;
+                }
+
+                &:after {
+                    @include pseudo;
+                    height: 6px;
+                    position: absolute;
+                    right: 12px;
+                    bottom: 2px;
+                    left: 12px;
+                    background: $color-green;
+                }
+            }
+        }
+
+        &:hover, &:focus {
+            color: $spray-lt-blue;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        &.prev, &.next, &.PagedList-skipToPrevious, &.PagedList-skipToNext, &.PagedList-skipToFirst, &.PagedList-skipToLast {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+            color: $spray-lt-blue;
+
+            &:hover {
+                color: $light-blue-hover;
+                text-decoration: none;
+            }
+            &[disabled] {
+                color: $spray-gray;
+                pointer-events: none;
+            }
+            i:before {
+                display: block;
+                position: relative;
+            }
+            span {
+                color: $dark;
+                font-size: 2rem;
+                text-decoration: underline;
+                padding-right: 3rem;
+            }
+        }
+        &.prev i:before {
+            left: -10px;
+            transform: rotate(90deg);
+        }
+        &.next i:before {
+            transform: rotate(-90deg);
+        }
+
+        &.PagedList-skipToPrevious, &.PagedList-skipToNext, &.PagedList-skipToFirst, &.PagedList-skipToLast {
+            font-size: inherit !important;
+        }
+    }
+
+    .page-link {
+        color: inherit !important;
+        text-decoration: none;
+        &:hover, &:focus {
+            text-decoration: none !important;
+        }
+    }
+}
