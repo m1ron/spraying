@@ -1,23 +1,16 @@
 /* ===== SITE-FOOTER ===== */
 .site-footer {
-    padding: 5rem 0;
+    padding: 4rem 0 3.5rem;
     position: relative;
     font-size: 14px;
     line-height: 1.5;
     letter-spacing: .015em;
     color: $color-ocean;
-    background-color: $color-night;
+    background-color: $spray-blue-gray;
 
     @at-root footer#{&} {
         color: $color-ocean !important;
-        background: $color-night !important;
-    }
-
-    .theme-sars & {
-        @at-root footer#{&}, & {
-            color: #aebdc6 !important;
-            background: #5e7c8e !important;
-        }
+        background: $spray-blue-gray !important;
     }
 
     &-container {
@@ -72,13 +65,13 @@
         }
 
         a {
-            width: 100%;
+            width: 90px;
             display: block;
             overflow: hidden;
         }
 
         img {
-            width: 228px;
+            width: 240px;
             max-width: none;
             height: auto;
             display: block;
@@ -86,19 +79,6 @@
             @include user-drag;
             @include media-breakpoint-down(lg) {
                 margin: 0 auto;
-            }
-        }
-
-        .theme-teejet & {
-            @include media-breakpoint-down(xl) {
-                width: 110px;
-                margin-right: auto;
-                margin-left: auto;
-                overflow: hidden;
-            }
-
-            img {
-                filter: grayscale(100%) brightness(10);
             }
         }
     }

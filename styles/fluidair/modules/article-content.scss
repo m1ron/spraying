@@ -69,13 +69,6 @@
 }
 
 .article {
-    /*
-    margin: 0 auto;
-    max-width: 99.4rem;
-    padding: 0 2rem;
-    */
-
-
     &-container {
         padding: 16px 0 32px;
         position: relative;
@@ -118,10 +111,6 @@
         @include media-breakpoint-up(xlm) {
             font-size: 60px;
             line-height: 1.15;
-        }
-
-        .theme-sars & {
-            margin-bottom: .333em;
         }
     }
 

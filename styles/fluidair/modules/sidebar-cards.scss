@@ -335,6 +335,8 @@
                         margin: 0 0 2.6rem;
                     }
 
+                    &:empty {display: none !important;}
+
                     &:after {
                         width: 0;
                         height: 6px;

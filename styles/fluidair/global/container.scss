@@ -23,19 +23,6 @@
     }
 }
 
-/*
-.content-wrapper {
-    max-width: 1380px;
-    margin: 0 auto;
-    padding: 0 2.4rem;
-    @media #{$medium-up} {
-        padding: 0 3.2rem;
-    }
-
-    &.has-sidebar {max-width: 1400px;}
-}
- */
-
 .full-width-container {
     background-color: $light;
 }
@@ -90,8 +77,6 @@
     }
     &.gray::before {background-color: #e6eaed;}
     &.light-gray::before {background-color: $color-mist;}
-
-    .theme-teejet &.light-gray::before {display: none;}
 }
 
 .module-border {

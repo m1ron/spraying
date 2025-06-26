@@ -1,7 +1,7 @@
 .blockquote-slider-container {
     @media #{$large-up} { margin-left: 4rem; }
-    blockquote { 
-        font-size: 2.8rem; 
+    blockquote {
+        font-size: 2.8rem;
         @media #{$medium-up} { font-size: 3.2rem; }
     }
 
@@ -10,22 +10,25 @@
         li {
             margin: 0 1rem;
             &.slick-active button:before {
-                color: #ffffff;
+                color: #fff;
                 opacity: 1;
             }
             &:hover button:before {
                 opacity: 0.5;
             }
         }
-        
+
         button:before {
+            padding: 0;
             color: $spray-blue;
-            font-size: 6rem;
-            opacity: 0.1;
+            font-size: 1px;
+            line-height: 1px;
+            opacity: .1;
+            box-shadow: none !important;
         }
     }
 
-    .slick-arrow{
+    .slick-arrow {
         display: none !important;
         font-size: 7rem;
         color: $spray-blue;
