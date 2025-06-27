@@ -147,99 +147,6 @@
         }
     }
 
-    // TEEJET
-    .theme-teejet & {
-        //margin: 6rem 0;
-        background: $color-navy;
-        @include media-breakpoint-up(xl) {
-            //margin-top: 9rem;
-            //margin-bottom: 9rem;
-        }
-
-        .cta-content {
-            padding: 40px 16px;
-            border-radius: 4px;
-            //background: $color-navy url('../images/product/cta-contacts.jpg') no-repeat center center / cover;
-            background: $color-navy;
-            &::after {
-                width: 100%;
-                background: $color-navy url('/en-gb/-/media/dam/agricultural/usa/website-images/teejet-spraycms-images/boom-components_main_tjweb.jpg') no-repeat center center / cover;
-                background-blend-mode: soft-light;
-                right: 0;
-                left: 0;
-                opacity: .3;
-                transform: none;
-            }
-
-            @include media-breakpoint-up(md) {
-                padding: 45px 30px;
-            }
-            @include media-breakpoint-up(xl) {
-                padding-top: 60px;
-                padding-bottom: 60px;
-            }
-
-            p {
-                font-size: 14px;
-                @include media-breakpoint-up(md) {
-                    font-size: 16px;
-                }
-            }
-        }
-
-        &-copy {
-            margin: 0 auto;
-            font: bold 21px/1.2 $font-default !important;
-            letter-spacing: .006em;
-            color: white;
-            text-align: center;
-            display: block;
-            @include media-breakpoint-up(md) {
-                font-size: 25px !important;
-            }
-            @include media-breakpoint-up(xl) {
-                font-size: 28px !important;
-                line-height: 32.8px !important;
-            }
-
-            & + p {
-                margin-top: 16px;
-                @include media-breakpoint-up(md) {
-                    margin-top: 20px;
-                }
-                @include media-breakpoint-up(xl) {
-                    margin-top: 34px;
-                }
-            }
-        }
-
-        &-button, .scTextWrapper {
-            min-width: 0;
-            padding: 14px 32px;
-            border: 1px solid white;
-            border-radius: 4px;
-            margin-top: 0;
-            //margin-top: 20px;
-            font-size: 14px !important;
-            line-height: 17px !important;
-            letter-spacing: .06em;
-            background: rgba(white, .35);
-            box-shadow: 0 9px 11px -5px rgba(63, 96, 116, .2), inset 0px -3px 0px rgba(black, .15);
-            @include media-breakpoint-up(md) {
-                padding-top: 19px;
-                padding-bottom: 19px;
-                //margin-top: 24px;
-            }
-            @include media-breakpoint-up(xl) {
-                //margin-top: 43px;
-            }
-
-            &:hover, &:focus {
-                background: rgba(white, .5);
-            }
-        }
-    }
-
     .blogs.article-copy & {
         margin-top: 3rem !important;
         margin-bottom: 3rem !important;
@@ -254,23 +161,6 @@
             width: 100%;
             left: 0;
             transform: none;
-        }
-    }
-
-    .theme-teejet .main-content.contact & {
-        margin-top: 40px;
-        margin-bottom: 40px;
-        @include media-breakpoint-up(md) {
-            margin-top: 60px;
-            margin-bottom: 60px;
-        }
-        @include media-breakpoint-up(xl) {
-            margin-top: 88px;
-            margin-bottom: 88px;
-        }
-
-        .cta-bar-copy:empty {
-            display: none;
         }
     }
 }

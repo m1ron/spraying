@@ -8,16 +8,9 @@
     color: $color-ocean;
     background-color: $color-night;
 
-    @at-root footer#{&} {
-        color: $color-ocean !important;
-        background: $color-night !important;
-    }
-
-    .theme-sars & {
-        @at-root footer#{&}, & {
-            color: #aebdc6 !important;
-            background: #5e7c8e !important;
-        }
+    @at-root footer#{&}, & {
+        color: #aebdc6 !important;
+        background: #5e7c8e !important;
     }
 
     &-container {
@@ -86,19 +79,6 @@
             @include user-drag;
             @include media-breakpoint-down(lg) {
                 margin: 0 auto;
-            }
-        }
-
-        .theme-teejet & {
-            @include media-breakpoint-down(xl) {
-                width: 110px;
-                margin-right: auto;
-                margin-left: auto;
-                overflow: hidden;
-            }
-
-            img {
-                filter: grayscale(100%) brightness(10);
             }
         }
     }

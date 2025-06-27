@@ -72,73 +72,29 @@
             display: block;
             overflow: hidden;
             @include media-breakpoint-down(xss) {
-                width: 40px;
+                width: 50px;
                 height: 40px;
             }
         }
 
         img {
             width: 100%;
+            max-width: none !important;
             height: auto;
+            max-height: none !important;
             display: block;
             @include user-select;
             @include user-drag;
             @include media-breakpoint-down(xss) {
-                width: 270px;
+                width: 180px;
                 max-width: none;
             }
-        }
-
-        .theme-teejet & {
-            @include media-breakpoint-down(xl) {
-                width: 228px;
-                top: 14px;
-            }
-
-            a {
-                @include media-breakpoint-down(xss) {
-                    width: auto;
-                    height: auto;
-                }
-            }
-
-            img {
-                @include media-breakpoint-down(xss) {
-                    width: 100%;
-                }
+            @include media-breakpoint-up(xss) {
+                width: 100% !important;
             }
         }
 
-
-        .theme-sars & {
-            max-width: none !important;
-            left: 10px;
-            @include media-breakpoint-up(xsl) {
-                width: 180px;
-            }
-            @include media-breakpoint-up(xl) {
-                min-width: 270px;
-            }
-
-            a {
-                @include media-breakpoint-down(xss) {
-                    width: 50px;
-                }
-            }
-
-            img {
-                max-width: none !important;
-                max-height: none !important;
-                @include media-breakpoint-down(xss) {
-                    width: 180px;
-                }
-                @include media-breakpoint-up(xss) {
-                    width: 100% !important;
-                }
-            }
-        }
-
-        .theme-sars.is-scrolled & {
+        .is-scrolled & {
             margin-top: 0 !important;
             @include media-breakpoint-up(xl) {
                 min-width: 228px;
@@ -157,7 +113,7 @@
         padding: 0 8px;
         position: absolute;
         top: 50%;
-        right: 0;
+        right: 8px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -290,10 +246,6 @@
                     background-size: 44px 44px;
                 }
             }
-        }
-
-        .theme-sars & {
-            right: 8px;
         }
     }
 

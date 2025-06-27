@@ -89,27 +89,6 @@
             }
         }
 
-        .theme-teejet & {
-            @include media-breakpoint-down(xl) {
-                width: 228px;
-                top: 14px;
-            }
-
-            a {
-                @include media-breakpoint-down(xss) {
-                    width: auto;
-                    height: auto;
-                }
-            }
-
-            img {
-                @include media-breakpoint-down(xss) {
-                    width: 100%;
-                }
-            }
-        }
-
-
         .theme-sars & {
             max-width: none !important;
             left: 10px;

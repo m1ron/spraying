@@ -90,8 +90,6 @@
     }
     &.gray::before {background-color: #e6eaed;}
     &.light-gray::before {background-color: $color-mist;}
-
-    .theme-teejet &.light-gray::before {display: none;}
 }
 
 .module-border {
