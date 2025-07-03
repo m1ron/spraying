@@ -203,9 +203,7 @@
                     text-align: left;
                 }
 
-                & > div[sc_item] > i, // icon wrapped in Edit Frame in Experience Editor
-                & > i,
-                & > a > i {
+                & > div[sc_item] > i, & > i, & > a > i {
                     color: $spray-blue;
                     font-size: 6.5rem;
                     margin-bottom: 1rem;

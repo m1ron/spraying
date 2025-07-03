@@ -123,7 +123,7 @@
             margin-bottom: 0.33rem;
             padding: 0 1rem;
 
-            @media #{$large-up} {
+            @include media-breakpoint-up(lg) {
                 font-size: 1.8rem;
             }
 
@@ -145,7 +145,6 @@
         .button-blue {
             padding: 12px 16px;
             border-radius: 4px;
-            //margin-top: 24px;
             display: inline-block;
             font: 600 13px/18px $font-default;
             letter-spacing: .02em;
@@ -174,14 +173,15 @@
         }
     }
 
-    //404 specific styles
+    // 404 specific styles
     &.four-O-four {
+        height: auto;
         max-height: 100%;
+        margin-bottom: 0 !important;
         background-image: url('../images/header_404page.jpg?cb=2019-03-22');
         background-attachment: scroll;
         background-position: center top;
         background-repeat: no-repeat;
-        height: auto;
         @include media-breakpoint-down(sm) {
             width: auto;
             max-width: none;

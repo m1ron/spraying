@@ -500,6 +500,12 @@
                             &.has-cart-items {opacity: 1}
                         }
 
+                        &[href*="spare-parts"], &[href*="服务/零部件"], &[href*="pièces-détachées"] {
+                            position: absolute;
+                            bottom: 6px;
+                            right: 15px;
+                        }
+
                         &.country-language-trigger {
                             width: auto;
                             padding: 10px 5px 10px 34px;

@@ -1,85 +1,85 @@
-.aside-contact-form { 
-	background-color: $light;
+.aside-contact-form {
+    background-color: $light;
     min-height: 600px;
     padding: 3rem;
     position: relative;
-    width: 100%; 
+    width: 100%;
 }
 
 .link-live-chat {
-	border-bottom: $dotted-border;
-	border-top: $dotted-border;
-	display: block;
-	font-size: 1.6rem;
-	letter-spacing: 0.21px;
-	line-height: 1.14;
-	padding: 2rem 0;
-	text-align: center;
-	width: 100%;
-	i.icon-chat {
-		color: $dark;
-		font-size: 3.5rem;
-		line-height: 0.6;
-	}
-	i.icon-double-arrow {
-		color: $spray-lt-blue;
-		font-size: inherit;
-		line-height: inherit;
-	}
+    border-bottom: $dotted-border;
+    border-top: $dotted-border;
+    display: block;
+    font-size: 1.6rem;
+    letter-spacing: 0.21px;
+    line-height: 1.14;
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+    i.icon-chat {
+        color: $dark;
+        font-size: 3.5rem;
+        line-height: 0.6;
+    }
+    i.icon-double-arrow {
+        color: $spray-lt-blue;
+        font-size: inherit;
+        line-height: inherit;
+    }
 }
 @media #{$medium-up} {
-	.link-live-chat {
-		font-size: 1.8rem;
-		padding: 3rem 0;
-		i.icon-chat { font-size: 3.75rem; }
-	}
+    .link-live-chat {
+        font-size: 1.8rem;
+        padding: 3rem 0;
+        i.icon-chat { font-size: 3.75rem; }
+    }
 }
 @media #{$xlarge-up} {
-	.link-live-chat {
-		font-size: 2rem;
-		i.icon-chat { font-size: 4rem; }
-	}
+    .link-live-chat {
+        font-size: 2rem;
+        i.icon-chat { font-size: 4rem; }
+    }
 }
 
 .business-info {
-	text-align: center;
-	.link-phone {
-		color: $dark;
-		display: block;
-		font-size: 1.6rem;
-		font-weight: bold;
-		letter-spacing: 0.21px;
-		line-height: 1.14;
-		margin-bottom: 1rem;
-		@media #{$medium-up} { font-size: 1.8rem; }
-		@media #{$xlarge-up} { font-size: 2rem; }
-	}
-	.hours-of-operation {
-		display: flex;
-		justify-content: center;
-		h4 {
-			color: $spray-dk-blue-gray;
-			font-size: 1.4rem;
-			font-weight: bold;
-			letter-spacing: 0.17px;
-			line-height: 1.5;
-			padding-right: 1rem;
-			text-align: right;
-			width: 75px;
-			@media #{$xlarge-up} { font-size: 1.6rem; }
-		}
-		div {
-			align-items: flex-start;
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-		}
+    text-align: center;
+    .link-phone {
+        color: $dark;
+        display: block;
+        font-size: 1.6rem;
+        font-weight: bold;
+        letter-spacing: 0.21px;
+        line-height: 1.14;
+        margin-bottom: 1rem;
+        @media #{$medium-up} { font-size: 1.8rem; }
+        @media #{$xlarge-up} { font-size: 2rem; }
+    }
+    .hours-of-operation {
+        display: flex;
+        justify-content: center;
+        h4 {
+            color: $spray-dk-blue-gray;
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 0.17px;
+            line-height: 1.5;
+            padding-right: 1rem;
+            text-align: right;
+            width: 75px;
+            @media #{$xlarge-up} { font-size: 1.6rem; }
+        }
+        div {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
-		p {
-			font-size: 1.4rem;
-			margin: 0;
-			text-align: left;
-			@media #{$xlarge-up} { font-size: 1.6rem; }
-		}
-	}
+        p {
+            font-size: 1.4rem;
+            margin: 0;
+            text-align: left;
+            @media #{$xlarge-up} { font-size: 1.6rem; }
+        }
+    }
 }

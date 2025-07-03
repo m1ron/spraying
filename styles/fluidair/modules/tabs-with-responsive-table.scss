@@ -225,7 +225,7 @@
                         line-height: 17px;
                         font-style: normal;
                         letter-spacing: .01em;
-                        color: #3f6074;
+                        color: $spray-dk-blue-gray;
                         @include media-breakpoint-up(md) {
                             font-size: 16px;
                             line-height: 19px;
@@ -440,7 +440,7 @@
 
     .th {
         padding: 6px 15px;
-        border: 1px solid #0065a5;
+        border: 1px solid $color-medium-blue;
         font-size: 18px;
         color: #24adff;
         text-align: left;

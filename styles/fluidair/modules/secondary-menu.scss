@@ -60,7 +60,7 @@
         &:hover, &.active {
             color: white;
             text-decoration: none;
-            background: #0065a5;
+            background: $color-medium-blue;
         }
 
         &.active {
@@ -108,7 +108,7 @@ section[data-menu] {
         text-transform: uppercase;
         text-align: left;
         position: relative;
-        background: #0065a5;
+        background: $color-medium-blue;
         cursor: pointer;
         @include media-breakpoint-up(sm) {
             width: 100vw;

@@ -239,7 +239,7 @@
                 p:last-child {margin-bottom: 0;}
 
                 p + p {
-                    @include media-breakpoint-down(md) {
+                    @include media-breakpoint-down(xl) {
                         display: none !important;
                     }
                 }

@@ -4,7 +4,6 @@
     flex-direction: column;
     gap: 24px;
     @include media-breakpoint-up(lg) {
-        //max-width: 1400px;
         margin: 0 auto;
         align-items: center;
         flex-direction: row;
@@ -34,7 +33,6 @@
             @include media-breakpoint-up(xl) {
                 .video-feature.videoRight {
                     justify-content: flex-start;
-                    //.video-feature-text {max-width: none;}
                 }
             }
         }
@@ -171,7 +169,6 @@
             .videoLeft & {padding-right: 0;}
         }
         @include media-breakpoint-up(xxl) {
-            //width: 50%;
             max-width: none;
             padding-right: 40px;
             padding-left: 40px;

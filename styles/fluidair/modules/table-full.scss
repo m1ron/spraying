@@ -1,5 +1,4 @@
 .table-full {
-    //padding: 4rem 4rem 0 4rem;
     margin: 4rem auto;
     display: flex;
     flex-direction: column;
@@ -10,7 +9,7 @@
     }
 
     .small-description {
-        color: #003b61;
+        color: $color-deep-blue;
         font-size: 1.2rem;
         margin-top: 1rem;
     }
@@ -38,7 +37,7 @@
     }
 
     .model-title {
-        color: #0065a5;
+        color: $color-medium-blue;
         font-size: 2.4rem;
         font-weight: normal;
         margin-bottom: .6rem;
@@ -76,7 +75,7 @@
 
         &.main-info {
             border-bottom: 1px solid rgba($color-navy, .5);
-            color: #0065a5;
+            color: $color-medium-blue;
             font-size: 1.8rem;
         }
 

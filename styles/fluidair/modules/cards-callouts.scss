@@ -70,7 +70,6 @@
             gap: 24px;
             @include media-breakpoint-up(md) {
                 flex-direction: row;
-                //justify-content: center;
             }
 
             &-item {
@@ -266,19 +265,11 @@
                                 }
                             }
                         }
-
-                        &.half-width {
-                            .cards-callouts-grid-item-image {
-                                @include media-breakpoint-up(xl) {
-                                    //object-fit: cover;
-                                }
-                            }
-                        }
                     }
                 }
 
                 .cards-callouts-grid-item-copy {
-                    //margin-bottom: 12px;
+                    margin-bottom: 6px;
                     font-size: 14px;
                     line-height: 1.5;
                     color: $spray-dk-blue-gray;
@@ -306,7 +297,6 @@
                 .cards-callouts-grid-item-image {
                     width: 100%;
                     height: 220px;
-                    //max-height: 200px;
                     object-fit: cover;
                     @include media-breakpoint-up(md) {
                         object-fit: cover;
@@ -316,8 +306,6 @@
                     }
                     @include media-breakpoint-up(xl) {
                         height: 200px;
-                        //object-fit: fill;
-                        //object-fit: contain;
                     }
                     @include media-breakpoint-up(xxl) {
                         height: 220px;
@@ -341,6 +329,7 @@
                         margin-bottom: 6px;
                         font-size: 16.8px;
                         line-height: 21.6px;
+                        &:last-child {margin-bottom: 0;}
                     }
 
                     .has-arrow::after {
@@ -361,9 +350,6 @@
                         margin-right: auto;
                         margin-left: auto;
                     }
-                }
-                @include media-breakpoint-up(xl) {
-                    //flex-grow: 1 !important;
                 }
 
                 &::after {display: none;}
@@ -451,7 +437,6 @@
                             @include pseudo;
                             width: 85px;
                             height: 8px;
-                            //margin-top: 10px;
                             margin-top: auto;
                             position: relative;
                             top: 10px;

@@ -340,7 +340,7 @@
 
             &.checkbox-checked {
                 color: $dark;
-                background: rgba(#3f6074, .05);
+                background: rgba($spray-dk-blue-gray, .05);
 
                 &:before {
                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cpath d='M443.01 266.17V441.8H157.079V155.87H390.91l20.629-32.07h-286.52v350.06h350.06V214.62Z'/%3E%3Cpath fill='%2324adff' d='M319.889 399.307 185.719 281.15l21.192-24.062 105.812 93.184 127.95-204.739 27.19 16.992-147.974 236.782z'/%3E%3C/svg%3E");

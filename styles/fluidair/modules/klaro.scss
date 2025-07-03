@@ -164,7 +164,7 @@ We declare all variables here as default so that they are easy to override...
     width: 20px;
     left: 5px;
     bottom: 5px;
-    background-color: #fff;
+    background-color: $light;
     transition: 0.4s;
 }
 
@@ -286,8 +286,8 @@ We declare all variables here as default so that they are easy to override...
 
 .klaro .cookie-modal .cm-btn.cm-btn-info,
 .klaro .cookie-notice .cm-btn.cm-btn-info {
-    background: #0065A4;
-    background: var(--blue1, #0065A4);
+    background: $spray-blue;
+    background: var(--blue1, $spray-blue);
 }
 
 .klaro .cookie-modal {
