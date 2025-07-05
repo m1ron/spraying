@@ -83,7 +83,6 @@
                 right: 0;
                 bottom: 0;
                 background-position: center right;
-                //background-size: 78% auto;
                 background-size: cover;
                 background-repeat: no-repeat;
 
@@ -96,16 +95,9 @@
                     left: calc((100vw - 1160px) / 2 + calc(640px * .8));
                     background: linear-gradient(to right, $color-mist 15%, rgba($color-mist, .75) 40%, rgba($color-mist, .5) 70%, rgba($color-mist, 0) 100%);
                     @include media-breakpoint-up(xlm) {
-                        //width: 80%;
-                        //max-width: 1200px;
-                        //left: auto;
                         left: calc((100vw - 1360px) / 2 + calc(640px * .8));
                     }
                     @include media-breakpoint-up(xxl) {
-                        //width: auto;
-                        //max-width: none;
-                        //right: 400px;
-                        //left: 300px;
                         left: calc((100vw - 1600px) / 2 + calc(720px * .8));
                     }
                 }
@@ -250,45 +242,6 @@
                 display: none;
             }
         }
-
-        /*
-        &.hero-content-theme-1 {
-            @media(min-width: 1201px) {
-                background: rgba($color-deep-space-blue, .85);
-                color: $color-white;
-
-                p {color: $color-white;}
-
-                .hero-alt-title {
-                    color: $color-white;
-                    span {color: $color-white;}
-                }
-            }
-
-            .actions {
-                > div {
-                    .hero-btn {
-                        &.btn1 {
-                            background: black;
-                            &:hover, &:focus {background: #98102e;}
-                        }
-                        &.btn2 {
-                            background: #0065a4;
-                            &:hover, &:focus {background: #98102e;}
-                        }
-                        &.e-commerce-btn {
-                            background: black;
-                            &:hover, &:focus {background: #98102e;}
-                        }
-                        &.video-btn {
-                            background: #0065a4;
-                            &:hover, &:focus {background: #98102e;}
-                        }
-                    }
-                }
-            }
-        }
-         */
     }
 
     &-title {
@@ -413,7 +366,7 @@
         }
     }
 
-    .theme-spray .main-content.homepage & {
+    .main-content.homepage & {
         &-view {
             margin-bottom: 0 !important;
             & + .wysiwyg-content {

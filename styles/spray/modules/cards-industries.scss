@@ -276,9 +276,6 @@
                     border-radius: 6px 6px 0 0;
                     aspect-ratio: 5/2.93;
                     display: block !important;
-                    .theme-sars & {
-                        max-height: 212px;
-                    }
                 }
                 @include media-breakpoint-up(lg) {
                     max-height: 142px;
@@ -294,10 +291,6 @@
                     @include media-breakpoint-up(md) {
                         object-fit: contain;
                     }
-                    /*
-                    object-fit: contain;
-                    .theme-sars & {object-fit: cover;}
-                     */
                 }
             }
 
