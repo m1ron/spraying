@@ -59,6 +59,10 @@
             top: 12px;
             transition: none;
         }
+        @include media-breakpoint-down(xl) {
+            width: 228px;
+            top: 14px;
+        }
         @include media-breakpoint-up(xl) {
             min-width: 310px;
             top: 20px;
@@ -72,8 +76,8 @@
             display: block;
             overflow: hidden;
             @include media-breakpoint-down(xss) {
-                width: 40px;
-                height: 40px;
+                width: auto;
+                height: auto;
             }
         }
 
@@ -84,65 +88,8 @@
             @include user-select;
             @include user-drag;
             @include media-breakpoint-down(xss) {
-                width: 270px;
+                width: 100%;
                 max-width: none;
-            }
-        }
-
-        .theme-teejet & {
-            @include media-breakpoint-down(xl) {
-                width: 228px;
-                top: 14px;
-            }
-
-            a {
-                @include media-breakpoint-down(xss) {
-                    width: auto;
-                    height: auto;
-                }
-            }
-
-            img {
-                @include media-breakpoint-down(xss) {
-                    width: 100%;
-                }
-            }
-        }
-
-
-        .theme-sars & {
-            max-width: none !important;
-            left: 10px;
-            @include media-breakpoint-up(xsl) {
-                width: 180px;
-            }
-            @include media-breakpoint-up(xl) {
-                min-width: 270px;
-            }
-
-            a {
-                @include media-breakpoint-down(xss) {
-                    width: 50px;
-                }
-            }
-
-            img {
-                max-width: none !important;
-                max-height: none !important;
-                @include media-breakpoint-down(xss) {
-                    width: 180px;
-                }
-                @include media-breakpoint-up(xss) {
-                    width: 100% !important;
-                }
-            }
-        }
-
-        .theme-sars.is-scrolled & {
-            margin-top: 0 !important;
-            @include media-breakpoint-up(xl) {
-                min-width: 228px;
-                top: 10px;
             }
         }
     }
@@ -290,10 +237,6 @@
                     background-size: 44px 44px;
                 }
             }
-        }
-
-        .theme-sars & {
-            right: 8px;
         }
     }
 

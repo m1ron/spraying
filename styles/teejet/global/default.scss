@@ -46,10 +46,8 @@ body {
         }
     }
 
-    &.theme-teejet {
-        &, * {
-            font-family: $font-default !important;
-        }
+    &, * {
+        font-family: $font-default !important;
     }
 }
 
