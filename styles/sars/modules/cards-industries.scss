@@ -247,10 +247,6 @@
                     left: 0;
                     z-index: 5;
                     background: #255a90;
-
-                    .cards-industries-homepage & {
-                        //display: block;
-                    }
                 }
             }
 
@@ -287,11 +283,13 @@
                     max-height: 185px;
                 }
 
+                /*
                 &.no-overflow-image {
                     @include media-breakpoint-up(md) {
                         object-fit: contain;
                     }
                 }
+                 */
             }
 
             &-content {
