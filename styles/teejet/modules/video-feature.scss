@@ -4,7 +4,6 @@
     flex-direction: column;
     gap: 24px;
     @include media-breakpoint-up(lg) {
-        //max-width: 1400px;
         margin: 0 auto;
         align-items: center;
         flex-direction: row;
@@ -34,7 +33,6 @@
             @include media-breakpoint-up(xl) {
                 .video-feature.videoRight {
                     justify-content: flex-start;
-                    //.video-feature-text {max-width: none;}
                 }
             }
         }
@@ -93,12 +91,8 @@
         position: relative;
         display: block;
         order: 1;
-        //align-self: flex-start;
         outline: none;
         transition: none;
-        @include media-breakpoint-up(md) {
-            //width: 580px;
-        }
         @include media-breakpoint-up(lg) {
             width: calc(50% - 16px);
             margin-bottom: 0;
@@ -449,22 +443,6 @@
         &.videoRight {
             .video-feature-text-action, .video-feature-link-action {
                 left: calc(50% + 20px);
-            }
-        }
-    }
-    @include media-breakpoint-up(xxl) {
-        &.videoLeft {
-            .video-feature-text-action, .video-feature-link-action {
-                //width: 660px;
-                //left: 0;
-                //right: auto;
-            }
-        }
-        &.videoRight {
-            .video-feature-text-action, .video-feature-link-action {
-                //width: 660px;
-                //left: auto;
-                //right: 0;
             }
         }
     }
