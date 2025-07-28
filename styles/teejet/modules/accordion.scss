@@ -1,9 +1,12 @@
 /* ===== ACCORDION ===== */
 .accordion {
-    max-width: 1068px;
-    margin: 3rem auto;
+    max-width: 1320px !important;
+    margin: 4rem auto;
     @include media-breakpoint-up(md) {
-        margin: 4rem auto;
+        margin: 5rem auto;
+    }
+    @include media-breakpoint-up(xl) {
+        margin: 6rem auto;
     }
 
     &-header {
@@ -194,22 +197,6 @@
             margin: 20px 0 0 0;
             display: none;
 
-            &::after {@include clearfix-new;}
-            &.edit-mode {display: block;}
-            & > *:last-child {margin-bottom: 0;}
-        }
-
-        &.reverse {
-            .accordion-grid-item-title, .accordion-grid-item-content {color: white;}
-            .accordion-grid-item-inner {background-color: $color-navy;}
-        }
-    }
-
-    .theme-teejet & {
-        max-width: 1320px !important;
-
-        .accordion-grid-item-text {
-
             h3 {
                 margin-bottom: .8rem;
                 font-size: 24px;
@@ -236,10 +223,19 @@
                     vertical-align: middle;
                 }
             }
+
+            &::after {@include clearfix-new;}
+            &.edit-mode {display: block;}
+            & > *:last-child {margin-bottom: 0;}
+        }
+
+        &.reverse {
+            .accordion-grid-item-title, .accordion-grid-item-content {color: white;}
+            .accordion-grid-item-inner {background-color: $color-navy;}
         }
     }
 
-    .theme-teejet .main-content.homepage & {
+    .main-content.homepage & {
         padding: 0 !important;
         margin-top: 4rem !important;
         margin-bottom: 4rem !important;

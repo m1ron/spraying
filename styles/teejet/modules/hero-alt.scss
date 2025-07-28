@@ -263,6 +263,7 @@
             padding: 12px 24px;
             border-radius: 4px;
             display: inline-flex;
+            justify-content: center;
             align-items: center;
             font: 600 14px/18px $font-default;
             letter-spacing: .005em;
@@ -321,13 +322,6 @@
                     &:hover, &:focus {
                         background: rgba(white, .2);
                     }
-                }
-
-                &:hover, &:focus {
-                    border-color: $color-navy-dark;
-                    color: white !important;
-                    text-decoration: none;
-                    background: $color-navy-dark;
                 }
             }
 

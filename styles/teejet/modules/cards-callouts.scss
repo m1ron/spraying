@@ -1,14 +1,14 @@
 /* ===== CARDS-CALLOUTS ===== */
 .cards-callouts {
-    padding: 3rem 0 3.5rem;
+    padding: 4rem 0;
     position: relative;
     z-index: 1;
     font: 16px/1.5 $font-default;
     @include media-breakpoint-up(md) {
-        padding: 4rem 0 4.5rem;
+        padding: 5rem 0;
     }
     @include media-breakpoint-up(xl) {
-        padding: 4.5rem 0 5rem;
+        padding: 6rem 0;
     }
 
     &::after {
@@ -19,7 +19,7 @@
         bottom: 0;
         left: -16px;
         z-index: -1;
-        background: white;
+        background: rgba(#1a679f, .1);
         @include media-breakpoint-up(sm) {
             width: 100vw;
             right: auto;
@@ -64,16 +64,37 @@
     }
 
     &-grid {
+        @include media-breakpoint-down(md) {
+            max-width: 382px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        @include media-breakpoint-up(md) {
+            flex-wrap: wrap;
+        }
+        @include media-breakpoint-up(xl) {
+            flex-wrap: nowrap;
+        }
+
         .generic-grid {
             display: flex;
+            justify-content: flex-start !important;
             flex-direction: column;
             gap: 24px;
             @include media-breakpoint-up(md) {
                 flex-direction: row;
-                //justify-content: center;
+                @include media-breakpoint-down(xl) {
+                    justify-content: center !important;
+                }
             }
 
             &-item {
+                padding-left: 0;
+                display: flex;
+                justify-content: flex-start;
+                flex: 1;
+                &::after {display: none;}
+
                 &.quarter-width {
                     @include media-breakpoint-up(md) {
                         width: calc(50% - 12px);
@@ -85,6 +106,7 @@
                         flex-basis: calc(25% - 18px);
                     }
                 }
+
                 &.half-width {
                     @include media-breakpoint-up(md) {
                         width: 100%;
@@ -94,6 +116,36 @@
                     @include media-breakpoint-up(lg) {
                         width: calc(50% - 12px);
                         flex-basis: calc(50% - 12px);
+                    }
+
+                    > a {
+                        padding: 0 !important;
+                        &::before {display: none;}
+                    }
+                }
+            }
+
+            &-item {
+
+                @include media-breakpoint-up(md) {
+                    max-width: 382px;
+                    flex-basis: calc(50% - 12px);
+                    flex-grow: 0;
+                }
+                @include media-breakpoint-up(xl) {
+                    &, &.quarter-width, &.half-width {
+                        flex-basis: calc(33.3% - 16px) !important;
+                    }
+                }
+                @include media-breakpoint-up(xlm) {
+                    &, &.quarter-width, &.half-width {
+                        flex-basis: calc(25% - 18px) !important;
+                    }
+                }
+
+                &.half-width {
+                    @include media-breakpoint-up(xl) {
+                        flex-basis: calc(25% - 18px);
                     }
                 }
             }
@@ -118,17 +170,37 @@
             display: flex;
             flex-direction: column;
             flex: 1;
+            background: $color-white;
+            box-shadow: 0 20px 50px -5px rgba(63, 96, 116, .15);
 
             > a {
+                width: 100%;
+                padding: 24px;
+                border-radius: 4px;
                 position: relative;
                 display: flex;
                 flex-direction: column;
+                align-items: flex-start;
                 flex: 1;
                 text-decoration: none;
                 transition: color $effect;
                 outline: none;
 
+                &::before {
+                    @include pseudo;
+                    width: calc(100% + 48px);
+                    border-radius: 4px 4px 0 0;
+                    margin: -24px -24px 28px;
+                    height: 170px;
+                    background: $color-navy no-repeat center center / 64px auto;
+                }
+                &[href*='.pdf']::before {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1920'%3E%3Cg fill-rule='evenodd'%3E%3Cpath fill='%23fff' d='M1251.654 0c44.499 0 88.207 18.07 119.718 49.581l329.223 329.224c31.963 31.962 49.581 74.54 49.581 119.717V1920H169V0Zm-66.183 112.941H281.94V1807.06h1355.294V564.706H1185.47V112.94Zm112.94 23.379v315.445h315.445L1298.412 136.32Z'/%3E%3Cpath fill='%23fff' d='M900.497 677.67c26.767 0 50.372 12.65 67.991 37.835 41.901 59.068 38.965 121.976 23.492 206.682-5.308 29.14.113 58.617 16.263 83.125 22.814 34.786 55.68 82.673 87.981 123.219 23.718 29.93 60.198 45.854 97.13 40.885 23.718-3.276 52.292-5.986 81.656-5.986 131.012 0 121.186 46.757 133.045 89.675 6.55 25.976 3.275 48.678-10.165 65.506-16.715 22.701-51.162 34.447-101.534 34.447-55.793 0-74.202-9.487-122.767-24.96-27.445-8.81-55.906-10.617-83.69-3.275-55.453 14.456-146.936 36.48-223.284 46.983-40.772 5.647-77.816 26.654-102.438 60.875-55.454 76.8-106.842 148.518-188.273 148.518-21.007 0-40.32-7.567-56.244-22.701-23.492-23.492-33.544-49.581-28.574-79.85 13.778-92.95 128.075-144.79 196.066-182.625 16.037-8.923 28.687-22.589 36.592-39.53l107.86-233.223c7.68-16.377 10.051-34.56 7.228-52.518-12.537-79.059-31.06-211.99 18.748-272.075 10.955-13.44 26.09-21.007 42.917-21.007Zm20.556 339.953c-43.257 126.607-119.718 264.282-129.996 280.32 92.273-43.37 275.916-65.28 275.916-65.28-92.386-88.998-145.92-215.04-145.92-215.04Z'/%3E%3C/g%3E%3C/svg%3E");}
+                &[href*='youtube']::before {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1920'%3E%3Cpath fill-rule='evenodd' fill='%23fff' d='M0 240v1440h1500.536v-438.89L1920 1574.062V346.051L1500.536 678.89V240H0Zm109.779 109.779h1280.979v556.348l177.995-141.29 241.468-191.66v773.646l-241.468-191.549-177.995-141.29v556.236H109.778V349.78Z'/%3E%3C/svg%3E");}
+
                 &:hover, &:focus {
+                    .cards-callouts-grid-item-title::after {
+                        width: 100% !important;
+                    }
                     .cards-callouts-grid-item-copy {
                         color: $color-night;
                         p::after {width: 100%;}
@@ -168,14 +240,29 @@
             }
 
             &-title {
-                margin: 0 0 10px;
-                font-size: 18px;
-                line-height: 21px;
+                margin: 0 auto 42px 0;
+                font-size: 21px;
+                line-height: 25px;
                 font-weight: 500;
                 color: $color-night;
-                @include media-breakpoint-up(xl) {
-                    font-size: 21px;
-                    line-height: 24px;
+                display: inline;
+                position: relative;
+                justify-self: flex-start;
+                @include media-breakpoint-up(md) {
+                    //min-height: 48px;
+                }
+
+                &::after {
+                    @include pseudo;
+                    width: 80px;
+                    height: 8px;
+                    margin-top: 17px;
+                    display: block;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: $color-forest-green;
+                    transition: width .4s ease;
                 }
             }
 
@@ -199,7 +286,7 @@
             .tag {
                 padding: 3px 5px;
                 margin-bottom: 10px;
-                display: inline-block;
+                display: none !important;
                 font: 800 10px/14px $font-default;
                 text-transform: uppercase;
                 letter-spacing: .05em;
@@ -214,19 +301,7 @@
             }
 
             &.callout-copy, &.callout-copy-image {
-                padding-left: 14px;
                 position: relative;
-
-                &::after {
-                    @include pseudo;
-                    width: 2px;
-                    border-left: 2px dotted $spray-dk-blue-gray;
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    opacity: .2;
-                }
 
                 .generic-grid {
                     flex-direction: row;
@@ -274,10 +349,11 @@
                 }
 
                 .cards-callouts-grid-item-copy {
-                    margin-bottom: 12px;
+                    margin-bottom: 14px;
                     font-size: 14px;
                     line-height: 1.5;
-                    color: $spray-dk-blue-gray;
+                    letter-spacing: .005em;
+                    color: $color-night;
                     transition: color $effect;
                     @include media-breakpoint-up(xl) {
                         font-size: 16px;
@@ -293,18 +369,21 @@
                             font-size: inherit !important;
                         }
                     }
+
+                    span {color: inherit !important;}
                 }
 
                 .cards-callouts-grid-item-image {
                     width: 100%;
-                    max-height: 220px;
+                    height: 170px;
+                    max-height: 170px;
+                    border-radius: 4px 4px 0 0;
                     object-fit: cover;
                     @include media-breakpoint-down(md) {
                         max-height: 240px;
                     }
                     @include media-breakpoint-up(xl) {
-                        //object-fit: fill;
-                        object-fit: contain;
+                        //object-fit: contain;
                     }
                 }
 
@@ -315,21 +394,31 @@
                 }
 
                 .cards-callouts-grid-item-callout-action {
-                    margin: 8px 0 0;
+                    margin: auto 0 0;
                     font-size: 14px;
-                    line-height: 1.5;
+                    line-height: 16px;
                     font-weight: 600;
+                    letter-spacing: .02em;
                     transition: color $effect;
                     @include media-breakpoint-up(xl) {
                         margin-top: auto;
                         margin-bottom: 6px;
-                        font-size: 16.8px;
-                        line-height: 21.6px;
+                        font-size: 15px;
+                        line-height: 19px;
+                        letter-spacing: .03em;
                     }
 
                     .has-arrow::after {
                         margin-top: 1px;
                         margin-left: 4px;
+                        font-weight: 500;
+                    }
+                }
+
+                .cards-callouts-grid-item-callout-action {
+
+                    @include media-breakpoint-up(xl) {
+
                     }
                 }
             }
@@ -529,256 +618,56 @@
                     }
                 }
             }
-        }
-    }
 
-    // TEEJET
-    .theme-teejet & {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        //margin-bottom: 6rem;
-        @include media-breakpoint-up(md) {
-            padding-top: 60px;
-            padding-bottom: 60px;
-        }
-        @include media-breakpoint-up(xl) {
-            padding-top: 90px;
-            padding-bottom: 88px;
-            //margin-bottom: 9rem;
-        }
+            & > .generic-grid, & > a > .generic-grid {
+                width: 100% !important;
+                flex-direction: column-reverse !important;
+                gap: 0 !important;
+                flex: 1 !important;
 
-        &::after {
-            background: rgba(#1a679f, .1);
-        }
+                .generic-grid-item {
+                    width: 100% !important;
 
-        .section-header {
-            margin-bottom: 38px !important;
+                    &.flex-cell-a {
+                        padding: 28px 24px 24px;
+                        flex: 1;
+                    }
+                    &.flex-cell-b {
+                        border-radius: 4px 4px 0 0;
+                        flex: 0;
+                        background: $color-navy;
 
-            h5 {
-                margin-bottom: 12px;
-                display: block;
-                font-size: 13px;
-                line-height: 1.5;
-                font-weight: 500;
-                letter-spacing: .025em;
-                color: $color-led-blue;
-                text-transform: uppercase;
-                @include media-breakpoint-up(md) {
-                    font-size: 14px;
-                }
-                @include media-breakpoint-up(xl) {
-                    margin-bottom: 17px;
-                    font-size: 16px;
-                    letter-spacing: .05em;
+                        img {
+                            @include user-select;
+                        }
+                    }
                 }
             }
 
-            h2 {
-                margin-bottom: 0 !important;
-                color: $color-night;
-            }
-        }
+            &-copy {
+                p {
+                    margin-bottom: 20px !important;
+                    &:last-child {margin-bottom: 0 !important;}
+                }
 
-        .cards-callouts-grid {
-            @include media-breakpoint-down(md) {
-                max-width: 382px;
-                margin-right: auto;
-                margin-left: auto;
-            }
-            @include media-breakpoint-up(md) {
-                flex-wrap: wrap;
-            }
-            @include media-breakpoint-up(xl) {
-                flex-wrap: nowrap;
-            }
-
-            &-item {
-                display: flex;
-                background: $color-white;
-                box-shadow: 0 20px 50px -5px rgba(63, 96, 116, .15);
-
-                & > a {
-                    width: 100%;
-                    padding: 24px;
-                    border-radius: 4px;
+                .fa-ul {
+                    margin: 0 !important;
                     display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    gap: 12px;
+                    font-weight: 600;
 
-                    &::before {
-                        @include pseudo;
-                        width: calc(100% + 48px);
-                        border-radius: 4px 4px 0 0;
-                        margin: -24px -24px 28px;
-                        height: 170px;
-                        background: $color-navy no-repeat center center / 64px auto;
-                    }
-                    &[href*='.pdf']::before {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1920'%3E%3Cg fill-rule='evenodd'%3E%3Cpath fill='%23fff' d='M1251.654 0c44.499 0 88.207 18.07 119.718 49.581l329.223 329.224c31.963 31.962 49.581 74.54 49.581 119.717V1920H169V0Zm-66.183 112.941H281.94V1807.06h1355.294V564.706H1185.47V112.94Zm112.94 23.379v315.445h315.445L1298.412 136.32Z'/%3E%3Cpath fill='%23fff' d='M900.497 677.67c26.767 0 50.372 12.65 67.991 37.835 41.901 59.068 38.965 121.976 23.492 206.682-5.308 29.14.113 58.617 16.263 83.125 22.814 34.786 55.68 82.673 87.981 123.219 23.718 29.93 60.198 45.854 97.13 40.885 23.718-3.276 52.292-5.986 81.656-5.986 131.012 0 121.186 46.757 133.045 89.675 6.55 25.976 3.275 48.678-10.165 65.506-16.715 22.701-51.162 34.447-101.534 34.447-55.793 0-74.202-9.487-122.767-24.96-27.445-8.81-55.906-10.617-83.69-3.275-55.453 14.456-146.936 36.48-223.284 46.983-40.772 5.647-77.816 26.654-102.438 60.875-55.454 76.8-106.842 148.518-188.273 148.518-21.007 0-40.32-7.567-56.244-22.701-23.492-23.492-33.544-49.581-28.574-79.85 13.778-92.95 128.075-144.79 196.066-182.625 16.037-8.923 28.687-22.589 36.592-39.53l107.86-233.223c7.68-16.377 10.051-34.56 7.228-52.518-12.537-79.059-31.06-211.99 18.748-272.075 10.955-13.44 26.09-21.007 42.917-21.007Zm20.556 339.953c-43.257 126.607-119.718 264.282-129.996 280.32 92.273-43.37 275.916-65.28 275.916-65.28-92.386-88.998-145.92-215.04-145.92-215.04Z'/%3E%3C/g%3E%3C/svg%3E");}
-                    &[href*='youtube']::before {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1920'%3E%3Cpath fill-rule='evenodd' fill='%23fff' d='M0 240v1440h1500.536v-438.89L1920 1574.062V346.051L1500.536 678.89V240H0Zm109.779 109.779h1280.979v556.348l177.995-141.29 241.468-191.66v773.646l-241.468-191.549-177.995-141.29v556.236H109.778V349.78Z'/%3E%3C/svg%3E");}
+                    .fa-li {display: none !important;}
 
-                    &:hover {
-                        .cards-callouts-grid-item-title::after {
-                            width: 100%;
-                        }
-                    }
-                }
-
-                & > .generic-grid, & > a > .generic-grid {
-                    width: 100%;
-                    flex-direction: column-reverse;
-                    gap: 0;
-                    flex: 1;
-
-                    .generic-grid-item {
-                        width: 100% !important;
-
-                        &.flex-cell-a {
-                            padding: 28px 24px 24px;
-                            flex: 1;
-                        }
-                        &.flex-cell-b {
-                            border-radius: 4px 4px 0 0;
-                            flex: 0;
-                            background: $color-navy;
-
-                            img {
-                                @include user-select;
-                            }
-                        }
-                    }
-                }
-
-                .tag {
-                    display: none !important;
-                }
-
-                &.half-width > a {
-                    padding: 0 !important;
-                    &::before {display: none;}
-                }
-
-                .cards-callouts-grid-item-title {
-                    margin-right: auto;
-                    margin-bottom: 42px;
-                    font-size: 21px;
-                    line-height: 25px;
-                    display: inline;
-                    position: relative;
-                    justify-self: flex-start;
-                    @include media-breakpoint-up(md) {
-                        min-height: 48px;
-                    }
-
-                    &::after {
-                        @include pseudo;
-                        width: 80px;
-                        height: 8px;
-                        margin-top: 17px;
-                        display: block;
-                        position: absolute;
-                        top: 100%;
-                        left: 0;
-                        background: $color-forest-green;
-                        transition: width .4s ease;
-                    }
-                }
-
-                &.callout-copy-image, &.callout-copy {
-                    .cards-callouts-grid-item-image {
-                        height: 170px;
-                        max-height: 170px;
-                        border-radius: 4px 4px 0 0;
-                        object-fit: cover;
-                    }
-                    .cards-callouts-grid-item-copy {
-                        margin-bottom: 14px;
-                        color: $color-night;
-                        letter-spacing: .005em;
-                        span {color: inherit !important;}
-                    }
-                    .cards-callouts-grid-item-callout-action {
-                        margin-top: auto;
-                        margin-bottom: 0;
-                        font-size: 14px;
-                        line-height: 16px;
-                        letter-spacing: .02em;
-                        @include media-breakpoint-up(xl) {
-                            font-size: 15px;
-                            line-height: 19px;
-                            letter-spacing: .03em;
-                        }
-
-                        .has-arrow::after {
-                            margin-top: 1px;
-                            margin-left: 4px;
-                            font-weight: 500;
-                        }
-                    }
-                }
-
-                &-copy {
-                    p {
-                        margin-bottom: 20px !important;
-                        &:last-child {margin-bottom: 0 !important;}
-                    }
-
-                    .fa-ul {
+                    li {
+                        width: calc(50% - 12px);
                         margin: 0 !important;
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 12px;
-                        font-weight: 600;
-
-                        .fa-li {display: none !important;}
-
-                        li {
-                            width: calc(50% - 12px);
-                            margin: 0 !important;
-                        }
-
-                        a {
-                            &:hover, &:focus {
-                                color: $color-night;
-                                text-decoration: none;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .generic-grid {
-                justify-content: flex-start !important;
-                @include media-breakpoint-up(md) {
-                    @include media-breakpoint-down(xl) {
-                        justify-content: center !important;
-                    }
-                }
-
-                &-item {
-                    padding-left: 0;
-                    display: flex;
-                    justify-content: flex-start;
-                    flex: 1;
-                    &::after {display: none;}
-                    @include media-breakpoint-up(md) {
-                        max-width: 382px;
-                        flex-basis: calc(50% - 12px);
-                        flex-grow: 0;
-                    }
-                    @include media-breakpoint-up(xl) {
-                        &, &.quarter-width, &.half-width {
-                            flex-basis: calc(33.3% - 16px) !important;
-                        }
-                    }
-                    @include media-breakpoint-up(xlm) {
-                        &, &.quarter-width, &.half-width {
-                            flex-basis: calc(25% - 18px) !important;
-                        }
                     }
 
-                    &.half-width {
-                        @include media-breakpoint-up(xl) {
-                            flex-basis: calc(25% - 18px);
+                    a {
+                        &:hover, &:focus {
+                            color: $color-night;
+                            text-decoration: none;
                         }
                     }
                 }
