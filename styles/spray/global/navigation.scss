@@ -202,7 +202,7 @@
                 }
             }
 
-            .jump-menu-container {
+            .jump-menu-container-1 {
                 font-size: 16px;
                 font-weight: 500;
                 letter-spacing: .02em;
@@ -243,7 +243,7 @@
                 }
             }
 
-            .jump-menu-container-1 {
+            .jump-menu-container {
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -542,11 +542,11 @@
                 }
             }
 
-            .jump-menu-container {
+            .jump-menu-container-1 {
                 padding-right: 24px;
             }
 
-            .jump-menu-container-1 {
+            .jump-menu-container {
                 min-height: 80px;
                 transition: min-height .3s $bezier;
                 .is-scrolled & {
