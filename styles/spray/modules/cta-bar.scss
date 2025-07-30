@@ -43,6 +43,11 @@
                 right: -16px;
                 left: -16px;
                 transform: none;
+
+                .accordion-content & {
+                    right: 0;
+                    left: 0;
+                }
             }
         }
 

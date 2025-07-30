@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     position: relative;
-    z-index: 500;
+    z-index: 99;
     font-family: $site-font;
     @include media-breakpoint-down(xl) {
         display: none;

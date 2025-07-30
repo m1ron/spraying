@@ -26,6 +26,13 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
+        .accordion-content & {
+            @include media-breakpoint-down(sm) {
+                right: 0;
+                left: 0;
+            }
+        }
     }
 
     &.no-gradient {

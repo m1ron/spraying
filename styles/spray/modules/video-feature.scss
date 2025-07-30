@@ -54,6 +54,12 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+            @include media-breakpoint-down(sm) {
+                .accordion-content & {
+                    right: 0;
+                    left: 0;
+                }
+            }
         }
     }
 
