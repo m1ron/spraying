@@ -85,6 +85,21 @@
                 margin-top: 21px;
             }
         }
+
+        html[lang="cs-CZ"] &, html[lang="sk-SK"] &, html[lang="pl-PL"] &,
+        html[lang="el-GR"] &, html[lang="tr-TR"] &, html[lang="hu-HU"] &, html[lang="ro-RO"] &,
+        html[lang="lv-LV"] &, html[lang="lt-LT"] &, html[lang="et-EE"] &,
+        html[lang="bg-BG"] &, html[lang="ru-KZ"] &, html[lang="uk-UA"] &, html[lang="ru-RU"] &,
+        html[lang="ja-JP"] &, html[lang="ko-KR"] & {
+            font-family: $font-roboto;
+            font-size: 20px;
+            @include media-breakpoint-up(md) {
+                font-size: 22px;
+            }
+            @include media-breakpoint-up(xl) {
+                font-size: 24px;
+            }
+        }
     }
 
     &-button, .scTextWrapper {

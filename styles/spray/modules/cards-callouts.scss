@@ -131,7 +131,7 @@
                 &:hover, &:focus {
                     .cards-callouts-grid-item-copy {
                         color: $color-night;
-                        p::after {width: 100%;}
+                        &::after {width: 100%;}
                     }
                     .cards-callouts-grid-item-callout-action {
                         color: $color-night;
@@ -402,7 +402,7 @@
                         img {
                             @include media-breakpoint-up(xl) {
                                 height: auto;
-                                max-height: none;
+                                max-height: 100%;
                                 border-radius: 0 0 4px 4px;
                             }
                         }
@@ -410,49 +410,51 @@
                 }
 
                 .cards-callouts-grid-item-copy {
-                    padding: 16px;
+                    padding: 16px 16px 26px;
                     margin: 0;
                     display: flex;
                     flex-direction: column;
                     flex: 1;
+                    font-size: 18px;
+                    line-height: 1.5;
+                    font-weight: 500;
+                    letter-spacing: 0;
+                    color: $color-night;
                     @include media-breakpoint-up(md) {
-                        padding: 24px;
+                        padding: 24px 24px 34px;
+                    }
+
+                    &::after {
+                        @include pseudo;
+                        width: 85px;
+                        height: 8px;
+                        margin-top: auto;
+                        position: relative;
+                        top: 10px;
+                        background: $color-forest-green;
+                        transition: width .5s ease;
                     }
 
                     p {
-                        padding-bottom: 10px;
                         margin: 0;
                         display: flex;
                         flex-direction: column;
                         flex: 1;
-                        font-size: 18px;
-                        line-height: 1.5;
-                        font-weight: 500;
-                        letter-spacing: 0;
-                        color: $color-night;
-
-                        &::after {
-                            @include pseudo;
-                            width: 85px;
-                            height: 8px;
-                            //margin-top: 10px;
-                            margin-top: auto;
-                            position: relative;
-                            top: 10px;
-                            background: $color-forest-green;
-                            transition: width .5s ease;
-                        }
+                        color: inherit;
                     }
                 }
             }
 
-            &.callout-alt {
+            &.callout-alt, .callout-alt {
                 padding-left: 0;
+                flex: 1;
 
                 > a {
                     height: 100%;
                     display: flex;
                     justify-content: center;
+                    color: white;
+                    text-decoration: none;
 
                     &:hover, &:focus {
                         .callout-alt-wrapper {background-color: $color-led-blue;}
@@ -479,7 +481,7 @@
                         padding: 24px 36px;
                     }
 
-                    .cards-callouts-grid-item-title {
+                    h3, .cards-callouts-grid-item-title {
                         margin-bottom: 8px;
                         font-size: 18px;
                         line-height: 21px;
