@@ -126,9 +126,9 @@
 
     &-content-wrapper {
         @include media-breakpoint-up(xl) {
-            min-height: calc(100vw * .333);
+            //min-height: calc(100vw * .333);
             max-height: 630px;
-            aspect-ratio: 20/6;
+            //aspect-ratio: 20/6;
             display: flex;
             align-items: center;
 
@@ -139,8 +139,8 @@
             }
         }
         @include media-breakpoint-up(xxxl) {
-            min-height: 0;
-            height: calc(100vw * .333);
+            //min-height: 0;
+            //height: calc(100vw * .333);
         }
     }
 
