@@ -55,17 +55,20 @@
             width: 200px;
         }
         @include media-breakpoint-up(md) {
-            width: 228px;
+            width: 232px;
             top: 12px;
             transition: none;
         }
         @include media-breakpoint-up(xl) {
-            min-width: 310px;
+            width: auto;
             top: 20px;
-            transform: none;
-            transition: min-width .2s linear, top .2s linear;
-
-            .is-scrolled & {min-width: 228px;top: 12px;}
+            transition: top .2s linear;
+            .is-scrolled & {top: 12px;}
+        }
+        @include media-breakpoint-up(xlm) {
+            //min-width: 310px;
+            top: 20px;
+            .is-scrolled & {top: 12px;}
         }
 
         a {
@@ -74,6 +77,14 @@
             @include media-breakpoint-down(xss) {
                 width: 84px;
                 height: 40px;
+            }
+            @include media-breakpoint-up(xl) {
+                width: 84px;
+                transition: width .2s linear;
+            }
+            @include media-breakpoint-up(xlm) {
+                width: 110px;
+                .is-scrolled & {width: 84px;}
             }
         }
 
@@ -86,6 +97,15 @@
             @include media-breakpoint-down(xss) {
                 width: 232px;
                 max-width: none;
+            }
+            @include media-breakpoint-up(xl) {
+                width: 232px;
+                max-width: none;
+                transition: width .2s linear;
+            }
+            @include media-breakpoint-up(xlm) {
+                width: 310px;
+                .is-scrolled & {width: 232px;}
             }
         }
     }
