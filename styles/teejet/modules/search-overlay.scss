@@ -49,15 +49,17 @@
         }
     }
     @include media-breakpoint-up(xl) {
-        width: 25%;
-        min-width: 320px;
+        width: 320px;
+        max-width: 320px;
+        min-width: 135px;
         min-height: 80px;
+        margin: 0 auto;
         align-items: center;
         position: absolute;
         top: 0;
-        left: 50%;
+        right: 0;
+        left: 145px;
         z-index: 110;
-        transform: translateX(-60%);
         transition: min-height .3s $bezier;
 
         .is-scrolled & {
@@ -73,9 +75,8 @@
         }
     }
     @include media-breakpoint-up(xlm) {
-        width: 36.5%;
-        max-width: 600px;
-        transform: translateX(-50%);
+        width: 460px;
+        left: 185px;
     }
 
     &-input {

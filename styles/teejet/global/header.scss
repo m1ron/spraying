@@ -42,54 +42,70 @@
     &-logo {
         display: block;
         position: absolute;
-        top: 12px;
-        left: 20px;
+        top: 18px;
+        left: 16px;
         z-index: 10;
         transform: none;
+        transition: width .3s $bezier;
         -webkit-backface-visibility: hidden;
-        @media screen and (min-width: 375px) {
-            width: 180px;
-            transition: width .3s $bezier;
-        }
-        @include media-breakpoint-up(xsl) {
-            width: 200px;
+        @include media-breakpoint-up(xss) {
+            top: 16px;
+            left: 20px;
         }
         @include media-breakpoint-up(md) {
-            width: 228px;
             top: 12px;
             transition: none;
         }
-        @include media-breakpoint-down(xl) {
-            width: 228px;
-            top: 14px;
-        }
         @include media-breakpoint-up(xl) {
-            min-width: 310px;
             top: 20px;
-            transform: none;
-            transition: min-width .2s linear, top .2s linear;
-
-            .is-scrolled & {min-width: 228px;top: 12px;}
+            transition: width .2s linear, top .2s linear;
+            .is-scrolled & {top: 12px;}
+        }
+        @include media-breakpoint-up(xlm) {
+            top: 20px;
+            .is-scrolled & {
+                top: 12px;
+                a {
+                    width: 110px;
+                }
+                img {
+                    width: 228px;
+                }
+            }
         }
 
         a {
+            width: 88px;
             display: block;
             overflow: hidden;
-            @include media-breakpoint-down(xss) {
-                width: auto;
-                height: auto;
+            @include media-breakpoint-up(xss) {
+                width: 100px;
+            }
+            @include media-breakpoint-up(md) {
+                width: 110px;
+            }
+            @include media-breakpoint-up(xlm) {
+                width: 150px;
+                transition: width .2s linear;
             }
         }
 
         img {
-            width: 100%;
+            width: 180px;
+            max-width: none;
             height: auto;
             display: block;
             @include user-select;
             @include user-drag;
-            @include media-breakpoint-down(xss) {
-                width: 100%;
-                max-width: none;
+            @include media-breakpoint-up(xss) {
+                width: 200px;
+            }
+            @include media-breakpoint-up(md) {
+                width: 228px;
+            }
+            @include media-breakpoint-up(xlm) {
+                width: 310px;
+                transition: width .2s linear;
             }
         }
     }
@@ -101,19 +117,20 @@
     }
 
     &-buttons {
-        padding: 0 12px;
+        padding: 0 8px;
         position: absolute;
         top: 50%;
         right: 0;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        gap: 4px;
+        gap: 0;
         transform: translate3d(0, -50%, 0);
         @media screen and (min-width: 375px) {
             gap: 1px;
         }
-        @include media-breakpoint-up(xsl) {
+        @include media-breakpoint-up(xss) {
+            padding: 0 12px;
             gap: 2px;
         }
         @include media-breakpoint-up(sm) {

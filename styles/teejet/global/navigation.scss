@@ -472,7 +472,10 @@
                 flex-direction: row;
                 justify-content: flex-end;
                 align-items: center;
-                gap: 14px;
+                gap: 6px;
+                @include media-breakpoint-up(xxl) {
+                    gap: 14px;
+                }
 
                 .menu-button {
                     display: block;
@@ -548,6 +551,7 @@
 
             .jump-menu-container {
                 min-height: 80px;
+                align-self: flex-end;
                 transition: min-height .3s $bezier;
                 .is-scrolled & {
                     min-height: 60px;
