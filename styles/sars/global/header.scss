@@ -55,16 +55,18 @@
             width: 200px;
         }
         @include media-breakpoint-up(md) {
-            width: 200px;
             top: 12px;
             transition: none;
         }
         @include media-breakpoint-up(xl) {
-            min-width: 310px;
-            top: 20px;
-            transform: none;
+            width: 228px;
+            top: 16px;
             transition: min-width .2s linear, top .2s linear;
-
+            .is-scrolled & {top: 12px;}
+        }
+        @include media-breakpoint-up(xlm) {
+            min-width: 310px;
+            top: 16px;
             .is-scrolled & {min-width: 228px;top: 12px;}
         }
 

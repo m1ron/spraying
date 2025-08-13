@@ -49,15 +49,17 @@
         }
     }
     @include media-breakpoint-up(xl) {
-        width: 25%;
-        min-width: 320px;
+        width: 320px;
+        max-width: 320px;
+        min-width: 135px;
         min-height: 80px;
+        margin: 0 auto;
         align-items: center;
         position: absolute;
         top: 0;
-        left: 50%;
+        right: 0;
+        left: 270px;
         z-index: 110;
-        transform: translateX(-60%);
         transition: min-height .3s $bezier;
 
         .is-scrolled & {
@@ -73,9 +75,23 @@
         }
     }
     @include media-breakpoint-up(xlm) {
-        width: 30%;
-        max-width: 460px;
-        transform: translateX(-50%);
+        width: 460px;
+        left: 355px !important;
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: 320px;
+        max-width: 320px;
+        min-width: 135px;
+        min-height: 80px;
+        margin: 0 auto;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 265px;
+        z-index: 110;
+        transition: min-height .3s $bezier;
     }
 
     &-input {
