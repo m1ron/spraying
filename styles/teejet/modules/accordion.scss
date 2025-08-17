@@ -1,11 +1,11 @@
 /* ===== ACCORDION ===== */
 .accordion {
-    max-width: 1320px !important;
     margin: 4rem auto;
     @include media-breakpoint-up(md) {
         margin: 5rem auto;
     }
     @include media-breakpoint-up(xl) {
+        max-width: 1260px !important;
         margin: 6rem auto;
     }
 

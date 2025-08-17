@@ -1,6 +1,6 @@
 /* ===== TABS-WITH-TABLES ===== */
 .tabs-with-tables {
-    max-width: 970px;
+    max-width: 1220px;
     margin: 0 auto;
     position: relative;
 }
@@ -82,6 +82,9 @@
         .wysiwyg-content {
             padding: 0;
             margin: 0;
+            @include media-breakpoint-up(xl) {
+                padding: 0 40px;
+            }
         }
 
         .article-copy {
@@ -178,6 +181,9 @@
                 background: none !important;
                 &:last-of-type {margin-bottom: 0 !important;}
                 @include media-breakpoint-up(md) {
+                    max-width: 970px;
+                    margin-right: auto;
+                    margin-left: auto;
                     margin-bottom: 24px !important;
                     justify-content: space-between;
                     flex-direction: row;
