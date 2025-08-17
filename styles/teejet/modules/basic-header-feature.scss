@@ -16,6 +16,7 @@
         font-size: 13px;
     }
     @include media-breakpoint-up(xl) {
+        padding: 32px 0;
         font-size: 16px;
         line-height: 160%;
     }
@@ -41,17 +42,18 @@
     h1 {
         margin: 0;
         font-family: $font-default !important;
-        font-weight: normal;
-        font-size: 25px;
+        font-size: 32px;
         line-height: 1.25;
-        letter-spacing: .005em;
+        font-weight: 400;
+        letter-spacing: .015em;
+        text-transform: uppercase;
         color: inherit !important;
         background: none !important;
         @include media-breakpoint-up(md) {
-            font-size: 28px;
+            font-size: 40px;
         }
         @include media-breakpoint-up(xl) {
-            font-size: 32px;
+            font-size: 50px;
         }
     }
 
@@ -80,10 +82,10 @@
     hr {
         max-width: 80rem;
         padding: 0;
-        border-top: 2px dotted rgba($color-ocean, .5);
-        margin: 8px auto 12px;
-        display: none;
+        border-top: 1px solid $color-white;
+        margin: 8px auto;
         @include media-breakpoint-up(md) {
+            border-width: 1.5px;
             margin-bottom: 18px;
         }
 
@@ -113,25 +115,30 @@
             max-width: 1480px;
         }
 
-        p {margin-bottom: 0;}
+        > p {
+            margin-bottom: 0;
+            line-height: 1.1em;
+            @include media-breakpoint-up(xl) {
+                font-size: 15px;
+            }
+        }
     }
 
     &-section {
         margin-bottom: 8px;
         display: block;
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1em;
         font-family: $site-font;
         font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: .01em;
+        letter-spacing: .025em;
         color: $spray-ltst-blue;
         @include media-breakpoint-up(md) {
-            margin-bottom: 12px;
-            font-size: 16px;
+            font-size: 14px;
         }
         @include media-breakpoint-up(xl) {
-            font-size: 21px;
+            font-size: 16px;
         }
     }
 
