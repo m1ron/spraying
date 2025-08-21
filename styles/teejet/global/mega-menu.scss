@@ -1,0 +1,287 @@
+.mega-menu {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        z-index: 2;
+    }
+
+    .navbar, .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+    }
+
+    button {
+        border: none;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .btn {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1em;
+        background: #428aff;
+        padding: 0.5em 1.3em;
+        border-radius: 16px;
+        color: #fff;
+    }
+
+    .btn:hover {
+        background: #3877db;
+    }
+
+    .menu-btn {
+        margin-left: 1em;
+        background: none;
+        display: inline-block;
+    }
+
+    .menu-btn span {
+        font-size: 2.3em;
+    }
+
+    .dropdown > div, .sub-dropdown > div {
+        cursor: pointer;
+    }
+
+    .dropdown .menu a:hover {
+        color: #9b9b9b;
+    }
+}
+@include media-breakpoint-up(xl) {
+    .mega-menu {
+        display: flex;
+        justify-content: center;
+
+        .navbar {
+            padding: 0 1.5em;
+        }
+
+        .dropdown > div {
+            padding: 1.5em 1em;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+        .menu {
+            background: #fff;
+            position: absolute;
+            top: 4.65em;
+            left: 0;
+            width: 100%;
+            padding: 0 2em;
+            overflow-y: scroll;
+            transition: 0.4s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2em;
+        }
+
+        .sub-dropdown > div span:first-child {
+            font-weight: bold;
+        }
+
+        .dropdown > div {
+            border-bottom: 3px #fff solid;
+            transition: 0.3s;
+        }
+
+        .dropdown > div span {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+
+        .dropdown:hover > div {
+            border-color: #000;
+        }
+
+        .dropdown li {
+            margin-bottom: 1em;
+        }
+
+        .dropdown > div span:last-child,
+        .sub-dropdown > div .material-symbols-outlined {
+            display: none;
+        }
+
+        .dropdown > div span:last-child,
+        .sub-dropdown > div {
+            padding-bottom: 10px;
+        }
+        /* Width */
+        .menu::-webkit-scrollbar {
+            width: 8px;
+        }
+        /* Track */
+        .menu::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        /* Handle */
+        .menu::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        /* Handle on hover */
+        .menu::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Hide menu */
+        .menu {
+            height: 0;
+        }
+
+        .dropdown:hover .menu {
+            height: 50vh;
+            padding: 2em;
+        }
+    }
+}
+/* Responsive Design */
+@include media-breakpoint-down(xl) {
+    .mega-menu::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .mega-menu::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .mega-menu::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    .mega-menu::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .mega-menu {
+        padding: 0 1em 1em 1em;
+        height: 100%;
+        overflow-y: scroll;
+
+        .navbar {
+            padding: 1em 1.5em;
+        }
+
+        .menu-container {
+            background: #fff;
+            position: absolute;
+            top: 4.4em;
+            left: 0;
+            width: 100%;
+            overflow-y: hidden;
+            transition: 0.3s ease-in-out;
+        }
+
+        li {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: .02em;
+            position: relative;
+        }
+
+        li > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        .menu li {
+            padding: 0 1em;
+            font-size: 1em;
+            font-weight: 400;
+        }
+
+        .menu a {
+            display: block;
+            margin: 0.8em 0;
+        }
+
+        .menu {
+            display: none;
+        }
+        /* Toggle class for Javascript */
+        .menu-show {
+            display: block;
+        }
+
+        .mega-menu-icon-arrow {
+            transition: 0.3s;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Cpath stroke='%2300ABE5' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M14.25 6.75 9 12 3.75 6.75'/%3E%3Cpath stroke='%23242F37' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M14.25 6.75 9 12 3.75 6.75'/%3E%3C/svg%3E") no-repeat center center !important;
+            width: 18px;
+            height: 18px;
+            margin: auto;
+            position: absolute;
+            right: 20px;
+        }
+        /* Toggle class for javascript */
+        .mega-menu-icon-rotated {
+            transform: rotate(180deg);
+        }
+
+        .dropdown > div, .sub-dropdown > div {
+            cursor: pointer;
+            padding: 0.5em;
+        }
+
+        .dropdown > div {
+            padding: 20px;
+        }
+
+        .dropdown::after {
+            content: '';
+            display: block;
+            overflow: hidden;
+            height: .5px;
+            right: 10px;
+            bottom: 0;
+            left: 10px;
+            background: #aebdc6;
+        }
+
+        .sub-menu {
+            font-size: 0.9em;
+            display: none;
+        }
+        /* Toggle class for Javascript */
+        .sub-menu-show {
+            display: block;
+        }
+
+        .dropdown:hover > div, .sub-dropdown:hover > div {
+            background: #dbdbdb;
+        }
+        /* Hide menu */
+        .mega-menu-container {
+            height: 0;
+        }
+        /* Toggle class for javascript */
+        .mega-menu-show {
+            height: 50vh;
+        }
+    }
+}
