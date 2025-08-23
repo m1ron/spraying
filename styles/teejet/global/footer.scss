@@ -6,14 +6,14 @@
     line-height: 1.5;
     letter-spacing: .015em;
     color: $color-ocean;
-    background-color: $color-night;
+    background-color: #102a40;
     @include media-breakpoint-up(md) {
         padding: 5rem 0;
     }
 
     @at-root footer#{&} {
         color: $color-ocean !important;
-        background: $color-night !important;
+        background: #102a40 !important;
     }
 
     &-container {

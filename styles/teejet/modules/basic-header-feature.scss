@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background: $spray-blue-alt-1;
+    background: #102a40;
     @include media-breakpoint-down(md) {
         min-height: 110px;
         font-size: 13px;
@@ -30,7 +30,7 @@
         bottom: 0;
         left: 50%;
         z-index: -1;
-        background: $spray-blue-alt-1;
+        background: #102a40;
         transform: translateX(-50%);
         @include media-breakpoint-down(sm) {
             right: -16px;

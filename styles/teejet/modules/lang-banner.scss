@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     z-index: 9999;
-    background: $spray-dkst-blue;
+    background: #102a40;
     cursor: default;
 
     &-container {
@@ -39,7 +39,7 @@
         display: block;
         font: 16px $font-default;
         color: $color-white;
-        background: $spray-ltr-blue url(../images/template/select-dropdown.svg) no-repeat 98% 50%;
+        background: #5cc4e4 url(../images/template/select-dropdown.svg) no-repeat 98% 50%;
         background-size: 26px 26px;
         -webkit-appearance: none;
         outline: none;
