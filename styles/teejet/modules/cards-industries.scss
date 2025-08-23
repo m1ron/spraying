@@ -456,14 +456,14 @@
 
                 &::after {
                     @include pseudo;
-                    width: 90px;
-                    height: 6px;
+                    width: 80px;
+                    height: 7px;
                     display: none;
                     position: absolute;
                     bottom: 0;
                     left: 0;
-                    background: #57b160;
-                    transition: width .6s ease;
+                    background: #5cc4e4;
+                    transition: width .5s ease;
                 }
 
                 @include media-breakpoint-up(md) {
@@ -888,7 +888,7 @@
                 &-title {
                     &::after {
                         //width: 87px;
-                        background: #add3ea;
+                        background: #5cc4e4;
                     }
                 }
             }
