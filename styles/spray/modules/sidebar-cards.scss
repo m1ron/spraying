@@ -183,6 +183,10 @@
                         opacity: 1;
                     }
                     &:last-child {margin-bottom: 0;}
+
+                    span[style*="font-size"] {
+                        font-size: inherit !important;
+                    }
                 }
 
                 a {
