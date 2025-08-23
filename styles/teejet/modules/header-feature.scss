@@ -264,7 +264,7 @@
 
     &-split {
         position: relative;
-        background: $spray-blue-alt;
+        background: #102a40;
         z-index: 1;
         @include media-breakpoint-up(lg) {
             min-width: 100vw;
@@ -284,7 +284,7 @@
             bottom: 0;
             left: -16px;
             z-index: -1;
-            background: $spray-blue-alt;
+            background: #102a40;
             @include media-breakpoint-up(sm) {
                 width: 100vw;
                 right: auto;
@@ -341,8 +341,8 @@
 
         &__content {
             padding: 3rem 0;
-            background: $spray-blue-alt;
             color: $light;
+            background: #102a40;
             @include media-breakpoint-down(md) {
                 font-size: 15px;
             }
@@ -373,7 +373,7 @@
 
             p {
                 margin-bottom: 0;
-                color: rgba(white, .7);
+                color: rgba(white, .9);
                 &:empty {display: none;}
             }
         }
