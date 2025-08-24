@@ -154,6 +154,7 @@
         }
         @include media-breakpoint-up(xl) {
             max-width: 640px;
+            padding: 60px 0;
         }
         @include media-breakpoint-up(xxl) {
             max-width: 720px;
@@ -250,45 +251,6 @@
                 display: none;
             }
         }
-
-        /*
-        &.hero-content-theme-1 {
-            @media(min-width: 1201px) {
-                background: rgba($color-deep-space-blue, .85);
-                color: $color-white;
-
-                p {color: $color-white;}
-
-                .hero-alt-title {
-                    color: $color-white;
-                    span {color: $color-white;}
-                }
-            }
-
-            .actions {
-                > div {
-                    .hero-btn {
-                        &.btn1 {
-                            background: black;
-                            &:hover, &:focus {background: #98102e;}
-                        }
-                        &.btn2 {
-                            background: #0065a4;
-                            &:hover, &:focus {background: #98102e;}
-                        }
-                        &.e-commerce-btn {
-                            background: black;
-                            &:hover, &:focus {background: #98102e;}
-                        }
-                        &.video-btn {
-                            background: #0065a4;
-                            &:hover, &:focus {background: #98102e;}
-                        }
-                    }
-                }
-            }
-        }
-         */
     }
 
     &-title {
@@ -413,6 +375,245 @@
         }
     }
 
+    &-view.hero-overlay-lightgrayblue-solid-gradient-0 {
+        .hero-alt-media.hero-alt-media-desktop {
+            @include media-breakpoint-up(xl) {
+                background-position: calc((100vw - 1160px) / 2 + 250px) top;
+            }
+            @include media-breakpoint-up(xlm) {
+                background-position: calc((100vw - 1360px) / 2 + 200px) top;
+            }
+            @include media-breakpoint-up(xxl) {
+                background-position: calc((100vw - 1360px) / 2 - 34px) top;
+            }
+
+            &::before {
+                display: none;
+                left: calc((100vw - 1160px) / 2 + calc(720px * .8333));
+                @include media-breakpoint-up(xlm) {
+                    left: calc((100vw - 1360px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xxl) {
+                    left: calc((100vw - 1600px) / 2 + calc(720px * .8333));
+                }
+            }
+
+            &::after {
+                @include media-breakpoint-up(xl) {
+                    width: calc((100vw - 1160px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xlm) {
+                    width: calc((100vw - 1360px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xxl) {
+                    width: calc((100vw - 1600px) / 2 + calc(720px * .8333));
+                }
+            }
+        }
+    }
+
+    &-view.hero-overlay-lightgrayblue-opacity-80 {
+        .hero-alt-media.hero-alt-media-desktop {
+            @include media-breakpoint-up(xl) {
+                background-position: 67% top;
+            }
+
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                opacity: .8;
+                @include media-breakpoint-up(xl) {
+                    width: calc((100vw - 1160px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xlm) {
+                    width: calc((100vw - 1360px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xxl) {
+                    width: calc((100vw - 1600px) / 2 + calc(720px * .8333));
+                }
+            }
+        }
+    }
+
+    &-view.hero-overlay-lightgrayblue-opacity-90 {
+        .hero-alt-media.hero-alt-media-desktop {
+            @include media-breakpoint-up(xl) {
+                background-position: 67% top;
+            }
+
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                opacity: .9;
+                @include media-breakpoint-up(xl) {
+                    width: calc((100vw - 1160px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xlm) {
+                    width: calc((100vw - 1360px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xxl) {
+                    width: calc((100vw - 1600px) / 2 + calc(720px * .8333));
+                }
+            }
+        }
+    }
+
+    &-view.hero-overlay-light-20 {
+        .hero-alt-media.hero-alt-media-desktop {
+            &::before {display: none;}
+
+            &::after {
+                background: linear-gradient(to right, rgba(238, 241, 244, 0.6) 70%, transparent 100%);
+                @include media-breakpoint-up(xl) {
+                    width: calc((100vw - 1160px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xlm) {
+                    width: calc((100vw - 1360px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xxl) {
+                    width: calc((100vw - 1600px) / 2 + calc(720px * .8333));
+                }
+            }
+        }
+        .hero-alt-content {
+            @include media-breakpoint-up(xl) {
+                max-width: 450px;
+
+                .hero-btn {
+                    border: 2px solid $color-led-blue;
+                    color: $color-led-blue !important;
+                    background: $color-white;
+                }
+            }
+        }
+    }
+
+    &-view.hero-overlay-dark-10 {
+        .hero-alt-media.hero-alt-media-desktop {
+            @include media-breakpoint-up(xl) {
+                background-position: 67% top;
+            }
+
+            &::before {display: none;}
+
+            &::after {
+                background: #212936;
+                @include media-breakpoint-up(xl) {
+                    width: calc((100vw - 1160px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xlm) {
+                    width: calc((100vw - 1360px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xxl) {
+                    width: calc((100vw - 1600px) / 2 + calc(720px * .8333));
+                }
+            }
+        }
+
+        .hero-alt-content {
+            @include media-breakpoint-up(xl) {
+                max-width: 450px;
+                color: $color-white;
+
+                .hero-alt-subtitle {
+                    color: rgb(209 213 219);
+                }
+                .hero-alt-title.hero-alt-title-desktop {
+                    color: inherit !important;
+                }
+
+                .hero-btn {
+                    border: 2px solid $color-white;
+                    color: $color-white;
+                    background: none;
+                }
+            }
+        }
+    }
+
+    &-view.hero-overlay-dark-20 {
+        .hero-alt-media.hero-alt-media-desktop {
+            &::before {display: none;}
+
+            &::after {
+                background: linear-gradient(to right, rgba(31, 41, 55, 0.6) 70%, rgba(0, 0, 0, 0) 100%);
+                @include media-breakpoint-up(xl) {
+                    width: calc((100vw - 1160px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xlm) {
+                    width: calc((100vw - 1360px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xxl) {
+                    width: calc((100vw - 1600px) / 2 + calc(720px * .8333));
+                }
+            }
+        }
+        .hero-alt-content {
+            @include media-breakpoint-up(xl) {
+                max-width: 450px;
+                color: $color-white;
+
+                .hero-alt-subtitle {
+                    color: rgb(209 213 219);
+                }
+                .hero-alt-title.hero-alt-title-desktop {
+                    color: inherit !important;
+                }
+
+                .hero-btn {
+                    border: 2px solid $color-white;
+                    color: $color-white;
+                    background: none;
+                }
+            }
+        }
+    }
+
+    &-view.hero-overlay-dark-22 {
+        .hero-alt-media.hero-alt-media-desktop {
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                background: linear-gradient(to right, #1f2937 50%, rgba(31, 41, 55, 0) 80%);
+                @include media-breakpoint-up(xl) {
+                    width: calc((100vw - 1160px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xlm) {
+                    width: calc((100vw - 1360px) / 2 + calc(720px * .8333));
+                }
+                @include media-breakpoint-up(xxl) {
+                    width: calc((100vw - 1600px) / 2 + calc(720px * .8333));
+                }
+            }
+        }
+
+        .hero-alt-content {
+            @include media-breakpoint-up(xl) {
+                max-width: 450px;
+                color: $color-white;
+
+                .hero-alt-subtitle {
+                    color: rgb(209 213 219);
+                }
+                .hero-alt-title.hero-alt-title-desktop {
+                    color: inherit !important;
+                }
+
+                .hero-btn {
+                    border: 2px solid $color-white;
+                    color: $color-white;
+                    background: none;
+                }
+            }
+        }
+    }
+
     &-view.hero-overlay-original {
         .hero-alt-media.hero-alt-media-desktop {
             &::before, &::after {
@@ -467,9 +668,9 @@
                 text-transform: none;
             }
         }
-        @include media-breakpoint-up(xlm) {
+        @media (min-width: 1740px) {
             .hero-alt-content-wrapper {
-                margin-left: -20px;
+                margin-left: -40px;
             }
         }
     }
