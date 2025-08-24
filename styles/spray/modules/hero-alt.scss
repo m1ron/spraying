@@ -466,13 +466,6 @@
             @include media-breakpoint-up(xl) {
                 max-width: 450px;
 
-                .hero-alt-subtitle {
-                    //color: rgb(209 213 219);
-                }
-                .hero-alt-title.hero-alt-title-desktop {
-                    //color: inherit !important;
-                }
-
                 .hero-btn {
                     border: 2px solid $color-led-blue;
                     color: $color-led-blue !important;
