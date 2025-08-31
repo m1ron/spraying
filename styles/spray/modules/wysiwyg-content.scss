@@ -42,6 +42,19 @@
             margin: 6rem 0 9rem;
         }
     }
+
+    [style*="max-width: 840px;"] {
+        > br, > span[style*="font-size"] {display: none;}
+        @include media-breakpoint-down(xl) {
+            table[style*="width:"] {width: 100% !important;}
+            table[style*="height:"] {height: auto !important;}
+        }
+        @include media-breakpoint-down(sm) {
+            table, table tbody, table tr, table td {
+                display: block;
+            }
+        }
+    }
 }
 
 .wysiwyg-script {

@@ -77,7 +77,7 @@
             display: block;
             @include user-select;
             @include user-drag;
-            @include media-breakpoint-down(lg) {
+            @include media-breakpoint-down(xl) {
                 margin: 0 auto;
             }
         }

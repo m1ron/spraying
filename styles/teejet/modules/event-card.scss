@@ -15,13 +15,32 @@
         &-item {
             width: 100%;
             @include media-breakpoint-up(xss) {
-                width: calc(50% - 12px);
+                width: calc(50% - 6px);
             }
             @include media-breakpoint-up(md) {
-                width: calc(33.3% - 14px);
+                width: 218px;
+                max-width: 218px;
+                flex: 0 1 218px;
             }
             @include media-breakpoint-up(lg) {
-                width: calc(25% - 12px);
+                width: 298px;
+                max-width: 298px;
+                flex: 0 1 298px;
+            }
+            @include media-breakpoint-up(xl) {
+                width: 278px;
+                max-width: 278px;
+                flex: 0 1 278px;
+            }
+            @include media-breakpoint-up(xlm) {
+                width: 259px;
+                max-width: 259px;
+                flex: 0 1 259px;
+            }
+            @include media-breakpoint-up(xxl) {
+                width: 253px;
+                max-width: 253px;
+                flex: 0 1 253px;
             }
 
             &-wrapper {

@@ -76,3 +76,10 @@
 .SnapABug_Button {
     z-index: 99992 !important;
 }
+
+.fancybox-slide {
+    @include media-breakpoint-down(md) {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+}
