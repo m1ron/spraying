@@ -1,161 +1,78 @@
 .mega-menu {
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    ul {
-        list-style: none;
-    }
-
-    a {
-        text-decoration: none;
-        color: #000;
-    }
-
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #fff;
-        z-index: 2;
-    }
-
-    .navbar, .buttons {
+    @include media-breakpoint-up(xl) {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1em;
-    }
-
-    button {
-        border: none;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-    .btn {
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.1em;
-        background: #428aff;
-        padding: 0.5em 1.3em;
-        border-radius: 16px;
-        color: #fff;
-    }
-
-    .btn:hover {
-        background: #3877db;
-    }
-
-    .menu-btn {
-        margin-left: 1em;
-        background: none;
-        display: inline-block;
-    }
-
-    .menu-btn span {
-        font-size: 2.3em;
-    }
-
-    .dropdown > div, .sub-dropdown > div {
-        cursor: pointer;
-    }
-
-    .dropdown .menu a:hover {
-        color: #9b9b9b;
-    }
-}
-@include media-breakpoint-up(xl) {
-    .mega-menu {
-        display: flex;
-        justify-content: center;
 
         .navbar {
             padding: 0 1.5em;
         }
 
-        .dropdown > div {
-            padding: 1.5em 1em;
-        }
-
-        .menu-btn {
-            display: none;
-        }
-
         .menu {
-            background: #fff;
+            width: 100%;
+            height: 0;
+            padding: 30px;
+
             position: absolute;
             top: 4.65em;
             left: 0;
-            width: 100%;
-            padding: 0 2em;
-            overflow-y: scroll;
-            transition: 0.4s ease-in-out;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: flex-start;
             gap: 2em;
+            overflow-y: scroll;
+            background: $color-white;
+
+            &::-webkit-scrollbar {width: 8px;}
+            &::-webkit-scrollbar-track {background: #f1f1f1;}
+            &::-webkit-scrollbar-thumb {background: #888;}
+            &::-webkit-scrollbar-thumb:hover {background: #555;}
         }
 
-        .sub-dropdown > div span:first-child {
-            font-weight: bold;
+        .dropdown {
+            &:first-child .menu {height: 50vh !important;}
+
+            > div {
+                padding: 1.5em 1em;
+                border-bottom: 3px #fff solid;
+
+                span {
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: 0.03em;
+                    white-space: nowrap;
+                }
+            }
+
+            &:hover > div {
+                border-color: #000;
+            }
+
+            li {
+                margin-bottom: 1em;
+            }
+
+            > div span:last-child {
+                padding-bottom: 10px;
+                display: none;
+            }
+
+            &:hover .menu {
+                //height: 50vh;
+                //padding: 2em;
+            }
         }
 
-        .dropdown > div {
-            border-bottom: 3px #fff solid;
-            transition: 0.3s;
-        }
+        .sub-dropdown {
+            > div {
+                padding-bottom: 10px;
 
-        .dropdown > div span {
-            font-size: 14px;
-            line-height: 20px;
-            letter-spacing: 0.03em;
-            white-space: nowrap;
-        }
+                span:first-child {
+                    font-weight: bold;
+                }
 
-        .dropdown:hover > div {
-            border-color: #000;
-        }
-
-        .dropdown li {
-            margin-bottom: 1em;
-        }
-
-        .dropdown > div span:last-child,
-        .sub-dropdown > div .material-symbols-outlined {
-            display: none;
-        }
-
-        .dropdown > div span:last-child,
-        .sub-dropdown > div {
-            padding-bottom: 10px;
-        }
-        /* Width */
-        .menu::-webkit-scrollbar {
-            width: 8px;
-        }
-        /* Track */
-        .menu::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        /* Handle */
-        .menu::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-        /* Handle on hover */
-        .menu::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-        /* Hide menu */
-        .menu {
-            height: 0;
-        }
-
-        .dropdown:hover .menu {
-            height: 50vh;
-            padding: 2em;
+                .material-symbols-outlined {
+                    display: none;
+                }
+            }
         }
     }
 }
