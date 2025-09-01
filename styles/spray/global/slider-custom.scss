@@ -101,6 +101,12 @@
     }
 }
 
+.reverse-conetnt-mobile {
+    &.slider {
+        display: flex;
+    }
+}
+
 .a11y-slider-autoplay-container {
     position: absolute;
     z-index: 10;
