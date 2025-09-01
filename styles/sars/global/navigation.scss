@@ -1,34 +1,58 @@
 /* ===== SITE-HEADER-MENU ===== */
 .site-header-menu {
     @include media-breakpoint-down(xl) {
-        width: 100%;
+        width: 100vw;
         min-width: $min-width;
         height: 100vh;
         display: block;
         overflow: hidden;
-        overflow-y: auto;
-        position: fixed;
-        top: -110vh;
-        right: 0;
-        left: 0;
+        position: absolute;
+        top: 0;
+        left: 100%;
         z-index: 100;
-        background-color: $color-white;
-        transition: top .4s $bezier, box-shadow .4s $bezier;
-        -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        &::-webkit-scrollbar {display: none;}
+        background: $color-white;
+        transition: left .4s $bezier, box-shadow .4s $bezier;
 
         .menu-open & {
-            top: 0;
+            left: 0;
             box-shadow: 0 0 5px rgba(black, .1);
         }
 
         .main-menu {
+            height: 100%;
             position: relative;
             padding-top: 64px;
 
+            &::before {
+                @include pseudo;
+                height: 1px;
+                position: absolute;
+                top: 64px;
+                right: 16px;
+                left: 16px;
+                background: #e5e7eb;
+            }
+
             &-container {
+                height: 100%;
+                overflow: hidden;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+                &::-webkit-scrollbar {display: none;}
+
+                &::after {
+                    @include pseudo;
+                    height: .5px;
+                    overflow: hidden;
+                    position: absolute;
+                    right: 16px;
+                    bottom: 0;
+                    left: 16px;
+                    background: $color-ocean;
+                }
+
                 ul, .main-menu-site-info ul {
                     padding: 0;
                     margin: 0;
@@ -39,21 +63,11 @@
                     &::before {display: none !important;}
                 }
 
-                > ul, .main-menu-site-info > ul {
-                    font-size: 16px;
+                > ul, .main-menu-site-info > ul, .mega-menu-wrapper > ul {
+                    font-size: 15px;
                     font-weight: 500;
                     letter-spacing: .02em;
                     position: relative;
-
-                    &::before {
-                        @include pseudo;
-                        height: .5px;
-                        position: absolute;
-                        top: 0;
-                        right: 10px;
-                        left: 10px;
-                        background: $color-ocean;
-                    }
 
                     > li {
                         margin: 0;
@@ -64,14 +78,14 @@
                             @include pseudo;
                             height: .5px;
                             position: absolute;
-                            right: 10px;
+                            right: 16px;
                             bottom: 0;
-                            left: 10px;
+                            left: 16px;
                             background: $color-ocean;
                         }
 
                         > a {
-                            padding: 20px;
+                            padding: 16px;
                             display: block;
                             position: relative;
                             z-index: 1;
@@ -203,7 +217,7 @@
             }
 
             .jump-menu-container-1 {
-                font-size: 16px;
+                font-size: 15px;
                 font-weight: 500;
                 letter-spacing: .02em;
                 position: relative;
@@ -223,7 +237,7 @@
                     }
 
                     > a {
-                        padding: 20px;
+                        padding: 16px;
                         display: block;
                         position: relative;
                         z-index: 1;
@@ -1063,163 +1077,6 @@
     position: relative;
     z-index: 9001
 }
-
-.main-menu-container ul.a11y-nav > .has-mega-menu {
-    position: static;
-}
-
-.main-menu-container ul.a11y-nav li .mega-menu ul {
-    position: static;
-    background: none;
-    padding: 0;
-    border: none;
-
-    @media (max-width: 1200px) {
-        ul {
-            padding-left: 10px;
-        }
-    }
-}
-
-.main-menu-container ul.a11y-nav .mega-menu {
-    position: absolute;
-    justify-content: space-between;
-    align-items: flex-start;
-    background: white;
-    top: calc(100%);
-    left: 0;
-
-    @media (max-width: 1200px) {
-        position: relative;
-    }
-
-    @media (min-width: 1201px) {
-        border: 1px solid $spray-blue;
-        box-shadow: 0 0 5px rgba(black, .5);
-
-        > ul > li {
-            > a, > button {
-                font-weight: 700 !important;
-                margin: 0 0 10px;
-                color: $spray-blue !important;
-
-                &:after {
-                    display: none;
-                }
-            }
-
-            > button {
-                cursor: default;
-            }
-
-            > a {
-                &:hover {
-                    color: $dark !important;
-                }
-            }
-
-            > ul {
-                display: block !important;
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
-
-            .nav-banner {
-                a {
-                    display: block;
-
-                    span {
-                        display: block;
-                        margin-bottom: 10px;
-                        text-align: center;
-                        font-weight: 700;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.main-menu-container ul.a11y-nav {
-    .mega-menu {
-        > ul {
-
-            @media (max-width: 1200px) {
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
-            }
-        }
-    }
-
-    @media (min-width: 1201px) {
-        .mega-menu > ul {
-            display: block !important;
-        }
-
-        .column-2 .mega-menu > ul {
-            column-count: 2;
-        }
-
-        .column-3 .mega-menu > ul {
-            column-count: 3;
-        }
-
-        .column-4 .mega-menu > ul {
-            column-count: 4;
-        }
-
-        .start-new-column {
-            break-before: column;
-        }
-    }
-}
-
-.main-menu-container ul.a11y-nav .mega-menu > ul {
-    > li {
-        flex: 1 1 auto;
-        padding: 35px;
-        width: 250px;
-
-        @media (max-width: 1200px) {
-            width: 100%;
-            padding: 0 40px 0 30px;
-            margin: 0;
-
-            > a, > button {
-                padding-left: 0;
-                padding-right: 0;
-
-                &:after {
-                    right: 0;
-                }
-            }
-        }
-    }
-
-    @media (min-width: 1201px) {
-        padding: 35px 0 !important;
-
-        > li {
-            padding: 0 35px;
-        }
-    }
-}
-
-.main-menu-container ul.a11y-nav .mega-menu > ul > li a {
-    padding: 5px 0;
-    border: 0;
-
-    @media (min-width: 1201px) {
-        padding: 0;
-        margin: 0;
-    }
-}
-
-.main-menu-container ul.a11y-nav .mega-menu.a11y-nav-active {
-    display: flex !important
-}
-/************************************************* END A11Y Navigation *************************************************/
 
 /* ===== BOTTOM-TAB ===== */
 .bottom-tab {
